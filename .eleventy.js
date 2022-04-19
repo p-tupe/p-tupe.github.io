@@ -1,11 +1,15 @@
+const pluginTailwindCSS = require("eleventy-plugin-tailwindcss");
+
 module.exports = (config) => {
+  config.addPlugin(pluginTailwindCSS, {
+    src: "src/css/style.css",
+    dest: "assets/css/",
+  });
 
-  // Copy as they are in build dir
-  // config.addPassthroughCopy("./src/assets/");
-
-  // Watch for changes and build
-  config.addWatchTarget("./src/assets/css/");
-  config.addWatchTarget("./src/assets/js/");
+  config.addPassthroughCopy("src/assets/icons/");
+  config.addPassthroughCopy("src/assets/imgs/");
+  config.addPassthroughCopy("src/assets/docs/");
+  config.addPassthroughCopy("src/assets/js/");
 
   return {
     dir: {

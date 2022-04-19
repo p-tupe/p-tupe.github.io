@@ -4,7 +4,7 @@
   "description": "Personal Website",
   "main": "index.js",
   "scripts": {
-    "start": "npx @11ty/eleventy --serve",
+    "start": "npx @11ty/eleventy --serve --quiet",
     "build:eleventy": "npx @11ty/eleventy",
     "build:tailwind": "npx tailwindcss -i ./src/assets/css/style.css -o ./docs/assets/css/output.css --minify",
     "build": "npm run build:eleventy && npm run build:tailwind"
@@ -26,7 +26,12 @@
   "homepage": "https://www.priteshtupe.com",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy-plugin-rss": "^1.1.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
+    "@photogabble/eleventy-plugin-word-stats": "^1.0.0",
+    "@quasibit/eleventy-plugin-sitemap": "^2.1.5",
     "@tailwindcss/typography": "^0.5.2",
+    "eleventy-plugin-tailwindcss": "^0.3.0",
     "tailwindcss": "^3.0.24"
   }
 }
