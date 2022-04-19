@@ -1,0 +1,44 @@
+---
+title: Pritesh Tupe | Grand Simlulation
+metaDescription: A fictional tale of a programmer trapped in a simulation
+permalink: "/gs/"
+---
+
+<h1>Grand Simulation</h1>
+
+<div class="summaryBox">
+  <div class="smallLeftBox">
+    <img alt="Grand_Simulation.jpeg" src="/assets/imgs/Grand_Simulation.jpeg" />
+  </div>
+
+  <div class="bigRightBox cursive">
+    <p>
+      <strong style="color: black"> A programmer trapped inside a simulation. </strong>
+    </p>
+
+    <p>
+      He and a band of misfits selected as "test subjects" must successfully complete the "test run"
+      to be able to return to their world or die trying. Follow along on his journey where he
+      matches his wits against the creators and their eerily familiar creations in a vast
+      fantastical world, seeking a way back home.
+    </p>
+
+    <p class="subtle">
+      <strong> Update twice per week (usually on Wednesday &amp; Saturday).</strong>
+      I will be posting this story on
+      <a href="https://www.royalroad.com/fiction/38540/grand-simulation">RoaylRoad.com</a>
+      as well, you continue there to keep track of progress, post comments, and mingle with the
+      community!
+    </p>
+  </div>
+</div>
+
+<h2><u>Chapters: </u></h2>
+
+<ul class="postList">
+  {% assign sorted = site.gs | sort: 'part' %} {% for chapter in sorted %}
+  <li>
+    <h3><a href="{{ chapter.url }}">{{ chapter.title }}</a></h3>
+  </li>
+  {% endfor %}
+</ul>

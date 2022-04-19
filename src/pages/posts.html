@@ -1,0 +1,20 @@
+---
+title: Pritesh Tupe | Blog
+metaDescription: Collection of articles
+permalink: "/posts/"
+---
+
+<h1>Blog Posts</h1>
+
+<ul class="postList">
+  {% for post in site.posts %}
+  <li>
+    <h3>
+      <a href="{{ post.url }}">
+        <span class="subtle"> {{ post.date | date: "%B %Y" }} »</span>
+        {{ post.title }}
+      </a>
+    </h3>
+  </li>
+  {% endfor %}
+</ul>

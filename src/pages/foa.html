@@ -1,0 +1,18 @@
+---
+title: Pritesh Tupe | Fate of Arda
+metaDescription: A story set in a fictional world
+permalink: "/foa/"
+---
+
+<blockquote>Apologies, FOA is currently on break. No chapters will be posted in the near future. Do check out Grand Simulation in the meantime!</blockquote>
+
+<h1><u>List of Chapters</u></h1>
+
+<ul class="postList">
+  {% assign sorted = site.foa | sort: 'part' %}
+  {% for chapter in sorted %}
+  <li>
+    <h3><a href="{{ chapter.url }}">{{ chapter.title }}</a></h3>
+  </li>
+  {% endfor %}
+</ul>
