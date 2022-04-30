@@ -10,9 +10,7 @@ module.exports = {
       // serif: ["Merriweather", "serif"],
     },
   },
-  plugins: [
-    require("@tailwindcss/typography"),
-  ],
+  plugins: [require("@tailwindcss/typography")],
   colors: {
     primary: colors.purple,
     secondary: colors.orange,
