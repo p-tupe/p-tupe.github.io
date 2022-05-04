@@ -25,9 +25,6 @@
     <link rel="manifest" href="/my.webmanifest" />
     <meta name="theme-color" content="#FF00FF" />
 
-    <!-- Remove later -->
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-
     <script>
       if (
         localStorage.theme === "dark" ||
@@ -41,7 +38,7 @@
     </script>
   </head>
 
-  <body>
-    {{ content }}
+  <body class="">
+    {% include "header.html" %} {{ content }}
   </body>
 </html>

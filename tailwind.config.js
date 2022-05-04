@@ -1,18 +1,18 @@
-const colors = require("tailwindcss/colors");
-const pluginTailwindCSS = require("eleventy-plugin-tailwindcss");
+const colors = require('tailwindcss/colors')
 
 module.exports = {
-  content: ["./docs/**/*.{html,js}", "./src/**/*.{html,js}"],
-  darkMode: "class",
+  mode: 'jit',
+  content: ['./src/**/*.{njk,html,js}'],
+  darkMode: 'class',
   theme: {
     fontFamily: {
       // sans: ["Graphik", "sans-serif"],
       // serif: ["Merriweather", "serif"],
-    },
+    }
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require('@tailwindcss/typography')],
   colors: {
     primary: colors.purple,
-    secondary: colors.orange,
-  },
-};
+    secondary: colors.orange
+  }
+}

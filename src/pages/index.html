@@ -2,139 +2,125 @@
 "permalink": "/"
 ---
 
-<div class="flex flex-col min-h-screen min-w-full bg-slate-50 mx-0 p-0">
-  <div class="fixed flex flex-row w-full justify-between pt-4 px-4">
-    <img
-      src="assets/icons/dark-mode-toggle.svg"
-      role="img"
-      alt="Dark Mode Toggle"
-    />
-    <img
-      src="assets/icons/hamburger-menu.svg"
-      role="img"
-      alt="Side Menu Toggle"
-    />
-  </div>
-
-  <div class="flex-1 grow flex flex-col justify-center items-center">
-    <div class="shrink-0">
-      <img
-        class="h-96 object-contain rounded-full transition-shadow duration-300 drop-shadow-lg hover:shadow-xl"
-        src="assets/imgs/profilePic.jpg"
-        alt="Profile Pic"
-      />
-    </div>
-
-    <div class="prose prose-zinc text-center mt-5 w-full">
-      <h1>PRITESH TUPE</h1>
-      <h4>Programmer | Writer | Violinist</h4>
-      <div class="flex flex-row justify-between">
+<div class="snap-y snap-mandatory overflow-y-scroll h-screen">
+  <section
+    style="scroll-snap-align: start"
+    class="flex flex-col min-h-screen min-w-full bg-slate-50"
+  >
+    <div class="flex-1 grow flex flex-col justify-center items-center">
+      <div class="shrink-0">
         <img
-          class="w-6"
-          src="assets/icons/github.svg"
-          role="img"
-          alt="Github Icon"
-        />
-
-        <img
-          class="w-6"
-          src="assets/icons/gmail.svg"
-          role="img"
-          alt="Mail Icon"
-        />
-
-        <img
-          class="w-6"
-          src="assets/icons/facebook.svg"
-          role="img"
-          alt="Facebook Icon"
-        />
-
-        <img
-          class="w-6"
-          src="assets/icons/instagram.svg"
-          role="img"
-          alt="Instagram Icon"
-        />
-
-        <img
-          class="w-6"
-          src="assets/icons/linkedin.svg"
-          role="img"
-          alt="Linkedin Icon"
+          class="h-96 object-contain rounded-full transition-shadow duration-300 drop-shadow-lg hover:shadow-xl"
+          src="/assets/imgs/profilePic.jpg"
+          alt="Profile Pic"
         />
       </div>
+
+      <div class="prose prose-slate text-center mt-5 w-full">
+        <h1>PRITESH TUPE</h1>
+        <h4>Programmer | Writer | Violinist</h4>
+        <div class="flex flex-row justify-between">
+          <img
+            class="w-6"
+            src="/assets/icons/github.svg"
+            role="img"
+            alt="Github Icon"
+          />
+
+          <img
+            class="w-6"
+            src="/assets/icons/gmail.svg"
+            role="img"
+            alt="Mail Icon"
+          />
+
+          <img
+            class="w-6"
+            src="/assets/icons/facebook.svg"
+            role="img"
+            alt="Facebook Icon"
+          />
+
+          <img
+            class="w-6"
+            src="/assets/icons/instagram.svg"
+            role="img"
+            alt="Instagram Icon"
+          />
+
+          <img
+            class="w-6"
+            src="/assets/icons/linkedin.svg"
+            role="img"
+            alt="Linkedin Icon"
+          />
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="flex-none flex flex-row justify-center">
-    <img
-      src="assets/icons/chevron-compact-arrow-down.svg"
-      role="img"
-      alt="Down Arrow Indicator"
-    />
-  </div>
-</div>
+    <div class="flex-none flex flex-row justify-center">
+      <img
+        src="/assets/icons/chevron-compact-arrow-down.svg"
+        role="img"
+        alt="Down Arrow Indicator"
+      />
+    </div>
+  </section>
 
-<div class="flex flex-col min-h-screen min-w-full bg-slate-50">
-  <div class="grow prose mx-auto pt-4">
-    <h1>Latest Posts</h1>
+  <section
+    style="scroll-snap-align: start"
+    class="flex flex-col min-h-screen min-w-full bg-slate-50 pt-16"
+  >
+    <div class="flex flex-row">
+      <div class="prose mx-auto w-full pt-4">
+        <h1>Latest Posts</h1>
 
-    {% assign sorted_posts = collections.post | reverse %}
-    <ul>
-      {%- for post in sorted_posts limit:10 -%}
-      <li class="decoration-slate-50">
-        <h3>
-          <span class="text-violet-300"
-            >{{ post.data.date | date: "%B %Y" }} |</span
-          >
-          <a href="{{ post.url }}">{{ post.data.title }}</a>
-        </h3>
-      </li>
-      {%- endfor -%}
-      <li class="decoration-slate-50">
-        <h3>
-          <a href="/posts">Show more...</a>
-        </h3>
-      </li>
-    </ul>
-  </div>
+        {% assign sorted_posts = collections.post | reverse %}
+        <ul>
+          {%- for post in sorted_posts limit:10 -%}
+          <li class="">
+            <h3>
+              <span class="text-slate-600">
+                {{ post.data.date | date: "%B %Y" }} |
+              </span>
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </h3>
+          </li>
+          {%- endfor -%}
+          <li class="decoration-slate-50">
+            <h3>
+              <a href="/posts">Show more...</a>
+            </h3>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  <div class="flex-none flex flex-row justify-center">
-    <img
-      src="assets/icons/chevron-compact-arrow-down.svg"
-      role="img"
-      alt="Down Arrow Indicator"
-    />
-  </div>
-</div>
+  <section
+    style="scroll-snap-align: start"
+    class="flex flex-col min-h-screen min-w-full bg-slate-50 pt-16"
+  >
+    <div class="flex flex-row">
+      <div class="prose mx-auto w-full pt-4">
+        <h1>Latest GS Chapters</h1>
 
-<div class="flex flex-col min-h-screen min-w-full bg-slate-50">
-  <div class="grow prose mx-auto w-full pt-4">
-    <h1>Latest GS Chapters</h1>
-
-    {% assign sorted_gs = collections.gs_sorted | reverse %}
-    <ul>
-      {%- for chapter in sorted_gs limit:10 -%}
-      <li class="decoration-slate-50">
-        <h3>
-          <a href="{{ chapter.url }}">{{ chapter.data.title }}</a>
-        </h3>
-      </li>
-      {%- endfor -%}
-      <li class="decoration-slate-50">
-        <h3>
-          <a href="/gs">Show more...</a>
-        </h3>
-      </li>
-    </ul>
-  </div>
-
-  <div class="flex-none flex flex-row justify-center">
-    <img
-      src="assets/icons/chevron-compact-arrow-down.svg"
-      role="img"
-      alt="Down Arrow Indicator"
-    />
-  </div>
+        {% assign sorted_gs = collections.gs_sorted | reverse %}
+        <ul>
+          {%- for chapter in sorted_gs limit:10 -%}
+          <li class="decoration-slate-50">
+            <h3>
+              <a href="{{ chapter.url }}">{{ chapter.data.title }}</a>
+            </h3>
+          </li>
+          {%- endfor -%}
+          <li class="decoration-slate-50">
+            <h3>
+              <a href="/gs">Show more...</a>
+            </h3>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </div>
