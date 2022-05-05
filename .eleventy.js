@@ -1,3 +1,5 @@
+const card = require('./src/_includes/components/card.js')
+
 module.exports = (config) => {
   config.addPassthroughCopy('src/assets/icons/')
   config.addPassthroughCopy('src/assets/imgs/')
@@ -9,6 +11,8 @@ module.exports = (config) => {
       .getFilteredByTag('gs')
       .sort((a, b) => a.data.part - b.data.part)
   })
+
+  config.addPairedShortcode('card', card)
 
   return {
     dir: {

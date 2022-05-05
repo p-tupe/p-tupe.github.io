@@ -23,22 +23,29 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/my.webmanifest" />
-    <meta name="theme-color" content="#FF00FF" />
+    <meta name="theme-color" content="#ffffff" />
 
     <script>
+      let classList = document.documentElement.classList;
+
       if (
         localStorage.theme === "dark" ||
         (!("theme" in localStorage) &&
           window.matchMedia("(prefers-color-scheme: dark)").matches)
       ) {
-        document.documentElement.classList.add("dark");
+        classList.add("dark");
       } else {
-        document.documentElement.classList.remove("dark");
+        classList.remove("dark");
+      }
+
+      function toggleDarkMode() {
+        if (classList.contains("dark")) classList.remove("dark");
+        else classList.add("dark");
       }
     </script>
   </head>
 
-  <body class="">
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
     {% include "header.html" %} {{ content }}
   </body>
 </html>

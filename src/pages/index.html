@@ -1,12 +1,11 @@
 ---
 "permalink": "/"
+"projects":
+  -
 ---
 
-<div class="snap-y snap-mandatory overflow-y-scroll h-screen">
-  <section
-    style="scroll-snap-align: start"
-    class="flex flex-col min-h-screen min-w-full bg-slate-50"
-  >
+<div class="snap-y md:snap-mandatory overflow-y-scroll h-screen">
+  <section class="snap-start flex flex-col min-h-screen min-w-full">
     <div class="flex-1 grow flex flex-col justify-center items-center">
       <div class="shrink-0">
         <img
@@ -16,71 +15,41 @@
         />
       </div>
 
-      <div class="prose prose-slate text-center mt-5 w-full">
+      <div class="prose prose-slate dark:prose-invert text-center mt-5 w-full">
         <h1>PRITESH TUPE</h1>
-        <h4>Programmer | Writer | Violinist</h4>
-        <div class="flex flex-row justify-between">
-          <img
-            class="w-6"
-            src="/assets/icons/github.svg"
-            role="img"
-            alt="Github Icon"
-          />
-
-          <img
-            class="w-6"
-            src="/assets/icons/gmail.svg"
-            role="img"
-            alt="Mail Icon"
-          />
-
-          <img
-            class="w-6"
-            src="/assets/icons/facebook.svg"
-            role="img"
-            alt="Facebook Icon"
-          />
-
-          <img
-            class="w-6"
-            src="/assets/icons/instagram.svg"
-            role="img"
-            alt="Instagram Icon"
-          />
-
-          <img
-            class="w-6"
-            src="/assets/icons/linkedin.svg"
-            role="img"
-            alt="Linkedin Icon"
-          />
-        </div>
+        <h4 class="mb-16">Programmer | Writer | Violinist</h4>
+        {% include "partials/contact-icons.html" %}
       </div>
     </div>
 
-    <div class="flex-none flex flex-row justify-center">
-      <img
-        src="/assets/icons/chevron-compact-arrow-down.svg"
-        role="img"
-        alt="Down Arrow Indicator"
-      />
+    <div
+      class="mx-auto py-16 prose prose-slate dark:prose-invert flex flex-row justify-between w-full"
+    >
+      <div><a href="/posts">Posts Archive</a></div>
+      <div><a href="/gs">Grand Simulation</a></div>
+      <div><a href="/projects">Projects</a></div>
+      <div><a href="/notes">Notes</a></div>
+      <div><a href="/about">About</a></div>
     </div>
+
+    {% include "partials/arrow-down.html" %}
   </section>
 
   <section
-    style="scroll-snap-align: start"
-    class="flex flex-col min-h-screen min-w-full bg-slate-50 pt-16"
+    class="snap-start flex flex-col justify-between min-h-screen min-w-full"
   >
+    {% include "partials/arrow-up.html" %}
+
     <div class="flex flex-row">
-      <div class="prose mx-auto w-full pt-4">
-        <h1>Latest Posts</h1>
+      <div class="prose prose-slate dark:prose-invert mx-auto w-full">
+        <h1 class="text-center">Latest Posts</h1>
 
         {% assign sorted_posts = collections.post | reverse %}
         <ul>
           {%- for post in sorted_posts limit:10 -%}
           <li class="">
             <h3>
-              <span class="text-slate-600">
+              <span class="text-slate-500">
                 {{ post.data.date | date: "%B %Y" }} |
               </span>
               <a href="{{ post.url }}">{{ post.data.title }}</a>
@@ -95,15 +64,16 @@
         </ul>
       </div>
     </div>
+    {% include "partials/arrow-down.html" %}
   </section>
 
   <section
-    style="scroll-snap-align: start"
-    class="flex flex-col min-h-screen min-w-full bg-slate-50 pt-16"
+    class="snap-start flex flex-col justify-between min-h-screen min-w-full"
   >
+    {% include "partials/arrow-up.html" %}
     <div class="flex flex-row">
-      <div class="prose mx-auto w-full pt-4">
-        <h1>Latest GS Chapters</h1>
+      <div class="prose prose-slate dark:prose-invert mx-auto w-full">
+        <h1 class="text-center">Latest GS Chapters</h1>
 
         {% assign sorted_gs = collections.gs_sorted | reverse %}
         <ul>
@@ -121,6 +91,93 @@
           </li>
         </ul>
       </div>
+    </div>
+    {% include "partials/arrow-down.html" %}
+  </section>
+
+  <section
+    class="snap-start flex flex-col justify-between min-h-screen min-w-full"
+  >
+    {% include "partials/arrow-up.html" %}
+    <div
+      class="prose max-w-none prose-slate dark:prose-invert grow flex flex-row justify-between flex-wrap mx-auto w-10/12"
+    >
+      <h1 class="w-full text-center pt-8">Projects</h1>
+      <!---->
+
+      {% card "Grand Simulation (Ongoing) [Web Novel]" %}
+      <p class="font-bold">
+        A programmer trapped in a simulation some extra spacing.
+      </p>
+      <p>
+        He and a band of misfits selected as "test subjects" must successfully
+        complete the "test run" to be able to return to their world or die
+        trying. Follow along on his journey where he matches his wits against
+        the creators and their eerily familiar creations in a vast fantastical
+        world, seeking a way back home.
+      </p>
+      {% endcard %}
+
+      <!---->
+
+      {% card "Fate of Arda (Discontinued) [Web Novel]" %}
+      <p>
+        About a boy with a strange past, becoming a linchpin in a conflict
+        spanning across realms. A coming of age with ancient blood with tragic
+        power. A tale of love, courage and heartbreak.
+      </p>
+      <blockquote>
+        Apologies! FOA is currently (possibly indefinetely) on break; do
+        checkout Grand Simulation in the meantime!
+      </blockquote>
+      {% endcard %}
+
+      <!---->
+
+      {% card "Zettel Merken [Self-Help]" %}
+      <p>
+        Supercharge your Supercharge your learning by combining two of the most
+        revolutionary ideas in knowledge enhancement!
+      </p>
+      {% endcard %}
+
+      <!---->
+
+      {% card "Creatures [Canvas Simulation]" %}
+      <p>
+        A simulation of an environment where different creatures interact with
+        the surroundings and each other
+      </p>
+      {% endcard %}
+
+      <!---->
+
+      {% card "Nvim Rss [Editor Plugin]" %}
+      <p>A simple RSS Reader plugin for Neovim!</p>
+      {% endcard %}
+
+      <!---->
+
+      {% card "Pingmon [Monitoring Tool]" %}
+      <p>
+        Self-hosted web-site and jobs monitoring, with downtime notifications
+        pushed to Slack.
+      </p>
+      {% endcard %}
+
+      <!---->
+
+      {% card "Impossible XO [Game Script]" %}
+      <p>A tic-tac-toe game that is impossible to win!</p>
+      {% endcard %}
+
+      <!---->
+
+      {% card "Binary Clock [Script]" %}
+      <p>A Binary Coded Decimal representation of current time.</p>
+      {% endcard %}
+
+      <!---->
     </div>
   </section>
 </div>
