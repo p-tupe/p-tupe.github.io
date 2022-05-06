@@ -24,28 +24,49 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/my.webmanifest" />
     <meta name="theme-color" content="#ffffff" />
-
-    <script>
-      let classList = document.documentElement.classList;
-
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        classList.add("dark");
-      } else {
-        classList.remove("dark");
-      }
-
-      function toggleDarkMode() {
-        if (classList.contains("dark")) classList.remove("dark");
-        else classList.add("dark");
-      }
-    </script>
   </head>
 
   <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
-    {% include "header.html" %} {{ content }}
+    {% include "header.html" %} {% include "side-nav.html" %} {{ content }}
+
+    <script defer>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList;
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode();
+      }
+
+      function darkMode() {
+        html.add("dark");
+        localStorage.theme = "dark";
+      }
+
+      function lightMode() {
+        html.remove("dark");
+        localStorage.theme = "light";
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode();
+      }
+
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList;
+
+      function toggleNavBar() {
+        sideNav.contains("hidden")
+          ? sideNav.remove("hidden")
+          : sideNav.add("hidden");
+      }
+    </script>
   </body>
 </html>

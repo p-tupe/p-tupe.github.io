@@ -1,13 +1,18 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  mode: 'jit',
-  content: ['./src/**/*.{njk,html,js}'],
+  // mode: 'jit',
+  content: ['./src/**/*.{html,js}'],
   darkMode: 'class',
   theme: {
-    fontFamily: {
-      // sans: ["Graphik", "sans-serif"],
-      // serif: ["Merriweather", "serif"],
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: '75ch'
+          }
+        }
+      }
     }
   },
   plugins: [require('@tailwindcss/typography')],

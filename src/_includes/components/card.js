@@ -8,7 +8,7 @@ module.exports = (content, title, img_src, img_alt) =>
   /> `
     : "") +
   `
-  <div class="p-6 grow flex flex-col justify-start">
+  <div class="p-4 grow flex flex-col justify-start">
     <h3 class="m-0">${title}</h3>
     ${content}
   </div>

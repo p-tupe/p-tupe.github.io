@@ -4,17 +4,18 @@ metaDescription: A fictional tale of a programmer trapped in a simulation
 permalink: "/gs/"
 ---
 
-<div
-  class="text-center prose prose-slate dark:prose-invert max-w-prose mx-auto pt-16"
->
+<div class="text-center prose prose-slate dark:prose-invert mx-auto pt-16">
   <h1>Grand Simulation</h1>
 </div>
 
 <div
-  class="flex flex-col md:flex-row mx-auto mt-16 rounded-lg bg-white dark:bg-black w-8/12 justify-evenly shadow-lg dark:shadow-stone-800"
+  class="flex flex-col lg:flex-row mx-auto mt-16 rounded-lg bg-white dark:bg-black w-10/12 md:w-8/12 justify-evenly shadow-lg dark:shadow-stone-800"
 >
-  <div class="">
-    <img class="h-full" src="/assets/imgs/Grand_Simulation.jpeg" />
+  <div class="lg:w-2/3">
+    <img
+      class="rounded-t-lg lg:rounded-r-none lg:rounded-l-lg h-full"
+      src="/assets/imgs/Grand_Simulation.jpeg"
+    />
   </div>
   <div
     class="prose prose-slate dark:prose-invert p-8 max-w-none flex flex-col justify-center align-middle"
@@ -45,7 +46,7 @@ permalink: "/gs/"
   </div>
 </div>
 
-<div class="prose prose-slate dark:prose-invert max-w-prose mx-auto py-16">
+<div class="prose prose-slate dark:prose-invert mx-auto px-4 md:px-0 py-16">
   <h2><u>Chapters: </u></h2>
 
   {% assign sorted_gs = collections.gs_sorted %}
