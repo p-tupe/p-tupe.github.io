@@ -1,14 +1,16 @@
 module.exports = (content, title, img_src, img_alt) =>
-  ` <div class="flex mx-4 mt-4 flex-col md:flex-row md:w-[45%] h-fit rounded-lg bg-white dark:bg-black shadow-lg dark:shadow-stone-800">` +
+  ` <div class="flex flex-col lg:flex-row w-full h-fit rounded-lg bg-white dark:bg-black shadow-lg hover:shadow-xl dark:shadow-stone-800">` +
   (img_src
-    ? ` <img
-    class="m-0 h-96 object-cover rounded-t-lg md:w-2/5 md:h-auto md:rounded-none md:rounded-l-lg"
-    src="${img_src}"
-    alt="${img_alt}"
-  /> `
+    ? `<div class="lg:w-2/3">
+    <img
+      class="rounded-t-lg lg:rounded-r-none lg:rounded-l-lg h-fit"
+      src="${img_src}"
+      alt="${img_alt}"
+    />
+  </div> `
     : "") +
   `
-  <div class="p-4 grow flex flex-col justify-start">
+  <div class="prose prose-slate dark:prose-invert p-4 md:p-8 max-w-none flex flex-col justify-center align-middle" >
     <h3 class="m-0">${title}</h3>
     ${content}
   </div>

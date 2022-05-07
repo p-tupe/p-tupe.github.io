@@ -14,19 +14,19 @@
       </div>
 
       <div class="prose prose-slate dark:prose-invert text-center mt-5 w-full">
-        <h1>PRITESH TUPE</h1>
-        <h4 class="mb-16">Programmer | Writer | Violinist</h4>
+        <h1 class="font-sans mt-8 tracking-widest">PRITESH TUPE</h1>
+        <h4 class="font-serif mb-16">Programmer | Writer | Violinist</h4>
         {% include "partials/contact-icons.html" %}
       </div>
     </div>
 
     <div
-      class="mx-auto py-16 prose prose-slate dark:prose-invert flex flex-row justify-evenly w-full"
+      class="lg:visible mx-auto py-16 prose prose-slate prose-sm dark:prose-invert flex flex-row justify-evenly w-full"
     >
       <div><a href="/posts">Posts</a></div>
       <div><a href="/gs">Grand Simulation</a></div>
-      <div><a href="/projects">Projects</a></div>
-      <div><a href="/notes">Notes</a></div>
+      <div><a href="#projects">Projects</a></div>
+      <!-- <div><a href="/notes">Notes</a></div> -->
       <div><a href="/about">About</a></div>
     </div>
 
@@ -94,82 +94,102 @@
   </section>
 
   <section
+    id="projects"
     class="snap-start flex flex-col justify-between min-h-screen min-w-full"
   >
     {% include "partials/arrow-up.html" %}
     <div
-      class="prose max-w-none prose-slate dark:prose-invert grow flex flex-row justify-between flex-wrap mx-auto w-10/12"
+      class="prose max-w-none prose-slate dark:prose-invert grow flex flex-col md:flex-row justify-evenly flex-wrap mx-auto w-10/12"
     >
       <h1 class="w-full text-center pt-8">Projects</h1>
-      <!---->
 
-      {% card "Grand Simulation (Ongoing) [Web Novel]" %}
-      <p class="font-bold mb-0 my-3">A programmer trapped in a simulation!</p>
-      <p class="m-0">
-        He and a band of misfits selected as "test subjects" must successfully
-        complete the "test run" to be able to return to their world or die
-        trying. Follow along on his journey where he matches his wits against
-        the creators and their eerily familiar creations in a vast fantastical
-        world, seeking a way back home.
-      </p>
-      {% endcard %}
+      <a href="/gs" class="decoration-transparent w-full md:w-[45%] mb-4">
+        {% card "Grand Simulation (Ongoing) [Web Novel]" %}
+        <p class="font-bold mb-0 my-3">A programmer trapped in a simulation!</p>
+        <p class="m-0">
+          He and a band of misfits selected as "test subjects" must successfully
+          complete the "test run" to be able to return to their world or die
+          trying. Follow along on his journey where he matches his wits against
+          the creators and their eerily familiar creations in a vast fantastical
+          world, seeking a way back home.
+        </p>
+        {% endcard %}
+      </a>
 
-      <!---->
+      <a href="/foa" class="decoration-transparent w-full md:w-[45%] mb-4">
+        {% card "Fate of Arda (Discontinued) [Web Novel]" %}
+        <p class="mb-0">
+          About a boy with a strange past, becoming a linchpin in a conflict
+          spanning across realms. A coming of age with ancient blood with tragic
+          power. A tale of love, courage and heartbreak.
+        </p>
+        {% endcard %}
+      </a>
 
-      {% card "Fate of Arda (Discontinued) [Web Novel]" %}
-      <p class="mb-0">
-        About a boy with a strange past, becoming a linchpin in a conflict
-        spanning across realms. A coming of age with ancient blood with tragic
-        power. A tale of love, courage and heartbreak.
-      </p>
-      {% endcard %}
+      <a
+        href="https://github.com/EMPAT94/zettel-merken"
+        class="decoration-transparent w-full md:w-[45%] mb-4"
+      >
+        {% card "Zettel Merken [Self-Help]" %}
+        <p class="mb-0">
+          Supercharge your Supercharge your learning by combining two of the
+          most revolutionary ideas in knowledge enhancement!
+        </p>
+        {% endcard %}
+      </a>
 
-      <!---->
+      <a
+        href="https://github.com/EMPAT94/creatures"
+        class="decoration-transparent w-full md:w-[45%] mb-4"
+      >
+        {% card "Creatures [Canvas Simulation]" %}
+        <p class="mb-0">
+          A simulation of an environment where different creatures interact with
+          the surroundings and each other
+        </p>
+        {% endcard %}
+      </a>
 
-      {% card "Zettel Merken [Self-Help]" %}
-      <p class="mb-0">
-        Supercharge your Supercharge your learning by combining two of the most
-        revolutionary ideas in knowledge enhancement!
-      </p>
-      {% endcard %}
+      <a
+        href="https://github.com/EMPAT94/nvim-rss"
+        class="decoration-transparent w-full md:w-[45%] mb-4"
+      >
+        {% card "Nvim Rss [Editor Plugin]" %}
+        <p class="mb-0">A simple RSS Reader plugin for Neovim!</p>
+        {% endcard %}
+      </a>
 
-      <!---->
+      <a
+        href="https://github.com/EMPAT94/pingmon"
+        class="decoration-transparent w-full md:w-[45%] mb-4"
+      >
+        {% card "Pingmon [Monitoring Tool]" %}
+        <p class="mb-0">
+          Self-hosted web-site and jobs monitoring, with downtime notifications
+          pushed to Slack.
+        </p>
+        {% endcard %}
+      </a>
 
-      {% card "Creatures [Canvas Simulation]" %}
-      <p class="mb-0">
-        A simulation of an environment where different creatures interact with
-        the surroundings and each other
-      </p>
-      {% endcard %}
+      <a
+        href="https://github.com/EMPAT94/impossible-xo"
+        class="decoration-transparent w-full md:w-[45%] mb-4"
+      >
+        {% card "Impossible XO [Game Script]" %}
+        <p class="mb-0">A tic-tac-toe game that is impossible to win!</p>
+        {% endcard %}
+      </a>
 
-      <!---->
-
-      {% card "Nvim Rss [Editor Plugin]" %}
-      <p class="mb-0">A simple RSS Reader plugin for Neovim!</p>
-      {% endcard %}
-
-      <!---->
-
-      {% card "Pingmon [Monitoring Tool]" %}
-      <p class="mb-0">
-        Self-hosted web-site and jobs monitoring, with downtime notifications
-        pushed to Slack.
-      </p>
-      {% endcard %}
-
-      <!---->
-
-      {% card "Impossible XO [Game Script]" %}
-      <p class="mb-0">A tic-tac-toe game that is impossible to win!</p>
-      {% endcard %}
-
-      <!---->
-
-      {% card "Binary Clock [Script]" %}
-      <p class="mb-0">A Binary Coded Decimal representation of current time.</p>
-      {% endcard %}
-
-      <!---->
+      <a
+        href="https://github.com/EMPAT94/binary-clock"
+        class="decoration-transparent w-full md:w-[45%] mb-4"
+      >
+        {% card "Binary Clock [Script]" %}
+        <p class="mb-0">
+          A Binary Coded Decimal representation of current time.
+        </p>
+        {% endcard %}
+      </a>
     </div>
   </section>
 </div>

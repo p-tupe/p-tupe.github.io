@@ -11,7 +11,7 @@
       class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900"
     >
       <div
-        class="w-full h-12 text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
         onclick="toggleNavBar()"
       >
         <svg
@@ -26,19 +26,19 @@
         </svg>
       </div>
       <div
-        class="max-h-screen overflow-y-scroll prose md:prose-xl lg:prose-2xl prose-slate dark:prose-invert"
+        class="overflow-y-scroll prose prose-slate dark:prose-invert prose-xl lg:prose-2xl pb-8"
       >
-        <ul>
+        <ul class="list-none">
           <li><a href="/">Home</a></li>
           <li><a href="/posts">Posts</a></li>
           <li><a href="/notes">Notes</a></li>
           <li>Web Novels</li>
-          <ul>
+          <ul class="list-none">
             <li><a href="/foa">Fate of Arda</a></li>
             <li><a href="/gs">Grand Simulation</a></li>
           </ul>
           <li>Open Source Projects</li>
-          <ul>
+          <ul class="list-none">
             <li>
               <a href="https://github.com/EMPAT94/creatures">Creatures</a>
             </li>

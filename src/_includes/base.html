@@ -19,6 +19,13 @@
     <meta property="og:url" content="https://www.mywebsite.com/page" />
     <link rel="canonical" href="https://www.mywebsite.com/page" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Baloo+Tamma+2&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="icon" href="/favicon.ico" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -63,9 +70,17 @@
       const sideNav = document.getElementById("side-nav").classList;
 
       function toggleNavBar() {
-        sideNav.contains("hidden")
-          ? sideNav.remove("hidden")
-          : sideNav.add("hidden");
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar();
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden";
+        sideNav.remove("hidden");
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll";
+        sideNav.add("hidden");
       }
     </script>
   </body>
