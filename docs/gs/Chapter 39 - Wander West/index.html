@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <meta name="description" content="Page description" />
+    <meta property="og:title" content="Unique page title - My Site" />
+    <meta property="og:description" content="Page description" />
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
+    <meta property="og:image:alt" content="Image description" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://www.mywebsite.com/page" />
+    <link rel="canonical" href="https://www.mywebsite.com/page" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Baloo+Tamma+2&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/my.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50"
+>
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"
+    ></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900"
+    >
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()"
+      >
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <div
+        class="overflow-y-scroll prose prose-slate dark:prose-invert prose-xl lg:prose-2xl pb-8"
+      >
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/rss">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 39 - Wander West</h2>
+<p>The Sun was shining high up in the sky like a spiteful overlord. I took another miserable step cursing my dark robe covering me head-to-toe. I wondered if desert rules applied here. I did not dally long, however, as the Centaur set an unrelenting pace.</p>
+<p>&quot;Tyee, slow down, please. My human legs can only go so fast!&quot; I called out for the third time since we set off.</p>
+<p>&quot;Hmpf,&quot; he snorted from up ahead, &quot;Perhaps a small break is in order.&quot;</p>
+<p>I rejoiced in my head and followed him to a shade under a withered tree nearby. The landscape was scarily similar to the semi-arid levels of the Tutorial, although thankfully absent of any monsters so far.</p>
+<p>&quot;Do you think we lost them?&quot; I asked after taking a sip from the leathery water bag.</p>
+<p>&quot;Perhaps. The human rangers are as famous for their tracking skills as Centaurs are for their hunting. They will track us until and unless we make it nigh-impossible to do so safely.&quot; He replied, declining my motion of the waterbag towards him.</p>
+<p>&quot;Is that why we are headed west?&quot; I looked up towards the mountains piercing the clouds far ahead. &quot;Towards the Dragon Peak?&quot;</p>
+<p>&quot;Yes,&quot; he followed my gaze, &quot;There is a buffer of uncontested land between the Tadako hunting grounds and the Dragon Peak. It is mostly inhabited by various monster species, especially closer to the sierra. We won't head deeper there, only cruising along the edges to make tracking us difficult.&quot;</p>
+<p>&quot;I see...&quot; 'We will use monsters as our shields.' But one statement struck out. &quot;Hey, why are there more monsters closer to the Peak? Shouldn't they be further away from the Dragons?&quot;</p>
+<p>Tyee looked at me. I saw him amused for the first time since last night. &quot;They see the lands in our direction as courting death since our hunting bands frequent these parts. The Dragons, however devastating, rarely come down from their high homes. So that region is relatively safer for the monster population.&quot; I opened my mouth to ask another question before he forestalled me with a raised palm. &quot;Rest. We still have a long way ahead.&quot;</p>
+<p>I acquiesced, sitting down with my back against the sturdy trunk and Tyee trotted off examining the flora around. Before I closed my eyes, I decided to take a look at my Status Window, expecting a level up from the Assassin.</p>
+<br />
+<hr>
+<h3>[Master] Mage - Level 21</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Health</td>
+<td>965/965</td>
+</tr>
+<tr>
+<td>Mana</td>
+<td>2870/2870</td>
+</tr>
+<tr>
+<td>Stamina</td>
+<td>34/107</td>
+</tr>
+<tr>
+<td>Experience</td>
+<td>398/2200</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Attributes</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strength</td>
+<td>22</td>
+</tr>
+<tr>
+<td>Vitality</td>
+<td>22</td>
+</tr>
+<tr>
+<td>Agility</td>
+<td>22</td>
+</tr>
+<tr>
+<td>Dexterity</td>
+<td>23</td>
+</tr>
+<tr>
+<td>Intelligence</td>
+<td>34</td>
+</tr>
+<tr>
+<td>Perception</td>
+<td>31</td>
+</tr>
+<tr>
+<td>Wisdom</td>
+<td>27</td>
+</tr>
+</tbody>
+</table>
+<p><em>Special Effects:</em></p>
+<ul>
+<li>Magic Boost - You get extra Intelligence, Perception, and/or Wisdom points on every Class Upgrade.</li>
+<li>Hero's Boost - You get 100-300% extra experience.</li>
+<li>Test Subject Perk - Unlock special areas.</li>
+<li>Other Worlder Perk - Immune to perpetual illusions and mind control Spells.</li>
+<li>[Master Mage Robe] Augment Perception/Wisdom (active) - You get a major reinforcement to casting and defense.</li>
+</ul>
+<hr>
+<br />
+<p>'Finally, my health is reaching the 4-digit mark now! Far cry from the measly 100 that I started with. Now, how about my spell repo?'</p>
+<br />
+<hr>
+<pre><code>
+# 10 mana
+identify o = echo o
+
+# 150 mana
+incendio x = (( x.temperature = x.temperature * 2 ))
+
+# 150 mana
+petrificus_totalus x = (( x.temperature = x.temperature / 2 ))
+
+# Exponential mana; Deadly! killed the pather within minutes
+petrificus_slowly x = while true; do (( x.temperature-- )); done;
+
+# Haven't tried yet
+incendio_slowly x = while true; do (( x.temperature++ )); done;
+
+# Exponential; helpers
+create_low_point l = while true; do (( l.potential-- )); done;
+create_high_point h = while true; do (( h.potential++ )); done;
+
+# High exponential cost; does not damage much but very good distraction
+stupefy xs = i=0;
+  for x in xs;
+    do
+      if [ $(( i % 2 )) -eq 0 ];
+        then create_high_point x;
+        else create_low_point x;
+      fi;
+      let i++;
+    done;
+
+# Low exponential consumption; beautiful to look at.
+lumos hr lr = create_high_point hr &amp;&amp; create_low_point lr
+
+# Takes far too much mana; no-op so far
+hack_pass = i=0;
+  while [ $i -le 255 ];
+    do
+      echo &quot;$(get_char $i) $(get_time)&quot; &gt;&gt; password_hack | sudo -S echo;
+      let i--;
+    done;
+
+# Helpers
+get_char i = printf &quot;\x$(printf %x $i)&quot;
+get_time = date +%s%N
+
+</code></pre>
+<hr>
+<br />
+<p>I bitterly removed the tail-end comment for petrificus_slowly, it didn't seem so deadly anymore. My repo was starting to resemble a hacked-together shell script. 'I wonder if I could modularize things somehow?' That experiment was for another day, however, as I opened my final quest list window that I had mostly neglected.</p>
+<br />
+<hr>
+<ul>
+<li>
+<p>Main Quest</p>
+<ul>
+<li>Escape simulation
+<ul>
+<li>~Complete tutorial~</li>
+<li>Find exit.
+<ul>
+<li>Related to a dungeon somehow.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Side Quests</p>
+<ul>
+<li>Extract core password</li>
+<li>~Create new rune~</li>
+<li>Defeat the calamity?
+<ul>
+<li>Looks like an infection.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<br />
+<p>I cleared the completed tasks and added &quot;Study mysterious Key&quot; to the list, which seemed interesting enough to warrant a separate entry. I decided to work on a new water-related spell next, no need to forage around for streams or depend on dwindling stale leather bags while out and about. Maybe add an earth spell to the arsenal as well? 'That will complete all the base elements at least, eh?'</p>
+<br />
+<p style="text-align:center"><strong>¤ ¤ ¤</strong></p>
+<br />
+<p>Wondering about how to use water spells had me stumped. Perhaps using the rocks would be easier? I had unfortunately lost the only reference book I carried with all the goings-on. I decided to postpone any deliberation on that, instead choosing to make small talk with Tyee who was gradually starting to speed up ahead. Again.</p>
+<p>&quot;Hey!&quot; I called out. He slowed but didn't look back. &quot;So, what did you talk about with Kai yesterday?&quot;</p>
+<p>He slowed to crawl, then asked carefully, &quot;What?&quot;</p>
+<p>&quot;You know, last night. Kai said she had some words for you. Isn't that how you knew to keep watch on me? What else did you guys discuss?&quot;</p>
+<p>He stilled as if trying to maintain his breathing constant. &quot;Why do you ask?&quot;</p>
+<p>I was getting a bit weirded out. I just wanted to make a conversation but somehow had stepped on a landmine. &quot;Um, just curious. Never mind.&quot;</p>
+<p>He exhaled out his breath, shoulders sagging a bit. &quot;We all have our burdens to carry Hero.&quot; 'Yes, very mysterious, but doesn't mean much.' &quot;Besides, we're here.&quot;</p>
+<p>I looked around, hoping to glean some idea of where we were. It was late afternoon, so the Sun wasn't so sweltering anymore. A mild breeze struggled to lift my robes, the sparse vegetation around us swaying slightly. The scene, although pleasing, wasn't different from what I had been seeing ever since dawn.</p>
+<p>Tyee snort-chuckled, then pointed in distance at a tall grey-brown tree that had more branches than leaves. 'How does a tree like that even work in this climate?' I wondered but noticed movement among those branches. A beak protruded from the foliage, followed by the rest of the patchy feathered mass. 'A vulture!'</p>
+<p>&quot;We have arrived at the edge of untamed lands.&quot; He pulled his bow out with a graceful flourish. &quot;Beware&quot; he declared, &quot;For there be monsters here.&quot; Then he notched an arrow, a slight smile dancing along his lips, &quot;and it is hunting season!&quot;</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/gs/Chapter 38 - Of Monsters and Men/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapter 38 - Of Monsters and Men
+    </a>
+     
+    <a href="/gs/Chapter 40 - Evolution/">
+      Chapter 40 - Evolution <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList;
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode();
+      }
+
+      function darkMode() {
+        html.add("dark");
+        localStorage.theme = "dark";
+      }
+
+      function lightMode() {
+        html.remove("dark");
+        localStorage.theme = "light";
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode();
+      }
+
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList;
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar();
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden";
+        sideNav.remove("hidden");
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll";
+        sideNav.add("hidden");
+      }
+    </script>
+  </body>
+</html>

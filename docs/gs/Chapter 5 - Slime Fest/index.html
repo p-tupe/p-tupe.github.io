@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <meta name="description" content="Page description" />
+    <meta property="og:title" content="Unique page title - My Site" />
+    <meta property="og:description" content="Page description" />
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
+    <meta property="og:image:alt" content="Image description" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://www.mywebsite.com/page" />
+    <link rel="canonical" href="https://www.mywebsite.com/page" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Baloo+Tamma+2&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/my.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50"
+>
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"
+    ></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900"
+    >
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()"
+      >
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <div
+        class="overflow-y-scroll prose prose-slate dark:prose-invert prose-xl lg:prose-2xl pb-8"
+      >
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/rss">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 5 - Slime Fest</h2>
+<p>While seemingly magical, slimes were no better than mundane beasts when it came to intellect. They were attracted by sound (or vibrations, to be precise) and attacked in a variety of ways, usually depending on their size. The golf ball-sized ones tried to trip you by spreading at your feet. Mostly though, they fled confrontation. The slightly larger ones - about the size of basketballs, bounced at you every now and then while fleeting in and out of your range. The larger ones, the size of large dogs and over, simply tried to crush everything in their path. Perhaps consume the target with the intention of suffocating them. We hadn't encountered anything larger than a pony. The most dangerous ones of the bunch were the bouncy balls, their speed and hit were no joke. At least the larger ones were sluggish and smaller ones inconsequential. Thankfully, we hadn't encountered any actual magical slimes. Like fire-wielding ones. Hell, there weren't any acidic or poisonous ones either. All they had was physical attack. Pure XP grind.</p>
+<p>The slimes were also immune to physical damage. Until you hit their &quot;core,&quot; that is. Their death transformed them into puddles. No one had yet tried pure magic on them; magical skills though did seem to damage them. Divin had a Skill that did freeze damage with a slash of his sword. It was currently the group's trump card to slowing a slime down just enough to allow Taro to pierce its heart. Taro had a Skill that sharpened his strikes. Julie laid the bait, Carol ran interference. Surprisingly, Arya was the busiest of all! After our small chat, having recovered her mana, she dived back into the slaughter and spread her hands in front of Taro. A glowing light around his bruised elbow indicated she was healing him.</p>
+<p>Just as the healing stopped, Carol pushed the slime in Divin's direction. He froze it with a large swing. Taro took the opportunity to crack the fist-sized core and add a new pinkish puddle to the palette. They all came back, probably to recover their stamina while Julie went on to collect her arrows. I decided to have a go at the next slime.</p>
+<br />
+<p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>&quot;Damn, how many did you get already?&quot; (Me, admiring the polychrome ground after everyone had gathered around)</p>
+<p>&quot;Oh, quite a few. Got some experience points as well!&quot; (Carol, with a slight smile)</p>
+<p>&quot;Not enough though. The points are spread among all four of us and one slime doesn't give out that much in the first place.&quot; (Julie, with a sigh)</p>
+<p>&quot;Four of you...?&quot; (Me, confused)</p>
+<p>&quot;Yeah, I don't attack the slimes. I mostly heal others.&quot; (Arya, looking embarrassed for some reason)</p>
+<p>&quot;And yet you have the most experience points of any of us!&quot; (Taro exclaimed)</p>
+<p>&quot;Well, as I said, that is simply because I am doing so much healing; all on my own too!&quot; (Arya defended)</p>
+<p>&quot;Out of curiosity, how many points have you guys gained?&quot; (Me)</p>
+<p>&quot;I've got 36&quot; (Taro) &quot;32 here&quot; (Carol) &quot;29 for me&quot; (Julie) &quot;35&quot; (Divin, after a while)</p>
+<p>&quot;...&quot; (Everyone staring at Arya again)</p>
+<p>&quot;Oh, fine already. Jeez. I've got 67 now, OK?&quot; (Arya)</p>
+<p>&quot;And I'm zero.&quot; (Me, in a slightly lower voice, mostly to myself) &quot;Hey, how did you figure out how to heal?&quot; (directed at Arya)</p>
+<p>&quot;Oh, it's a Skill I have. Named 'Heal', haha&quot; (Arya, chuckling) &quot;I kinda just figured it out.&quot;</p>
+<p>&quot;Interesting. How much mana does it take?&quot; (Me, slightly sullen about her intuitive knowledge)</p>
+<p>&quot;Oh, about 80. I can cast 3 in a row then I need to recover&quot; (Arya)</p>
+<p>&quot;I see. Anyway, guys, I was wondering if I can have a go at the next slime first? Wanna try out a couple of spells.&quot; (Me, looking around)</p>
+<p>&quot;Sure&quot; &quot;OK&quot; &quot;Hmm&quot; (Positive grumbles all about)</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>Betty had merged back into one. Julie was standing at the front, looking for a suitable slime to lure. I was a couple of meters behind her. Taro, Carol, and Divin were spread out behind me. Arya was at the end. Betty's light was visible beyond Arya's head, giving her a divine halo.</p>
+<p>Soon enough, Julie released her bowstring. An arrow went and landed beside a smallish slime. Big enough to fit five tennis balls, I suppose. It rolled towards the arrow. As it was about to reach it, Julie let out another one, this one about halfway between the first and us. Another couple of arrows brought the slime within our striking distance. Julie retreated while I and the three behind me took her place.</p>
+<p>Mana? Check. I raised my palm to the slime headed for my legs. Target selected? Check. I exhaled out stale air and filled my lungs with fresh oxygen. 'Incendio' - a slight whisper, no more. Perhaps the slime heard me? It stopped moving for a second. It then twitched and seemed to swell to twice its size. And then it popped. Even made a &quot;pop&quot; sound. Its core exposed to the world, still rolling on the ground towards us carried by momentum. The rest of its remains lay steaming on the ground.</p>
+<p>I was dumbstruck. The others were no better off. They were looking at the core with mouths agape, shell shocked. I looked at my Status Window to make sure it really was my spell that did the trick. It was. All my mana was gone. Squaring the temperature rarely worked on anything bigger than a fist-sized object and it sucked all 800 points of my mana. Even on a small object, it was a hit and miss. True gamble, to be honest. Yet against the ill-fated slime, it was perfect. 'Whilst immune to physical damage, they are extra vulnerable to magical attacks, huh?' I surmised.</p>
+<p>&quot;Um, shouldn't we break the core?&quot; I eventually asked. Carol moved as if in a daze and stabbed it with a dagger. My Status Window showed I had earned 11 experience points. Everyone seemed to wake up from their dreams, with varied expressions on their face.</p>
+<p>&quot;Man, what was that? Incendio? OP Skill man, how much mana does it take?,&quot; Taro was excited beyond words. &quot;It takes all the considerable mana I have. It's not a Skill though, more of a spell&quot; I replied, arguing semantics for no reason. &quot;Still, it was awesome!&quot; 'I agree, it was.' &quot;Now we don't have to stab one a million times to kill it. That is some nice spell&quot; Julie interjected. 'I agree, it is'. &quot;Did you all get experience points from that one as well?&quot; I asked. &quot;Nah, only I got 'em,&quot; Carol said, &quot;and only 3 though. Since you did the most damage. You gotta contribute to the fight somehow to get some, even if you don't directly hit anything. You get points according to your contribution.&quot; she concluded. &quot;So, you guys still have to fight then,&quot; I wondered aloud. &quot;Yes,&quot; Divin said, &quot;but it is different now. First, we all will take shots at it. Then you explode it. Then one of us finishes it off. Much more efficient.&quot; I was of the same mind. That being said, I can't be out of the fight after a single spell - one that may or may not even work. I decided to revert to my temperature-double. If I paced myself properly, I could fight continuously for however long my mana and stamina held. 'Perhaps one spell every couple minutes. Yeah, that would work.'</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>With that, we all went on a rampage. While Incendio still popped the smaller ones, it turned the mid-sized ones into a more liquidy state from their semi-solid sludge one. The larger ones seemed to shrug it off though. But I had another spell. I had tweaked this one as well; reducing temperature to zero worked even more infrequently than squaring it. I simply halved it instead. It did not literally freeze them but slowed them all considerably. We were never swamped. Julie lured in a bunch of slimes at once, we fought on multiple fronts and gained experience at an accelerated pace.</p>
+<p>No one knew how much time went by. The sky was still dusky. We weren't hungry or thirsty, let alone sleepy. Whenever we felt a bit tired, we took time out and capped off our stamina points. Then back into the fight. Julie could now hit a slime once every 5 tries on average. Divin and Taro's slashes were getting slightly more precise as if they had gotten hang of the swords' weight. Carol was getting slightly better at evading jumpy slimes while kiting them. Arya had managed to find a good pace of healing, that required the least amount of rest in between. The bouncy balls did the most damage, but it was limited to small bruises. Must have been several hours at least. Some of the earlier puddles had vanished. We only noticed it because there were patches of brown grass where supposed colorful ponds were meant to be. While the fight was not exhausting physically, it was draining in an entirely different way. If we had a 'mental capacity' point, we would all be very low on it. It was in this situation that Arya suddenly exclaimed - &quot;Guys? I just leveled up&quot;</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/gs/Chapter 4 - Gesture Input/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapter 4 - Gesture Input
+    </a>
+     
+    <a href="/gs/Chapter 6 - Level Up/">
+      Chapter 6 - Level Up <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList;
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode();
+      }
+
+      function darkMode() {
+        html.add("dark");
+        localStorage.theme = "dark";
+      }
+
+      function lightMode() {
+        html.remove("dark");
+        localStorage.theme = "light";
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode();
+      }
+
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList;
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar();
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden";
+        sideNav.remove("hidden");
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll";
+        sideNav.add("hidden");
+      }
+    </script>
+  </body>
+</html>

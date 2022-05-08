@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <meta name="description" content="Page description" />
+    <meta property="og:title" content="Unique page title - My Site" />
+    <meta property="og:description" content="Page description" />
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
+    <meta property="og:image:alt" content="Image description" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://www.mywebsite.com/page" />
+    <link rel="canonical" href="https://www.mywebsite.com/page" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Baloo+Tamma+2&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/my.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50"
+>
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"
+    ></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900"
+    >
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()"
+      >
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <div
+        class="overflow-y-scroll prose prose-slate dark:prose-invert prose-xl lg:prose-2xl pb-8"
+      >
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/rss">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 22 - Stupefy</h2>
+<p>The journey across the swamps was simple thereafter if tiring nonetheless. I chain-casted Incendios to move the eels out and make way. Thankfully, the route was easy to infer as well, it simply became deep if we went astray. Halfway through, everyone had leveled up. By the time we sighted the bridge, I had leveled up again!</p>
+<p>'Guess we can skip levels, eh?' Upon the bridge, I requested the team for a long break to work on something. We had decided to stop our nap-times on the bridges a while ago. While it did make our excursion quite time-efficient, I rarely got a chance to experiment on new stuff. This was one of the few times I could do so with impunity. The next &quot;test&quot; was for my new lightning spell. I figured that since electricity is simply the transfer of energy across a path of least resistance from higher potential to lower, I could create two points of potential difference and it should work.</p>
+<p>'Okay, so far, the Status Window has managed to capture my intent. It shouldn't just be the window though - the code I write is my will itself, interpreted by the &quot;core&quot;. So if I do this...' Thus, I started my experimentation on a new spell while recovering mana.</p>
+<hr>
+<pre><code class="language-sh">
+create_low_point l = while true; do (( l.potential-- )); done;
+
+create_high_point h = while true; do (( h.potential++ )); done;
+
+</code></pre>
+<hr>
+<p>I used a loop since the voltage required for &quot;sparks&quot; will vary with distance and medium between the two points. It didn't matter if it looked like an infinite loop since I could cancel the spell from my side as well whenever I wanted. Or it would stop on it's own when it couldn't affect the target anymore. 'Okay, here we go.'</p>
+<p>I picked up two pebbles lying nearby. Arya, Divin, and Taro looked on expectantly. The other two were resting. &quot;Ne, what are you doing?&quot; Taro enquired. Before I could answer, Arya interjected - &quot;He's probably trying a new spell, right?&quot; &quot;Right on&quot; I smiled. Juxtaposing the pebbles about 2 centimeters apart, I cast my spells in quick succession. Selecting pebble on the right: &quot;create_low_point &quot;, then in the same breath on the left one: &quot;create_high_point &quot;; that done, I kept an eye on the stats.</p>
+<p>Both consumed 10 mana points as they started. Every other second, the consumption increased by 2-3 points until it reached 20 per second when there was suddenly a small &quot;crack&quot;, not unlike a static shock. I canceled the ongoing loops. &quot;Lightning Spell...&quot; Divin murmured. &quot;Hell yeah! Can you make a big one fall from the sky as well? That would be EPIC!&quot; Taro was more excited than I was by the success. &quot;Nice work. You got fire and air down. If you get water, earth and heart as well, we'd have our own Captain Planet!' Arya quipped. I looked at her with a deadpan face. 'What an old ass joke, who would even get that? Oh wait, I did. Damn.' &quot;Who's Captain Planet?&quot; Taro asked. No one answered. I shook my head and contemplated making the spell more efficient and deadlier than the playful pinch it was now. 'Perhaps use partial surfaces and multiple points? Also, I should combine these into a parent function; I have a perfect name for it...'</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>The later levels' monsters were barely worth mentioning. The terrain itself was quite varied though.</p>
+<p>We had waist-high scorpion-type monsters in a desert region on level 11. Thankfully, they weren't poisonous.</p>
+<p>On level 12, we had a Tundra-themed area with packs of dire wolves.</p>
+<p>Level 13 had us battling in a valley against griffons. This time, they were even named so.</p>
+<p>All of us were level 14. The creatures had started bleeding since level 11, albeit not the exact color of human blood but close enough. Our equipment, once again, was in dire straits. Carol was down to one dagger. Julie lost a lot of arrows in the valley, now down to just 10 or so. Divin's sword had its endpoint missing. Fortunately, our clothes, while dirty, took abuse like champs. A good wash and they would be good as new.</p>
+<p>I was quite looking forward to the next Class Upgrade. The first one increased the effects of my Perception, allowing me to select small or large areas of anything in range. The latter gave me the ability of Runes. I had yet to fully explore that one. For now, I can only distinguish between patterns as spells or not. I did try to experiment with it in what little lull-time we got, but I couldn't for the life of me create any Runes. I tried copying the exact pattern on the ring, Arya's staff, and Divin's gloves into the dirt, but no success. Oh, Divin's gloves were shredded too, griffon claws are no joke. Thinking of possible gains with the next level, I hoped it was something Rune-related. Just imagining the extent of applications made my mouth drool.</p>
+<p>None of us talked of home again beyond passing mentions of similarities. For better or worse, we were highly focused on finishing the Tutorial. Even conversations with Betty lessened. There wasn't much to ask her about anymore and she wasn't the best conversationalist anyway. We had rested on this bridge instead of moving on like usual - it would not do to enter a boss fight with anything but the best state.</p>
+<p>Soon enough, we got up. No one needed any urging. As if it had become a habit by now, that our actions simply were in sync. Carol took lead, followed closely by Julie. The knights were slightly behind and covering the flanks. Arya and I were in the rear and clumped together. Betty trailed at the end.</p>
+<p>The entrance led us to a well-lit area. 'Wait no, is that the Sun? And what is this warm breeze I feel on my cheeks? Am I in heaven?' Weeks of the dusky sky and temperate air had dulled my senses to a point where I was shocked to a standstill just witnessing this miracle. I simply closed my eyes and let it all wash over me. I was indulgent to the point of losing myself when Arya elbowed me, &quot;Get a hold of yourself, there could be a monster around!&quot; I grunted, thankful and yet not for her reminder, as I took in the surroundings.</p>
+<p>We were moving at a slow pace, as we usually did before identifying our opponents. Soon we came upon something halfway between a large hill and a small mountain. It was hollowed out a bit from the side to form a large cavern. Sparse trees and broken stone structures were lying near the base of the same.</p>
+<p>If not for this ominous structure, this place would have been perfect for a picnic. No one doubted that the cavern was where our foe lay. I wondered what sort of creature could inhabit such a large cave. And why the sunny ambiance anyway? Soon, the group decided to take cover under the shade of an outermost tree and plan the next steps.</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>&quot;What should we do?&quot; (Carol)</p>
+<p>&quot;We have to identify the monster. I bet it's inside that cave. One of us should go and check.&quot; (Me)</p>
+<p>&quot;I agree. Would you like to go? You have the most damaging and versatile attacks.&quot; (Divin looking at me)</p>
+<p>&quot;It's a recon run, not an assault. Attacking power does not matter. I have no Stealth and lowest SP among us.&quot; (Me, slightly annoyed for some reason)</p>
+<p>&quot;I'll go,&quot; (Carol, interrupting any counter to my statement) &quot;But not alone. Nay. I'll take lead and go inside to take a looksie. Ya'll hang around the mouth and come help if I scream.&quot;</p>
+<p>&quot;Sounds like a plan. Let's go.&quot; (Julie, ending the conversation)</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>Pretty soon, we reached the mouth of the huge cavern. Taro, Arya, and I took position by the left side with Julie and Divin went to the right. Carol muffled her footsteps and ventured inside.</p>
+<p>After a few tense minutes of nothing happening, we relaxed our guard a bit. I looked at Taro who has started fidgeting.</p>
+<p>&quot;What do you think is - &quot; he started but was cut off by a loud deep roar that shook not only the cavern but our very bones. I heard Betty said something but I was in no state to notice.</p>
+<p>Everyone stood still, not taking a breath. We looked at each other and came to a similar conclusion. It would be extremely foolish to enter the cave. Whatever was inside, even its fart would be the death of us. Our hesitation lasted for a bit, but when the ground shook with the steps of the creature inside making its way out, we took off for the level entrance without a second thought. Carol... She could take care of herself. She was a Scout for a reason. She was the best of us at hiding, evading and running away. We all rationalized the situation in our minds.</p>
+<p>After a while of sustained sprinting, I stopped. I was at the very end of our group. Running was not my forte; and even with increase stats, I was the slowest and close to winded. I glanced back to see Carol running out of the trees. I waved at Carol. She didn't wave back. Instead, she screamed at me to run faster, her eyes wild. I did not want to know what she saw in that cave; but my eyes were drawn to the entrance anyway. I saw a brownish reptilian head poking out, glaring at Carol as she headed our way. The head was not unlike the crocodiles, but its edges were more pronounced. The head came out, followed by a long neck. The brown color shifted in the sunlight, and I saw that they were scaled. A clawed hand the size of my torso grabbed the cave entrance where I stood not long ago. The monster walked out, huge bat-like wings followed. It let out another terrifying roar that even at this distance made me want to shit myself. Then with a flap of its appendages, it took to the sky.</p>
+<p>'Ah... Shit!'</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/gs/Chapter 21 - Abaia Swamps/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapter 21 - Abaia Swamps
+    </a>
+     
+    <a href="/gs/Chapter 23 - Dragon Hunters/">
+      Chapter 23 - Dragon Hunters <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList;
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode();
+      }
+
+      function darkMode() {
+        html.add("dark");
+        localStorage.theme = "dark";
+      }
+
+      function lightMode() {
+        html.remove("dark");
+        localStorage.theme = "light";
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode();
+      }
+
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList;
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar();
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden";
+        sideNav.remove("hidden");
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll";
+        sideNav.add("hidden");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <meta name="description" content="Page description" />
+    <meta property="og:title" content="Unique page title - My Site" />
+    <meta property="og:description" content="Page description" />
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
+    <meta property="og:image:alt" content="Image description" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://www.mywebsite.com/page" />
+    <link rel="canonical" href="https://www.mywebsite.com/page" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Baloo+Tamma+2&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/my.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50"
+>
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"
+    ></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900"
+    >
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()"
+      >
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <div
+        class="overflow-y-scroll prose prose-slate dark:prose-invert prose-xl lg:prose-2xl pb-8"
+      >
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/rss">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 38 - Of Monsters and Men</h2>
+<p>Dreams of magical Runes and Circles haunted my night. It was still quite dark when I awoke to a nightmare of myriad screams.</p>
+<p>I lifted the heavy covers off me and stumbled out of the tent allotted to me on the outskirts of the temporary settlement. The first thing I saw was the raging pockets of fire all around the camp, forming a grim contrast against the black of night. I focused on the Centaurs who were galloping about, some of them yelling orders. Perhaps to quench the fire.</p>
+<p>I did not have any water Spells on hand, but I could pick a bucket like any other. I decided to lend a hand and was just moving towards the source when I noticed a few Runes light up in my perception. They were moving about slowly along the forest line, closest to the tent I just exited from.</p>
+<p>While my perception skill let me identify magical patterns from a distance without my active input, I was unable to glean more information about anything else without having them in my eyesight. Thus, while I knew there was <em>something</em> sulking about, it could have been anything from a sneaky Centaur foal to a vellum Scroll riding the wind. So I moved towards the Runes, powering both the Circle of Perception on the hood and the Circle of Protection on my back. I had experimented enough to know that I could not supply a &quot;high&quot; mana volume. And when given a &quot;moderate&quot; amount of mana, it granted protection against both the environment and weapons. In the case of weapons, it simply &quot;buffered&quot; the attack - the soft fabric acting as a thick leather armor against sharp edges and force absorbent against blunt attacks.</p>
+<p>As I moved towards the forest line, I felt the Runes move towards me as well. Soon enough, they were within my line of sight. I saw what looked to be two men garbed in standard Ranger uniforms, the same as those worn by Seline's husband and his team. We walked within talking distance of each other, and one of the men called out to me.</p>
+<p>&quot;M'lord Hero Sire, we came to rescue you. I'm glad you were up and about, saves the men from the trouble of searching through each tent.&quot; The grizzled old man spoke in a hoarse voice. He had a large grey-brown beard and his eyes seemed to exude relief. The other man, however, was lean to an unhealthy degree. He also had what seemed to be a perpetual frown etched on his brows.</p>
+<p>&quot;Uh...&quot; I wondered how to tell them that I did not really need rescuing, the Centaurs were willing to just let me walk away. &quot;Yes. I'm here now, so can you signal the others to withdraw?&quot; Might as well cut the losses and leave, so they don't start more fires. My side quest here was complete anyway. Like I did with most NPCs I met, I almost subconsciously cast an Identify at them both.</p>
+<p>&quot;Yea, of course. Let me put up the flare, then we must be off!&quot;</p>
+<hr>
+<h3>[??] Ranger - Level ??</h3>
+<hr>
+<hr>
+<h3>[??] Assassin - Level ??</h3>
+<hr>
+<p>'Why is there an <em>Assassin</em> in the Ranger corps?'</p>
+<p>I watched the lean guy silently move behind the Ranger, who was tinkering on some Runed device.</p>
+<p>&quot;LOOK OUT!&quot; I shouted in vain, as the assassin plunged a dagger through the Ranger's neck before he could react. The Ranger dropped like a wet tissue, the Runed device tumbling out of his hands.</p>
+<p>'What the fuck?'</p>
+<p>While I was not struck senseless this time around, my mind still slowed down and refused to process the events happening in front of me. Fortunately, the assassin took his time toying with the device and extracting his weapon.</p>
+<p>&quot;Funny that,&quot; he chuckled, in a voice surprisingly low pitched. &quot;He thought we were friends.&quot;</p>
+<p>Somehow, his ridicule brought me back my voice. &quot;What- Who are you? Why did you kill him?&quot; I mentally went through the list of spells and ordered the best I could use against the Assassin. 'Just an NPC. A monster even. Nothing more.'</p>
+<p>&quot;Oh, where are my manners! You may call me... Jack. For the next few minutes while you live anyway.&quot; Another chuckle, the man did like to drone on. &quot;As for why I killed him? Because I didn't want the distraction to stop as yet. I need a little more time. You see, some ranger <em>will</em> find you, those buggers can track a rabbit to the moon, I'll give them that. But all they will find is your cold corpse.&quot;</p>
+<p>I stood still, the words washing over me like a frigid wind. I watched as the man pocketed the device and flicked the blood off the dagger. &quot;Any last words?&quot; He asked, the playful tickle inside his voice sent shivers down my spine.</p>
+<p>&quot;W-why?&quot; I asked again, having chosen to use Incendio on his dagger to rid of it, Stupefy as a distraction, and Petrificus Slowly as the main attack. Then sprint back with all I had.</p>
+<p>&quot;Why? Oh, it's nothing personal. Just another job, you see. Courtesy of the New Church, or whatever they call themselves.&quot; He took a step closer, &quot;The last job was to kidnap the red-haired Scout Hero.&quot; He looked at the sky as if reliving a particularly bittersweet memory, giving an indulgent smile, &quot;I came <em>so</em> close to killing her myself! Not every day you get to slice a Hero's throat.&quot; He took another step to the side, gauging my reaction. I gave none, waiting for the right time to unleash all barrage of Spells. &quot;But I'm a professional. So I gave her up to the Church as promised, despite my reluctance. Then imagine my surprise, when an outright kill order came for another Hero! I jumped at the chance. And so here we are.&quot; He took another short step, we were now close enough that I could see the demented glint in his eyes. His grin was lopsided, bordering on a smirk. It widened some more, &quot;I guess it <em>is</em> a bit personal.&quot;</p>
+<p>I took a step back. He sneered. I hadn't found a single instance where the man was off his guard. &quot;Of course, fighting a Mage who has no Skills is a bit of a downer. And I see you have no Scrolls on you either. Exhausted them all leveling up? It won't be as much fun, but hey... A job's a job. A Hero's a Hero.&quot; The man took some manner of stance, the playfulness of his eyes replaced by something malignant. &quot;And I'm a professional.&quot;</p>
+<p>I wasn't going to get a better chance than this. I cursed myself for not acting immediately, as if a seasoned Assassin was going to leave an obvious opening for me to exploit. I targeted his dagger's handle and cast a few Incendios. Then I targeted his fingers on the dagger hand and the nose, casting a single Stupefy centered around the latter. Unfortunately, he moved before I could cast the last spell, moving into my blind side like a gale. I only found him out due to the crackle of Stupefy. At least he had dropped the dagger somewhere. He looked confused for a moment, perhaps wondering how I was casting a Spell. Only for a moment, however, as he immediately dropped low and started circling me. But that moment was enough for me to get the curse latched on. He moved in rapid unpredictable flow using trees as cover such that I couldn't pin him. I risked opening the Status Window to check my mana while keeping one eye on the Assassin. The mana was ticking down slowly. I needed more time.</p>
+<p>&quot;Why does the Church want me dead?&quot; For some reason, bantering <em>during</em> the fight seemed off-limits to the guy. &quot;You know if you kill us Heroes the Calamity will cover the world?&quot; I pushed a wild conjecture. I shouldn't have bothered. Something came whirling at me from the side, I sidestepped just enough for it to avoid hitting a vital spot. I spotted a throwing knife embedded in the trunk of a tree I was making for, having sliced through the robe on my bicep. Thankfully, the robe took the majority of the damage.</p>
+<p>I check the Status Window again, I was down to less than half my mana, the uptick now taking more than 60 units per second. The effect was taking longer than I hoped, I did not know how long I could last. Immediately after, Jack capitalized on the moment of my distraction and before I knew it, I was lying down in the foliage and had a dagger to my throat. He must have recovered it at some point.</p>
+<p>&quot;Well well well...&quot; The Assassin smiled, his breath coming out in white vapor. The man loved the sound of his voice. I noticed a slightly bluish tint to his skin. &quot;What interesting magics. This was fun after all!&quot;</p>
+<p>I wanted to do something, maybe burn the fucker's eye with another Incendio. But I knew he would slice me up before I even got a syllable out. I glared at the bloodshot eyes of my would-be murderer instead, the sneer back on his lips. He was about to speak something when he suddenly jerked away. An arrow landed with a thunk beside me.</p>
+<p>We both turned in the direction the arrow came from. My savior came into view, with another arrow ready to shoot.</p>
+<p>&quot;Tyee!&quot; I shouted and stood up from the ground. My robes were disheveled but I was unhurt as yet. My Status Window was still up, mana down to low double digits. The Assassin shivered a little but didn't look much worse for wear. He may have been putting up a false front, but I couldn't tell. Either way, my attack had failed spectacularly.</p>
+<p>&quot;Begone, honor-less cretin!&quot; Tyee thundered. I had only seen Tyee the Medicine Man, calm and collected, polite in all ways if a little stoic. Tyee the Centaur Warrior was something else. His face was ferocity personified, his roar all but promising a violent death.</p>
+<p>The Assassin muttered something about being a professional under his breath, then huffed out a breath that was such thick fog in the pre-dawn light it almost looked solid. But he stayed still and measured his words, &quot;This chill will take me anyw-&quot;. An arrow sprouted from his chest before he could finish the sentence. &quot;A warrior's death is undeserved by traitors who live by the shadows. May you be judged by your ancestors in the afterlife.&quot; Tyee declared.</p>
+<p>I felt a tug that I hadn't experienced since the tutorial ended.</p>
+<br />
+<p style="text-align:center"><strong>¤ ¤ ¤</strong></p>
+<br />
+<p>We walked back to the camp at a leisurely pace. The fires had been suppressed while the fight went on. It felt like spare minutes to me but had been almost been an hour since I came into the forest. Of course, most of the time was spent burying the two who died, even with the absurd strength of Centaur's arms.</p>
+<p>&quot;How did you know where I was?&quot; I asked as we crested the forest line.</p>
+<p>&quot;Kai mentioned this might happen. I had someone keep a watch on your tent.&quot; He spoke without looking at me. While he wasn't in the &quot;fight mode&quot; any longer, there was still something off about his demeanor.</p>
+<p>&quot;I see...&quot; I wanted to ask more about what he and Kai talked about since it seemed it involved me somehow, but my words died in my throat when I noticed Nina pacing in front of the tent with a dark expression.</p>
+<p>Nina stomped our way as soon as she noticed us. A large war-axe in her hand lifted threateningly.</p>
+<p>&quot;<em>You</em>!&quot; she announced, dripping acrimony. She raised her axe to point at my forehead. &quot;What have you to say to <em>this</em>? Attacking like sneaky rats in the night, setting fires to our homes instead of facing us upfront.&quot; She looked up at Tyee. &quot;And what ludicrous instinct led you into the grove? Why did you seek this craven while he consorted with his ill-bred brethren?&quot; She was fuming, her axe still pointing at me. She seemed to be fishing for an excuse to split my melon in half.</p>
+<p>&quot;Our <em>guest</em> was under attack by those very rats you speak of.&quot; Tyee stood between Nina and me and crossed his arms. Her axe wavered a bit as she went silent for a whole minute. When she spoke, her voice was barely audible.</p>
+<p>&quot;My son, your nephew...&quot; She lowered her axe, deep sorrow finally breaking through the cracks of her undirected fury. &quot;He was still in a stupor when-&quot;, she sniffled, &quot;When the tent burned down on him.&quot;</p>
+<p>Tyee said nothing. Since I was behind him, I couldn't see his expression. However, I could tell that Nina did not find whatever she was looking for. She dragged her sorrow back inside, fury galvanized into a countenance of forced resolution.</p>
+<p>&quot;The tribe will be moving North as the sun rises, towards the war council.&quot; Her voice was cold, axe held by the side with practiced ease. &quot;The rat scum are hiding in the forest still. We must move before their main force descends on our camp.&quot; Then she glanced at me, &quot;I cannot have a human travel along with us as we ride to war against them.&quot;</p>
+<p>&quot;I will go with him,&quot; Tyee stated calmly. There was still something weird about his behavior as if he knew something no one else did.</p>
+<p>Nina's expression was a storm of melancholy and ire. She stared unblinkingly at Tyee, her front hoof itching to stomp the ground at her feet in vexation, and her knuckles white with a grip straining o the axe.</p>
+<p>&quot;Leave then. Never return.&quot; She announced and turned around to trample off into the distance.</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/gs/Chapter 37 - Crypto Keys/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapter 37 - Crypto Keys
+    </a>
+     
+    <a href="/gs/Chapter 39 - Wander West/">
+      Chapter 39 - Wander West <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList;
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode();
+      }
+
+      function darkMode() {
+        html.add("dark");
+        localStorage.theme = "dark";
+      }
+
+      function lightMode() {
+        html.remove("dark");
+        localStorage.theme = "light";
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode();
+      }
+
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList;
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar();
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden";
+        sideNav.remove("hidden");
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll";
+        sideNav.add("hidden");
+      }
+    </script>
+  </body>
+</html>

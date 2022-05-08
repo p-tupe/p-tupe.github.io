@@ -2,7 +2,7 @@ const colors = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  // mode: 'jit',
+  mode: 'jit',
   content: ['./src/**/*.{html,js}'],
   darkMode: 'class',
   theme: {
@@ -21,8 +21,4 @@ module.exports = {
     }
   },
   plugins: [require('@tailwindcss/typography')],
-  colors: {
-    primary: colors.purple,
-    secondary: colors.orange
-  }
 }

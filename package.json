@@ -4,7 +4,7 @@
   "description": "Personal Website",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build:eleventy && npm run build:tailwind",
+    "build": "NODE_ENV=production npm run build:eleventy && npm run build:tailwind",
     "build:eleventy": "npx @11ty/eleventy",
     "build:tailwind": "npx tailwind -i ./src/assets/css/style.css -o ./docs/assets/css/output.css --minify",
     "start": "npm run process:tailwind & sleep 4; npm run process:eleventy",

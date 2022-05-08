@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <meta name="description" content="Page description" />
+    <meta property="og:title" content="Unique page title - My Site" />
+    <meta property="og:description" content="Page description" />
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
+    <meta property="og:image:alt" content="Image description" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://www.mywebsite.com/page" />
+    <link rel="canonical" href="https://www.mywebsite.com/page" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Baloo+Tamma+2&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/my.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50"
+>
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"
+    ></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900"
+    >
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()"
+      >
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <div
+        class="overflow-y-scroll prose prose-slate dark:prose-invert prose-xl lg:prose-2xl pb-8"
+      >
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/rss">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 8 - Impish Impulse</h2>
+<p>Slimes were one thing, they felt more or less like jelly in motion. Stabbing monkeys to death was a different matter, however. No one took the initiative to step forward. I noticed several more of our supposed prey gathering ahead of us on a precariously upright wall. Taking a closer look, I noticed some differences in their physiology that made it harder for me to call them just monkeys. Especially the small leathery wings on their back. While our party stood at an impasse, more of these &quot;imps&quot; gathered around.</p>
+<p>There must've been around eight of these critters staring down at us when a slightly larger one of them jumped down to the ground. It took a couple steps towards us. We were perhaps 15 meters away from it. The attention of all the members, both human and imp, was focused on this particular pioneer. I was wondering what it was trying to do. 'Perhaps sniff for snacks?' I was immediately proved wrong when it picked up a pebble. Before any of us could register what was happening, it swung its hand and the pebble came sailing at Taro's face. Thankfully, it whizzed past his head and plopped harmlessly onto the ground behind. I looked at Taro, who was frozen more from disbelief than fear. Then I looked at the imp, it was still standing there as if waiting for our reaction. It certainly got one.</p>
+<p>Julie notched her arrow and fired at the culprit. Of course, it was never going to hit, but the imp didn't know that. Neither did its friends on the wall. They skedaddled out of the clearing faster than you could say imp. In that regard, they did comically seem like monkeys.</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>As time went by, the varmints grew bolder. There were over 20 of them now, taking turns throwing rocks at us while the rest egged them on. Julie stopped shooting at them after her seventh arrow. According to her, it was a waste of arrows against such numbers. I think it had more to do with how they cackled when her last arrow had hit a pillar far away from any of them. All seven of her arrows now had new owners, being held like short spears and used to poke the poor plebeians who didn't have one.</p>
+<p>We were stuck. Sometimes Taro and Carol threw rocks back. At first, the imps were guarded. Then they guffawed at the rocks as well. While they didn't exactly mount an attack on us, we couldn't go ahead anyway. Not unless we wished to get stoned to death halfway through. Perhaps a Craftsman would've been useful here, making traps and lures.</p>
+<p>'Traps, eh?' a sudden idea hit me. I gathered the group around and explained the process. I could see the poorly hidden doubt in their dubious faces. Still, no one else had any better solution, so we decided to give it a go. We had already lost seven arrows, what does one more matter?</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>It was again the pioneer imp that took the initiative. So far, the distance between us and the imps had been constant. But now it couldn't maintain the same anymore. All of its friends had arrows of their own, whereas the who took the first step was still empty-handed. It didn't sit well with the imp. Now its greed overwhelmed its caution. We must've seemed harmless enough anyway, what with our misguided arrows and unenthusiastic rock throws.</p>
+<p>It ambled towards the arrow stuck deep into the earth. Perhaps only a centimeter of it was visible above. The imp knew it was a shiny arrow though, for it had seen us bury it not so long ago. All of us had even retreated from the spot, now standing further back almost behind the entrance, watching the show. Well... Not all of us. Carol stood all by her lonesome behind a decrepit pillar by the side. Perhaps she was trying to hide? Either way, the imp didn't give Carol more than a glance. It was confident in its ability to run away at the slightest of sounds. And the larger group was in its sight anyway. Nothing stood between it and the arrow.</p>
+<p>Soon it reached the spot and gave a tug at the stem. It looked us over to make sure we hadn't made a move. We hadn't. It then tugged harder. Not enough. It tried to use both hands. No grip. Soon, it was apparent that pulling the thing out wasn't gonna work, so it quickly set to digging. After giving us a cautionary glace of course. Unfortunately for the imp, it hadn't noticed Carol moving out from behind the pillar. She was using her Skill of silent footsteps. I had also cast Incendio on her dagger - twice. After freezing the lump of ground holding the arrow, that is.</p>
+<p>I was actually impressed by how firm Carol stayed, given that she was about to stab the primate in the back. She reached from behind the imp, which was still engrossed in clawing out cold soil. It also ignored the pandemonium its brethren were making, perhaps mistaking it for encouragement. So lost was it in the task, that it didn't notice the dagger until it was out poking through its chest. The girl certainly didn't take half measures. The blade had cut clean through.</p>
+<p>I had a cognition that my XP stash had increased. I would've checked the Status Window to confirm, but the scene that was unfolding held my full attention. The imp fingered the point of the dagger, then touched the end of the arrow longingly. Not a moment later, it slumped down with a confused mewl. Interestingly enough, there was not a drop of blood. The imps fur changed as if it had caught fire, originating from the wound. The fire then went on to consume the whole body, leaving but a pinch of dark ash behind, which soon scattered in the non-existent wind.</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>The imps had ceased their uproar as if on cue. Carol stood looking down at her dagger. Nobody moved for several seconds. And then everyone moved at once. A few imps squealed and sprinted at Carol on their short legs and flapping wings. The rest ran back to wherever they came from. We made a dash for Carol as well, shouting warnings at her. Unlike the dead imp though, she didn't ignore her companions. Didn't even look back. She ran towards us as soon as she picked her dagger off the ground.</p>
+<p>Must've been about six imps. Perhaps they were close friends and family of the pioneer. The madness and rage in their eyes was certainly a sight to behold. Just as Carol joined us, she turned back again and we clashed with the incoming gamins. There was no time to ponder on the moral and ethical concerns I harbored previously. If a rabid dog tries to corner and bite you, you instinctively kick back, no matter how much of a dog lover or a pacific you are. I had recovered just enough mana to freeze three of them. Taro, Divin, and Carol engaged the other three. While we certainly weren't experts at combat, we had recent experience being swarmed. Our previous foes were even immune to physical damage. And these imps weren't thinking straight. All they had was their ferocity and slightly sharp claws. Everything else was working against them. Numbers, equipment, range, power, we outmatched them in all. It wasn't long before one went down, then another, and another. I hadn't even recovered mana to cast another spell when the last one was ablaze.</p>
+<p>I noticed that the damage, shallow though it was, was quite extensive. We had scratches all over our limbs, Carol even had some on her face. To say it was uncomfortable was an understatement. 'I hope we don't catch some weird disease,' I pondered. Arya took her sweet time healing us all. Several times, she had to cast heal multiple times on a single wound. That being said, it was quite magical in the way it healed. Not a single blemish remained as if the wounded had never existed. 'It <em>is</em> magic though,' I contemplated as I mulled over the Status Window and XP gains from the fight.</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/gs/Chapter 7 - Settling down/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapter 7 - Settling down
+    </a>
+     
+    <a href="/gs/Chapter 9 - The Unknown/">
+      Chapter 9 - The Unknown <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList;
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode();
+      }
+
+      function darkMode() {
+        html.add("dark");
+        localStorage.theme = "dark";
+      }
+
+      function lightMode() {
+        html.remove("dark");
+        localStorage.theme = "light";
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode();
+      }
+
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList;
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar();
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden";
+        sideNav.remove("hidden");
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll";
+        sideNav.add("hidden");
+      }
+    </script>
+  </body>
+</html>

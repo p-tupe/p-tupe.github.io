@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <meta name="description" content="Page description" />
+    <meta property="og:title" content="Unique page title - My Site" />
+    <meta property="og:description" content="Page description" />
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
+    <meta property="og:image:alt" content="Image description" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://www.mywebsite.com/page" />
+    <link rel="canonical" href="https://www.mywebsite.com/page" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Baloo+Tamma+2&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/my.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50"
+>
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"
+    ></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900"
+    >
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()"
+      >
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <div
+        class="overflow-y-scroll prose prose-slate dark:prose-invert prose-xl lg:prose-2xl pb-8"
+      >
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/rss">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose prose-slate dark:prose-invert mx-auto py-16 prose md:prose-lg px-4 md:px-0"
+>
+  <h1>What we deserve</h1>
+
+  <p>There I was trying to catch a wink - that seemed to have vanished as soon as I hit the bed, when as usual the brain started throwing up unfathomable imaginary sceneries. I have learnt the hard way the vainness of trying to stop this - the more you try, the harder it drives; instead, I tried to steer the process towards more &quot;down-to-earth&quot; issues.</p>
+<p>I have been coveting a certain position for myself this past month or so. This desire was where I tuned my brain towards and soon enough I was up to my neck in thoughts of &quot;what-ifs&quot;, you know how it goes. The important point here is that I was at this fork where I was wondering what would be the best course of action if I lost to a derelict fate the desired status quo of my future. To keep working at it or Be content with what I have.</p>
+<p>Yes, this world is very polarizing. We come across experiences that enables us to form our opinions. And as such, each person usually has different opinions and perspectives on a matter. In my case, it was the Star Wars series. Like any impressionable young guy out there, after watching them movies, I took it in my heart to be like a Jedi. More importantly, there was this specific assertment that I was in awe of and found sagity inside - &quot;If you're afraid to lose something, let it go&quot;. Now, I admit I've never actually applied this in practice, but still it lingered in the recesses of my mind and &quot;poured forth&quot; when I was stuck upon this fork. But it wasn't the only thing that came forth - it's never so simple, is it?</p>
+<p>Relying on technology to connect with age old quirky friend, I put forth my predicament. She was of the opinion that &quot;Never Giving Up&quot; is the only way through - ALWAYS. I was a bit skeptical about this, so I presented a couple of scenarios where-in that approach would result in disastrous consequences. She countered with her own hypothesis - i realized that, she was applying her own approach of Never Giving Up on me in this discussion itself. Although it didn't leave me thoroughly convinced, it did leave a mark where I thought this approach could work in certain situations. So yeah, this thought too poured in, along with the aforementioned.</p>
+<p>When I voiced my concerns to my room-mate, he had some opinions of his own. He said, and I quote &quot;We get what we deserve&quot;. I was astounded - who decides what we deserve? He retorted that our actions determine that, to which I said, in not so polite words, &quot;My dear friend, my actions are the exact thing we are trying to plan here&quot; He kept his stand on the &quot;deserving&quot; thing, which I thought could have some shred of viability to it; but NOT in the way he proposed. It seemed too primitive, too easy a way out. After considerable discussions, enough to drive his sleep away too, we came to an agreement on a theory that I believe provides a not-so-easy-but-probably-right way out.</p>
+<p>Know these terms - &quot;Pre-deserve&quot;, &quot;Accept&quot;, &quot;Post-deserve&quot;. Here I put forth the theory in these terms that seemed to make sense to my sleep-deprived brain.</p>
+<p>At the initial stage, based on your talent and actions hitherto, you have a pre-disposition to achieve your &quot;Pre-deserve&quot; state. For example, if you're good at table tennis, better than anyone in your class then you pre-deserve to be on the team before anyone else from your class is considered. But does it mean you deserve to play in the State-level clashes? I think not. This is where the &quot;Accept&quot; part comes in, which you either do or you don't. If you follow my old friend's philosophy of &quot;never giving up&quot;, and continue to take actions in honing your talent, then at some point, you will definitely deserve to be in the State-level matches. This state is &quot;Post-deserve&quot; state. Now the question is, at what point do you just &quot;Accept&quot; instead of &quot;Never Giving Up&quot;. That, my friend, is quite simple. When you're happy, &quot;accept&quot; it. Now, there is considerable difference between being content and being happy - but this post isn't about that; It is about an approach to face conundrums, and I guess I've just given you the master key.</p>
+<p>As I presented this to my room-mate with same flourish as I do to you now, he snorted and said &quot;Can I sleep now?&quot; I guess when some people just don't see the lock, what's the point of showing them a key? I plan to enlighten the old friend I mentioned before, yet I fear she's too into the &quot;never giving up&quot; approach to ever give up convincing me otherwise. It may not late for her still, as I hope it isn't for you too.</p>
+<p>See, there is no one process which can solve all your problems. It's usually an intermix of this and that, which is what I've tried to do and - ironically - create one cohesive process that can solve all problems. Yet, I'll reiterate, I have yet to fully apply this in person. I did reach the &quot;post-deserved&quot; state and achieve the goal I coveted, but this circular has re-initiated. I haven't yet &quot;accepted&quot; and probably won't for a long time to come. But when I do, I hope I'll be Happy. I will then close the issue and rightly consider this theory to go down as a Universal Law. Well, a guy can dream. Anyway, I hope you gleaned some such from my rattlings, or if you're someone like my room-mate who after encountering such a philosophy tends to snore (in his defense, he does so only when he's sleepy), I'm glad I was instrumental in helping you catch that ever-so-elusive wink. Cheerio.</p>
+
+
+  <!---->
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/posts/Greed-Evolution-on-psychological-level/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Greed - Evolution on a psychological level
+    </a>
+     
+    <a href="/posts/Time-Travel/">
+      Time Travel <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList;
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode();
+      }
+
+      function darkMode() {
+        html.add("dark");
+        localStorage.theme = "dark";
+      }
+
+      function lightMode() {
+        html.remove("dark");
+        localStorage.theme = "light";
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode();
+      }
+
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList;
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar();
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden";
+        sideNav.remove("hidden");
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll";
+        sideNav.add("hidden");
+      }
+    </script>
+  </body>
+</html>

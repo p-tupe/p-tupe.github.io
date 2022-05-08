@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <meta name="description" content="Page description" />
+    <meta property="og:title" content="Unique page title - My Site" />
+    <meta property="og:description" content="Page description" />
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
+    <meta property="og:image:alt" content="Image description" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://www.mywebsite.com/page" />
+    <link rel="canonical" href="https://www.mywebsite.com/page" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Baloo+Tamma+2&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/my.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50"
+>
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"
+    ></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900"
+    >
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()"
+      >
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <div
+        class="overflow-y-scroll prose prose-slate dark:prose-invert prose-xl lg:prose-2xl pb-8"
+      >
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/rss">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose prose-slate dark:prose-invert mx-auto py-16 prose md:prose-lg px-4 md:px-0"
+>
+  <h1>...in Love and War</h1>
+
+  <p><em>Author's Note : This is a work of fiction, as are all the events and characters within. The views and opinions expressed are entirely personal and do not reflect the official policy of any agency or government. The contents should not be utilised for analytics as they are based on out-dated and/or fictitious information.</em></p>
+<p><em>This is part 2, continuation of a short story starting with post  &quot;All is fair..&quot;, check it out if you haven't already. Enjoy!</em></p>
+<h2>New Delhi, 2030.</h2>
+<p>It was the passing out ceremony. She saw him stealing looks at her, even when he was with that other guy and a senior official; she always did. She didn't know how, in all the time they were in NDA, she always caught this guy glancing at her. She shrugged, laying it all down on a secret connection she hoped they had. Her cousin was teasing her about all the tough muscles around her, and she let it slip that the one set in her eyes was not from Air Force but actually an Lt from the Army. &quot;But you always said that army guys are idiots!&quot;, her cousin teased. &quot;Whatever&quot; she said, rolling her eyes. She intended to introduce herself to him and see what this guy was all about.</p>
+<h2>Sikkim, 2037.</h2>
+<p>She was jolted from her fond memories by a radio crackle in her head set. 'Damn, I mustn't day dream while on patrol, especially during war. Bad girl.'</p>
+<p>&quot;&quot;Eagle 24-9? This is unit Critter on Ground, xGPS online. Need help. Respond, over&quot;&quot;.</p>
+<p>&quot;&quot;Unit Critter this is Eagle 24-9, got you on map, what do you need? over&quot;&quot;</p>
+<p>&quot;&quot;Need you to throw dirt on some Bulls, one klick east of our current position. how far out are you? over&quot;&quot;</p>
+<p>&quot;&quot;Repeat Confirmation, 1 Klick East. over&quot;</p>
+<p>&quot;&quot;Yes, 1 klick to the EAST of our current position, confirm, Over.&quot;&quot;</p>
+<p>&quot;&quot; Gotcha, Scrambling the Jets&quot;&quot;</p>
+<p>&quot;&quot;Roger. &quot;&quot;</p>
+<p>&quot;&quot;Estimated time of arrival... 5 minutes, just hold on. Over&quot;</p>
+<p>&quot;&quot;Roger that... Over and Out!&quot;</p>
+<p>So, unit Critter, that's his Unit. Captain Amar. She had missed the opportunity to introduce herself after the ceremony, and thereon, they went their different ways. By a stroke of luck, this war had thrown them together in same zone. Over the period, she got to hear about his rise to Captain ship and how he lost more than half his unit down in Laya. She wondered how ANYONE could've survived what could only be described as a slaughter in a death trap. She even saw him at the meeting at the start of zonal collaboration and had introduced herself. Yet then, she herself was responding to a emergency due south so had to rush out.  'Back to reality girl!' she shook her cheeks. She called in her wing men, informed them of the change in route and plan, logged herself and felt the tingles in her heart as she always did when facing the enemy. She just hoped the enemy regiment didn't carry any Anti-Air as she didn't want any scratches on her high flying baby. 5 minutes out, here we come boys.</p>
+<p> 
+ </p>
+<hr>
+<p> 
+ </p>
+<p>&quot;MOVE OUT NOW!&quot; Amar shouted. &quot;Nighty, break a section down the left and go east over south. Crackpot you lead the rest the other way&quot; Both men shouted in affirmative and then Nighty asked &quot;Which way are you coming Cap?&quot; Amar said &quot;Right behind Crakpot, now MOVE!&quot;</p>
+<p>Chau was the last of his men out of the cave, and Amar was right behind him. They were moving at steady speed when after a couple of minutes, Amar made his move. Using the artillery smoke and ambient chaos as his cover, he slipped behind the back and ran right back whence they came. Soon he was past their cave and sought a position as his last stand. &quot;That one looks a cosy nest there, on your 3&quot; he heard a familiar voice behind him &quot;Sorry Cap, couldn't leave you alone&quot;. 'damn him' &quot;You disobeyed direct orders Soldier.&quot; &quot;Yeah, bite me, Singh da launda&quot; That brought a smile to Amar's face and he didn't hide it like his old man. &quot;Fine, that nest does look cosy, let's set up shop there&quot;</p>
+<p>It was a nice perch, elevated enough to give a birds eye view of surrounding area. Not that there was much to see, just smoke and dust. Still, just as they settled themselves, they heard shouts in a foreign language, unintelligible yet starkly familiar, like urging men to move on, sounds of encouragement. &quot;There, down by that slope, I see one&quot; Amar saw him to, through the x20 scope fitted on his Stealth Magnum Sniper. The next moment, he saw the man's head splatter and his body roll down the slope &quot;Nice shot&quot; he exclaimed, also being suitably tensed because the enemy was now aware of their presence.</p>
+<p>&quot;Hey Cap, remember Chiki?&quot;, asked Chau. &quot;Seriously, you wanna talk girls right now Chau?&quot; Amar said snidely. &quot;Hey, as better a time as any. She is cute, isn't she? I'm thinking, if we get out of here alive, I'll thank her by asking her out to dinner. you know, for saving our asses back there and all&quot;. &quot;Nice excuse you got, asking a girl out because... hey, hell, is that... ?&quot; Amar shook in disbelief. Chau chimed in,  &quot;Holy Moly, they brought the Dragon Riders here! Shit, they must've assembled those tanks right here in the valley. What do we do now Cap? Our bullets are useless against them&quot;. Amar calmed Chau while saying, &quot;We do what we came back here to do, hold them off as long as we can. still go the radio? pass on the Intel to our guys so they can rely it to HQ. Just hope they aren't pissed that we fooled them into leaving.&quot;</p>
+<p>So there they say as sun went down beyond the mountains. All the enemy forces, that was crawling on the slopes before had either moved back or went into hiding in the caves. Both men had their eyes peeled for movement, scoping out the entire area between them. Soon enough, their fears materialised. There was a sure rumble through the ground that only grew greater as minutes passed by. &quot;Switch to Night Scope, look out for strays, don't give away our position until the very last. We'll drag some of those Bulls down to hell with us&quot; Amar whispered. 'Roger that' was the only reply he received, along with the clicking sounds as the Scopes were switched.</p>
+<p>The sight that received them in the dying light of the sun was both terrifying and heartbreaking in it's magnitude and sheer beauty. Multitudes upon multitudes of steel-titanium reinforced tanks matted to reduce reflection down to nil. They weren't called Dragons for nothing. Their mobility, firepower and precision was well known, along with their extremely thick and resistant armour. And all of them were headed right in their direction. Suddenly Chau said &quot;Did I ever tell you? Why I joined the army?&quot; he didn't wait for a reply, &quot;All my life, I've seen my dad beat up my mom. He was a drunk, never had a sane thought in his addled brain and always used mom as a punching bag. Yet my mom used to feed him, without fail, take care of his stuff, work hard for money which he spent on his sins. Still she supported his destruction, didn't say one word to him. I never understood why and never cared to. One day, I just couldn't take it. Drunk as usual, he came in and slapped my mom because she took so long to open the door, and I lost it. Beat him senseless. And my mom slapped me. She SLAPPED ME! I ran off that day, never looked back. And here we are about to die, and all I can think of is to show her how her son turned out to be, tell her how everything is fine now, just tell tell her how much I missed her all these years.&quot;</p>
+<p>&quot;It's going to be fine Chau&quot; Amar whispered, not believing a word himself. &quot;Yeah, pff, Right. Fine.&quot; Chau returned, &quot;Let's just shoot the hell out of these fuckers!&quot;. &quot;Right, Take out as many as you can before they lock on your location, here we go, on my mark, One, Two, Shoot!&quot; 'Clink! Clank! Splish!' noises filled the air as their bullets bounced off the tanks' hides. Some ground units were unlucky to get caught in the mid-fire and died in the night. While both men were shooting at any viable target they could find, a Dragon Rider out of their sight had set his scoped on their nest, and suddenly screamed, &quot;She'ji&quot;. He saw the rocks on top of the mountain crumble and soon form a rock avalanche headed right for the sniper he knew was hiding there.</p>
+<p>Chau's head was on Amar's lap, his legs smashed into nothing. Both men had bled out pools of blood. There were no more gunshots, no more noises, total silence as last of the pebbles fell into their place. Amar was dead already, a rock having struck him on the back of his head. Chau did know this yet, he never would. He just lay there, his bleeding head resting on this best friends thighs.</p>
+<p>&quot;I should've told her, I should've told her how much...&quot; he sobbed away into silence. Those were the last words he ever spoke.</p>
+
+
+  <!---->
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/posts/The-play-of-shaun's-life/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ The Play of Shaun's Life
+    </a>
+     
+    <a href="/posts/All- is-fair.../">
+      All is Fair... <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList;
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode();
+      }
+
+      function darkMode() {
+        html.add("dark");
+        localStorage.theme = "dark";
+      }
+
+      function lightMode() {
+        html.remove("dark");
+        localStorage.theme = "light";
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode();
+      }
+
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList;
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar();
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden";
+        sideNav.remove("hidden");
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll";
+        sideNav.add("hidden");
+      }
+    </script>
+  </body>
+</html>

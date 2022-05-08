@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <meta name="description" content="Page description" />
+    <meta property="og:title" content="Unique page title - My Site" />
+    <meta property="og:description" content="Page description" />
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
+    <meta property="og:image:alt" content="Image description" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://www.mywebsite.com/page" />
+    <link rel="canonical" href="https://www.mywebsite.com/page" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Baloo+Tamma+2&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/my.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50"
+>
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"
+    ></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900"
+    >
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()"
+      >
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <div
+        class="overflow-y-scroll prose prose-slate dark:prose-invert prose-xl lg:prose-2xl pb-8"
+      >
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/rss">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 27 - Lay of Land</h2>
+<p>Breakfast was normal. Strips of crisp bacon, a couple of eggs, some brown bread, and another sweet drink.</p>
+<p>Feeling my trouser tighten a bit around my waist, I called it quits. The princess did eat, after all, but in small bits held in dainty hands with quick moves that were quite hard to notice. When you did notice it, there was an indisputable grace to the motion; having the effect of making me feel like a brute. Not that she mentioned it.</p>
+<p>After the hearty breakfast, she led me to the gardens on the backside of the Palace. Well, calling them gardens was a bit of an understatement - they felt more like a landscape artist decided to go crazy with experimentation.</p>
+<p>The &quot;front&quot; gardens were supposedly large areas meant for social gatherings and perhaps showing off. The &quot;back&quot; gardens, where I was currently examining what looked like a pink daffodil, were for private conversations and relaxing.</p>
+<p>Sitting under the shade of an awning and nursing another sweet drink in her hand, the princess was currently expanding my knowledge on local geography.</p>
+<p>&quot;... And so, this is both a frontier and last line of defense for humanity. My great-grandfather - honored King Alexander Von Lohengramm, noticed the signs of creeping calamity long before other nations. Thus, he began the colonization of this continent of Alteraz. Eventually, the kingdom could not hold out any longer, so he sent my grandfather, then merely 19 years of age, to continue the line here while he himself stayed back. Many nobles of our kingdom followed his example, sending their sons and daughters along with my grandfather to the new lands,&quot; she took a sip before continuing, &quot;of course, there was the prophecy as well, it pointed to a dungeon here. Alteraz is where the Heroes shall defeat the calamity and the world will be safe once again!&quot;</p>
+<p>'Did she just casually mention a dungeon?' Before I could interrupt, she pushed on. When it comes to talking about her family history, she just kept going on and on.</p>
+<p>&quot;And so, my grandfather formed an alliance with four other clans. They weren't more than bridgeheads back then, but now the former alliance rules as the five major clans. The clan system was actually formalized by my father himself! And my big brother was-&quot; her breath hitched. I remember her mentioning her little brother, this was the first time I heard about a big brother. I gave her a moment, as she hesitated. She spoke in a small voice, &quot;Big brother was supposed to be the first official overseer.&quot;</p>
+<p>Her fingers trembled slightly. Moisture clouded her eyes. 'Why is this cut scene making my heart squidge?'</p>
+<p>After a practiced deep breath, a mournful smile decorated her features. &quot;He was last seen on the other side of the High Passes,&quot; she spoke in a low voice. After a minute of silence, she pronounced, &quot;Oh! Look at me, rambling on. The Sun is almost past the zenith, perhaps we should head inside for the luncheon?&quot;</p>
+<br />
+<p style="text-align:center"><strong>¤ ¤ ¤</strong></p>
+<br />
+<p>In the several hours since breakfast till noon, I got a crash course on the surrounding terrain, historical intrigues, and the current political situation of this continent named Alteraz.</p>
+<p>This continent was also supposedly the only inhabitable one left. Others were taken over by the calamity. I was still unclear on exactly what it was.</p>
+<p>So, the disaster started off on the other side of the planet, slowly covering a larger area with time. All the sapient species, at least those that could traverse the oceans, sailed ahead of it. Eventually ending up gathering here. Even I could imagine the chaos this would imply.</p>
+<p>The native inhabitants of this region - the eastern part of the continent, were goblins and beast tribes of diverse species. Goblins had been wiped out a few years before Francisa was born. By the time she celebrated her tenth birthday, a majority of the beast tribes had been subjugated. The annexation of Centaur lands was currently underway. There was also an incursion of faeries back when humans initially marched in when they overran the southern forests, but not much is known about their whereabouts now.</p>
+<p>The central area was littered with high mountains. An entire mountain range split the continent in two. I imagined this was probably due to there being two different continents that collied into one. Not unlike the Himalayas when India bumped into Asia.</p>
+<p>In any case, the highest mountains graced the northernmost parts and were occupied by, unsurprisingly, the Dragons. There were large sub-terrain worms that dug in a little south. The central area was taken in by Dwarves. Well, the central area deep inside the mountains at least, perhaps even below sea level. Further south were the caves of Drows. There was a large forested area to the south that covered a better part of the mountains and flowed on either side of it.</p>
+<p>Also somewhere high up in the mountains, near the Dwarven territory, were the &quot;high passes&quot; that humans held. This place was a window to the other side of the continent. On the other side, there were reports of Elven constructs and Orcish hordes. Not much was known beyond that.</p>
+<p>Of course, these were only some of the major players on the continent. &quot;Civilized&quot; people, so to speak. Innumerable creatures roamed the vast &quot;uncivilized&quot; areas that were being quickly engulfed by the former. I learned that the mammoths, crocs, and squid-face went extinct hundreds of years ago. Panthers still resided in the south. About the rest of the creatures, they were either common or unknown. Quite a dichotomy.</p>
+<p>An optimistic estimate was that humans currently reigned supreme in the eastern region - bar the &quot;uncivilized&quot; regions as it were.</p>
+<br />
+<p style="text-align:center"><strong>¤ ¤ ¤</strong></p>
+<br />
+<p>Closer to home, there were about thirteen clans spread out all over the human-occupied lands ranging from the eastern coast to central mountains. Five were considered as major clans, the ones from the original invasion alliance. They were also closer to the center. Apparently, I was one clan's area away from the mountains - one could see them if they go to the front gardens. The rest were under the oversight of these five clans in one way or another.</p>
+<p>This was a very new system of governance, not even two generations old. And so there were the typical ones who wanted to rise above others, others who sought to pull the former down. There were even such forces among the major clans. Francisa all but mentioned that her brother was a victim to these political plays and not the minacious posting at the border.</p>
+<p>All that was about the nobles. The commoners, instead, played a different game. Needless to say, petty criminals were commonplace. Serious crimes were widespread as well. But these things were par for the course. What concerned Francisa the most, and by that I mean her father - I doubt she was viewing the situation from her own perspective, was the new church of convulsion. This church believed that the ongoing cataclysm was a sign from the gods. Their gospel was that humans should fight the monster hordes that heralded the disaster, allying instead of conquering other sapient species. The more radical members of the church were convinced that the world was going to end because the humans had strayed from the righteous path and this was their just reward. It was funny how even NPC humans were inclined to consider themselves the center of everything - even a catastrophe. The problem arose, however, when one of their core beliefs was that heroes were against the natural order of things, the belief that had led to numerous troubles so far. Indeed, hearing about their exploits made me re-imagine them more as an assassin's guild than a godly church.</p>
+<p>Such was the situation where I was summoned into - war on all fronts, people tearing each other's throats out, and an inevitable doom closing in on us. This world was fucked to hell and back!</p>
+<br />
+<p style="text-align:center"><strong>¤ ¤ ¤</strong></p>
+<br />
+<p>I arrived at the summoning hall following Francisa, which was being doubled as a throne room and dining hall. 'Shit, they scrubbed the Summoning Runes!'</p>
+<p>I nodded at the NPCs and smiled at my companions, of whom everyone but Taro was already present. Julie sent a weary smile back. Carol seemed amused by something. Divin nodded back without a smile. Arya was fuming. I took a seat amidst them, all of us seating on one side of the table. Francisa took the seat facing me on the other side. Apparently, each of the representatives had taken a seat in front of their partners.</p>
+<p>The prince NPCs ahead of Carol and Arya sat in a rigid posture, staring at the table with expressionless eyes and stony faces. The one in front of Julie instead had a natural serious expression one would expect as such an occasion. The princess with Divin sat with a finger on her chin, eyes far away in thought.</p>
+<p>I sat beside Carol, who immediately leaned over and whispered, &quot;Didja, ya know...?&quot; and glanced at Francisa.</p>
+<p>&quot;Naw... I'm not that short-sighted you know.&quot; I retorted. She raised her hands in mock apology, saying something about men and their thinking equipment.</p>
+<p>It was at that moment that Taro strolled in. With the remaining princess in tow. Clinging on to each other like newlyweds. 'Damn it, they got him. Hook, line and sinker!'</p>
+<p>Carol flashed a victorious smirk at me. I scowled back, 'His actions have no bearing on the reasoning of all men.' Her smug expression persisted, however.</p>
+<p>Lunch was a somber affair. Besides the tasty food of course. Earlier, Francisa bemoaned never having had a full royal course that her grandfather boasted of. Food was scarce here. Yet tasteful enough for my palate. No, the somberness came from the NPCs! Especially the representatives. From the look of things, only the youngest princess had succeeded in their shared mission.</p>
+<p>&quot;Ahm...&quot; the clan head stood up and cleared his throat. 'Man, at least let me enjoy my dessert first!' Uncaring of my mental protests, he continued - &quot;Again, I would like to welcome you all. I hope our hospitality wasn't too lacking.&quot; He looked over us, pausing slightly longer on the taut princes. &quot;As you all must have surmised, our world is currently facing a great tribulation, one which we yearn to repatriate with your fortunate aid. The Council proposed to have one clan take in one hero each to prepare you for the preordained animus.&quot; 'Does this guy walk around with a hidden dictionary or something?' &quot;And yet, some unforeseen events have caused us to reassess our adjudication.&quot; 'Hmm? <em>What</em> is this about?' &quot;As such, Sir Pat, Lady Arya, and Lady Carol shall continue to dwell in our royal quarters. Sir Divin, Lady Julie, and Sir Taro have preferred to follow their representatives to respective clans for further tutelage.&quot; '<em>Whaaaa...?</em> When did these guys decide everything?' Julie shot me an apologetic glance. Divin was stoic as usual. Taro was... Best not spoken about right now.</p>
+<p>I barely had a chance to process this news. The leader, however, steamrolled onward. &quot;Nevertheless, fret not over what may come. For today is a day of convalescence. The three departing heroes shall leave tomorrow afternoon, but not before a grand parade to reassure the populace!&quot; He beamed at us; was he expecting excited &quot;whoo&quot; perhaps? All he got in return were affirmative grunts from Divin and Julie. I was stumped still - 'We are disbanding our party? Is it temporary then, just for training? What <em>does</em> he mean by training though?' A thousand thoughts whirled in my head, the cold dessert in front of me left untouched.</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/gs/Chapter 26 - Bootstrap/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapter 26 - Bootstrap
+    </a>
+     
+    <a href="/gs/Chapter 28 - A Hero's Welcome (1)/">
+      Chapter 28 - A Hero's Welcome (1) <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList;
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode();
+      }
+
+      function darkMode() {
+        html.add("dark");
+        localStorage.theme = "dark";
+      }
+
+      function lightMode() {
+        html.remove("dark");
+        localStorage.theme = "light";
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode();
+      }
+
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList;
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar();
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden";
+        sideNav.remove("hidden");
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll";
+        sideNav.add("hidden");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <meta name="description" content="Page description" />
+    <meta property="og:title" content="Unique page title - My Site" />
+    <meta property="og:description" content="Page description" />
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
+    <meta property="og:image:alt" content="Image description" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://www.mywebsite.com/page" />
+    <link rel="canonical" href="https://www.mywebsite.com/page" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Baloo+Tamma+2&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/my.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50"
+>
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"
+    ></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900"
+    >
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()"
+      >
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <div
+        class="overflow-y-scroll prose prose-slate dark:prose-invert prose-xl lg:prose-2xl pb-8"
+      >
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/rss">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 17 - Curse Series</h2>
+<p>I jolted awake to a numbing pain in my abdomen. I had no idea what was going on. I opened my eyes to see some girl flashing a torchlight on my torso with tears in her eyes. For some reason, I felt her tears were more out of fright than worry for me. 'Why do I even care about that?' I wondered. Some dude with a sword was glancing around and then at me with furrowed brows. 'What is <em>he</em> mad about?' I thought. Tilting my head, I saw a few more people standing around with their backs to me. While they were just standing, I could feel the tension in their stance. Or was it fear? Another guy with a sword was actively quaking in his boots. 'What are they all looking for?' I eventually managed to sit up after some difficulty. The pain didn't make it any easier. 'Why is my shirt all torn up? Wait... Is that blood? What the hell is...' and then reality hit me like a cold shower.</p>
+<p>I was still here. I was still alive. The panther gouged out my intestines - or so I felt, and I quickly fainted. The torchlight was Arya casting healing on me non-stop. Thankfully, I was past the worst. Not bleeding anymore. 'Healing magic is really overpowered here.' Everything felt weirdly squishy though. Not to mention long scars that decorated my stomach. I noticed them through my tattered shirt. The shirt looked more like a crop-top now. I calmed Arya down, asking her to slow the constant barrage of heals coming my way and explain what happened.</p>
+<p>Must've been about 5 minutes since I was mauled. Divin was the one who thrust his sword at it first. While the feline did dodge and escape being pierced, there was cold damage that it could not escape. Not to mention Taro's sharp strike to its side. Even Carol manage to scrape it with her only dagger. All in all, we managed to hurt it more this time around. Although we got more than we gave. It hadn't attacked since - licking its wounds perhaps. I was badly hurt but it wasn't immediately fatal. Back home, if I couldn't get urgent medical assistance, I would have died very slowly and very painfully. That sort of wound it was. The others were clearly rattled. This was the first time since coming here that any of us got so close to dying. Not to mention our current situation - hopeless was an adequate description for it. 'Speaking of hopeless...' I had a small smile on my lips. Arya looked at me like I'd lost my mind. Divin, who was still slightly frowning for some reason, queried: &quot;You have a plan?&quot; 'Damn right I do!'</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>&quot;You okay? How do you feel?&quot; she asked. Perhaps she <em>was</em> worried about me. &quot;I feel like I got my guts gouged out!&quot; I joked. She wasn't amused. &quot;Ahem.. I'll be alright. Thanks,&quot; I placated her, &quot;And yeah, Divin. I do have a plan.&quot; The others were listening in on our conversation and I could feel the tension lessen a bit. Carol's shoulders visibly slouched as she asked, &quot;What be the plan?&quot;</p>
+<p>One reason we couldn't land extensive damage on the creature was because it was too damn fast. I could barely cast a single spell. For my spells to take full effect I had to cast them multiple times in a row. I had no idea why doubling or halving the temperature didn't cause any significant issue to these creatures. 'Oh wait... Magical Resistance, Duh!!!' Of course. I even had an attribute that was directly related to magic resistance. I just couldn't make the connection because it never came up. I was never magically attacked! It is not unreasonable to assume that monsters had resistances as well. 'Ah! That is why the imps basically shrugged off my heat spells. They probably had very high resistance to it. Makes sense.' As for our current feline problem, I had just the spell to use. One attack is all I need. It will stick on like a leech and keep reducing the temperature, as low as it can go! This was less of a spell and more of a <em>curse</em>.</p>
+<p>As I explained my curse spell to the team, I could see their hopes rise. &quot;It might take a while to affect though, even I'm not sure how long. So I suggest we don't let it slip by next time. Divin, Taro &amp; Carol can follow it in the forest as it retreats. Then you can finish it off.&quot; &quot;Why are we splitting up?&quot; Taro asked. &quot;Well, two reasons. First, if all of us go in, we could get lost in the fog. If we split up, half of Betty will remain here and act as a lighthouse. Second, there is no point for all of us to go. I am injured and will only slow you down, Arya is a Healer so she can't help in a kill - about healing, I doubt you'd get injured as the thing will be freezing and in no condition to fight by the time you get close to it, and Julie has no close-range weapons.&quot; I explained my reasoning.</p>
+<p>I opened up my Status Window to see my health was down to 61 but rising rapidly. Arya had restarted her heal, though with lesser frenzy. 'I wonder how low I went?' No time for that though. The tension in the air was now at its lowest since the attack. It must've been a few hours since we entered the forest. Thankfully, the fog didn't get any denser and our vision of a few meters around us remained intact. With a plan to subdue our foe, we cautiously made our way ahead.</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>&quot;It has been 15 hours and 21 minutes since we entered level 4!&quot; Betty replied to my question. The panther had left us alone so far. Too bad for it, it did not have a magical Healer on its side. We had continued our slow and steady march through the foggy forest. We didn't stop at all. Our stats were all full and we were primed and ready for any action.</p>
+<p>If the previous levels were any indication, I'd say we were more than halfway through this one. The chances of being attacked were increasing with every step we took. So did our vigilance. We were back in our original formation. I started wondering when the thing would show up when I heard the slight tell-tale rustle. It came from the right, towards Taro. We all ganged up within a moment. It lunged at Taro's throat. We had discussed earlier how to avoid getting our guts or throats ripped off. Following the same, Taro crouched down, almost hugging his knees. The panther fell on him, using his back as a launchpad to leap at Divin. Just as it was about to jump off, I moved my palm towards it and shouted, &quot;PETRIFICUS_SLOWLY!&quot;</p>
+<p>The panther was startled to hear my raised voice. Being a veteran hunter though, it immediately changed its trajectory and decided to retreat. Unfortunately for it, the damage was done. Arya hastily cast a couple of heals on Taro. Within a few seconds, he was disappeared in the fog following Divin and Carol. Sudden silence assaulted our ears, and I took a calming breath. I had done what needed to be done. I flipped my finger up and noticed the rate of mana consumption. 'I guess it started off with 10 mana per second like usual but now it is consuming 13... Oh wait, it is 19 now. 19. 19. 19. 19.. 24!' Every few seconds, it jumped up by some amount. It must've been about 50 seconds later when it stopped. Towards the end, it was consuming more mana at a faster rate, concluding by leaving 408 points intact. A quick calculation revealed the curse had taken 592 mana in about a minute. 'Not bad, I guess. As long as it worked.' I closed my stat window and sat down leaning against a tree. Muck was no longer an issue, my clothes couldn't get dirtier.</p>
+<p>Must've been a couple of minutes after I sat down that I suddenly felt like I had leveled up and more. Looking across the two girls revealed a similar reaction. 'They did it!' I thought and opened up my Status Window to look at my gains.</p>
+<hr>
+<h3>[Competent] Mage - Level 5</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Health</td>
+<td>179/200</td>
+</tr>
+<tr>
+<td>Mana</td>
+<td>408/1050</td>
+</tr>
+<tr>
+<td>Stamina</td>
+<td>38/43</td>
+</tr>
+<tr>
+<td>Experience</td>
+<td>324/600</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Attributes</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strength</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Vitality</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Agility</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Dexterity</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Intelligence</td>
+<td>14</td>
+</tr>
+<tr>
+<td>Perception</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Wisdom</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p><em>Special Effects:</em></p>
+<ul>
+<li>Magic Boost - You get extra Intelligence, Perception, and/or Wisdom points on every Class Upgrade</li>
+</ul>
+<hr>
+<p>'Oh, I got extra points on Perception and Wisdom. Cool! Hey, did I get exactly 500 exp? I had 324/500 before entering this level.'</p>
+<p>Talking with Julie and Arya revealed they had gotten an extra Skill each. Arya had gotten something similar to group heal. All allies within a certain distance from her would automatically heal when the Skill was active. It appeared to be weaker than her normal heal though. For Julie, it was something called True Shot. The description was a bit vague but it seemed like some sort of homing mechanism. She tried it out on a nearby tree and hit <em>exactly</em> the spot she was aiming at. &quot;It costs all my mana though,&quot; she lamented. However, I could tell she wasn't upset about it - quite the opposite. It was truly a game-changer for her.</p>
+<p>Soon the rest of the gang returned. With souvenirs, no less. They had a new sword, a set of daggers, a staff, bow &amp; arrows, and some sort of ring. Also, 6 distinct unisex apparel. Everything was of a higher quality than what Betty had provided for us. I picked up a brown robe-like piece that screamed 'Mage' and put it on. The rest divided the stuff among themselves. Apparently, the equipment was for 6 Base Classes. After some discussion, I decided to keep the ring. It must've been meant for Craftsmen, there was some worn motif on it. It could be enchanted, I could study it. Further discussion revealed each of us had acquired exactly 500 XP. All of us were now &quot;Competent&quot;. Divin received the sharp Skill that Taro already possessed, while Taro got a wind-related Skill. It let the cut from a swing extend beyond the physical edge. Carol on the other hand received something similar to Julie's True Shot, except it was for daggers.</p>
+<p>Everyone changed their clothes and equipped their weapons in their private corner behind the trees. A few more hours of light trekking got us to the exit of this level. No one hesitated to step beyond. This time, the bridge was different. It was wide enough to allow two cars to run parallel with space in between. It also looked properly built and well maintained. I immediately slumped over and fell asleep by the side. Almost dying is quite taxing on your mind, I learned.</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/gs/Chapter 16 - Mini Boss/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapter 16 - Mini Boss?
+    </a>
+     
+    <a href="/gs/Chapter 18 - The Mage Situation/">
+      Chapter 18 - The Mage Situation <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList;
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode();
+      }
+
+      function darkMode() {
+        html.add("dark");
+        localStorage.theme = "dark";
+      }
+
+      function lightMode() {
+        html.remove("dark");
+        localStorage.theme = "light";
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode();
+      }
+
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList;
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar();
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden";
+        sideNav.remove("hidden");
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll";
+        sideNav.add("hidden");
+      }
+    </script>
+  </body>
+</html>

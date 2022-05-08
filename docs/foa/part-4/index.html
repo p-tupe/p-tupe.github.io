@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <meta name="description" content="Page description" />
+    <meta property="og:title" content="Unique page title - My Site" />
+    <meta property="og:description" content="Page description" />
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
+    <meta property="og:image:alt" content="Image description" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://www.mywebsite.com/page" />
+    <link rel="canonical" href="https://www.mywebsite.com/page" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Baloo+Tamma+2&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/my.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50"
+>
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"
+    ></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900"
+    >
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()"
+      >
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <div
+        class="overflow-y-scroll prose prose-slate dark:prose-invert prose-xl lg:prose-2xl pb-8"
+      >
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/rss">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 10</h2>
+<p>Niyensi had a restless night. The dawn brought little solace to ease her bewilderment. She expected to be extinguished by now or in process of accepting torment for life. Yet, here she was sitting idly beneath a tree mingling among the shadows cast by ancient pines that graced this region. She had spent the entire night  snarling at jungle noises that she expected somehow to expose Anudîn’s minions. None had materialized. When she wasn’t hyper aware of her surroundings, she was busy making her case to justify her actions. Anudîn was a rational entity, she knew. But where has my rationale gone? She wondered. Fear and worry was eating her up and sitting idly was adding to the helplessness she felt. She berated herself for acting so stupidly when she promised to be patient. Yet when she thought of her actions, her stomach made a satisfied groan. The human’s brain was especially tasty. There she sat flickering between thoughts and fears never settling down on one for long.</p>
+<p>As the shadows shortened, Niyensi finally calmed down and started thinking calmly. If Anudîn wanted to punish her, he would have done so already. It was very unlike him to defer judgement. So, assumption: Anudîn was okay with her breaking his condition. Now, she thought, this was only because she knew it herself that the condition made no sense. Not all of them were so. Inference: Anudîn is testing her. But for what? Maybe that was a part of test too. She felt a little light in her heart. Anudîn may not be her master but he deserved credit where it was due. He was adept at intelligent schemes and playing the long game. Till now she thought she was just another pawn, but now she wondered about the “what ifs” ...</p>
+<p>Suddenly the sun was high above her head and she decided it was time to get moving again. She got her bearings, then sensed her marked human’s direction. Still south but moving west-ward. So, this human lived on the West Coast. She’ll have to sail down the ocean that separated the North Lands and Coast. But before, she had to figure out where the port to West was first and where she herself was. She figured, correctly, that she was somewhere in the middle of the top island and towards the eastern coast of same. She needed more information and now she had the means to get whatever she wanted, perhaps with a side of some delicious grey. She wondered if all human brains tasted the same. “I’ll find out soon enough”, she thought merrily to herself. “Ye should get goin’” she rasped and made up her mind to see if there were other spoken tongues more suited to her tongue. With that, off she went southward, subconsciously avoiding the mansion. Changing her garb to that of a travelling merchant, she set on finding the next large settlement where she would “ask” about the long journey that loomed before her.</p>
+<p> </p>
+<hr>
+<p> </p>
+<p>“My lord, the drakekin seem to be banding together, is it happening in all the circles?”</p>
+<p>“Yes, that is so.”</p>
+<p>“Oh... What of the drakekin on surface?”</p>
+<p>“Not your concern Kranch. Did you bring the chain I asked for?”</p>
+<p>“Yes my lord. Although I cannot understand –”</p>
+<p>“Do you know what happened to Helio, my last servant and your brother?”</p>
+<p>“No my lord.”</p>
+<p>“I sent him as a gift to my subjects to do with as they will. He was as inquisitive as you are, and he decided to act against my will on a certain matter. Should I feel you are headed in that direction, you shall face the same fate as him. Am I understood?”</p>
+<p>“Yes my lord”</p>
+<p>“Yet, on this specific subject, you are meant to understand what is happening. I need to find out how my brother means to maintain the portal he opens if he gets his claws on the boy’s essence. Over the years, he has stopped answering my mind probes so I need to project myself in his realm. I expect you to be my anchor to my circle and hence this chain. If you would, bind it on your hand and then we shall get started.”</p>
+<p>“So be it my lord, I shall not fail you.”</p>
+<p>“I hope not. Or you’ll be dragged along with me. Let’s get started. The lord of Hells awaits!”</p>
+<p> </p>
+<h2>Chapter 11</h2>
+<p>They were walking along an endless path winding through lush gardens, hand in hand, sun setting on the zenith and a gentle breeze brushing past caressing their skin. He saw her hair rise and fall in a rhythm, and shy smile decorating her blush, all for him. He was happy, he could walk this path forever. He closed his eyes and took a deep breath, taking in the timelessness of the moment and at that instant, he realized that she was no longer by his side. Nor was there any path to follow, as his next step would take him down the cliff into a bottomless chasm. The sun had set, but the sky was ablaze; the land was barren and red. A deep hum seemed to emit from underground, and he was scared. He screamed for his beloved but no sound emitted from his throat. He coughed and fire emerged in a huff from his mouth. The deep hum was coming closer to the ground, shaking the land beneath his feet. He called for Sara again, looking all over the red horizon. His voice did emerge this time but it was lost among the cracks that now formed in the land. He was growing frantic with every passing moment, his fear of having lost Sara absolute. Amongst the chaos, a slithery cold voice touched his ear. “Embrace death” it whispered and filled his heart with dread. Just as he was about to shout for Sara again, he heard her scream from somewhere beyond his vision. She was screaming his name. Dear god, where is she? What had he done to her? Suddenly, the cracks started spitting fire, fire that melted the rocks it was held beneath. He knew what was going to happen next – so he ran; towards the nightmarish scream that he somehow felt responsible for causing. The land rushed by in a blur, ash and fire tearing at his face. He felt something hot and moist stream down his cheek - a tear drop.’ “Can’t stop now, must save Sara” he tried to motivate himself. It was overwhelming his senses. The exploding surroundings, the cold whisper of death he knew was present and the screams from the distance that crushed his soul. He looked behind and saw a monster chasing him. This was not unlike the creatures he had seen previously but it had a cunning in its eyes which he did not like. The thing was gaining on him fast and yet his heart yearned to console the sounds from distance. He knew now that he had lost. He looked back one last time to face the creature, which promptly jumped on its prey, claws outstretched. “I’m sorry, Sara” were his last words as darkness took over and his feet lost ground.</p>
+<p> </p>
+<hr>
+<p> </p>
+<p>Kelly awoke with Sara’s name on his lips, and a dried tear streak across his cheek. He could not shake off this dream as he had the others. This was about matters dear to him more than his own self. He still had about half an hour left before his alarm went off, but as much as he tried, sleep would not come. Kelly decided to tell Sara about these dreams. The thought of meeting Sara again tonight brought some calmness in his heart. She was really something, that girl. Maybe she can make sense of these dreams. His thoughts drifted between what he should do today and whether he should buy something for her or not. They had met several times now, and he believed he was in love. A rose would do fine, he told himself, imagining how happy she will be when he surprises her with it.</p>
+<p>Today was a special day in the hotel. The boss had called everyone in for a meeting during the lunch break, as he had some very special announcement to make. Kelly asked his co-workers if they knew what it was, and all shook their heads in a negative. So there he was, standing when the boss called his name. Kelly went over and stood by his boss’s side. The boss continued with his speech, “...and here we have Kelly, the guy who was sleeping on a bench not 4 years ago and is now practically running this hotel. We know how hard he works as a waiter, always pleasing his customers. I do not know if he has any formal education, but his accounting skills are better than many educated people I know. He has worked every day to the best of his abilities and never asked for anything more in return that what he was provided. To honor his commitment and skills, and also because there is now a vacancy, I hereby promote Kelly to the post of Manager starting right now!” turning towards Kelly as the crowd cheered, he whispered, “My heartiest congratulations to you, my dear boy” and hugged Kelly lightly. Kelly tried, and failed, to hide his tears of joy. He saw happiness aglow all about him and inside him, and yet somehow, somewhere in a deep dark corner of his conscious, he remembered the cold voice from his dreams. His smile shortened a bit but he forced his thoughts back into the moment; “I won’t fail you, sir” he told his mentor.</p>
+<p>Sara was jubilant. The rose had worked wonders to start off the evening and the news about his promotion only lengthened the bliss. She was talking about his new role and responsibilities, but his mind was not in those words. He was lost in her joy, her soft pink lips seemed to engulf his whole vision. Ahhh, he could just sit and watch that face for eternity. She was looking at him with amusement and was speaking something that was simply music to his ears. Then she lifted her hand and swayed it in front of his eyes. “Hello!” she said with a chuckle, “Are you even listening?” she asked. “Of course, yes” he lied. She knew he lied, and he knew she knew. Yet she asked “Alright, so what will you be wearing now that you’re a manager?” to which Kelly joked “Umm, the manager costume?” and laughed. She laughed too, but then said “Just so you know, your jokes suck, but I like the way you laugh!” and laughed again. They looked at each other with eyes sparkling from recent mirth, and she spoke softly, “Your eyes are so...” as the distance between them closed. “...so what?” he asked equally softly, taking her face in his hands, not expecting an answer. She mumbled something barely audible, but he felt it on her breath, now mingling with his own. Both their hearts were beating out of their chests, and in a rush of air &amp; heat, their lips met. The moment was both timeless and over in an instant, mostly because the ground had suddenly started shaking violently beneath their feet. Sara broke off first and had barely exclaimed “Earthquake!?!” when it over as quick as it came. “That kiss was literally Earth shattering, huh?” she joked, but as she looked over at Kelly, her fingers found cold sweat on his brows and dead fear in his eyes. “Hey, it’s okay. We’re okay!” she consoled him. Yet she could only look as he calmed himself enough to speak. “I wanted to tell you something. About the dreams – nightmares, which I’m having...”</p>
+<p> </p>
+<h2>Chapter 12</h2>
+<p>Niyensi made rapid progress in the following weeks. Once she happened upon the big city she so eagerly looked forward to, she decided to stay away from large human settlements there on. The absolute filth, of their own making no less, in which they dwelled filled her with disgust. More so, she was appalled by the total apathy with which everyone treated one another. She had picked up several stranded individuals and wanderers off alleyways and no one cared. Not that she ate them all, several she simply sucked dry of information and left them with a dazed memory of those events. Rest were not so lucky. Also, not all time in the city was wasted on sightseeing and local cuisine. First, she had collected enough information for her maiden voyage to the west. She knew what to expect when she landed on those shores. Next, she realized that she had the ability to “insert” subtle instructions in weak human minds – manipulate them to her liking. A desirable trick, one she practiced every chance she got, getting better with each try.</p>
+<p>After considerable stay in the city and having munched on enough brains and soft limbs, she shot out like an arrow to her destination. She didn’t need much sleep, and she knew which major routes to avoid. With enough food in her belly, her lithe limbs carried her with haste as she covered the entire distance from eastern side of the island to the south-western port in a matter of few weeks. The port was simply known as “North Harbor”, which confused her because it was to the south of the Island. Nevertheless, she watched the movement of people in and around the port from a vantage point. Not that there was a big crowd present, the next ship to set sail wasn’t expected for another couple of days, but those that were present betrayed points of interest that she would require later on - the ticket counter, the queue point, the boarding ledge, among other locations. She would need the “currency” to “purchase” a ticket. Although all this was new to her, the concept of trade wasn’t and she was quick enough to catch on. She needn’t worry about the purchase, for she had lifted enough currency off of her victims in city to cover her journey in style, and then some. Her idle hand reached her pouch which jingled as she had expected. Her mind was planning the excursions for the night and coming days before the journey – get enough rest on land, while she can; get the tickets as soon as they’re available, preferably for a secluded room facing the front; a guise of a well-off woman perhaps? But not too young, else she’ll be pestered by overly-enthusiastic men the whole time...</p>
+<p>Just as Niyensi was fixing her disguise, her pouch started jingling slightly. She sensed tremors coming from the sea and soon beneath her body that were causing the jingles. Somewhere down in the harbor, the sign post for queue start fell sideways. The tremors passed on further north within a couple of breaths. “This was no common quake” she concluded, “something big must’ve happened beneath to cause such an effect on the surface!” She felt a slight tug of fear in her heart, for she was always wary of the unknown. There was much about this whole business that she didn’t know - powerful entities and ancient relics were involved. She cozied up further down to the ground, hoping for more tremors but also, more realistically, gleaning knowledge from the land. Magic always left traces. Her intuition was right, for the tremors had a magical origin, their epicenter at the very south – further beyond the vast seas. After some time, when her hope for more tremors faded, she got up and dusted the dirt off her apparel that she had “borrowed” from a city shop. She went back to her modest camp and decided to rest. Niyensi realized that being in action suited her best. Planning, manipulation, strategizing and out-witting opponents brought the best in her. But this deceptively simple task of resting brought her demons to fore. The fear of what ifs, the hatred of unknown, thoughts and memories that she wasn’t sure were hers anymore... she’d rather face the elven army again than just rest! But she knew she had to; powerful as she was, she couldn’t foresee the obstacles that awaited her, and it was best to conserve strength and not need it, than to need it and not have it. And so she lost herself again in the whirlpool of her own mind, the memory of recent tremors soon turning into a vivid scene of hell’s snow storm.</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/foa/part-3/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapters 7 to 9
+    </a>
+     
+    <a href="/foa/part-5/">
+      Chapters 13 to 16 <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList;
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode();
+      }
+
+      function darkMode() {
+        html.add("dark");
+        localStorage.theme = "dark";
+      }
+
+      function lightMode() {
+        html.remove("dark");
+        localStorage.theme = "light";
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode();
+      }
+
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList;
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar();
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden";
+        sideNav.remove("hidden");
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll";
+        sideNav.add("hidden");
+      }
+    </script>
+  </body>
+</html>

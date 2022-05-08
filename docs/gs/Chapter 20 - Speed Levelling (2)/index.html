@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <meta name="description" content="Page description" />
+    <meta property="og:title" content="Unique page title - My Site" />
+    <meta property="og:description" content="Page description" />
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
+    <meta property="og:image:alt" content="Image description" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://www.mywebsite.com/page" />
+    <link rel="canonical" href="https://www.mywebsite.com/page" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Baloo+Tamma+2&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/my.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50"
+>
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"
+    ></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900"
+    >
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()"
+      >
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <div
+        class="overflow-y-scroll prose prose-slate dark:prose-invert prose-xl lg:prose-2xl pb-8"
+      >
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/rss">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 20 - Speed Levelling (2)</h2>
+<p>Just as I had gone right, Julie went left. My attention was fixed on the creature, so I could not see how the digging was progressing. Quite poorly, I feared. That being said, my job was to gain as much time as possible and keep the monster distracted. With that in mind, I stood there staring at it while it stared right back. I saw Julie, thoroughly ignored, creep closer to her position. She, the mammoth, and I were now at an obtuse angle with about 50 meters between each in that order. Behind me was the pit wall, perhaps to stop the prey from escaping.</p>
+<p>As I stood there contemplating my next move, the furball took action. Ever so slowly, it raised its massive legs and took a step forward. One could be forgiven for thinking that a being of this size was moving at a suitably low speed. I wasn't fooled, however, as I knew of the bursts a rush Skill could cause. Without another thought, I took a step back. The monster would take one step towards me, I'd take a couple of steps back in sync. So it went on for several seconds. Until my back finally touched the solid wall.</p>
+<p>I noticed Julie gesturing something to me. 'Stop? Stay here? Can't she see I'm about to become fucking kebab?' I almost shook my head. But then I realized that she was rapidly moving towards the blind side of the mammoth. 'Ah, she aims to lure it towards herself?' I took a step away from the wall, raised my palm, and waited for the thing to come into my range.</p>
+<p>Thankfully, my range was longer than its Skill, for I was able to select it before it rushed me. I again chose the same eye as before, now selecting it directly instead of through the eyelids. I whispered four Incendios. The new spell chain seemingly did the trick, it closed its red eye with a pained grunt. I could see a trickle of orange fluid that must've been its blood flow down. That didn't stop its progress, however.</p>
+<p>The beast was about 15 meters away from me now. 'Come on Julie, shoot fast!' I prayed. I saw her taking aim from the side.</p>
+<p>13 meters. The creature suddenly stopped in its tracks. For a moment, the very air was stilled. The fur on its body bristled as it bent its hind legs a little. Out from the left, I heard Julies customary <em>whiz</em> of an arrow. The arrow struck true, right in its healthy eye. Just as the arrow struck, the quadruped showed off why it was the boss of the arena. With such acceleration that seemingly ignored its massive frame, it rushed at me. Newly blind and howling from the pain, it did not correct its course as I veered far out of its trajectory.</p>
+<p>The mammoth thundered towards my previous location as if its tail was on fire. And then it crashed into the wall with resounding cracks. One for the wall, other for its skull. It then slumped down, eyes bleeding freely, with a new orange stream joined from the forehead. Soon, its fur changed from dark brown to bright orange. Then it melted. I stood there utterly mesmerized as what was once a majestic creature was now a rapidly evaporating pool of orange blood. Shortly thereafter, the last vestiges of the creature's existence dissipated, leaving behind a veritable pile of resources. With a slight nudge to my consciousness, I became aware of my increased XP, along with the resulting level up and Class up.</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>&quot;Told ya it was dumb,&quot; Carol cackled. I was still in a state of incredulity over the sorry way the boss monster died. &quot;Well, I ain't complaining,&quot; I replied with a small smile.</p>
+<p>&quot;Are you both okay?&quot; Arya looked at Julie, then me. &quot;I'm good,&quot; Julie said. &quot;Me too,&quot; I said with a warm smile. 'I thought her cold and distant when we first met, but she's actually quite sweet,' I reminisced. &quot;I ran away long before it came near me. By the way, that was a hell of a shot, Julie. Might've just saved my life there,&quot; I praised Julie. It was truly remarkable - while the aim was not much of an issue on a stationary object with her True Shot Skill, the timing of that was impeccable. A moment earlier and the thing would've just retreated. A moment later and it would've missed entirely. &quot;Thanks! I got lucky this time, so don't count on it to keep happening,&quot; she said with equal parts of humility and caution, while checking her newest acquisition - a longbow.</p>
+<p>We were standing in front of the pile of clothes and weapons left behind. While my current robe wasn't in as dire replacement as my previous clothing had been, I took it nonetheless. The new one was not the common brown anymore, but a grey version that was both thicker yet lighter somehow. 'And so comfortable! I think I can sleep on the stone floor with this on without issues.' Everyone had graduated from brown clothes to grey ones. We hadn't changed yet, the place was essentially an open barren land walled off from all sides. No opportunities for private cloth swap.</p>
+<p>Arya took on her new staff. This one had a bit of design on it - not unlike the patterns on the ring. Besides that, it was the same as before. Carol got another set of daggers; her dagger count now reaching a total of four. Taro threw his broken sword away and took the new one. Divin claimed a set of artistic gloves. They had patterns on them as well along with redundant design. 'Redundant design? Since when can I distinguish between useful patterns and otherwise?'</p>
+<p>I immediately opened my full Status Window to check for any changes.</p>
+<hr>
+<h3>[Proficient] Mage - Level 10</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Health</td>
+<td>310</td>
+</tr>
+<tr>
+<td>Mana</td>
+<td>1290</td>
+</tr>
+<tr>
+<td>Stamina</td>
+<td>52</td>
+</tr>
+<tr>
+<td>Experience</td>
+<td>1100</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Attributes</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strength</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Vitality</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Agility</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Dexterity</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Intelligence</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Perception</td>
+<td>14+1</td>
+</tr>
+<tr>
+<td>Wisdom</td>
+<td>14+1</td>
+</tr>
+</tbody>
+</table>
+<p><em>Special Effects:</em></p>
+<ul>
+<li>Magic Boost - You get extra Intelligence, Perception, and/or Wisdom points on every Class Upgrade</li>
+<li>[Apprentice Robe] Augment Perception/Wisdom - You get a minor reinforcement to spell casting and magical defense</li>
+</ul>
+<hr>
+<p>'Oh, I am proficient now? Also got extra points on some attributes. Apprentice Robe eh? So equipment can have special effects as well, just like in a game. But still, why do these patterns stand out now and not before? Is this the intangible benefit of a Class upgrade? I should check if Betty knows something...'</p>
+<p>&quot;What is it?&quot; Divin asked.</p>
+<p>&quot;What?&quot; I blinked back.</p>
+<p>&quot;You were looking as if something bit ya,&quot; Carol supplied helpfully.</p>
+<p>&quot;We were talking about the new Skills we've got. You zoned out there for a while. Got something good?&quot; Taro said, slightly excited.</p>
+<p>'Ah, I totally missed the conversation.' &quot;Oh, sorry. There seems to be some effect of Class upgrade that I can't figure out,&quot; I apologized. I removed the ring I acquired in the last upgrade and showed it to Betty, pointing at the seemingly innocuous designs on it. &quot;What does this pattern mean, do you know?&quot;</p>
+<p>&quot;Why yes! It is a Rune. Spells can be etched onto suitable surfaces that can be cast by expending mana points. Such spells are called Runes. While there are a variety of Runes, ranging from the complexity of arrangement to usage restriction all of them come under the Runic category of general spell etching,&quot; Betty replied with emotionless cheer. Perhaps she was looking forward to this question for a while.</p>
+<p>&quot;What do the Rune on the ring mean?&quot; I asked back. I noticed everyone else was paying rapt attention to our conversation.</p>
+<p>&quot;I'm afraid I cannot say,&quot; Betty, back to her cheerless voice.</p>
+<p>&quot;So how do I etch a Rune?&quot; I insisted. By now, we knew that while the bot wouldn't outright refuse to answer a question, there were some she preferred over others. If asked about anything unrelated to this world, she moved away from the interlocutor to signify her disinterest. If asked something related to the system and lore of this world, however, she was unusually forthcoming - mostly.</p>
+<p>&quot;Etching a Rune is similar to casting a Spell, except that it executes at a later time instead of immediately.&quot; she replied as if expecting me to understand.</p>
+<p>I did not ask anything else, instead trying to internalize the new information. 'So etched spells are just like compiled binaries. Instead of writing the function and calling it, you compile the source and &quot;install&quot; it on an physical object. Interesting! I wonder if I can reverse engineer it with Identify.' With that thought, I held the ring in my palm and selected it. &quot;Identify,&quot; I spoke out loud and a new window opened up.</p>
+<hr>
+<h3>Apprentice Healer Ring</h3>
+<p><em>Special Effects</em></p>
+<ul>
+<li>Augment Attunement - You get a minor amplification to the healing rate of others</li>
+</ul>
+<hr>
+<p>'Why didn't I try this before?' This ring's effects were useless to me. I thought of giving it to Arya later on. 'That being said, it doesn't help me one bit in understanding Runes. Maybe I'm going about it wrong?'</p>
+<p>&quot;We should head out,&quot; I heard Julie call out. I moved accordingly, but my mind was still stuck on the issue. 'What am I missing? Ah!' A sudden inspiration struck me. I again help the ring in my hand as I was walking behind others towards the exit. This time, I selected only the pattern that stood out. &quot;Identify,&quot; I intoned softly.</p>
+<hr>
+<p>x617474756e656d656e74 = x617474756e656d656e742b310a</p>
+<hr>
+<p>'Okaaay... Gibberish. Could be a condensed hex dump. I doubt I can get anything from this.' I sighed and closed the window. I was slightly disappointed. Unknowingly, I had harbored high hopes from the experiment.</p>
+<p>'Oh, we are halfway done with the tutorial already!' &quot;Betty, how long have we been here?&quot; I asked. &quot;It has been 13 days 2 hours and 1 minute since you all arrived at Spawn Point.&quot; 'Not bad.'</p>
+<p>&quot;We've made good progress,&quot; Taro extolled from ahead. 'Not that we have anything to compare to, but it could've much worse,' I thought. &quot;I agree,&quot; I concurred.</p>
+<p>I was still lost in thoughts on Runes and hex dumps when we came upon the exit and made our way out.</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/gs/Chapter 19 - Speed Levelling (1)/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapter 19 - Speed Levelling (1)
+    </a>
+     
+    <a href="/gs/Chapter 21 - Abaia Swamps/">
+      Chapter 21 - Abaia Swamps <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList;
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode();
+      }
+
+      function darkMode() {
+        html.add("dark");
+        localStorage.theme = "dark";
+      }
+
+      function lightMode() {
+        html.remove("dark");
+        localStorage.theme = "light";
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode();
+      }
+
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList;
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar();
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden";
+        sideNav.remove("hidden");
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll";
+        sideNav.add("hidden");
+      }
+    </script>
+  </body>
+</html>

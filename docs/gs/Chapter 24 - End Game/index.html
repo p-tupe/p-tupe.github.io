@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <meta name="description" content="Page description" />
+    <meta property="og:title" content="Unique page title - My Site" />
+    <meta property="og:description" content="Page description" />
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
+    <meta property="og:image:alt" content="Image description" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://www.mywebsite.com/page" />
+    <link rel="canonical" href="https://www.mywebsite.com/page" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Baloo+Tamma+2&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/my.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50"
+>
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"
+    ></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900"
+    >
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()"
+      >
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <div
+        class="overflow-y-scroll prose prose-slate dark:prose-invert prose-xl lg:prose-2xl pb-8"
+      >
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/rss">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 24 - End Game</h2>
+<p>We made our way to the base of the mountain. The cave was still filled with noxious fumes, so we decided to camp out under the trees. Not that I minded in the least; the warm sunshine and soothing breeze almost made me forget that I was trapped in some weird simulated alternate reality. Carol and Arya volunteered to say near the cave and monitor the smoke situation.</p>
+<p>I wasn't tired at all, so I sat down in the shade splaying my legs out and started experimenting with my spells. I added a new spell that selected all possible objects near a target and created points of potentials.</p>
+<pre><code class="language-sh">
+stupefy xs = i=0; for x in xs; do if [ $(( i % 2 )) -eq 0 ]; then create_high_point  x; else create_low_point x; fi; (( i++ )); done;
+
+</code></pre>
+<p>The effect of &quot;Stupefy&quot; was like a bunch of random splintered static sparks converging from all sides. It sucked up mana like no tomorrow, but it was quite a sight to behold. Exhausting my mana, I closed my eyes for a bit, imagining creating Runes of Stupefy. An unfortunate passerby would activate one by mistake and immediately get pinched by static shocks from all directions.</p>
+<p>'I still need to work on increasing the damage. Perhaps I could increase the resistance temporarily so the difference created is higher? Should do something to the ground as well. Convert it into quicksand so they cannot run away. And add alternating Incedios and Petrificus inside the pit. Not that I would trap an innocent passerby, no sir! Just the monsters. Maybe a few who deserves it as well? Yes. I am close to an &quot;Earth&quot; spell. This new multi-point selection is awesome. It lets me select volume as opposed to the area that I had so far. Perhaps &quot;Wind&quot; as well? Heh, maybe I can build an all elemental super awesome pit trap. Even able to trap dragons! Come jump me now kitten, trying to scoop my guts? Let's see you run when you're neck-deep into the ground getting shock therapy. Huehuehuehue...'</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>&quot;Pat, wake up. Hey, <em>wake up!</em>&quot; Taro's voice brought me out of my dream. 'Wait, did I doze off?' &quot;Haha, sleepyhead. Come, the cave is mostly clear. Time to collect out the loot!&quot;</p>
+<p>&quot;Ah, oh. I see. Let's go...&quot; I murmured. &quot;Betty, how many days has it been so far?&quot; I queried. &quot;It has been 24 days 19 hours and 16 minutes since you all arrived at Spawn Point,&quot; Betty replied.</p>
+<p>&quot;Whoa, we spent close to three days in this level. I can't believe it!&quot; Taro exclaimed.</p>
+<p>&quot;I can. Perhaps we missed the Sun more than we thought. And it staying fixed above didn't help us hurry along with either. Still, it has been close to a month, eh? Soon we'll be out of here.&quot; I brightened up. A bit of sleep and a positive attitude encouraged me, no doubt.</p>
+<p>&quot;You bet. I wonder what this outer world is like? It's the &quot;real&quot; simulation according to Betty.&quot; Taro uttered as we fell in line with the other two moving towards the cave. Moving in formation was second nature by now.</p>
+<p>&quot;If the tutorial is any indication, it is not much different from our world. Well, except the monsters. And magic, of course.&quot; Julie filled in.</p>
+<p>&quot;But what about the people? What level of technology are they at? Going by our apparels, equipment, and Classes, I would say the world is at the later middle ages. When religion clashed with science and swords with firearms. It probably reached Renaissance earlier than our world due to existence of magic, and yet did not move on to modern age as their scientific progress stagnated for the very same reason.&quot; Divin expounded. This might have been the most I've heard him talk at once. I had to agree with him though, I had very much the same theory.</p>
+<p>&quot;Oh, I can't wait to go and explore the world out there! I will join the Adventurers Guild first. Become the best-rated adventurer. Maybe along the way, I'll meet a few - &quot; Taro caught himself in time, covering his embarrassment with a cough. It wasn't hard to extrapolate his thoughts though, I had read a few of such stories as well. In my opinion  our world held far more wonders that whatever dreams the authors conjured up. Many we take for granted by the day. The only saving grace was the magical abilities. Or rather my research into them. I couldn't picture myself swinging a sword day in and day out like a drone, facing murderous monstrosities to earn a pittance. 'Nah, I'm gonna stick to my custom main quest. I won't mind exploring a little though, not like I don't have the time.'</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>The conversation continued as we reached the cave entrance. At length, I noticed the glowing embers of our bonfire, the area around and above it slick with soot. Carefully walking across without disturbing the structure, we arrived at the foyer beyond which lay the dragon's hall.</p>
+<p>The hall was... Unimpressive. It was more of a big room - an extension of the cavern. And in the center lay smoldering ruins of what may have once been coins and equipment. The wooden stuff was char already. However, inside the smoking ruins was a small clearing, which held our &quot;loot&quot;.</p>
+<p>Six robes, as usual. These were, however, different from earlier ones. Each one was unique. Carol picked a robe that was almost pitch black. It felt like it melded in the shadows. Julie picked up one that looked lighter and silkier in comparison. Taro picked up another that was thicker than the current ones. It could probably survive a direct sword strike or two. Arya's had frills on the side for some reason and looks silky like Julie's. I picked up one that was close to black like Carol's without the melding ability. Instead, it had a pattern that I quickly identified as a Rune on the hood. Divin was left with a baggy one that had a lot of deep pockets on the interior.</p>
+<p>Instead of two swords, there was one sword and one shield. Divin claimed the former, Taro the latter. The longbow this time was the same as the previous one, with the addition of Runes. The new staff held a sharp point that the bottom. Carol got a set of dangerous-looking daggers whose color matched her robe. I watched in abject fascination as the light from the torch was almost sucked in those black depths. But another thing caught my eye. There, by the side lay an unoffending wand. Closer inspection revealed it to be close to a pen than a stick. 'Is this used to etch Runes? Hot damn!' I immediately lay claim to the item.</p>
+<p>I filed away a side quest to identify all the new patterns. Upon going through the rest of the stuff lying around the &quot;hall&quot; and finding nothing interesting, we decided to move on. After switching to newer equipment, we headed to the exit. The bridge was exquisite this time. If not the pristine condition, faultless tiling, decorative railings then the very scale of the thing beggared belief. I doubt I had seen bigger bridges than this in my life. If one stood on one side, then they had to shout at the top of their lungs for their voice to reach the other end. Not that we scattered as such. We all stayed close to the right railing and advanced together. After another turn and a bit more walking, we reached the entrance for level 15!</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>The levels further in kept varying their terrain. The difficulty had raised a notch with the monsters becoming diverse in their capabilities as well. The pen-wand was useless, I couldn't get it to work. It didn't matter though, we went through the monsters like a knife through cheese.</p>
+<p>Level 15 was the site of an inactive volcano with fire-breathing toads slushing about in the mud.</p>
+<p>On Level 16 we were cutting through head-high grass filled with poisonous hedgehogs that loved to sneak attack.</p>
+<p>Level 17 was a nostalgic tropical forest with gorillas again. These had lightning punches though.</p>
+<p>And Level 18 had us grappling on a steep mountainside with a valley reminiscent of the bridge-abyss. Eagles with wind slices harangued us all the way.</p>
+<p>Level 19 was what we assumed to be the last boss since we'd be reaching level 20 here. We faced an aggressive squid-faced monster big as a barn. However, we had the least trouble at this boss fight than the others. Probably because it was built on the assumption that since we trapped or tricked many bosses earlier, having an ultra-aggressive one that required a strong front liner would be challenging. We had two front-liners though. And a mage with high damage output (depending on the situation). I bet having a craftsman would have been a liability here.</p>
+<p>Nevertheless, we collected our loot, replaced our equipment, and marched on. There was a final level 20 to go. We reached the connecting bridge, closed in on the entrance. Nothing was visible inside. We decided to take a rest, mayhap our final stop in the Tutorial, before carrying forward. And so I lay on the smooth stone, going through my gains on the last level and learnings throughout, readying myself for the new world!</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/gs/Chapter 23 - Dragon Hunters/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapter 23 - Dragon Hunters
+    </a>
+     
+    <a href="/gs/Chapter 25 - The Fog/">
+      Chapter 25 - The Fog <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList;
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode();
+      }
+
+      function darkMode() {
+        html.add("dark");
+        localStorage.theme = "dark";
+      }
+
+      function lightMode() {
+        html.remove("dark");
+        localStorage.theme = "light";
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode();
+      }
+
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList;
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar();
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden";
+        sideNav.remove("hidden");
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll";
+        sideNav.add("hidden");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <meta name="description" content="Page description" />
+    <meta property="og:title" content="Unique page title - My Site" />
+    <meta property="og:description" content="Page description" />
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
+    <meta property="og:image:alt" content="Image description" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://www.mywebsite.com/page" />
+    <link rel="canonical" href="https://www.mywebsite.com/page" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Baloo+Tamma+2&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/my.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50"
+>
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"
+    ></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900"
+    >
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()"
+      >
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <div
+        class="overflow-y-scroll prose prose-slate dark:prose-invert prose-xl lg:prose-2xl pb-8"
+      >
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/rss">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 29 - A Hero's Welcome (2)</h2>
+<p>The usual glare of the dawning sun woke me from my slumber. It was getting old fast. 'Just five more minutes please!'</p>
+<p>It was not to be. I faced the other side in protest, yet hardly a wink passed and I heard a knock.</p>
+<p>I hate waking up from deep sleep. Half the time, I get mild headaches when it happens. As if my body itself is naturally resistant to waking up early. Today was not one of those days, thankfully. I did not want to be annoying first thing in the morning at Francisa. Still, I wasn't in the best of moods.</p>
+<p>&quot;Come on in!&quot; I grunted. It wasn't Francisa who greeted me, however. Just the maid, who curtsied and nonchalantly deposited a jar of water on the table and went to draw the bath.</p>
+<p>I did the necessities, coming out of the bath a while later with my Tutorial robe on, my mood markedly improved. The breakfast was laid on the table, with a beaming princess on the side.</p>
+<p>&quot;Today is a fine day, isn't it Sir Pat?&quot; she uttered, caressing out non-existent wrinkles on her expensive purple-hued dress. This was the same variant of the one she wore when we first met. An &quot;important event&quot; NPC costume, I figured.</p>
+<p>&quot;Yep. You're looking quite nice in the dress.&quot; I casually complimented and sat down. &quot;And please Francisa, just call me Pat.&quot; A maid hovered by to drop dollops of orangish stuff into my plate. And some bread. These guys loved their bread.</p>
+<p>&quot;T-thanks, Sir Pat. I mean, Pat.&quot; She blushed a little. 'Cute.' &quot;Ah, my apologies. It would get some getting used to. Please try the bhuna pumpkin sauce, it's a specialty where we come from. Or rather, used to be.&quot; She tapered into silence at the end but perked up again by proclaiming my tasks for today. &quot;Today we'll be going around the Noble quarters and the town square in commoner's district in the ceremonial chaises. Hero and their representatives in each one. Hopefully, we'll be back by lunch, where we will meet Hamilton, my dear friend. The evening will be taken up for your discourse with the Royal Mages. They shall lay out your tutelage for the coming weeks. I shall attend to you whenever I can, of course.&quot;</p>
+<p>I just nodded, quietly savoring the bitter-sweet taste of the orange sauce, a bit overwhelmed by the extreme emotional swings of this NPC. The only thing missing in my opinion was a steaming cup of joe. I didn't even mind having the bread again, soft and freshly baked out of the oven. The day was getting better with the minute.</p>
+<br />
+<p style="text-align:center"><strong>¤ ¤ ¤</strong></p>
+<br />
+<p>We gathered into the main hall - the one that had served as a throne room, a dining hall, and a summoning room so far.</p>
+<p>'This is it!' Today, I was actually venturing out beyond the safe zone. A whole new world and all I'd seen were a couple of rooms and a backyard. Sure, being gawked at by the masses sucked the fun out a bit, but I was excited to step out nonetheless. 'What sort of wonders shall I see today?'</p>
+<p>Each &quot;hero&quot; - 'Heh.' I still chuckled at that - was standing beside their representative and a couple of Royal Guards. The guards did not have shining armor or magic swords. Instead, they carried spears and round shields like aspis, reminding me of Spartan Hoplites. They did look stone-cold deadly.</p>
+<p>Divin and Anna were having a whispered conversation. Not romantic. No. More like mafiosos discussing an underground business deal. Taro, still stupidly grinning but with bags under his eyes, had the other princess clutching his arm like a vise. 'What had Francisa called her? Prissy?'</p>
+<p>Carol still had her representative beside her, but the wide distance between them left no one in doubt about their relationship. Arya was with a little kid that had the same sky blue eyes and dirty blond hair as Francisa. 'Her little brother?'</p>
+<p>Julie was having an animated conversation with Johnathan. 'The guy could do to loosen up a bit.' And finally, little old me with my - err, not actually mine - princess, who was going on about the importance of soon-to-be-held &quot;parade&quot; in calming the people down. I nodded and hummed where necessary, but the words filtered in one ear and went right out the other.</p>
+<p>We weren't standing close enough to speak with each other, so I simply smiled and mouthed a &quot;hey&quot; when our eyes met. Divin gave a barely perceptible nod. Taro half-waved with his free hand. Carol smiled and returned an energetic wave. 'She is probably the most excited of us all about this.' Arya was staring at the still-chatting princess by my side, missing my signal entirely. Julie gave a firm nod back. We had planned to meet today sometime, but never decided on the time. 'Perhaps after lunch?'</p>
+<p>My thoughts were interrupted by another cutscene. The main clan leader NPC stood up and began another speech of gratitude and co-operation with suitably pompous words. With that, we stepped out the large doors of the hall out into the sunlight.</p>
+<br />
+<p style="text-align:center"><strong>¤ ¤ ¤</strong></p>
+<br />
+<p>Another garden. For a while, I had forgotten about the front gardens. These were spread over a wide area, however, and a majority of that area was taken by nicely trimmed grass. Sporadically planted were some sort of short trees with white trunks and round tops. My attention was snatched up by the small open-topped carriages - carriages whose decorations had decorations. I was loath to even be seen near such gaudy creations, but I suppose it was too late to present my suggestions.</p>
+<p>We went ahead and climbed upon the aberrations. Not forgetting my chivalry this time around, I extended a hand to Francisa. NPC or not, her surprise and the eventual flush was worth the effort. I did let go of the hand after she climbed up though. 'Was she trying to hold on?' Perhaps it was just my imagination.</p>
+<p>The chariots began with a start. The horse bound on mine was a black shiny thing, brushed to high heavens. The lead carriage had the clan leader and his wife. Us test subjects followed. In the rear was another chariot with a Royal Mage and an Archer on board.</p>
+<p>Our procession went through the gardens and out onto a dirt road. It was pressed flat and had a smooth asphalt-like surface though, probably done so using magic. The road widened out as we went further when we finally came across something resembling a city.</p>
+<p>Apparently, the palace was at the center of this city. It was surrounded by the Noble quarters on all sides. The Noble quarters, as it turned out, was a bunch of spaced-out buildings that looked like they were made of granite. A closer look revealed everything to be made of some dark smooth stone. Tuning in to radio-Francisa revealed why.</p>
+<p>&quot;...And so they had to build everything up in a hurry at first. Never knew when the goblins would attack. But later on, we employed Stone Masons, Earth Mages, High Enchanters, and so on to construct solid buildings out of compressed stone blocks and enchanted binding agents. The plan was to convert the whole city, but resources dwindled out soon enough...&quot;</p>
+<p>'Yes, just when the people with deep pockets had their homes sorted out, the resources &quot;dwindled&quot;!' I almost snorted.</p>
+<p>Francisa stopped talking then, as we sighted a bunch of NPCs hanging out in their balconies, wearing their &quot;important event&quot; costumes and waving bright colorful clothes at us. The procession stopped here for a bit, some heavy words filtering back from the front-most carriage. A bit of cheering followed and we moved on. I saw a little boy waving a green cloth with all his might, screaming something unintelligible at me. My lips curled up on their own and my hand followed. I waved. Francisa smirked. 'Oh no!'</p>
+<p>From then on, I had to wave at every bloody Tom, Dick, and Harry. 'You brought this on yourself. Now, you gotta suck it up and just smile &amp; wave boy!'</p>
+<p>We circled around the quarters, stopping every now and then. Soon, we left the magically constructed road and went on an actual dirt road. One with a generous helping of potholes and crevices. Thankfully, the carriages had pretty good suspension. I had a sneaking feeling that some magic was involved. More Runes, perhaps. I couldn't peek under the plentiful decorative coverings, however. 'I guess they are meant to hide as much as attract. Clever.'</p>
+<p>Expansive stone houses gave way to shoddy wooden constructs. Eventually, we happened upon a clearing where many an enterprising merchant laid their wares. The NPC crowd here was not wearing their &quot;important event&quot; dresses. I wondered if they even owned any. Many looked on in surprise and wariness as the guards cleared some space near the center. The leader spoke some words up ahead and there was some slight cheering. Then we were asked to alight our carriages and gather around.</p>
+<p>&quot;Dear heroes!&quot; NPC pseudo-king announced, &quot;This is where we must part ways.&quot; 'Um... What?'</p>
+<p>&quot;Sir Divin, Sir Taro, Lady Julie. Representative clan carriages await your presence at the edge of this town, just a bit further. Bereave not your parting, for we shall foregather soon enough!&quot; 'Goddamn it! Stupid fucking storyline.'</p>
+<p>I was grouchy. I wanted to plan ahead. To make sure we exchanged information regularly. Hell, even devise a <em>means</em> to exchange said information and generally keep in touch. I didn't know if I could exit on my own.</p>
+<p>&quot;Guess this is it, huh? Wish we had discussed stuff some more.&quot; Julie said. &quot;We will meet again as soon as we reach the required level to go out on our own,&quot; Divin commented. &quot;Yeah. Time will fly away, you'll see.&quot; Taro chipped in.</p>
+<p>We said our goodbyes and swore to meet up again. Their carriages went ahead. We turned around, heading in the opposite direction - back the way we came. Francisa stayed quiet the whole way. Perhaps she sensed my crummy mood.</p>
+<p>While I had known these guys for less than a month, we had come from the same place and overcame our trials together. I was slightly bitter at the separation, however temporary or necessary it was supposed to be. Maybe I had come to depend on them a little, or even feel a bit comfortable knowing they were around. 'I guess I should be happy that at least Carol and Arya are around.'</p>
+<p>We made our trip back in silence, followed the same route back. The same people cheered for us again, with equal enthusiasm. Without stooping, we converged on the palace soon enough. Francisa promised to drop by during lunch and hopped off. Inside the hall, I talked with Arya and Carol, planning to meet again after lunch and get our headings. I went into my room and plopped into the bed. Even just smiling and waving can get mighty tiring.</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/gs/Chapter 28 - A Hero's Welcome (1)/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapter 28 - A Hero's Welcome (1)
+    </a>
+     
+    <a href="/gs/Chapter 30 - A Hero's Welcome (3)/">
+      Chapter 30 - A Hero's Welcome (3) <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList;
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode();
+      }
+
+      function darkMode() {
+        html.add("dark");
+        localStorage.theme = "dark";
+      }
+
+      function lightMode() {
+        html.remove("dark");
+        localStorage.theme = "light";
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode();
+      }
+
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList;
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar();
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden";
+        sideNav.remove("hidden");
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll";
+        sideNav.add("hidden");
+      }
+    </script>
+  </body>
+</html>

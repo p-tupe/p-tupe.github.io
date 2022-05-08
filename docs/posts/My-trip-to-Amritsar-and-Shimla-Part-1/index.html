@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <meta name="description" content="Page description" />
+    <meta property="og:title" content="Unique page title - My Site" />
+    <meta property="og:description" content="Page description" />
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
+    <meta property="og:image:alt" content="Image description" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://www.mywebsite.com/page" />
+    <link rel="canonical" href="https://www.mywebsite.com/page" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Baloo+Tamma+2&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/my.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50"
+>
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"
+    ></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900"
+    >
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()"
+      >
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <div
+        class="overflow-y-scroll prose prose-slate dark:prose-invert prose-xl lg:prose-2xl pb-8"
+      >
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/rss">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose prose-slate dark:prose-invert mx-auto py-16 prose md:prose-lg px-4 md:px-0"
+>
+  <h1>My trip to Amritsar & Shimla Part 1</h1>
+
+  <p><em>This June, I went on a trip to Amritsar &amp; Shimla along with 3 of my college friends - Aakash, Shubham &amp; Rishab. The plan had been in works since April and was technically our first long distance trip. This post is a recollection of the same, with a dash of opinionated perspective and meandering romanticism.</em></p>
+<h2>Day 0</h2>
+<p>We started off on the eve of 15th where we boarded Rajdhani Express around 5:30 pm. Supposed to reach Delhi at 8:45 the next day. The 3 of us were all allotted upper and middle seats (Shubham came by plane from Nagpur), but that was fine. Our fellow passengers were affable enough. The journey went fine, even the food was okay-ish, until it was time to sleep. Forget the fact that the bunk at the top was so close to ceiling that I was reminded of Will Smith in Men in Black. Forget the fact that that a/c switched on &amp; off with such consistent frequency that I felt being dragged across Tundra &amp; Mordor in a loop. The worst thing was the <strong>snores</strong>. A closeted ac compartment is like an echo chamber, and it seems I was blessed with a particularly noisy batch. That monologue was soon joined by Aakash &amp; the &quot;affable&quot; fellow passenger and turned into a chorus. Yeah... I got no sleep that night.</p>
+<h2>Day 1</h2>
+<p>I &quot;woke up&quot; the next day, did the necessaries and offloaded myself at Delhi. Next task - find our car guy. We had booked a car in advance. But the guy was waiting at the &quot;Rajiv chowk&quot; metro station, which was <em>near</em> the Delhi station but far enough that we had a metro journey ahead of us. So, sub task - find the metro station. (Mind you, the metro station is underground, so while we had Google maps to show where it was supposed to be, we had no clue how to get in). However, it wasn't as hard as it seemed; presently, we found an entrance, got out tickets, got on the metro (yellow line, I think) and got off at the next stop. So yeah, near - but not really.</p>
+<p>We did the document registration and other requirements, got our car (KUV 100) and waited for Shubham to arrive. Eventually he did, and then the monumental task of regrouping with him. He was at the airport &amp; we were at Rajiv Chowk. We first thought we'd go pick him up, but Google maps showed a sludge of traffic. So we asked Shubham, the guy who'd never been to Delhi before, to come meet us at Rajiv chowk. First he said he'd be getting off at Delhi metro station (the one where we got on first) so we took our car and went there.. No issues, it was near enough. Then he said that he'd be getting off at Rajiv chowk itself. (This is how the conversation went from my perspective, he might tell a different story). No issues, we'll just go back to Rajiv chowk. Just one big damn circle to cover. Except there was an issue. The moment Shubham said Rajiv chowk, Aakash (our driver) turned the car around... And the police caught us. We had supposedly made an illegal turn. So we paid the fine and went on our way. We mistook Gate 7 of metro for Gate 1 from the outside (everything looked similar) and Shubham had to walk the entire way there. In any case, we were ready to go. And off we went - to Amritsar.</p>
+<p>The road was quite good. It'd have been a straight shot had it not been for ongoing constructions now and then. Some patches were really bad. While Aakash took from Delhi to Haryana/Punjab Border, I took the wheel ahead. We had a leisurely drive (our speed by hard-capped at 80 km/hr). Nothing eventful occurred during the drive, except we made a wrong turn at one point, sped past the city and had to drive back. Man, if there's one thing I'll remember about the place, it's the damn congestion. I had to drive the car from alleys that I doubt were made for anything more than some foot traffic. Not to mention the elites had the great sense to park their vehicles in the middle to go for a quick shop. Somehow, I manage to park taking up just less than half the road in a different alley. You see, our hotel was smack dab in the middle of an alley junction where 3 narrow pathways met. Later on, we'd realise that the &quot;parking&quot; mentioned in the hotel was actually paid parking nearby, with minimum of 100 for the night. We might have even parked there,  had we known about it then.</p>
+<p>Either way, myself fatigued from the late night drive (I genuinely dislike driving at night, everyone from front and behind, wants to driving with upper on always - a note to drivers, please switch dipper if you see a car ahead), sleep deprived from last night, not to mention hungry, was past caring about parking. Went to the hotel, took a quick shower and was off for dinner at a place called &quot;Kesar da dhaba&quot; - a place serving food for over a century; it was recommended to Rishab. It had a long line to prove its popularity. We waited for 10-15 min and got inside. Perhaps I've taken for granted the tasty food and prompt service I get back home (I'm from Navi Mumbai), perhaps the dhaba was too crowded, or whatever be the reason, I was not satisfied. The cost, the wait, the hype... Not worth the food, both in quantity and quality. Rishab got a lot of slack for that from the rest of us. In any case, at least I wasn't hungry anymore. Soon, we made our was to the Golden Temple. We reached what looked like an entrance. Aakash was insistent that the main entrance was elsewhere (he'd been here before). I noticed people taking off their shoes and heading inside, and we decided that we'll head inside from there instead of searching for the &quot;main&quot; entrance.</p>
+<p><img src="/assets/imgs/golden_temple.jpg" alt="Golden Temple"></p>
+<p>I have visited the Sun Temple down south, and the Taj Mahal in Agra, some of the best places I've ever seen so far. I expected to get similar vibes from this place. Unfortunately, we were late (given dinner and all) and the inner sanctum was closed. So we simply made a round of the place. It looks quite good. I couldn't taste the 'langer', because we had had our dinner already. So we left, planning to come the next morning to get inside. I wouldn't say much about my experience there as I was simply in and out, didn't get the absorb the ambience well.</p>
+<p>Did I tell you about the rooms we were in? Well, they were kind of okay. We had booked 2 rooms and us 4 split into 2 for each room. While they looked all good, for me, there was a big issue. I am not used to air conditioning, being fortunate enough to live in a place with natural flow of (sometimes) cold wind. There weren't any windows either, so no sunlight, no ventilation. I had another bad night in front of me.</p>
+<h2>Day 2</h2>
+<p>While I did get some sleep, I woke up with a raging head ache. Should've been obvious. Still, I wanted to get out of the room, so I refreshed and did just that. There wasn't a single car outside. We had breakfast in another dhaba. This one was Aakash's idea; this dhaba too was over 100 years old. Well anyway, we together got a masala dosa, onion utthapa and mix paratha. Let me tell you something; DO NOT order South Indian food in North India, and vice versa. The paratha was very good, and the rest was proportionally bad. We ordered another paratha.</p>
+<p>After breakfast, we again went to the Temple. This time the alleys were packed. And we brought our car coz we were checking out of our rooms and moving on. So yeah... It sucked. The heat, the traffic, the head ache, the noise, the pollution... Not a good experience. I had a tall glass of lemonade as we entered.  This time I believe we entered from the main gate. I was surprised to find that Jallianwala Bagh was so close, it was literally in front of the Temple. We visited the &quot;Bagh&quot;, saw the bullet holes on the wall on the side where construction work wasn't ongoing. We couldn't find the Well mentioned in the stories. Perhaps was on the other side. In any case, we left the place pretty soon - didn't feel like a major destination point we had made it out to be.</p>
+<p><img src="/assets/imgs/jallianwala_bagh.jpg" alt="Jallianwala Bagh"></p>
+<p>Aakash &amp; Rishab went ahead to see the inner temple; I was on the fence of whether to go or not when Shubham asked me to accompany him out shopping nearby. The shops were inside a building, with shade and cool air. I didn't hesitate. Shubham had just finished buying some stuff when the others came back. Seems like there was a waiting of 3-4 hours to go inside. Bummer. Instead I had another tall lemonade (It was really good, if you're not very hygiene-bound) and tried few different flavours of lassi at &quot;Gani Di Lassi&quot; after another parking hazard. Worth it.</p>
+<p>We left for Attari border. The climate had changed - suddenly storm clouds brewed on the horizon. The heat and head-ache from the morning seemed like a bad dream. Traffic was gone as we hit the highway. The day was turning about getting better as  every minute passed…</p>
+<p><img src="/assets/imgs/attari_border.jpg" alt="Attari Border"></p>
+<p><em>continued on Part 2</em></p>
+
+
+  <!---->
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/posts/My-trip-to-Amritsar-and-Shimla-Part-2/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ My trip to Amritsar & Shimla Part 2
+    </a>
+     
+    <a href="/posts/Calculate-day-by-date/">
+      Simple way to calculate the day for any date <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList;
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode();
+      }
+
+      function darkMode() {
+        html.add("dark");
+        localStorage.theme = "dark";
+      }
+
+      function lightMode() {
+        html.remove("dark");
+        localStorage.theme = "light";
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode();
+      }
+
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList;
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar();
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden";
+        sideNav.remove("hidden");
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll";
+        sideNav.add("hidden");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <meta name="description" content="Page description" />
+    <meta property="og:title" content="Unique page title - My Site" />
+    <meta property="og:description" content="Page description" />
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
+    <meta property="og:image:alt" content="Image description" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://www.mywebsite.com/page" />
+    <link rel="canonical" href="https://www.mywebsite.com/page" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Baloo+Tamma+2&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/my.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50"
+>
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"
+    ></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900"
+    >
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()"
+      >
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <div
+        class="overflow-y-scroll prose prose-slate dark:prose-invert prose-xl lg:prose-2xl pb-8"
+      >
+        <ul class="list-none">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/rss">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 4</h2>
+<p>The sky bleeding red, grounds roared, rocks consumed whole by ever-greedy lava…</p>
+<p>And there was Kelly, standing on a precipice, surrounded by hordes and hordes of utterly frightening creatures below, their hides matching the surroundings.</p>
+<p>Then Kelly raised his hands and the scene stood still…</p>
+<p>The creatures started to whisper; a powerful whisper of other-worldly magic…</p>
+<p>Whispers turned to groans, and then into mad screaming… but not a word was out of place…</p>
+<p>Kelly felt the sky split, the land around the creatures was crumbling and falling into darkness.</p>
+<p>Chanting, as if a manifest of one, all the creatures were now tuned together…</p>
+<p>“Kirse qolat isde nashl niniye, lisir asul lisir asul…”</p>
+<p>Bright red flames erupted where the land crumbled, as far as sight could go…</p>
+<p>Kelly felt the creatures rejoice, he knew not for what…</p>
+<p>Then the land cracked at his feet and he was consumed by the fire…</p>
+<p>The alarm beeped loudly! Kelly was dumbstruck… this was much more elaborate than the dreams he had had earlier. Careful not to move his thumping head much, he annoyingly tapped the alarm switch and yawned, thinking to himself… another day in paradise!</p>
+<p> </p>
+<hr>
+<p> </p>
+<p>Niyensi was wandering around in some old town. Her human was still quite far. She was now in form of an old woman, possibly thrown out of home and no-where to go. As she had predicted, no one gave her a second glance. While she sought a place to halt for the night, to scan her inventory and more importantly her options, she thought about how recent events had unfolded.</p>
+<p>The ship had had quite a haul and crew was invigorated. The only reason she could stand not crushing and swallowing such a buffet was the fact that Anudîn had forbidden it… another of his conditions. Also contributed to the fact was the still digesting bear in her belly. When they had spotted her, they were half-way through the catch.</p>
+<p>Niyensi knew nothing of the gibberish they spoke, she just smiled and nodded; everyone assumed she spoke another foreign language. They had made anchor in some bustling port and just as soon as the ship made berth, she took off and kept on walking in the general direction where her senses were leading her. As the sun went down over the horizon, its rays reflected from the watery surfaces of a swift stream, following which Niyensi had arrived in this town.</p>
+<p>Soon she came across what looked like a rundown mansion along the dusty road. She saw few humans venture there, most keeping to the other side of road and whispering. Assuming that the place held certain fear in their minds, she chuckled to herself and ventured in through the large iron gates. Just then she realized there was some old human feverishly saying something to her and shifting its head side by side in a funny way, she also noted the look of fear in its eyes; although all she could respond was smile and nod. The human stopped and looked at her in a weird way, then went running down the road. How funny these human creatures are! She thought to herself.</p>
+<p>It was mostly dark now; Niyensi had found a quiet dark place in the basement of the mansion and was just sitting there, thinking…</p>
+<p>So, Anudîn wants the human dead… why?</p>
+<p>He chose her for the task, let loose a drakekin on surface, totally violating the treaty, putting their existence at risk, all for a human… again, she couldn’t find any reason as such. What in Arad’s green lush forest was so dangerous about this human anyway? And assuming she finished the task, where would that leave her? Anudîn couldn’t be trusted; he’ll as surely kill her as snow will fall in winter. But then, how could she escape? More importantly, where could she escape? She can’t go back to her plane without re-opening the portal she knew not how; hiding on surface would be a sad joke, she’ll get caught eventually. So that left her with only one option for now, stick with the plan, until she could figure out something. Yes, she will find this human and….?</p>
+<p>“First things First”, she cajoled herself,” just rest now.” And rest she did.</p>
+<p> </p>
+<h2>Chapter 5</h2>
+<p>Radagast was just about to call it a day and go in to have a lie down, when ol’ Grandda came running down the road with eyes wide. He went down to meet Grandda and saw many of his neighbors doing the same. There was a curious circle of men around Grandda, who was catching his breath. Eventually, he said “I saw with me own eyes, some ol’ witch gone and lyin’ in the dark mansion!”</p>
+<p>Within minutes, the men had pitch forks and big sticks in their hands with brave faces masking a fear of the mansion. Radagast was a man of faith, just like his neighbors, and believed the dark mansion was not a place for any man. He went in, got his butcher’s knife and was out with the men marching up the road behind Grandda.</p>
+<p>Soon, they stood at the broken gates of the mansion, and he took a burning torch from one of the men and went in. He won’t let some old hag come and destroy their homes by waking the ancient ghosts in the mansion. His anger clouded his fear &amp; common sense as he went in without noticing that only half the men followed him in through the gates.</p>
+<p>As they entered the mansion, a silence fell among them. Radagast ordered them all to spread out. He didn’t believe for a moment that there was a witch here, but whoever was, she wasn’t supposed to be here and needed to be thrown out quick. He decided to go down the basement, with a torch in one hand and the knife in other.</p>
+<p>As soon as he was in the basement, his eyes fell on an extraordinarily gorgeous woman, lying on the floor with hypnotizing grace. As his eyes slide up from her barely covered long smooth legs up the torso, they met with a dark other-worldly stare. He couldn’t break it; he didn’t want to. The red flecks in the dark pupils were both the most beautiful and terrifying thing he had ever seen. Although he thought he should alert the others, no voice escaped his throat. He wanted to move, but his legs failed him. He was starting to panic, when the woman stood up. She has a strange smile on her face, and she was looking at him in a weirdly dangerous way. He had seen the look before, yes… the death stare of a predator. As she took a step closer, he felt himself shivering. His knife fell from his hands, and it took all his will to hold on to the torch. Another step closer and he could clearly see the red specks in her eyes reflecting the light of his torch. She was a couple of steps away from him when he felt something warm down his trousers; he had pissed himself. She didn’t seem to care as she took another step towards him, and he saw what seemed like a curious look intermixed with the deathly stare.</p>
+<p>“Radagast….” She whispered, as if trying to roll the words over her tongue. Then, her smile widened and the torch fell from his hands. Her fangs were the last things he saw before the darkness took him forever.</p>
+<p> </p>
+<hr>
+<p> </p>
+<p>“My lord Anudîn, it just ate a human; in direct violation of your condition. Shall we send our minions to drag it back here or should we just kill it on the surface?”</p>
+<p>“No, leave it be.”</p>
+<p>“But…”</p>
+<p>“That is my wish. Now go, leave me in peace.”</p>
+<p> </p>
+<hr>
+<p> </p>
+<p>“It’s the hellllll…” a voice said.</p>
+<p>“But I’m not dead yet” Kelly replied.</p>
+<p>“Not yettt…” it retorted with a chuckle.</p>
+<p>Kelly didn’t know what to say, so he tried to find where the voice came from. It was dark all around, even below his feet.</p>
+<p>“Deathhhh….” the voice said as if in a whisper over the winds, looming close.</p>
+<p>Kelly turned back just in time to see a creature that he had seen in his dreams before racing towards him.</p>
+<p>“Embraceeee Deathhhh….” Said the voice, seemingly fading away just as the creature jumped on him with talons out and long fangs ready to rip his throat out. Then he woke up.</p>
+<p>Kelly thought he had fever. This dream that he had was different from his earlier ones. ‘Embrace Death’? Yeah, Right. He chuckled to himself.</p>
+<p>He had stopped getting worked up about these dreams. There were just dreams anyway. He had better things to worry about. As he lay in bed thinking about the things he should worry about, his alarm went off. With a sigh, he woke up and started his new day that was same as all the other days; although he did hope to see the almond eyed girl again. Fool’s hope, he told himself.</p>
+<p> </p>
+<h2>Chapter 6</h2>
+<p>Niyensi didn’t really need much rest; after a short time of lying down, she was up again thinking of the status quo. That was when she heard the humans rush in through the gates. She didn’t expect them but she wasn’t surprised. She simply changed her form to a very beautiful human female and waited.</p>
+<p>Soon, she heard footsteps coming down the basement stairs. A human carrying a fire stick and a small flat knife came through. She was disappointed with their tactics; why were they making so much noise unless they wished to alert their prey of their presence? Stupid humans, she thought. As she lay there, she saw the human getting caught in her feminine form. While it was appraising her form, a hunger pang hit her. But she couldn’t eat a human, according to Anudîn’s condition. Well, this one came as if on a platter and she needed food. So damn his condition, what’s the worst he can do?</p>
+<p>She stood up, clearly excited to fill her stomach with human meat. As she stepped closer, she saw the human start shivering, and his knife fell from his hand. She knew these humans were sentient and had been curious to know their species more. Now, she had a chance. Another step closer and she could feel strands of silvery threads coming from its head, just as it pissed itself. She caught one thread, curious as to what they entail. Suddenly she was glancing through a mixture of thoughts, memories and emotions. Another thread, another mixture. She became highly curious; within a moment, she had learned so much of this human. She tried their speech, by speaking what she expected other humans called this one. “Radagast…” she whispered, trying to test the words through her mouth. Then another hunger pang hit her, and all the silvery threads from the human were of absolute fear. She smiled wider, and decided to end its misery.</p>
+<p> </p>
+<hr>
+<p> </p>
+<p>The torch had burned down half the mansion to char. As soon as the fire became visible above the basement, the other men had fled the mansion. Niyensi was pretty resistant to the fire, and as a precaution, she had taken on the appearance of Radagast while escaping the mansion like the humans, just in other direction.</p>
+<p>When she in the thicket of some trees far off from the mansion and the human town, she slowed her trot and concentrated her senses. Her human was somewhere south of where she was. Her next immediate concern was that of Anudîn. He must know by now that she had eaten a human. What will he do now? Bring her back to hell for punishment? Kill her here itself? Although she was a bit scared of what he might do, she was also exalted as the same time. She felt good, having exercised her freedom for the first time in her long memory. She decided to wait and watch for Anudîn’s move, as she ruminated on the information she had gleaned from Radagast.</p>
+<p>Humans were a petty species, she thought in retrospect. They thought themselves at the center of Universe. Radagast himself was so narrow minded that she was surprised how a sentient being could be so stubborn about protecting lies that even common sense could dispel. Then she concentrated on the world in general. So, the lands had split in 3 parts. She remembered during the war that the land was one whole called Terra surrounded by seas on all side. Over the mils though, the land had split. The upper half of the north was covered with an ice sheet all cycle round, where she was placed. The lands intermixed with seas. As one came down, they encountered lush grasslands with sporadic human population. The humans in north were mostly “village-folk”. Radagast had an uncle who had visited the western piece of land and came back with stories of large buildings and “vehicles”, saying they were very advanced humans with good “technology”. He had also brought toys for young Radagast. The region to the south held some fear in Radagast’s mind; Grandda said that is where demons come from; down below.</p>
+<p>She sat below a large willow tree, thinking of this new world; waiting for Anudîn’s minions and wondering what her next move should be. Was it foolish to have eaten that human? She could’ve just killed it, and it wouldn’t have broken any of Anudîn’s conditions. Then she thought, if she could kill him, then why couldn’t she eat it? The condition didn’t make any sense to her and she decided she’d present this argument to Anudîn if she lived to see him. Yes, it was maybe foolish to eat the human, a hasty decision. Yet she decided not to regret it now. “Just don’t ye be goin’ round makin’ such hasty decisions in the future” she spoke in Radagast’s speech. “If ye live that is!” she reminded herself.</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/foa/part-1/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapters 1 to 3
+    </a>
+     
+    <a href="/foa/part-3/">
+      Chapters 7 to 9 <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList;
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode();
+      }
+
+      function darkMode() {
+        html.add("dark");
+        localStorage.theme = "dark";
+      }
+
+      function lightMode() {
+        html.remove("dark");
+        localStorage.theme = "light";
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode();
+      }
+
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList;
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar();
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden";
+        sideNav.remove("hidden");
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll";
+        sideNav.add("hidden");
+      }
+    </script>
+  </body>
+</html>
