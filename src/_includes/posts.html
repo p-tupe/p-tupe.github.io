@@ -8,4 +8,21 @@ layout: base
   <h1>{{ title }}</h1>
 
   {{ content }}
+
+  <!---->
+  {% assign sorted = collections.post | reverse %} {% assign prev = sorted |
+  getPreviousCollectionItem: page %} {% assign next = sorted |
+  getNextCollectionItem: page %} {% if prev or next %}
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    {% if prev %}
+    <a href="{{prev.url}}">
+      {% include "partials/arrow-left.html" %} {{prev.data.title}}
+    </a>
+    {% endif %} {% if next %}
+    <a href="{{next.url}}">
+      {{next.data.title}} {% include "partials/arrow-right.html" %}
+    </a>
+    {% endif %}
+  </div>
+  {% endif %}
 </div>

@@ -4,15 +4,39 @@ metaDescription: A story set in a fictional world
 permalink: "/foa/"
 ---
 
-<blockquote>Apologies, FOA is currently on break. No chapters will be posted in the near future. Do check out Grand Simulation in the meantime!</blockquote>
+<div class="text-center prose prose-slate dark:prose-invert mx-auto pt-16">
+  <h1>Fate Of Arda</h1>
+</div>
 
-<h1><u>List of Chapters</u></h1>
+<div class="w-10/12 md:6/12 mx-auto m-8">
+  {% card "" %}
 
-<ul class="postList">
-  {% assign sorted = site.foa | sort: 'part' %}
-  {% for chapter in sorted %}
-  <li>
-    <h3><a href="{{ chapter.url }}">{{ chapter.title }}</a></h3>
-  </li>
-  {% endfor %}
-</ul>
+  <div class="prose-xl lg:prose-2xl">
+    <p>
+      About a boy with a strange past, becoming a linchpin in a conflict
+      spanning across realms. A coming of age with ancient blood with tragic
+      power. A tale of love, courage and heartbreak.
+    </p>
+
+    <blockquote>
+      Apologies, FOA is currently on break. No chapters will be posted in the
+      near future. Do check out Grand Simulation in the meantime!
+    </blockquote>
+  </div>
+  {% endcard %}
+</div>
+
+<div class="prose prose-slate dark:prose-invert mx-auto px-4 md:px-0 py-16">
+  <h2><u>Parts: </u></h2>
+
+  {% assign sorted = collections.foa %}
+  <ul>
+    {%- for part in sorted -%}
+    <li class="decoration-slate-50">
+      <h3>
+        <a href="{{ part.url }}">{{ part.data.title }}</a>
+      </h3>
+    </li>
+    {%- endfor -%}
+  </ul>
+</div>
