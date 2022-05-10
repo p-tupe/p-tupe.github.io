@@ -3,38 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title></title>
-
-    <link rel="stylesheet" href="/assets/css/output.css" />
-
-    <meta name="description" content="Page description" />
-    <meta property="og:title" content="Unique page title - My Site" />
-    <meta property="og:description" content="Page description" />
-    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
-    <meta property="og:image:alt" content="Image description" />
-    <meta property="og:locale" content="en_GB" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="Chapter 42 - A Proper Mage" />
+    <meta property="og:description" content="" />
+    
+    <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:url" content="https://www.mywebsite.com/page" />
-    <link rel="canonical" href="https://www.mywebsite.com/page" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Baloo+Tamma+2&display=swap"
-      rel="stylesheet"
+    <meta name="twitter:card" content="Pritesh Tupe's Personal Website" />
+    <meta property="og:url" content="https://www.priteshtupe.com/" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="white"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="black"
     />
 
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/my.webmanifest" />
-    <meta name="theme-color" content="#ffffff" />
+    <link rel="canonical" href="https://www.priteshtupe.com/" />
+    <link rel="icon" href="/assets/icons/favicon.ico" />
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <script>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList;
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode();
+      }
+
+      function darkMode() {
+        html.add("dark");
+        localStorage.theme = "dark";
+      }
+
+      function lightMode() {
+        html.remove("dark");
+        localStorage.theme = "light";
+        localStorage.themeColor = "#ffffff";
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode();
+      }
+    </script>
+
+    
+    <script
+      async
+      defer
+      data-website-id="040de05a-50a8-453f-a578-8a5a57693612"
+      src="https://analytics.priteshtupe.com/umami.js"
+    ></script>
+    
+
+    <!---->
+
+    
+    <title>Chapter 42 - A Proper Mage | Pritesh Tupe</title>
+    
   </head>
 
   <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
-    <div class="fixed flex flex-row w-full justify-between pt-4 px-4">
+    <div class="absolute md:fixed flex flex-row w-full justify-between pt-4 px-4">
   <div class="flex flex-row">
     
     <div
@@ -196,11 +238,15 @@
 <p>I had a pretty good feeling about this one. The system seemed to consider &quot;intent&quot; when parsing functions, and since my functional logic was flawless, I did not expect to fail.</p>
 <p>&quot;pull_down,&quot; I spoke up, keeping my palm as steady as possible.</p>
 <p>The leaf stopped swaying. I noticed my mana regeneration slow down but overall mana kept increasing. The spell didn't seem so mana hungry but was taking far too long to produce any effect. So I forced it along by adding 100 mana to the process.</p>
-<p>The leaf immediately tugged free of the branch and slapped down into my hand. It even stung a bit. But it didn't diminish the joy in my heart. The system may have kept the abstraction of environment variables hidden from me, but I was not above getting my hands dirty with some low-level hacking. &quot;Heh, take that!&quot; I threw the leaf at the imaginary creators. It merely tumbled away, free of my magic.</p>
-<p>&quot;Right, back to the main task!&quot;</p>
-<p>I modified the water function to pull condensed vapors in.</p>
+<p>The leaf immediately tugged free of the branch and slapped down into the ground beside me instead of my hand. So much for &quot;flawless&quot; logic. But it didn't diminish the joy in my heart. The system may have kept the abstraction of environment variables hidden from me, but I was not above getting my hands dirty with some low-level hacking. &quot;Heh, take that!&quot; I kicked the leaf at the imaginary creators. It merely tumbled away, free of my magic.</p>
+<p>&quot;Right, back to the main task! Need to account for negative co-ordinates.&quot;</p>
+<p>I modified the water function to pull condensed vapors in at the point.</p>
 <pre><code class="language-sh">
-pull_down o = while true; do o.x--; o.y--; o.z--; done;
+pull_down o = while true; do
+  if [[ o.x &gt; 0 ]]; then o.x--; fi;
+  if [[ o.y &gt; 0 ]]; then o.y--; fi;
+  if [[ o.z &gt; 0 ]]; then o.z--; fi;
+done;
 
 create_water_test v = petrificus_slowly v | pull_down
 
@@ -263,33 +309,6 @@ accio_aqua v = petrificus_slowly v | accio
 
 
     <script defer>
-      /*
-       * Theme toggle (Dark - Light Mode)
-       */
-      const html = document.documentElement.classList;
-
-      if (
-        localStorage.theme === "dark" ||
-        (!localStorage.theme &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        darkMode();
-      }
-
-      function darkMode() {
-        html.add("dark");
-        localStorage.theme = "dark";
-      }
-
-      function lightMode() {
-        html.remove("dark");
-        localStorage.theme = "light";
-      }
-
-      function toggleTheme() {
-        localStorage.theme === "dark" ? lightMode() : darkMode();
-      }
-
       /*
        * Side Nav Bar Toggle
        */

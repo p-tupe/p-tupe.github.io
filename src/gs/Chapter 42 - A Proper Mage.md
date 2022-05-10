@@ -87,15 +87,19 @@ I had a pretty good feeling about this one. The system seemed to consider "inten
 
 The leaf stopped swaying. I noticed my mana regeneration slow down but overall mana kept increasing. The spell didn't seem so mana hungry but was taking far too long to produce any effect. So I forced it along by adding 100 mana to the process.
 
-The leaf immediately tugged free of the branch and slapped down into my hand. It even stung a bit. But it didn't diminish the joy in my heart. The system may have kept the abstraction of environment variables hidden from me, but I was not above getting my hands dirty with some low-level hacking. "Heh, take that!" I threw the leaf at the imaginary creators. It merely tumbled away, free of my magic.
+The leaf immediately tugged free of the branch and slapped down into the ground beside me instead of my hand. So much for "flawless" logic. But it didn't diminish the joy in my heart. The system may have kept the abstraction of environment variables hidden from me, but I was not above getting my hands dirty with some low-level hacking. "Heh, take that!" I kicked the leaf at the imaginary creators. It merely tumbled away, free of my magic.
 
-"Right, back to the main task!"
+"Right, back to the main task! Need to account for negative co-ordinates."
 
-I modified the water function to pull condensed vapors in.
+I modified the water function to pull condensed vapors in at the point.
 
 ```sh
 
-pull_down o = while true; do o.x--; o.y--; o.z--; done;
+pull_down o = while true; do
+  if [[ o.x > 0 ]]; then o.x--; fi;
+  if [[ o.y > 0 ]]; then o.y--; fi;
+  if [[ o.z > 0 ]]; then o.z--; fi;
+done;
 
 create_water_test v = petrificus_slowly v | pull_down
 

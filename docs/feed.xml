@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Pritesh Tupe RSS Feed</title>
+  <subtitle>Articles about technology, Personal opinion pieces, and fiction series!</subtitle>
+  <link href="https://priteshtupe.com/feed.xml" rel="self"/>
+  <link href="https://priteshtupe.com/"/>
+  <updated>2022-05-10T08:51:14Z</updated>
+  <id>https://priteshtupe.com/</id>
+  <author>
+    <name>Pritesh Tupe</name>
+    <email>mail@priteshtupe.com</email>
+  </author>
+</feed>

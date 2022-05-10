@@ -7,10 +7,6 @@
 @layer base {
   h1,
   h2 {
-    @apply font-sans;
-  }
-
-  body {
-    @appy font-serif;
+    @apply font-serif;
   }
 }

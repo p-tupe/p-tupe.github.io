@@ -3,40 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title></title>
-
-    <link rel="stylesheet" href="/assets/css/output.css" />
-
-    <meta name="description" content="Page description" />
-    <meta property="og:title" content="Unique page title - My Site" />
-    <meta property="og:description" content="Page description" />
-    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
-    <meta property="og:image:alt" content="Image description" />
-    <meta property="og:locale" content="en_GB" />
+    <meta name="description" content="{{ metaDescription }}" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ metaDescription }}" />
+    {% if img %}
+    <meta property="og:image" content="{{ img }}" />
+    <meta property="og:image:alt" content="{{ title }}" />
+    {% endif %}
+    <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:url" content="https://www.mywebsite.com/page" />
-    <link rel="canonical" href="https://www.mywebsite.com/page" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Baloo+Tamma+2&display=swap"
-      rel="stylesheet"
+    <meta name="twitter:card" content="Pritesh Tupe's Personal Website" />
+    <meta property="og:url" content="https://www.priteshtupe.com/" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="white"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="black"
     />
 
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/my.webmanifest" />
-    <meta name="theme-color" content="#ffffff" />
-  </head>
+    <link rel="canonical" href="https://www.priteshtupe.com/" />
+    <link rel="icon" href="/assets/icons/favicon.ico" />
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/output.css" />
 
-  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
-    {% include "header.html" %} {% include "side-nav.html" %} {{ content }}
-
-    <script defer>
+    <script>
       /*
        * Theme toggle (Dark - Light Mode)
        */
@@ -58,12 +54,36 @@
       function lightMode() {
         html.remove("dark");
         localStorage.theme = "light";
+        localStorage.themeColor = "#ffffff";
       }
 
       function toggleTheme() {
         localStorage.theme === "dark" ? lightMode() : darkMode();
       }
+    </script>
 
+    {% if env.mode == "production" %}
+    <script
+      async
+      defer
+      data-website-id="040de05a-50a8-453f-a578-8a5a57693612"
+      src="https://analytics.priteshtupe.com/umami.js"
+    ></script>
+    {% endif %}
+
+    <!---->
+
+    {% if title %}
+    <title>{{ title | append: " | Pritesh Tupe" }}</title>
+    {% else %}
+    <title>Pritesh Tupe</title>
+    {% endif %}
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    {% include "header.html" %} {% include "side-nav.html" %} {{ content }}
+
+    <script defer>
       /*
        * Side Nav Bar Toggle
        */

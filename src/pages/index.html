@@ -36,9 +36,9 @@
   <section
     class="snap-start flex flex-col justify-between min-h-screen min-w-full"
   >
-    {% include "partials/arrow-up.html" %}
+    <div class="hidden md:block">{% include "partials/arrow-up.html" %}</div>
 
-    <div class="flex flex-row">
+    <div class="flex flex-row my-8 md:m-0">
       <div class="prose prose-slate dark:prose-invert mx-auto w-full">
         <h1 class="text-center">Latest Posts</h1>
 
@@ -62,14 +62,14 @@
         </ul>
       </div>
     </div>
-    {% include "partials/arrow-down.html" %}
+    <div class="hidden md:block">{% include "partials/arrow-down.html" %}</div>
   </section>
 
   <section
     class="snap-start flex flex-col justify-between min-h-screen min-w-full"
   >
-    {% include "partials/arrow-up.html" %}
-    <div class="flex flex-row">
+    <div class="hidden md:block">{% include "partials/arrow-up.html" %}</div>
+    <div class="flex flex-row mt-8 md:m-0">
       <div class="prose prose-slate dark:prose-invert mx-auto w-full">
         <h1 class="text-center">Latest GS Chapters</h1>
 
@@ -90,14 +90,14 @@
         </ul>
       </div>
     </div>
-    {% include "partials/arrow-down.html" %}
+    <div class="hidden md:block">{% include "partials/arrow-down.html" %}</div>
   </section>
 
   <section
     id="projects"
-    class="snap-start flex flex-col justify-between min-h-screen min-w-full"
+    class="snap-start flex flex-col justify-between min-h-screen w-full"
   >
-    {% include "partials/arrow-up.html" %}
+    <div class="hidden md:block">{% include "partials/arrow-up.html" %}</div>
     <div
       class="prose max-w-none prose-slate dark:prose-invert grow flex flex-col md:flex-row justify-evenly flex-wrap mx-auto w-10/12"
     >

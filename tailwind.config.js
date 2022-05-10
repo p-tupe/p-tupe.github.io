@@ -1,24 +1,24 @@
-const colors = require('tailwindcss/colors')
-const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require("tailwindcss/colors");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  mode: 'jit',
-  content: ['./src/**/*.{html,js}'],
-  darkMode: 'class',
+  // mode: "jit",
+  content: ["./src/**/*.{html,js}"],
+  darkMode: "class",
   theme: {
     fontFamily: {
-      sans: ['Baloo Tamma 2', ...defaultTheme.fontFamily.sans],
-      serif: ['Arima Madurai', ...defaultTheme.fontFamily.serif]
+      serif: [...defaultTheme.fontFamily.serif],
+      sans: [...defaultTheme.fontFamily.sans],
     },
     extend: {
       typography: {
         DEFAULT: {
           css: {
-            maxWidth: '75ch'
-          }
-        }
-      }
-    }
+            maxWidth: "75ch",
+          },
+        },
+      },
+    },
   },
-  plugins: [require('@tailwindcss/typography')],
-}
+  plugins: [require("@tailwindcss/typography")],
+};
