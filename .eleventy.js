@@ -12,10 +12,17 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addPassthroughCopy('src/site.webmanifest')
   eleventyConfig.addPassthroughCopy('src/robots.txt')
+  eleventyConfig.addPassthroughCopy('src/CNAME')
 
   eleventyConfig.addCollection('gs_sorted', function (collectionApi) {
     return collectionApi
       .getFilteredByTag('gs')
+      .sort((a, b) => a.data.part - b.data.part)
+  })
+
+  eleventyConfig.addCollection('foa_sorted', function (collectionApi) {
+    return collectionApi
+      .getFilteredByTag('foa')
       .sort((a, b) => a.data.part - b.data.part)
   })
 
