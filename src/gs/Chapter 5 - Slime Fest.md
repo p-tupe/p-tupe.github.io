@@ -1,6 +1,6 @@
 ---
 title: Chapter 5 - Slime Fest
-part: 5
+part: 6
 ---
 
 ## Chapter 5 - Slime Fest
