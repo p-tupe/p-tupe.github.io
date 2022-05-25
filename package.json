@@ -7,7 +7,7 @@
     "build": "NODE_ENV=production npm run build:eleventy && npm run build:tailwind",
     "build:eleventy": "npx @11ty/eleventy",
     "build:tailwind": "npx tailwind -i ./src/assets/css/style.css -o ./docs/assets/css/output.css --minify",
-    "start": "npm run process:tailwind & sleep 4; npm run process:eleventy",
+    "start": "concurrently \"npm:process:*\"",
     "process:eleventy": "npx @11ty/eleventy --serve --quiet",
     "process:tailwind": "TAILWIND_MODE=watch npx tailwind -i ./src/assets/css/style.css -o  ./docs/assets/css/output.css --watch"
   },
@@ -34,6 +34,7 @@
     "@quasibit/eleventy-plugin-sitemap": "^2.1.5",
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.7",
+    "concurrently": "^7.2.1",
     "postcss-cli": "^9.1.0",
     "tailwindcss": "^3.0.24"
   }
