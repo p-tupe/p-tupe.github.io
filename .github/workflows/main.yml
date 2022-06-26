@@ -1,26 +1,37 @@
 name: Deploy Site
 
+# Run job when commit pushed to main
 on:
   push:
     branches: ["main"]
 
+  # Allow button "Actions" from github browser
   workflow_dispatch:
 
 jobs:
   build_deploy:
     runs-on: ubuntu-latest
     steps:
+      # Checkout latest commit
       - uses: actions/checkout@master
+
+      # Build using node 16
       - name: Build
         uses: actions/setup-node@v3
         with:
           node-version: "16"
       - run: npm install
       - run: npm run build
+
+      # Deploy using peaceiris helper
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
         with:
+          # Automatically retrieved
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
+          # Deploy to this branch
+          publish_branch: publish-only
+          # Copy from this directory
           publish_dir: ./docs
+          # Use latest commit only
+          force_orphan: true
