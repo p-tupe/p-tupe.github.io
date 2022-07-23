@@ -3,8 +3,6 @@ date: "2022-07-23T00:00:00Z"
 title: On learning a general-purpose programming langugage
 ---
 
-# Learning a general-purpose language
-
 ## Beginner
 
 ### Theory
