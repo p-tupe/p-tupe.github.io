@@ -7,13 +7,15 @@ title: On learning a general-purpose programming langugage
 
 ### Theory
 
-1. Basic data types
+> Quick Starts, Tutorials, Walk-throughs, User Guides, Beginner Books, etc
+
+1. Basic data types and operators
 1. Basic data structures
 1. Variable definition
 1. Function definition
 1. Loops
 1. Branching
-1. Std library
+1. Some Std library
 
    1. Data manipulation
    1. File
@@ -22,6 +24,10 @@ title: On learning a general-purpose programming langugage
    1. Datetime
    1. Math
    1. Extended data structures
+
+> Grok the lexicon, sementics and syntax!
+
+_Many languages have different ways of doing the same thing; many even do the same thing the same way but under a different name!_
 
 ### Practical
 
@@ -49,6 +55,8 @@ _Yes, we must keep in mind that the solutions need to be **SIMPLE**, else we mis
 
 ### Theory
 
+> Documentations, User Manuals, API References, More Books etc
+
 1. Simple Project Structure (with tooling)
    1. Linters
    2. Test Runners
@@ -71,12 +79,14 @@ _Yes, we must keep in mind that the solutions need to be **SIMPLE**, else we mis
 
 ## Practical
 
-1. 6 simple projects
+1. 6 small projects
 2. 3 medium projects
 3. 1 large project
 4. Contribute to open source projects
 
 ## Expert
+
+> Everything, everywhere but not all at once
 
 1. Idiomatic Code
 1. Complex Project Structure (with embedded DSLs, advanced config, CI/CD, container images etc)
