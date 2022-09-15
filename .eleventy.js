@@ -26,6 +26,16 @@ module.exports = eleventyConfig => {
       .sort((a, b) => a.data.part - b.data.part)
   })
 
+  eleventyConfig.addCollection("notes", function (collectionApi) {
+    return collectionApi
+      .getFilteredByTag("notes")
+      .map(n => {
+        n.title = n.url.split("/")[2]
+        return n
+      })
+      .filter(n => !["README"].includes(n.title))
+  })
+
   eleventyConfig.addPairedShortcode("card", card)
 
   eleventyConfig.addPlugin(pluginRss)
