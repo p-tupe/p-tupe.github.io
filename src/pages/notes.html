@@ -7,9 +7,36 @@ permalink: "/notes/"
 <div class="container pt-16 prose prose-slate dark:prose-invert mx-auto">
   <h1 class="text-center">All Notes</h1>
 
-  <blockquote>Inter-post links may not work yet!</blockquote>
+  <blockquote>Inter-post links do not work yet!</blockquote>
 
-  <ul>
+  <div class="sm-12">
+    <div class="pt-2 relative mx-auto text-gray-600">
+      <input
+        class="border-2 border-gray-300 bg-slate-50 dark:bg-zinc-900 h-10 px-5 pr-16 rounded-lg text-sm prose prose-slate dark:prose-invert focus:outline-none"
+        type="search"
+        name="search"
+        id="searchBar"
+        placeholder="Search all notes" />
+
+      <button
+        onclick="search()"
+        type="submit"
+        class="bg-transparent text-slate-400 rounded-full px-5 border-2 border-slate-400 hover:text-zinc-900 hover:border-zinc-900 dark:hover:text-white dark:hover:border-white">
+        Search
+      </button>
+
+      <button
+        onclick="reset()"
+        type="reset"
+        class="bg-transparent text-slate-400 rounded-full px-5 border-2 border-slate-400 hover:text-zinc-900 hover:border-zinc-900 dark:hover:text-white dark:hover:border-white">
+        Reset
+      </button>
+    </div>
+  </div>
+
+  <div id="searchResults"></div>
+
+  <ul id="notesList">
     {%- for note in collections.notes -%}
     <li class="decoration-slate-50">
       <h3>
@@ -20,10 +47,50 @@ permalink: "/notes/"
   </ul>
 </div>
 
+<script src="https://unpkg.com/lunr/lunr.js"></script>
 <script>
+  let searchIndex
+  let searchBar
+  let searchResults
+  let notesList
+
   async function init() {
     let resp = await fetch("/searchIndex.json")
-    console.log(await resp.json())
+    searchIndex = lunr.Index.load(await resp.json())
+    searchBar = document.getElementById("searchBar")
+    searchResults = document.getElementById("searchResults")
+    notesList = document.getElementById("notesList")
+    reset()
+  }
+
+  function search() {
+    if (searchBar.value == "") {
+      searchResults.innerHTML = "Please enter a search term in input box!"
+      return
+    }
+    const result = searchIndex.search(searchBar.value)
+    if (result.length == 0) {
+      searchResults.innerHTML =
+        "No results found, please try a different search!"
+      return
+    }
+
+    Array.prototype.forEach.call(notesList.children, li => {
+      let hide = true
+      result.forEach(res => {
+        if (li.innerHTML.includes(res.ref)) hide = false
+      })
+
+      if (hide) li.setAttribute("hidden", true)
+    })
+  }
+
+  function reset() {
+    searchBar.value = ""
+    searchResults.innerHTML = ""
+    Array.prototype.forEach.call(notesList.children, li => {
+      li.removeAttribute("hidden")
+    })
   }
 
   init()
