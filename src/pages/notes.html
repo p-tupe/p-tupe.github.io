@@ -55,7 +55,7 @@ permalink: "/notes/"
   let notesList
 
   async function init() {
-    let resp = await fetch("/searchIndex.json")
+    let resp = await fetch("/notesIndex.json")
     searchIndex = lunr.Index.load(await resp.json())
     searchBar = document.getElementById("searchBar")
     searchResults = document.getElementById("searchResults")

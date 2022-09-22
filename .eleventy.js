@@ -54,7 +54,7 @@ module.exports = eleventyConfig => {
         JSON.stringify(idx),
       ].join("")
 
-      const file = "./src/pages/notesIndex.json"
+      const file = "./src/pages/notesIndex.html"
 
       writeFile(file, data, err => err && console.error(err))
 
