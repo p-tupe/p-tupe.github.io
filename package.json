@@ -43,5 +43,8 @@
     "quoteProps": "consistent",
     "bracketSameLine": true,
     "arrowParens": "avoid"
+  },
+  "dependencies": {
+    "lunr": "^2.3.9"
   }
 }
