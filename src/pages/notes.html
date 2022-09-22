@@ -6,7 +6,9 @@ permalink: "/notes/"
 
 <div class="container pt-16 prose prose-slate dark:prose-invert mx-auto">
   <h1 class="text-center">All Notes</h1>
+
   <blockquote>Inter-post links may not work yet!</blockquote>
+
   <ul>
     {%- for note in collections.notes -%}
     <li class="decoration-slate-50">
@@ -17,3 +19,12 @@ permalink: "/notes/"
     {%- endfor -%}
   </ul>
 </div>
+
+<script>
+  async function init() {
+    let resp = await fetch("/searchIndex.json")
+    console.log(await resp.json())
+  }
+
+  init()
+</script>
