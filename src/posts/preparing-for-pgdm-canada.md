@@ -37,7 +37,7 @@ This is a rough outline of the steps I took preparing for my journey to Canada f
 
    - GIC is a sort of "guarantee" to the Candian govt that you have money to support yourself here. You pay an upfront 10,000$ (was ~6L Rupees for me) into a Canadian bank in form of a sorta-fixed FD that you get disbursed into your account (that will be opened after you arrive in Canada) every month or so.
 
-   > Most common options for opening GIC is Scotia or CIBC. I opened a CIBC because I had a referral from a friend. I'll be posting the link below for my referral as well.
+   > Most common options for opening GIC is Scotia or CIBC. I opened a CIBC because I had a referral from a friend. I'll be posting the link below for my referral as well. [TODO: GIC referral link here]()
 
 1. Get VISA Photo & Statement of Purpose ready.
 
@@ -67,7 +67,7 @@ This is a rough outline of the steps I took preparing for my journey to Canada f
 
 1. Visa Forms
 
-   - Very important step. You need to create an account and submit your forms for Visa.
+   - Very important step. You need to create an account on IRCC and submit your forms for Visa/Permit application.
 
    > I am not attaching any link here because I highly recommend doing it with your agent. It's a tedious process and a lot can go wrong here.
 
@@ -80,19 +80,51 @@ This is a rough outline of the steps I took preparing for my journey to Canada f
 
 1. Buy a ticket
 
-1. College specific stuff (Visa Proof, Vaccination etc)
+   > Most wait for their visa to arrive before booking a ticket. Fair enough, but the problem with that is the prices skyrocket by then. If possible, try to book a "refundable" ticket well in advance. I paid around 60k Rupees for a single-layover ticket when I booked it 4 months earlier (Granted, I had my passport stamped by then), but a friend of mine book only a month later for twice the amount. And another friend book it 2 months before departure for over 1.5L. You get the picture.
+
+1. College specific stuff (Visa Proof, Vaccination Proof etc)
+
+   > Hopefully, covid won't still be a thing when you're reading this.
 
 1. Buy a sim card
 
+   > Majority of people buy their SIM after coming to Canada. I got mine while still in India. I did not need to pay anything upfront, simply fill their forms and upload some docs. The sim arrived at home a week later. The advantage of this is that you get immediate internet/telephone access after you arrive in Canada. The last link in the point below is where I registered. I was helped with the process by Priyanka, her business number: <>.
+
+   - Some helpful links:
+
+     - [CompareCellular.ca](https://www.comparecellular.ca/compare-plans-in-ontario/prepaid-phones-and-sim-cards)
+     - [Canadiansim.com](https://canadiansim.com/)
+     - [Fido.ca](https://www.fido.ca/)
+     - [TODO: Wireless DNA registration link]()
+
+   - The SIM that I currently have, FIDO, also has referral bonuses where both who refers and the one who is referred get one month free of cost irrespective of plans. This is my referral link: [TODO: Fido Referral Link]()
+
 1. Get CAD cash or Forex Card
+
+   - This is only for emergencies. If you have your room booked and travel arrangements made, then you won't really need any of it.
+
+   > I brought around 500$ in cash with me, most of which I deposited back in bank after opening my account. You can bring up to 10,000$ dollars cash, beyond which you need to submit declaration at customs and what-have-yous.
 
 1. Find a room
 
-1. Get RTO Extract (For those who drive)
+   - I found my room through a whatsapp group. I recommend joining similar groups on facebook and instagram as well.
+   - Beyond social media, you can rent a place from [kijiji.ca](https://www.kijiji.ca) and [airbnb](https://www.airbnb.ca/)
+
+   > Try not to get pressured into a long-term lease, if you must move elsewhere after a few months for any reason. Also, ensure to have a video-call to check the property first. There may be some token amount for booking, but do not pay it before verifiying everything.
+
+1. Get RTO Extract (For those who have a driving licence)
+
+   - Just submit a letter to an RTO where you got your licence and they will give you a printout of your extract.
+
+   - You can use this extract to expidite you Canadian driving licence process.
 
 1. Update ArriveCAN details (2 days before flight)
 
-1. Shopping and Packing (See for lists below)
+1. Shopping and Packing
+
+   - [Generic Packing List 1](https://nextcloud.priteshtupe.com/s/iLimMZPn7RYXt6z)
+   - [Generic Packing List 2](https://nextcloud.priteshtupe.com/s/FEG9NdJ9qaRgnnN)
+   - [Personal Packing List](https://nextcloud.priteshtupe.com/s/8wMDfK3HapNjxZs)
 
 ## Phase 4: Post Arrival
 
@@ -103,9 +135,3 @@ This is a rough outline of the steps I took preparing for my journey to Canada f
 1. Get SIN Card
 
 1. College specific stuff (ID Card, Study Permit etc)
-
-### Packing List
-
-- [Generic Packing List 1](https://nextcloud.priteshtupe.com/s/iLimMZPn7RYXt6z)
-- [Generic Packing List 2](https://nextcloud.priteshtupe.com/s/FEG9NdJ9qaRgnnN)
-- [Personal Packing List](https://nextcloud.priteshtupe.com/s/8wMDfK3HapNjxZs)
