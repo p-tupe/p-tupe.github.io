@@ -2,13 +2,17 @@
 
 - [Official Site](https://www.java.com/en/)
 
-- [Official Docs](https://docs.oracle.com/en/java/javase/18/)
+- [Official Docs Java 19](https://docs.oracle.com/en/java/javase/19/)
+
+- [Official Docs Java 18](https://docs.oracle.com/en/java/javase/18/)
 
 - [Official Tutorial](https://docs.oracle.com/javase/tutorial/)
 
 - [Dev.java tutorial/docs beginner](https://dev.java/learn/)
 
 - [Central Connecticut State University: Introduction to Computer Science using Java](https://chortle.ccsu.edu/Java5/index.html)
+
+- [Java Programming for Beginners – Full Course: youtube video from freecodecamp.org](https://www.youtube.com/watch?v=A74TOX803D0)
 
 ## Notes
 
@@ -63,11 +67,11 @@
 
 - Logical `&&` `||` `!`
 
-- Bitwise `<<` `>>` `&` `|`
+- Bitwise `<<` `>>` `&` `~` = complement `|` = inclusive OR `^` = exclusive OR
 
 - Comparison `==` `<` `>` `<=` `>=` `!=`
 
-- Other Operators `+` `++` `-` `--` `=`
+- Other Operators `+` `++` `-` `--` `=` and so on.
 
 > some operators (like `+`) are overloaded depending on the operads and position
 
@@ -89,23 +93,110 @@
 ```java
 import java.util.Scanner;
 
-//...
-
 Scanner ip = new Scanner(System.in);
+
 System.out.print("Enter something: ");
-<type> someVar = ip.next[Int | Float | Double | ...]();
+String something = ip.nextLine();
+System.out.println("Something is " + something);
 
-// For Strings it is simply "next" not "nextString"
-
-//...
+// <type> someVar = ip.next[Int | Float | Double | ...]();
+// For next word use "next" (space terminates)
+// For next line use "nextLine" (newline/enter terminates)
+// Careful when using nextLine _after_ other next* as they leave newline in buffer
 
 input.close();
 ```
 
-### Type casting
+### Type casting gotchas
 
 - integers => 7 / 3 = 2
 
 - real => 7.0 / 3 = 2.333...
 
+- Addition of precision results in implicit casting (like assigning an int value to a double var)
+
+- Loss of precision results in compiler error (like assigning a double value to an int var)
+
+  - Explicit casting is required to ignore errors: `int x = (int) 1.0;`
+
 - real variable for int expression => double x = 7 / 3 => x = 2.0
+
+- System.out.println(3 + 2 + 1 + "") => 6
+
+- System.out.println("" + 3 + 2 + 1) => 321
+
+### Conditionals (Branching | Selection)
+
+- if else
+
+  Syntax:
+
+  ```
+  if (<expression>) {}
+  else if (<xepression>) {}
+  else {}
+  ```
+
+  Example:
+
+  ```java
+  int num = 9;
+
+  if (num % 2 == 0) System.out.println("Number is even.");
+  else System.out.print("Number is odd.");
+  ```
+
+- switch case
+
+### Loops
+
+- for
+
+- while
+
+### Classes & Objects
+
+```java
+/*
+
+Syntax:
+
+<modifier> class <class_name> extends <another_class> implements <interfaces> {
+
+    // fields
+    <modifier> <type> <var_name>;
+
+    // constructor
+    <modifier> <class_name>(<type> <var>) {
+      <var_name> = <var>;
+    }
+
+    // methods
+    <modifier> <type> <fn_name>(<params>) {
+        ...
+    }
+}
+
+modifier = public, private, protected, static etc
+
+constructor is optional and can be overloaded like methods
+
+*/
+
+// Example Public Bike Class
+
+public class Bike {
+
+  static int numWheels = 2;
+  int fuelTank = 12; // Ltr
+
+  public Bike(int fuelTankInLtr) {
+    fuelTank = fuelTankInLtr;
+  }
+}
+
+// Creating a new Bike Object
+
+Bike b = new Bike(18);
+
+```
