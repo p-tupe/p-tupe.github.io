@@ -3,7 +3,14 @@ date: "2022-10-04T00:00:00Z"
 title: Preparing for PGDM in Canada
 ---
 
-This is a rough outline of the steps I took preparing for my journey to Canada for my studies. I'm outlining them below to give a sort of holistic view of the whole process for those who intend to do the same. Please do not base your entire plan on this single post; I highly recommend contacting a consulting agency. They provide all information for _free_!
+![Canadian Flag](/assets/imgs/canada-flag.jpg)
+
+<em>
+This is a rough outline of the steps I took preparing for my journey to Canada for my studies. I'm outlining them below to give a sort of holistic view of the whole process for those who intend to do the same. Please do not base your entire plan on this single post; I highly recommend contacting a consulting agency. They provide all information for __free__!
+</em>
+
+<br />
+<br />
 
 > All the advice in blocks like this is my personal opinion for the rest of this post.
 
@@ -31,7 +38,7 @@ This is a rough outline of the steps I took preparing for my journey to Canada f
 
    > While you can't take out a loan without an admission letter, I recommend having some funds on hand as colleges usually ask for some amount (mine was 2,300$) to book a seat and let you pay the rest (a year's worth of fees) in the coming months.
 
-## Phase 2: Prepare for Visa (Post-Admission)
+## Phase 2: Prepare for Visa
 
 1. Apply for GIC.
 
@@ -82,7 +89,7 @@ This is a rough outline of the steps I took preparing for my journey to Canada f
 
 1. Once you get approved (your Passport Request comes in, send your passport out for stamping)
 
-## Phase 3: Prepare for Departure (Post-Visa)
+## Phase 3: Prepare for Departure
 
 1. Buy a ticket.
 
@@ -94,14 +101,13 @@ This is a rough outline of the steps I took preparing for my journey to Canada f
 
 1. Buy a SIM card
 
-   > Majority of people buy their SIM after coming to Canada. I got mine while still in India. I did not need to pay anything upfront, simply filled out their forms and uploaded some docs. The SIM arrived home a week later. The advantage of this is that you get immediate internet/telephone access after you arrive in Canada. The last link in the point below is where I registered. I was helped with the process by the Customer Care Exec named Priyanka, her business number is <>.
+   > Majority of people buy their SIM after coming to Canada. I got mine while still in India. I did not need to pay anything upfront, simply filled out their forms and uploaded some docs. The SIM arrived home a week later. The advantage of this is that you get immediate internet/telephone access after you arrive in Canada. The last link in the point below is where I registered. I was helped with the process by the Customer Care Exec named Priyanka, her business number is <+1-647-309-5658>.
 
    - Some helpful links:
 
      - [CompareCellular.ca](https://www.comparecellular.ca/compare-plans-in-ontario/prepaid-phones-and-sim-cards)
      - [Canadiansim.com](https://canadiansim.com/)
      - [Fido.ca](https://www.fido.ca/)
-     - [TODO: Wireless DNA registration link]()
 
    - The SIM that I currently have, FIDO, also has referral bonuses where both those who refer and the one who is referred get one month free of cost irrespective of plans. This is my referral link: [referme.to/pritesht-11](https://referme.to/pritesht-11)
 
