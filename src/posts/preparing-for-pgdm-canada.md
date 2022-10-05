@@ -152,6 +152,8 @@ This is a rough outline of the steps I took preparing for my journey to Canada f
 
    - A SIN Card is like Social Security (or Aadhar) Card. If you get a job in Canada, your employer will ask for SIN to put your records and payments against. More about SIN [here](https://www.canada.ca/en/employment-social-development/services/sin.html)
 
+   - While a majority of people coming here apply for SIN by visiting Service Canada in person, it is not known by many that we can get SIN by applying online too! I did mine online and got it within 2 weeks. There is no difference in either, except that in-person you get it same day but have to stand in a line for hours.
+
 1. College-specific stuff
 
    - I received my College ID from college; it also doubles as a bus pass. You'll also get your health care and other college-related stuff done in the first few weeks.
