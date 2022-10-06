@@ -17,13 +17,11 @@
     <meta
       name="theme-color"
       media="(prefers-color-scheme: light)"
-      content="white"
-    />
+      content="white" />
     <meta
       name="theme-color"
       media="(prefers-color-scheme: dark)"
-      content="black"
-    />
+      content="black" />
 
     <link rel="canonical" href="https://www.priteshtupe.com/" />
     <link rel="icon" href="/assets/icons/favicon.ico" />
@@ -36,40 +34,33 @@
       /*
        * Theme toggle (Dark - Light Mode)
        */
-      const html = document.documentElement.classList;
+      const html = document.documentElement.classList
 
       if (
         localStorage.theme === "dark" ||
         (!localStorage.theme &&
           window.matchMedia("(prefers-color-scheme: dark)").matches)
       ) {
-        darkMode();
+        darkMode()
       }
 
       function darkMode() {
-        html.add("dark");
-        localStorage.theme = "dark";
+        html.add("dark")
+        localStorage.theme = "dark"
+        if (window.REMARK42) window.REMARK42.changeTheme("dark")
       }
 
       function lightMode() {
-        html.remove("dark");
-        localStorage.theme = "light";
-        localStorage.themeColor = "#ffffff";
+        html.remove("dark")
+        localStorage.theme = "light"
+        localStorage.themeColor = "#ffffff"
+        if (window.REMARK42) window.REMARK42.changeTheme("light")
       }
 
       function toggleTheme() {
-        localStorage.theme === "dark" ? lightMode() : darkMode();
+        localStorage.theme === "dark" ? lightMode() : darkMode()
       }
     </script>
-
-    {% if env.mode == "production" %}
-    <script
-      async
-      defer
-      data-website-id="040de05a-50a8-453f-a578-8a5a57693612"
-      src="https://analytics.priteshtupe.com/umami.js"
-    ></script>
-    {% endif %}
 
     <!---->
 
@@ -87,20 +78,20 @@
       /*
        * Side Nav Bar Toggle
        */
-      const sideNav = document.getElementById("side-nav").classList;
+      const sideNav = document.getElementById("side-nav").classList
 
       function toggleNavBar() {
-        sideNav.contains("hidden") ? showNavBar() : hideNavBar();
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar()
       }
 
       function showNavBar() {
-        document.body.style.overflow = "hidden";
-        sideNav.remove("hidden");
+        document.body.style.overflow = "hidden"
+        sideNav.remove("hidden")
       }
 
       function hideNavBar() {
-        document.body.style.overflow = "scroll";
-        sideNav.add("hidden");
+        document.body.style.overflow = "scroll"
+        sideNav.add("hidden")
       }
     </script>
   </body>

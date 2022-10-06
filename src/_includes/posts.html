@@ -4,8 +4,7 @@ title: Posts
 ---
 
 <div
-  class="prose prose-slate dark:prose-invert mx-auto py-16 prose md:prose-lg px-4 md:px-0"
->
+  class="prose prose-slate dark:prose-invert mx-auto py-16 prose md:prose-lg px-4 md:px-0">
   <h1>{{ title }}</h1>
 
   {{ content }}
@@ -26,4 +25,29 @@ title: Posts
     {% endif %}
   </div>
   {% endif %}
+
+  <hr />
+
+  <div id="remark42"></div>
 </div>
+
+<script>
+  // Commenting System remark42
+  var remark_config = {
+    host: "https://remark42.priteshtupe.com",
+    site_id: "remark",
+    theme: localStorage.theme,
+  }
+
+  !(function (e, n) {
+    for (var o = 0; o < e.length; o++) {
+      var r = n.createElement("script"),
+        c = ".js",
+        d = n.head || n.body
+      "noModule" in r ? ((r.type = "module"), (c = ".mjs")) : (r.async = !0),
+        (r.defer = !0),
+        (r.src = remark_config.host + "/web/" + e[o] + c),
+        d.appendChild(r)
+    }
+  })(remark_config.components || ["embed"], document)
+</script>
