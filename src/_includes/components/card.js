@@ -1,5 +1,5 @@
 module.exports = (content, title, img_src, img_alt) =>
-  ` <div class="flex flex-col lg:flex-row w-full h-fit rounded-lg bg-white dark:bg-black shadow-lg hover:shadow-xl dark:shadow-stone-800">` +
+  ` <div class="flex flex-col lg:flex-row w-full rounded-lg bg-white dark:bg-black shadow-lg hover:shadow-xl dark:shadow-stone-800">` +
   (img_src
     ? `<div class="lg:w-2/3">
     <img
@@ -15,4 +15,4 @@ module.exports = (content, title, img_src, img_alt) =>
     ${content}
   </div>
 </div>
-`;
+`
