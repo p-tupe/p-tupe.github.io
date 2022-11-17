@@ -71,11 +71,44 @@
     select distinct <col1>, <col2> from <table>;
     ```
 
-  - Count Query
+  - Limit Query
 
     ```sql
-    select count(*) from table;
+    select ... LIMIT <number>;
     ```
+
+  - Offset Query
+
+    ```sql
+    select ... OFFSET <number>;
+    ```
+
+    - Offset and Limit may be used together (with order by) for paginated results
+
+  - Like Query
+
+    ```sql
+    select * from <table> where LIKE <pattern>;
+    ```
+
+    - `<pattern>` is _like_ regex but not really. Here's a comparison:
+      - `x%` = `^x+` = starts with "x"
+      - `%x` = `.*x$` = ends with "x"
+      - `%xyz%` = `.*xyz.*` = contains "xyz"
+      - `_x%` = `^.x.*` = has x in second position, `_` is like `.` - means any
+      - `x%y` = `^x.*y$` = starts with "x" and ends with "y"
+
+  - Sum | Min | Max | Average | Count - Aggregate functions
+
+  ```sql
+  select [SUM | MIN | MAX | AVG | COUNT](<col>) from <table> [group by <table>]
+  ```
+
+  - HAVING: Like "WHERE" filter for aggregate functions
+
+  ```sql
+  select <col> from <table> [group by <col>] HAVING <[sum | min | max | avg | count ] bool expr>;
+  ```
 
 - Backup Sqlite3 (non-interactively)
 
