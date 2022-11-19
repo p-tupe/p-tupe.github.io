@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="Chapter 14 - Avian Prosecution (1)" />
+    <meta property="og:description" content="" />
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="Pritesh Tupe's Personal Website" />
+    <meta property="og:url" content="https://www.priteshtupe.com/" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="white" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="black" />
+
+    <link rel="canonical" href="https://www.priteshtupe.com/" />
+    <link rel="icon" href="/assets/icons/favicon.ico" />
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <script>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode()
+      }
+
+      function darkMode() {
+        html.add("dark")
+        localStorage.theme = "dark"
+        if (window.REMARK42) window.REMARK42.changeTheme("dark")
+      }
+
+      function lightMode() {
+        html.remove("dark")
+        localStorage.theme = "light"
+        localStorage.themeColor = "#ffffff"
+        if (window.REMARK42) window.REMARK42.changeTheme("light")
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode()
+      }
+    </script>
+
+    <!---->
+
+    
+    <title>Chapter 14 - Avian Prosecution (1) | Pritesh Tupe</title>
+    
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="absolute md:fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50">
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900">
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()">
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16">
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+      </div>
+      <div class="prose prose-slate dark:prose-invert prose-xl lg:prose-2xl">
+        <ul class="list-none max-h-screen overflow-y-scroll pb-8">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/feed.xml">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 14 - Avian Prosecution (1)</h2>
+<p>I was getting used to the variations in the landscape by now. First the plain fields, then the ruins, finally the hills. I was almost looking forward to seeing what the upcoming level would throw at us. Whatever it was, I did not expect it to be <em>this</em>.</p>
+<p>Slimes, Chimps, Crocs, and now... Birds? Almost anticlimactic. The terrain was also not that different from the previous level except for fewer hills and more trees. The withered old trees were populated with what looked like vultures to my eyes. They were not even that large!</p>
+<p>&quot;This is Level 3 of the Tutorial Dungeon - The Nekhbet Copse!,&quot; Betty announced.</p>
+<p>&quot;These birds... They are vultures, aren't they?&quot; Taro asserted. 'Damn right they are. Let's just ignore the chatbot and her dramatic naming sense,' I thought.</p>
+<p>We were a bit ahead of the entrance. The shock that sneaky crocs had given us made our progress cautious but slow. Seems like it was for naught, as our opponents were out and about, causing a ruckus with their hisses and whines. I have never heard a vulture's sound before but I'm betting they aren't as loud as these.</p>
+<p>&quot;Yeah, they look like vultures,&quot; Julie stepped up, &quot;There are a lot of them on the tree and below. They might swarm us like the slimes. How should we proceed?&quot;</p>
+<p>After some discussion, we decided to let the knights take point. Carol just behind them. Julie went at the end of the formation. Arya and I stood back, deciding to not interfere initially.</p>
+<p>Soon, the tree was within shooting distance of the vanguard. Julie notched her arrow and fired at the largest vulture in the group. The birds suddenly went quiet. Her target was near the top of the tree. Her arrow landed about a couple of meters below it. 'Getting good,' I thought. She <em>was</em> a fair distance away from her target, so it was impressive.</p>
+<p>The birds weren't impressed, however. With a low guttural hiss, the big guy swooped down and headed towards Julie. The rest of the flock of perhaps ten to fifteen followed behind it.</p>
+<p>Our four companions admirably stood their ground. Carol intercepted the large bird with her daggers. Just as they were about to pierce the belly, the bird changed directions with a flap of its wings and dodged. The dagger scratched its tail nonetheless, just as its claws scraped past her wrists. Taro and Divin were doing better. Each one was hounded by three or four birds but it didn't seem like a major issue. Their swords had more reach after all. One vulture was already down. I noticed it was hit by Divin's freeze Skill.</p>
+<p>Just as the rest of the fowls reached the group, I joined the fight as well. I feared they might outnumber us and we'd have to run away again. The largest was still harassing Carol, while Julie had distanced herself a bit more from the chaos and was now shooting at the dissenters. She got in a hit now and then. Taro and Divin held their ground. I noticed Arya had arrived behind Julie as well, checking if her help was needed.</p>
+<p>As for me, I immediately leaped behind Carol and froze the big bird. It was startled and missed its attack. At that moment, I blasted another freezing spell at it. It was in vain though, as Carol's dagger was deep in its heart by then. It barely made a hiss and plunked on the ground. Within seconds, it disappeared in a storm of feathers, leaving behind a tattered cloth that must have been a shirt before it was mutilated.</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>The balance for this level was tilted in our favor. The addition of an extra Knight was nothing to scoff at! Now that I think about it, having 3 front-liners had nothing but helped us all these levels. I wonder what would have happened if instead of a Knight, we had a Craftsman. How would it have affected our fights?</p>
+<p>Either way, the vultures did not present any big difficulty. The beaks and claws were sharp, perhaps even more so than the Imps, but that was it. Sure they could fly, but they couldn't attack from the air. They <em>had</em> to come down if they wanted to hurt us. And up close, we had better reach and sharper weapons. Their numbers didn't mean much when only a few could attack at a time.</p>
+<p>Pretty soon, the rest of the carrion-feeders were gone. I had helped cool down a few more of them after the first. The way their bodies turned into a small tornado of feathers after they died was a sight to behold. There were other tattered clothes dropped. A hat and another shirt, quite past their shelf life.</p>
+<p>Everyone had a relaxed smile on their faces. With the sudden-death threat from sneaky 20 feet monsters lifted, we breathed slightly easy. Sure, these guys gave us the most trouble so far, but it was not much danger. Unlike the Imps, their cuts were deeper. They also fought more harmoniously in a group. That was it though. We could take them!</p>
+<p>We decided to rest up beneath the tree. Not that we needed shade in the ever-evening. Arya had healed Carol and she moved towards me. &quot;Nah, I'm okay. Heal those two first,&quot; I gestured towards Divin and Taro. They took the brunt of the attack and had more cuts than others. &quot;OK,&quot; she smiled and moved on to heal Taro.</p>
+<p>I, on the other hand, opened up my Status Window to check the gains.</p>
+<hr>
+<h3>[Novice] Mage - Level 3</h3>
+<table>
+<thead>
+<tr>
+<th>HP</th>
+<th>MP</th>
+<th>SP</th>
+<th>XP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>103/150</td>
+<td>34/950</td>
+<td>2/35</td>
+<td>136/400</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>I already had just under 60 extra from the previous level. 'If I helped kill say, 6 of the birds, then I am getting about 12 or 13 XP per kill', I mused, 'Not bad, I guess'.</p>
+<p>After attaining level 3, I could cast Petrificus four times in a row. However, it rarely worked the fourth time. 'I wonder if there is a job I can run that will keep on decreasing the temperature to as low as possible? Or even increase it? Will have to loop on it. I wonder how long it will take to kick in though? Well, no harm in trying out anyway'. I opened up my &quot;spell repository&quot; and quickly added a spell to decrease temperature slowly.</p>
+<pre><code class="language-sh">petrificus_slowly x = while true; do (( x.temperature-- )); done;
+</code></pre>
+<p>And my full repo of spells now looked like -</p>
+<hr>
+<pre><code>
+incendio x = (( x.temperature = x.temperature * 2 ))
+
+petrificus_totalus x = (( x.temperature = x.temperature / 2 ))
+
+identify o = echo o
+
+test = i=0; while [ $i -le 255 ]; do echo &quot;$(get_char $i) $(get_time)&quot; &gt;&gt; password_hack | sudo -S echo; done;
+
+get_char i = printf &quot;\x$(printf %x $i)&quot;
+
+get_time = date +%s%N
+
+petrificus_slowly x = while true; do (( x.temperature-- )); done;
+
+</code></pre>
+<hr>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>As I was about to add another function to increase the temperature, I heard Divin call out to me. He had sneaked close while I was looking into the window. The rest were still frolicking about below the tree. I was more surprised by the fact that he took initiative to call me out. &quot;Hey, what's up?&quot; I queried.</p>
+<p>&quot;What were you and Arya talking about?&quot; he asked with a straight face. I did not understand what he was talking about. Perhaps noticing my befuddlement, he elaborated, &quot;On the last bridge and the one before, when the rest of us were sleeping.&quot; 'I guess not all of you were sleeping, eh?' I thought to myself. &quot;Ah that. You see she and I, being a Healer and Mage, can access our editors to create new spells. That is what we were discussing.&quot; I replied. &quot;OK&quot; he said impassively and walked away before I could ask anything more. 'What that was about?' I wondered.</p>
+<p>I decided to move as well, we had birds to hunt!</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/gs/Chapter 13 - Timing Attack/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapter 13 - Timing Attack
+    </a>
+     
+    <a href="/gs/Chapter 15 - Avian Prosecution (2)/">
+      Chapter 15 - Avian Prosecution (2) <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar()
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden"
+        sideNav.remove("hidden")
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll"
+        sideNav.add("hidden")
+      }
+    </script>
+  </body>
+</html>

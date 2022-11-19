@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="A "from scratch" guide to setting up Nextcloud + Postgresql + Nginx secure reverse proxy using docker on Ubuntu 20.04" />
+    <meta property="og:description" content="" />
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="Pritesh Tupe's Personal Website" />
+    <meta property="og:url" content="https://www.priteshtupe.com/" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="white" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="black" />
+
+    <link rel="canonical" href="https://www.priteshtupe.com/" />
+    <link rel="icon" href="/assets/icons/favicon.ico" />
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <script>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode()
+      }
+
+      function darkMode() {
+        html.add("dark")
+        localStorage.theme = "dark"
+        if (window.REMARK42) window.REMARK42.changeTheme("dark")
+      }
+
+      function lightMode() {
+        html.remove("dark")
+        localStorage.theme = "light"
+        localStorage.themeColor = "#ffffff"
+        if (window.REMARK42) window.REMARK42.changeTheme("light")
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode()
+      }
+    </script>
+
+    <!---->
+
+    
+    <title>A "from scratch" guide to setting up Nextcloud + Postgresql + Nginx secure reverse proxy using docker on Ubuntu 20.04 | Pritesh Tupe</title>
+    
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="absolute md:fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50">
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900">
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()">
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16">
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+      </div>
+      <div class="prose prose-slate dark:prose-invert prose-xl lg:prose-2xl">
+        <ul class="list-none max-h-screen overflow-y-scroll pb-8">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/feed.xml">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose prose-slate dark:prose-invert mx-auto py-16 prose md:prose-lg px-4 md:px-0">
+  <h1>A "from scratch" guide to setting up Nextcloud + Postgresql + Nginx secure reverse proxy using docker on Ubuntu 20.04</h1>
+
+  <blockquote>
+Disclaimer: This post begins (and ends) with the assumption that you are familiar with the words in the title. If you do not know <i>any</i> of those, perhaps this isn't for you yet. If you understand <i>some</i> but not all, I highly recommend reading about them elsewhere before continuing, I'll add links to the bottom for convenience.
+</blockquote>
+<blockquote>
+Disclaimer 2: While the aim of this post is to enable you to have a working nextcloud setup eventually, the process I go through is a tumble through many obstacles and learnings (a few of them I have mentioned here) as <i>my</i> aim was the learn docker container stuff and nginx proxy. This post is a brief recount of the same. If you wish to skip all the fluff and just want a working nextcloud instance, there are many docker-compose files out there that will get you up and running within minutes. And no, I do not use docker-compose here (or even a Dockerfile).
+</blockquote>
+<blockquote>
+Disclaimer 3: Following assumptions are made -
+<br />
+1. You have a cloud instance ready. Check out the free oracle servers below.
+<br />
+2. You have docker installed. Again, linked at the bottom.
+<br />
+3. You have a domain name linked to your instance IP. (This is a requirement for HTTP secure, not essential but highly recommended)
+</blockquote>
+<blockquote>
+Disclaimer 4: This is not a disclaimer. You have had enough disclaimers already. There will be no more.
+</blockquote>
+<h2>Playing around</h2>
+<p>First off, let us see what we want at the end. Get docker installed and docker.service running in your local machine if you haven't already. Then run the following command:</p>
+<pre><code class="language-sh">sudo docker run -p 8000:80 -d nextcloud
+</code></pre>
+<p>The above command starts a container (an isolated process) using the nextcloud image (a set of lib/commands to run said process) in &quot;detached&quot; mode (in the background), binding your machine's (&quot;host&quot;, from the container's perspective) port 8000 to the container's port 80 - that is, any data received on machine's port 8000 will be forwarded to container's port 80 and vice versa. (-p is short for --port, -d is short for --detached.)</p>
+<p>You can ensure that the container is running with the following command:</p>
+<pre><code class="language-sh">sudo docker ps
+</code></pre>
+<p>You can ensure that the container is running <em>properly without errors</em> with the following command:</p>
+<pre><code class="language-sh">sudo docker logs &lt;container-id/name&gt;
+</code></pre>
+<p>You will get the container id (a seemingly random alphanumeric string) or name from the <code>ps</code> command. There are also ways to name a container but that is for later. Now, assuming the container is running properly, let us see what the fuss is all about.</p>
+<p>Open your browser and go to http://localhost:8000. You will see a nice login screen. Add a random username and password, click on submit and then explore around. <em>THIS</em> is what we want at the end, only it will be available from the internet using a recommended database. (Spoiler: The name is in the title)</p>
+<p>Now if you're done playing around, you can stop the container with:</p>
+<pre><code class="language-sh">sudo docker stop &lt;container-id/name&gt;
+</code></pre>
+<p>To check that your container is stopped, run the <code>ps</code> command again. You'll notice it is gone from there. It is still, however, saved to disk and ready to go anytime. To see all containers, do:</p>
+<pre><code class="language-sh">sudo docker ps -a
+</code></pre>
+<p>Where -a stands for all. To <em>remove</em> a container, you'd do:</p>
+<pre><code class="language-sh">sudo docker rm &lt;container-id/name&gt;
+</code></pre>
+<p>And check with <code>ps -a</code>. Gone, right?</p>
+<p>Anyhoo, now that we have a vision to work towards, lets... work towards it. You may try all this in your local machine (except the TLS stuff), or give it a go in your remote instance if you so wish.</p>
+<h2>Setting up Postgresql</h2>
+<p>Alright, let us kick things off with an easy one - setting up our database. Run the following command:</p>
+<pre><code class="language-sh">sudo docker volume create postgres-data
+</code></pre>
+<p>Docker containers are &quot;ephemeral&quot;. You may look the word up in the dictionary for the exact definition and expand your vocabulary. In practice, what this means for us is that all the data inside the container is purged when the container is removed. That is how they are meant to be. We kinda need our data to remain behind, even if the service stops. Thus, volumes.</p>
+<p>A &quot;volume&quot; is a block of storage that is &quot;attached&quot; to a container. Multiple volumes can be attached to one container. They can be shared among other containers as well. More importantly, they are persistent. There are three types - unnamed, named, and bound volumes. Here we have a named volume that is managed by docker itself. It is easy to backup, share, and replicate when a volume is named. When we ran the nextcloud container above, it stored the data in an &quot;unnamed&quot; volume to ensure persistence across container restarts and acts of god.</p>
+<p>All this is to say, we have a block of persistent storage named &quot;postgres-data&quot; somewhere on our disk now ready to be attached to our database container. Let us do that:</p>
+<pre><code class="language-sh">sudo docker run \
+  -v postgres-data:/var/lib/postgresql/data \
+  -e POSTGRES_PASSWORD=supersecretpassword \
+  --net=host --name=my-postgres --restart=unless-stopped \
+  -d postgres
+</code></pre>
+<p>'Whoa whoa! What is all this?' you ask? Allow me to explain!</p>
+<p>First, we ask docker to start a container with <code>docker run</code>. Then we ask it to bind our previously created volume to the directory where PostgreSQL stores data with the <code>-v</code> flag. It stands for --volume. Then we supply the password our database will use in an environment variable named POSTGRES_PASSWORD with the -e flag. It stands for --environment (--env). The --name flag give our container - you guessed it, a name! We can use it to start, stop, remove or log without having to <code>ps</code> all the time (or have some weird name attached by default). Now, the --restart flag tells docker to start the process again should it stop for any reason. Unless it was stopped manually. Finally, -d runs it in the background.</p>
+<p>'You missed one!' Yes, I'm aware.</p>
+<p>Remember how we used the port flag (-p) earlier to bind port 8000 to port 80? Yeah, you can expose PostgreSQL's port 5432 similarly using the -p 5432:5432 option. However, I initially planned to expose my DB instance to the world (or just me but from anywhere, you get it). Across my voyage of learning through the forums and docs, I came across information that -p flag introduces a <em>slight</em> delay due to docker container having a separate virtual network interface (isolation, yay!) and it must do NAT for the port functionality. And the solution was <code>--net=host</code>. Now, that delay didn't <em>really</em> matter to me but who am I to turn down easy optimizations? What the flag does is run the container on the host's network interface. All the ports and rules of the host apply to the container as well. Your machine's localhost is the container's localhost. This eliminates the NAT requirement but also removes the network isolation. If you care about it, open the port as mentioned above, and instead of &quot;host&quot;, create a different network (like we did volume) and attach it to the container. When the same network is attached to another container (like our upcoming nextcloud one) then they can chat with each other. At this point, I had no plans to set up nginx, instead intending to allow 5432 directly in my machine. Plans change. But I was too lazy to tear down and start again. So this is how it remained. Btw, --net is short for --network.</p>
+<p>Check if our PostgreSQL is up and running from previous commands. Done? Make a note of password somewhere (I hope you did not use literal supersecretpassword as password) and let's move on to the nextcloud... next. Heh.</p>
+<h2>Setting up Nextcloud</h2>
+<p>Alright, we need another volume for nextcloud. Easy peasy:</p>
+<pre><code class="language-sh">sudo docker volume create nextcloud-data
+</code></pre>
+<p>And there we have it. Should you ever wish to remove a volume (as I had to do a zillion times during my experiments), just issue the following command:</p>
+<pre><code class="language-sh">sudo docker volume rm &lt;volume-id/name&gt;
+</code></pre>
+<p>'Where will I get the id/name from if I did not give them one?' you ask? Well just list 'em with this:</p>
+<pre><code class="language-sh">sudo docker volume ls
+</code></pre>
+<p>And should you ever wish to remove <em>all</em> volumes that aren't being used, do:</p>
+<pre><code class="language-sh">sudo docker volume prune
+</code></pre>
+<p>Use with caution. This will remove volumes for <em>all</em> removed containers. Try it in the playground terminal, where we set up our initial nextcloud container. You'll gain around 400 MBs. It is necessary to houseclean docker every now and then because this thing consumes storage like no tomorrow. Anyway, moving on to the main show:</p>
+<pre><code class="language-sh">sudo docker run \
+  -e OVERWRITEWEBROOT=&quot;/nextcloud&quot; \
+  -e OVERWRITEPROTOCOL=&quot;https&quot; \
+  -v nextcloud-data:/var/www/html \
+  -p 8000:80 --name=my-nextcloud --restart=unless-stopped \
+  -d nextcloud
+</code></pre>
+<p>'I understand the flags now, but I wonder why we need those overwrite thingys' Ah, sweet bliss of ignorance. I had a lot of <em>fun</em> getting things to work for Nextcloud behind https proxy. So much fun, that I feel I should just omit those flags and let you figure things out yourself. For the fun obviously, I swear! But I promised you'll have a working setup by the end of this post, so here we go.</p>
+<p>We will access our nextcloud instance like so - https://yourdomain.com/nextcloud</p>
+<p>Notice the http<em>s</em> and <em>/nextcloud</em>. By default, nextcloud assumes it is being hosted in the root of the webserver, so it uses / path for all resources. And it also assumes HTTP protocol. Our setup won't work with either default. Those two flags overwrite the defaults.</p>
+<p>At this point, I confess I fell a bit short on reading (since I had had several hours of fun by this point), so once this worked, I stopped looking for alternatives. I am assuming there is a better way of doing what I did, as I noticed these flags being suggested as &quot;use this if earlier didn't work&quot;. I never tried this <em>earlier</em> option - a TRUSTED_PROXIES flag. This is left as an exercise for you, dear reader.</p>
+<p>Now that we have our nextcloud instance running (I am going to assume you checked the logs), let us move on to the final step - setting up nginx reverse proxy.</p>
+<h2>Setting up Nginx</h2>
+<p>I have a confession. Originally, my intention was simply to learn a few docker commands and play around with nextcloud. Eventually, I decided to host it on a virtual server instance that I recently acquired, and adding a database was trivial. The plan was to just have those two running, with nextcloud exposed on port 80 and postgres on 5432.</p>
+<p>'But what about the other stuff you wanna deploy there eventually?' Exactly! I had the same thought - after I had both PostgreSQL and nextcloud up and running. Yes, the command you ran exposed port 8000 and had nice overwrite flags but that is what I arrived at at the very end. All this is to say, nginx reverse proxy was kinda hammered into my setup at the end. And of course, it had to be secure. All this is kinda &quot;duh!&quot; to you now but I was in sort of a zeal to play around with new stuff and so it sorta slipped my mind. You know how it goes.</p>
+<p>The reason I am saying all this is that when I looked around at how the setup would look like, I found a <em>ton</em> of docker-compose files with the nice packaged deployment of all I wanted in a single easy command. So did I do the sane thing and use docker-compose? 'Meh! How hard could it be? Just run another container.' I thought. Heh.</p>
+<p>So I deployed an nginx docker container. I ran it on <code>--net=host</code> like postgres to offset NAT latency. Added reverse proxy for /nextcloud. Spent a few fun hours pulling my hair out over how to make it work. Eventually reaching the overwrite flag after trying out many things in the nginx config itself. NOTE: Avoid making substitutions in nginx, it can lead to unforeseen issues, including but not limited to frustration, fury, &quot;f*k this sh*t, I'm becoming a farmer&quot; moments. Simply changing the route in the proxied container is far easier <em>and</em> simpler.</p>
+<p>At this point, I should also mention that my remote server is hosted on Oracle (Thank you Oracle for the free stuff!), and while I had made sure to open port 80 (http) and 443 (https) in my security groups <em>and</em> that my firewall wasn't blocking, one of the culprits of &quot;Why the hell isn't this working?&quot; was... iptables. Ensure that no firewalls and iptable routes are blocking access to your goodies. I used the following commands:</p>
+<pre><code class="language-sh">sudo iptables -I INPUT 6 -m state --state NEW,ESTABLISHED -p tcp --dport 80 -j ACCEPT
+sudo iptables -I INPUT 7 -m state --state NEW,ESTABLISHED -p tcp --dport 443 -j ACCEPT
+sudo iptables -I INPUT 8 -m state --state NEW,ESTABLISHED -p tcp --dport 5432 -j ACCEPT
+sudo netfilter-persistent save
+sudo netfilter-persistent reload
+</code></pre>
+<p>Explaining the above is beyond the scope of this document. (Always wanted to say that!)</p>
+<p>Kidding aside, the commands basically allow packets from said ports, by adding rules at specific index (notice the 6, 7, and 8) in the chain. At the end of the chain is usually REJECT. Notice port 5432? Yeah, I had to add that too for nextcloud to communicate with postgres (although port 8000 seemed to work fine for some reason, probably docker voodoo). Anyway, it is not allowed in security groups so not a big deal as far as I know. Also, during one iteration of my experiment, I simply flushed all iptable rules. Please avoid doing that, no matter how satisfying. If you want to check if all is good:</p>
+<pre><code class="language-sh">sudo iptables -L
+</code></pre>
+<p>Moving on to the meat of the matter, I deployed an nginx container and somehow managed to get it connected to nextcloud. All good. Now came the security part. (Kudos to Let's Encrypt EFF people, thanks for your hard work!)</p>
+<p>It is trivial to get a security certificate. Just install certbot and let it do its thing. It not only downloads the necessary stuff but also updates them before their expiry. For free. And you don't have to do a thing! Heady stuff. There are docker images that do this for you, but having a docker container running for a cron job that does nothing but changes a couple of files every few months sounded like a bit of over-engineering to me. I decided to go non-container mode.</p>
+<p>So, since I had nginx running already, I tried to run certbot with --nginx command that professes to automatically set things up for you. But it apparently doesn't work for dockerized containers. No issues, just downloaded the certificates and bound the letsencrypt folder to the nginx container and got things running well. Problem? Every time I wanted to renew the expired certificates, I would have to take down the container, manually run the renew command, and then start the container.</p>
+<p>Now, there were many ways I could go. Setup separate certbot and nginx containers with shared volumes. Or fetch an image with certbot <em>and</em> nginx builtin that does everything. Or as mentioned above, manually renew every three months. Doesn't sound so bad? OR...</p>
+<p>I could just non-dockerize nginx too. I was already running it on the host network, and it wasn't storing any data, so the benefits of isolating that process vs implementing other options made my choice clear, especially since I did not want to run certbot in a container.</p>
+<p>So, download nginx using sudo apt-get and change /etc/nginx/nginx.conf to /etc/nginx/nginx.conf.bak. Open a new file nginx.conf there and add the following:</p>
+<pre><code>worker_processes  auto;
+
+events {
+  worker_connections  256;
+}
+
+http {
+
+  # Default settings
+  sendfile on;
+  tcp_nopush on;
+  tcp_nodelay on;
+  keepalive_timeout 65;
+  types_hash_max_size 2048;
+  include /etc/nginx/mime.types;
+  default_type application/octet-stream;
+
+  # SSL/TLS
+  ssl_session_cache   shared:SSL:10m;
+  ssl_session_timeout 10m;
+  ssl_certificate /etc/letsencrypt/live/yourdomain.com/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
+  ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
+  ssl_prefer_server_ciphers on;
+  ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA:ECDHE-ECDSA-AES128-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-SHA:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA256;
+  add_header Strict-Transport-Security &quot;max-age=63072000&quot; always;
+  ssl_stapling on;
+  ssl_stapling_verify on;
+
+  # Gzip
+  gzip on;
+  gzip_vary on;
+  gzip_comp_level 4;
+  gzip_min_length 256;
+  gzip_proxied expired no-cache no-store private no_last_modified no_etag auth;
+  gzip_types application/atom+xml application/javascript application/json application/ld+json application/manifest+json application/rss+xml application/vnd.geo+json application/vnd.ms-fontobject application/wasm application/x-font-ttf application/x-web-app-manifest+json application/xhtml+xml application/xml font/opentype image/bmp image/svg+xml image/x-icon text/cache-manifest text/css text/plain text/vcard text/vnd.rim.location.xloc text/vtt text/x-component text/x-cross-domain-policy;
+
+
+  # Always Secure
+  server {
+    listen 80;
+    listen [::]:80;
+    server_name yourdomain.com;
+    return 301 https://$server_name$request_uri;
+  }
+
+  server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name  yourdomain.com;
+
+    location = ^/nextcloud$ {
+      return 302 /nextcloud/;
+    }
+
+    location /nextcloud/ {
+      # https://docs.nextcloud.com/server/23/admin_manual/installation/nginx.html
+      proxy_pass http://127.0.0.1:8000/;
+
+      client_max_body_size    512m;
+      client_body_timeout 300s;
+      fastcgi_buffers 64 4K;
+
+      proxy_redirect          off;
+      proxy_set_header        Host            $host;
+      proxy_set_header        X-Real-IP       $remote_addr;
+      proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_connect_timeout   90;
+      proxy_send_timeout      90;
+      proxy_read_timeout      90;
+      proxy_buffers           32 4k;
+    }
+
+    location = /.well-known/webfinger {
+      return 301 https://yourdomain.com/nextcloud/index.php/.well-known/webfinger;
+    }
+
+    location = /.well-known/nodeinfo {
+      return 301 https://yourdomain.com/nextcloud/index.php/.well-known/nodeinfo;
+    }
+
+    location = /.well-known/caldav {
+      return 301 https://yourdomain.com/nextcloud/remote.php/dav;
+    }
+
+    location = /.well-known/carddav {
+      return 301 https://yourdomain.com/nextcloud/remote.php/dav;
+    }
+
+    location ~ ^/nextcloud/(?:build|tests|config|lib|3rdparty|templates|data)(?:$|/)    {
+      return 404;
+    }
+
+    location ~ ^/nextcloud/(?:\.|autotest|occ|issue|indie|db_|console) {
+      return 404;
+    }
+  }
+}
+
+</code></pre>
+<p>I have added different components in this file from several different sources. What you must focus on are the SSL/TLS section and the location redirects. Also, note that I built this config based on what I learned over a few days of frantic efforts to get things going. <em>I AM NOT AN EXPERT IN NGINX (OR DOCKER), TRUST BUT VERIFY!</em> This is a minimal config that I worked for me:</p>
+<pre><code class="language-conf">worker_processes  auto;
+
+events {
+  worker_connections  256;
+}
+
+http {
+  ssl_certificate /etc/letsencrypt/live/yourdomain.com/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
+
+  server {
+    listen 80;
+    listen 443 ssl;
+
+    location = ^/nextcloud$ {
+      return 302 /nextcloud/;
+    }
+
+    location /nextcloud/ {
+      proxy_pass http://127.0.0.1:8000/;
+    }
+  }
+</code></pre>
+<p>Moving on, once you save nginx.conf, make sure it is correct using the following:</p>
+<pre><code class="language-sh">sudo nginx -t
+</code></pre>
+<p>Should be &quot;ok&quot; somewhere. If so, then:</p>
+<pre><code class="language-sh">sudo nginx -s reload
+</code></pre>
+<p>And your reverse proxy is up and running! But wait, you don't have the certificates yet. Try this:</p>
+<pre><code class="language-sh">sudo certbot --nginx --staging
+</code></pre>
+<p>If okay, remove the staging flag. This command downloads certificates and configures nginx. (It did not change my config but I had it set up from previous efforts so your mileage may vary)</p>
+<p>To check if your renewal is working:</p>
+<pre><code class="language-sh">sudo certbot renew --dry-run
+</code></pre>
+<p>If okay, then give yourself a pat on the back. You did it! Enjoy the goodies on https://yourdomain.com/nextcloud/</p>
+<p>By the way, the default username and database name of PostgreSQL are &quot;postgres&quot;. I hope you saved the password previously. If not, no worries, just inspect your postgres container and check the environment variables section. If you're worried about security, check out docker secrets.</p>
+<p>Also, the database host is your gateway of nextcloud instance hosted on a bridged docker network (usually docker0). You could get it by doing:</p>
+<pre><code class="language-s">sudo docker inspect my-nextcloud | grep &quot;Gateway&quot;
+</code></pre>
+<p>So instead of localhost, add 172.x.x.x:5432 and you're good to go!</p>
+<h2>Important Links</h2>
+<ul>
+<li>
+<p><a href="https://nextcloud.com">Nextcloud</a></p>
+</li>
+<li>
+<p><a href="https://www.postgresql.org/">Postgresql</a></p>
+</li>
+<li>
+<p><a href="https://nginx.org/en/">Nginx</a></p>
+</li>
+<li>
+<p><a href="https://www.docker.com/">Docker</a></p>
+</li>
+<li>
+<p><a href="https://certbot.eff.org/">Certbot</a></p>
+</li>
+<li>
+<p><a href="https://ubuntu.com/">Ubuntu</a></p>
+</li>
+<li>
+<p><a href="https://www.oracle.com/cloud/free/">Oracle Free Servers</a></p>
+</li>
+<li>
+<p><a href="https://docs.docker.com/engine/install/ubuntu/">Installing docker on ubuntu</a></p>
+</li>
+</ul>
+
+
+  <!---->
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/posts/learning-a-general-purpose-language/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ On learning a general-purpose programming langugage
+    </a>
+     
+    <a href="/posts/regex-groups/">
+      Regular Expression Group Descriptions <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+
+  <hr />
+
+  <div id="remark42"></div>
+</div>
+
+<script>
+  // Commenting System remark42
+  var remark_config = {
+    host: "https://remark42.priteshtupe.com",
+    site_id: "remark",
+    theme: localStorage.theme,
+  }
+
+  !(function (e, n) {
+    for (var o = 0; o < e.length; o++) {
+      var r = n.createElement("script"),
+        c = ".js",
+        d = n.head || n.body
+      "noModule" in r ? ((r.type = "module"), (c = ".mjs")) : (r.async = !0),
+        (r.defer = !0),
+        (r.src = remark_config.host + "/web/" + e[o] + c),
+        d.appendChild(r)
+    }
+  })(remark_config.components || ["embed"], document)
+</script>
+
+
+    <script defer>
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar()
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden"
+        sideNav.remove("hidden")
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll"
+        sideNav.add("hidden")
+      }
+    </script>
+  </body>
+</html>

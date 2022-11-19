@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="Notes" />
+    <meta property="og:description" content="" />
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="Pritesh Tupe's Personal Website" />
+    <meta property="og:url" content="https://www.priteshtupe.com/" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="white" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="black" />
+
+    <link rel="canonical" href="https://www.priteshtupe.com/" />
+    <link rel="icon" href="/assets/icons/favicon.ico" />
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <script>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode()
+      }
+
+      function darkMode() {
+        html.add("dark")
+        localStorage.theme = "dark"
+        if (window.REMARK42) window.REMARK42.changeTheme("dark")
+      }
+
+      function lightMode() {
+        html.remove("dark")
+        localStorage.theme = "light"
+        localStorage.themeColor = "#ffffff"
+        if (window.REMARK42) window.REMARK42.changeTheme("light")
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode()
+      }
+    </script>
+
+    <!---->
+
+    
+    <title>Notes | Pritesh Tupe</title>
+    
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="absolute md:fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50">
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900">
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()">
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16">
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+      </div>
+      <div class="prose prose-slate dark:prose-invert prose-xl lg:prose-2xl">
+        <ul class="list-none max-h-screen overflow-y-scroll pb-8">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/feed.xml">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose prose-slate dark:prose-invert mx-auto py-16 prose md:prose-lg px-4 md:px-0">
+  <h1>Shell</h1>
+<ul>
+<li>
+<p>Using a default value for a variable</p>
+<pre><code class="language-sh">VAL=${&lt;var&gt;:-&quot;&lt;default&gt;&quot;}
+</code></pre>
+<ul>
+<li>The above sets default if var is null or unset. Use only <code>:</code> for skipping null check.</li>
+</ul>
+</li>
+<li>
+<p>Reuse previous shell command</p>
+<pre><code class="language-sh">$ !!
+</code></pre>
+<p>Example: check git root and cd if proper</p>
+<pre><code class="language-sh">$ git rev-parse --show-toplevel
+/git/root
+$ cd $(!!)
+</code></pre>
+</li>
+<li>
+<p>Reinstall xcode-select @MACOS</p>
+<pre><code class="language-sh">$ sudo rm -rf $(xcode-select --print-path) &amp;&amp; xcode-select --install
+</code></pre>
+</li>
+<li>
+<p>Mount external ntfs hdd @MACOS</p>
+<ol>
+<li><code>brew cask install osxfuse</code></li>
+<li>Reboot</li>
+<li><code>brew install ntfs-3g</code></li>
+<li>Connect hdd</li>
+<li><code>mkdir ~/NTFS</code></li>
+<li><code>diskutil list</code> (check MS drive num eg disk2s1)</li>
+<li><code>sudo umount /dev/disk2s1</code></li>
+<li><code>sudo /usr/local/bin/ntfs-3g /dev/disk2s1 ~/NTFS -olocal -oallow_other</code></li>
+</ol>
+</li>
+<li>
+<p>Mount an attached block storage (pre-formatted) to instance using fstab</p>
+<ul>
+<li>
+<p>Check currently attached volumes <code>lsblk</code> (ensure attached but not mounted)</p>
+</li>
+<li>
+<p>Get UUID of volume <code>blkid</code></p>
+</li>
+<li>
+<p>Add entry in /etc/fstab <code>UUID=&lt;from above&gt; /mount/point format options</code></p>
+</li>
+<li>
+<p>Mount all fstab volumes <code>sudo mount -a</code></p>
+</li>
+<li>
+<p>Check currently attached volumes <code>lsblk</code> (ensure mounted)</p>
+</li>
+<li>
+<p><span style="color:orange">IMPORTANT!</span> If attaching new block storage, may need to format first</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Check size of a directory</p>
+<pre><code class="language-sh">$ du -sh &lt;dir&gt;
+</code></pre>
+<p>where,</p>
+<ul>
+<li>s = summary</li>
+<li>h = human readable format</li>
+</ul>
+<p>Example: Get size of all directories in current directory</p>
+<pre><code class="language-sh">$ du -sh ./*/
+</code></pre>
+</li>
+<li>
+<p>Move new files only (do not overwrite if exists)</p>
+<pre><code class="language-sh">$ mv -vn &lt;source&gt; &lt;target&gt;
+</code></pre>
+<p>where,</p>
+<ul>
+<li>v = verbose</li>
+<li>n = no overwrite</li>
+</ul>
+</li>
+<li>
+<p>if/else</p>
+<pre><code class="language-sh">$ if [ &lt;test&gt; ]; then &lt;something&gt;; fi
+</code></pre>
+<p>for command sucess | fail, simply do this (not no sq brackets)</p>
+<pre><code class="language-sh">$ if command; then &lt;sucess&gt;; else &lt;fail&gt;; fi
+</code></pre>
+<ul>
+<li>
+<p>Check if an environment variable exists</p>
+<pre><code class="language-bash">if [[ -z $ENV_VAR ]]; then; fi;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>for loop</p>
+<pre><code class="language-sh">for ((expr1;expr2;expr3)); do &lt;command&gt;; done;
+</code></pre>
+<p>Example: Loop from 1 to END</p>
+<pre><code class="language-sh">END=5
+for ((i=1;i&lt;=END;i++)); do echo $i; done;
+</code></pre>
+</li>
+<li>
+<p>for in loop</p>
+<pre><code class="language-sh">for &lt;variable&gt; in &lt;list&gt;; do &lt;command&gt;; done
+</code></pre>
+<p>Example: Add all dot files to gitignore</p>
+<pre><code class="language-sh">for file in .*; do echo $file &gt;&gt; .gitignore; done
+</code></pre>
+</li>
+<li>
+<p>Arrays</p>
+<p>An array in shell is within <code>()</code> brackets and looped like so:</p>
+<pre><code class="language-sh">arr=(&quot;a&quot; &quot;b&quot; &quot;c&quot;)
+
+for alph in ${arr[*]}; do echo $alph; done;
+</code></pre>
+<p>Note that on cli, direct <code>$arr</code> works for looping but not in script!</p>
+</li>
+<li>
+<p>Script strict mode</p>
+<p><em>Ignore the \ in # below, kept for formatting reasons</em></p>
+<pre><code class="language-sh">\#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+</code></pre>
+<p><a href="http://redsymbol.net/articles/unofficial-bash-strict-mode/">http://redsymbol.net/articles/unofficial-bash-strict-mode/</a></p>
+</li>
+<li>
+<p>Find command</p>
+<pre><code class="language-sh">find &lt;path&gt; [-type | -size] -name &quot;regex&quot; [-exec &lt;another cmd&gt; | -delete]
+</code></pre>
+<p>Example: find and delete all dot files in current directory</p>
+<pre><code class="language-sh">find . -name &quot;.*&quot; -delete
+</code></pre>
+<p>as an alternative, <code>fd</code> works as follows</p>
+<pre><code class="language-sh">fd -t [d|f] [-HIL] &quot;regex&quot;
+</code></pre>
+</li>
+<li>
+<p>Remove duplicate lines from a file</p>
+<pre><code class="language-sh">awk '!l[$0]++' file &gt; newfile
+</code></pre>
+<p>if order is not important</p>
+<pre><code class="language-sh">sort -u file &gt; newfile
+</code></pre>
+</li>
+<li>
+<p>Start a background job</p>
+<pre><code class="language-sh">nohup &lt;job&gt; &lt; /dev/null &gt; /dev/null 2&gt;&amp;1 &amp; disown
+</code></pre>
+<p>where,</p>
+<ul>
+<li>nohup = no hangup signal</li>
+<li>&lt; /dev/null = no stdin (input)</li>
+<li>&gt; /dev/null = no nohup file (output)</li>
+<li>2&gt;&amp;1 = redirect errors to stdout (which is null)</li>
+<li>&amp; = start in background</li>
+<li>disown = detach from shell</li>
+</ul>
+<p>Example: To start <a href="https://mpv.io/">mpv</a> as music daemon</p>
+<pre><code class="language-sh">nohup mpv --no-audio-display --shuffle ~/Music &lt; /dev/null &gt; /dev/null 2&gt;&amp;1 &amp; disown
+</code></pre>
+</li>
+<li>
+<p>Mount Ram as disk</p>
+<pre><code class="language-sh">sudo mount -t tmpfs -o size=5g tmpfs /mnt/ramfs
+</code></pre>
+<p>where a new temporary mount point /mnt/ramfs is created with 5 Gigabytes of capacity;
+to unmount, do</p>
+<pre><code class="language-sh">umount /mnt/ramfs
+</code></pre>
+</li>
+<li>
+<p>Watch a file for change and run command when changes</p>
+<pre><code class="language-sh">while true; do watch -g ls -l &lt;filename&gt; &amp;&amp; &lt;cmd&gt;; sleep 5; done
+</code></pre>
+</li>
+<li>
+<p>Download a webpage and all it's linked pages and content</p>
+<pre><code class="language-sh">wget -r -l 1 -p -k -H -D domain.com,relateddomain.com http://domain.com/page/in/domain
+</code></pre>
+<p>where,</p>
+<ul>
+<li>r = recurse</li>
+<li>k = patch local links</li>
+<li>H = traverse domains other than original</li>
+<li>D = limit domains traversed</li>
+<li>l = depth of recursion</li>
+<li>p = download related content like images</li>
+</ul>
+</li>
+<li>
+<p>Generate a random base64 string (May be used as token or password)</p>
+<pre><code class="language-sh">head -n1 /dev/urandom | base64
+</code></pre>
+<ul>
+<li>number after <code>n</code> changes length of string</li>
+</ul>
+</li>
+<li>
+<p>Lazy regex quatifier (works in js, not is sed, vim)</p>
+<p>Suppose there is a line like so:</p>
+<p><code>&quot;this is some string&quot; &quot;this is another string&quot;</code></p>
+<p>And the aims is to select everything within quotes as a string.</p>
+<p>A naive regex would be: <code>/&quot;.*&quot;/</code></p>
+<p>But it actually selects everything inside starting from first &quot; to the end of line &quot;</p>
+<p>To select only the content withing first closing quote, do : <code>/.*?/</code></p>
+<p>That is, add a <code>?</code> aka a lazy quatifier (as opposed to normal greedy approach)</p>
+</li>
+<li>
+<p>Add colour to console output (make sure to add <em>Reset</em> at the end after adding colour)</p>
+<p><code>\033[0m</code> : Reset
+<code>\033[1m</code> : Bold
+<code>\033[91m</code> : Red
+<code>\033[92m</code> : Green
+<code>\033[93m</code> : Blue</p>
+<ul>
+<li>JS Function</li>
+</ul>
+<pre><code class="language-js">const colorize = (...args) =&gt; ({
+  black: `\x1b[30m${args.join(&quot; &quot;)}`,
+  red: `\x1b[31m${args.join(&quot; &quot;)}`,
+  green: `\x1b[32m${args.join(&quot; &quot;)}`,
+  yellow: `\x1b[33m${args.join(&quot; &quot;)}`,
+  blue: `\x1b[34m${args.join(&quot; &quot;)}`,
+  magenta: `\x1b[35m${args.join(&quot; &quot;)}`,
+  cyan: `\x1b[36m${args.join(&quot; &quot;)}`,
+  white: `\x1b[37m${args.join(&quot; &quot;)}`,
+  bgBlack: `\x1b[40m${args.join(&quot; &quot;)}\x1b[0m`,
+  bgRed: `\x1b[41m${args.join(&quot; &quot;)}\x1b[0m`,
+  bgGreen: `\x1b[42m${args.join(&quot; &quot;)}\x1b[0m`,
+  bgYellow: `\x1b[43m${args.join(&quot; &quot;)}\x1b[0m`,
+  bgBlue: `\x1b[44m${args.join(&quot; &quot;)}\x1b[0m`,
+  bgMagenta: `\x1b[45m${args.join(&quot; &quot;)}\x1b[0m`,
+  bgCyan: `\x1b[46m${args.join(&quot; &quot;)}\x1b[0m`,
+  bgWhite: `\x1b[47m${args.join(&quot; &quot;)}\x1b[0m`,
+});
+</code></pre>
+</li>
+<li>
+<p>Process SIGnals (<code>man signal</code>)</p>
+<ul>
+<li>
+<p>The INT (interrupt) signal is the weakest. It is the signal number 2. Its meaning is &quot;stop what you're doing right now and wait for further user input&quot;. It's the signal generated by Ctrl+C in a terminal</p>
+</li>
+<li>
+<p>The TERM (terminate) signal is the normal kill signal (i.e. the one sent when you just call kill). It is signal number 15. It tells the application to exit cleanly. This signal allows for a trap handler, which enables the receiving process to do some clean up in an orderly fashion. An application that doesn't want to be interrupted during a critical operation might ignore SIGTERM for a while.</p>
+</li>
+<li>
+<p>The HUP signal (hang up) is about the same as SIGTERM in terms of harshness, but it has a specific role because it's automatically sent to applications running in a terminal when the user disconnects from that terminal. It is signal number 1.</p>
+</li>
+<li>
+<p>The QUIT signal is the harshest of the ignorable signals. It's meant to be used when an application is misbehaving and needs to be killed now, and by default it traditionally left a core dump file. It is signal number 3.</p>
+</li>
+<li>
+<p>The KILL signal does not have ANY possibility of the being resisted. It always works because a KILL signal cannot be handled. This is both its blessing and its curse. It is signal number 9.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>curl</h2>
+<ul>
+<li>
+<p>Send an email using gmail smtp</p>
+<pre><code class="language-sh">curl --ssl-reqd \
+  --url smtp://smtp.gmail.com \
+  --mail-from sender@gmail.com \
+  --mail-rcpt recipient@mail.com \
+  --user &quot;sender@gmail.com:apppassword&quot; \
+  --upload-file mail.txt
+</code></pre>
+<p>where mail.txt:</p>
+<pre><code class="language-txt">From: Sender Name &lt;sender@gmail.com&gt;
+To: Recipient Name &lt;recipient@mail.com&gt;
+Subject: an example.com example email
+Date: Mon, 5 Nov 1994 12:10:00
+
+Dear Recipient,
+This is an example email.
+</code></pre>
+</li>
+</ul>
+<h2>vlc [cli mode]</h2>
+<ul>
+<li>
+<p>Start vlc with ncurses interface</p>
+<pre><code class="language-sh">vlc --intf ncurses --random --loop --audio --recursive --no-video ~/Music/
+</code></pre>
+<ul>
+<li><code>recursive</code> is so subdirs in playlist expand instead of just sitting there; gui is preferences &gt; all &gt; playlist &gt; subdir behav &gt; expand</li>
+</ul>
+</li>
+</ul>
+<h2>youtube-dl</h2>
+<ul>
+<li>
+<p>Download songs from youtube</p>
+<p><a href="https://youtube-dl.org/">https://youtube-dl.org/</a></p>
+<p>Only audio:</p>
+<pre><code class="language-sh">youtube-dl --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --output '%(title)s.%(ext)s' [--yes-playlist] &lt;&quot;URL&quot; | --batch-file  ./fileName&gt;
+</code></pre>
+<p><em>where fileName is a list of urls separated by blank lines;</em></p>
+<p>Best video+audio:</p>
+<pre><code class="language-sh">youtube-dl --ignore-errors --format 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4  -o '%(title)s.%(ext)s' &lt;&quot;video-link&quot;&gt;
+</code></pre>
+<p>Note the brackets for the above are part of the command.</p>
+</li>
+</ul>
+<h2>gpg</h2>
+<ul>
+<li>
+<p>Encrypt file for self</p>
+<pre><code class="language-sh">gpg --encrypt [&quot;name&quot; | --recipient &lt;self@mail.com&gt;] &lt;file&gt;
+</code></pre>
+<p>This will create an encryped <code>&lt;file&gt;.gpg</code> file in same directory. Opening it normally will show gibberish.</p>
+</li>
+<li>
+<p>Decrypt a file</p>
+<pre><code class="language-sh">gpg --decrypt &lt;file&gt;.gpg
+</code></pre>
+<p>This will ask for your gpg passphrase and output the original <code>&lt;file&gt;</code>.</p>
+</li>
+<li>
+<p>Export public key to server (so can encrypt files there)</p>
+<pre><code class="language-sh">gpg --armor --export &lt;self@mail.com&gt; &gt; pub.key
+</code></pre>
+<ul>
+<li>Copy <code>pub.key</code> to server (via scp or copy-paste), then</li>
+</ul>
+<pre><code class="language-sh">gpg --import pub.key
+</code></pre>
+</li>
+</ul>
+<h2>beets</h2>
+<ul>
+<li>
+<p>Seek help</p>
+<pre><code class="language-shell">$ beet help [command]
+</code></pre>
+</li>
+<li>
+<p>For all tracks in albumFolder, import metadata, fix filenames and copy to Dir:</p>
+<pre><code class="language-shell">$ beet -d ~/Dir import [-S &lt;url&gt;] [-s &lt;file&gt; | -g &lt;folder&gt;]
+</code></pre>
+<p>where<br>
+-S - Source URL (musicbrainz)
+-s - Import as single track (Artist -&gt; Track)
+-g - Import as album (Album -&gt; Track)</p>
+</li>
+</ul>
+
+</div>
+
+
+    <script defer>
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar()
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden"
+        sideNav.remove("hidden")
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll"
+        sideNav.add("hidden")
+      }
+    </script>
+  </body>
+</html>

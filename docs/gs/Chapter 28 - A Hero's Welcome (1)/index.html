@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="Chapter 28 - A Hero's Welcome (1)" />
+    <meta property="og:description" content="" />
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="Pritesh Tupe's Personal Website" />
+    <meta property="og:url" content="https://www.priteshtupe.com/" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="white" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="black" />
+
+    <link rel="canonical" href="https://www.priteshtupe.com/" />
+    <link rel="icon" href="/assets/icons/favicon.ico" />
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <script>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode()
+      }
+
+      function darkMode() {
+        html.add("dark")
+        localStorage.theme = "dark"
+        if (window.REMARK42) window.REMARK42.changeTheme("dark")
+      }
+
+      function lightMode() {
+        html.remove("dark")
+        localStorage.theme = "light"
+        localStorage.themeColor = "#ffffff"
+        if (window.REMARK42) window.REMARK42.changeTheme("light")
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode()
+      }
+    </script>
+
+    <!---->
+
+    
+    <title>Chapter 28 - A Hero's Welcome (1) | Pritesh Tupe</title>
+    
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="absolute md:fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50">
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900">
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()">
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16">
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+      </div>
+      <div class="prose prose-slate dark:prose-invert prose-xl lg:prose-2xl">
+        <ul class="list-none max-h-screen overflow-y-scroll pb-8">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/feed.xml">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 28 - A Hero's Welcome (1)</h2>
+<p>&quot;So you're leaving then?&quot; (Me, to Julie)</p>
+<p>&quot;Yes. Johnathan told me about his clan - they are sort of experts in the outdoorsy things. Training at their place would prove beneficial to me as an Archer.&quot; (Julie explained)</p>
+<p>&quot;What about their plans for us later?&quot; (Divin questioned)</p>
+<p>&quot;What are you talking about?&quot; (Taro, doubtful)</p>
+<p>&quot;I talked with my representative, Anna. I got the feeling that once this calamity is over, these clans intend to retake their homelands. And they want us by their side. Having a hero to reclaim their lands will give any clan quite an edge over others.&quot; (Divin)</p>
+<p>'Oh, so that was why...' (Me, connecting the dots)</p>
+<p>&quot;I don't know. It's too far off in the future.&quot; (Julie, now turning to Carol) &quot;Carol, you should rethink your plan and join me for training.&quot;</p>
+<p>&quot;Nae, I told ye before. I'll be fine 'ere with Pat and Arya.&quot; (Carol)</p>
+<p>&quot;I'm afraid I am out of the loop. Why are we suddenly splitting up for training?&quot; (Me, glancing about)</p>
+<p>&quot;Well, it's no surprise you don't know about the split. They presumed you would stay here in the first place. Anyhow, your princess should have explained the training part at least - see, our attributes increase not only by level-ups but also by exercising our skills. And these skills are a double-edged sword, for that matter. Like my True Shot skill - it doesn't matter if I can shoot a homing arrow if I misjudge the distance from my target; or worse, simply freeze during combat. This stuff needs getting used to, hence the training.&quot; (Julie)</p>
+<p>&quot;I see. No, she probably missed it. And she's not <em>my</em> princess. We just talked about geography and current affairs the most, with bits of history and politics.&quot; (Me, frowning) 'And near entirety of Lohengramm family past.'</p>
+<p>&quot;Seems our next Class Upgrade will be somewhat special.&quot; (Divin, changing topics)</p>
+<p>&quot;Oh, how so?&quot; (Taro, distracted)</p>
+<p>&quot;I'm not sure. They will tell us before starting our training, I suppose. Does anyone else have any info?&quot; (Divin, looking around)</p>
+<p>&quot;Nah, I don't think so. By the way, what's up with you Arya? Been quiet a lot.&quot; (Me, glancing at Arya, noticing sympathetic looks from Julie and Carol)</p>
+<p>&quot;Um, sorry was just lost in thought.&quot; (Arya)</p>
+<p>&quot;'Twas that goon prince, bloody minger.&quot; (Carol, bursting out) &quot;He was quite insistent with Arya last night. I saw 'em scurry off after lunch.&quot;</p>
+<p>&quot;What happened?&quot; (Divin, severely)</p>
+<p>&quot;Nothing happened! It wasn't as bad as Carol made it sound.&quot; (Arya)</p>
+<p>'Ah, I guess the courting manners of medieval princes do not suit the sensibilities of modern women. Heh.'</p>
+<p>The conversation died down after that. Taro was fiddling with something in his hands. His grin from earlier today returned full force.</p>
+<p>&quot;A-Ano... I've got this... Thing. Yeah. S-So, I'll see ya later.&quot; (Taro, almost jogging off)</p>
+<p>No prize for guessing his destination. The rest looked on with complicated expressions. 'Let him have his fun, he'll be alright. Hopefully.'</p>
+<p>&quot;So, what happens when this simulation is over?&quot; (Arya)</p>
+<p>&quot;What do you mean?&quot; (Divin)</p>
+<p>&quot;I mean... Will we be spending the rest of our lives here? Or will it end at some definite point? Will we be back as we were before, or will the time we spend here will be gone forever? All I know is that time here goes faster than Earth. What do you think Pat?&quot; (Arya)</p>
+<p>&quot;Well, the test <em>has</em> to end at some point, else there won't be any point of it. And I think it will end after we defeat this world-ending threat. Also, even if we grow gray-haired by that point, we should still end up back home as we were when we first entered.&quot; (Me)</p>
+<p>&quot;How did you come to these conclusions?&quot; (Divin, with the rest listening in rapt attention)</p>
+<p>&quot;Hmm, this whole setup feels like an RPG video game campaign to me. And games end when you defeat the final boss. As for our time spent here, I think we aren't actually here physically. Simply because the Simulation itself is virtual. We are something like game characters or avatars, just based on our exact physical appearances. That is a guess though.&quot; (Me)</p>
+<p>'At least I hope so. We could just as well be copies of our original consciousness to be discarded after the test is finished.'</p>
+<p>&quot;Do you think we will remember all this?&quot; (Julie, after considering my words)</p>
+<p>&quot;I can't say for sure but, when a test ends, you revert the system to its original state. All the effects are temporary. And given what we've been through, I don't think memory alteration is a big deal to these guys. So, yeah...&quot; (Me)</p>
+<p>'Time dilation and memory modification - the perfect recipe for conducting tests on unsuspecting subjects. I bet they've been at this for a considerable time, who knows how many hapless poor sods were experimented upon beside us?'</p>
+<p>&quot;So, them new special effects? They're quite swick eh? And these people, are they real or what?&quot; (Carol)</p>
+<p>'What? I have not opened my status since coming here. Need to check up on a lot of things.'</p>
+<br />
+<p style="text-align:center"><strong>¤ ¤ ¤</strong></p>
+<br />
+<p>Our after-lunch soirée lasted for a while. It was just us &quot;heroes&quot; gathered in the back gardens. Sans Taro.</p>
+<p>The NPCs planned to have one hero attach to one clan. That clan would take responsibility for training the hero. All five major clans were in, of course. The sixth clan, where Julie was headed, was admitted out of necessity. Either way, not one day in and we'd already upended the storyline.</p>
+<p>Arya decided to stay at the palace. Carol opted to stay with her as well. Neither had warmed up to their prince. The girls had decided this together last night sometime. Divin presumed everyone was splitting up so he planned to go out as well. After hearing that he could've refused, he made a sour face for a while. As for the former two, Arya was getting help from the Lohengramm clan like myself. She had refused all support from the assigned representative clan. Carol instead was having her &quot;tutor&quot; coming over. As for me? I would have to check things out with Francisa later.</p>
+<p>Regarding our Classes, while we <em>were</em> at the baseline, it was merely the lowest standard required to get official jobs out here. People started their leveling as young as 6 years old. By the time they grew up to 15 years, they comfortably reached level 20. A human was considered an adult at that point. Some leveled up earlier, some later but most reach the threshold by their late-teens.</p>
+<p>The fun began beyond this milestone. People take up jobs befitting their Class, usually under a mentor. What they do with their mastery of Base Classes ends up affecting the next Class Upgrade. A Craftsman who takes up farming gets a Farmer Class. A Healer who joins the clergy and starts preaching gets a priest-like Class. And there is no limit on the variety of Classes one could achieve depending on the jobs they take. Assuming they are in their evolutionary tree, of course. A Scout would end up as a very poor stable-boy if he even gets that Class. As far as Julie knew, and she was the one who knew the most in this area, the Craftsman Class had the most known branches and the Mage class had the least.</p>
+<p>We continued sharing the knowledge we had gleaned from our NPC counterparts. I expounded on the war with Centaurs and the situation in high passes. Divin was more concerned about what the NPCs expected of us, cautioning against making ill-advised agreements and taking thoughtless actions. He feared altering the storyline too much; we might cut ourselves off from achieving the end goal.</p>
+<br />
+<p style="text-align:center"><strong>¤ ¤ ¤</strong></p>
+<br />
+<p>The shadows lengthened as the sky turned orange. For a while, I imagined myself back in the Tutorial. A flash of light burst from the side. 'Betty?' All of us immediately glanced at the spherical source.</p>
+<p>Similar bursts happened at regular distances all across the garden. &quot;Magical Lights,&quot; Divin explained quietly.</p>
+<p>I calmed myself. 'Getting worked up over nothing.' Besides, it was quite late. I remembered Princess had some plans for the eve.</p>
+<p>Eventually, we broke off, planning to meet again the next day to discuss and work out future arrangements. I arrived at my room, not surprised to see Francisa already waiting, with a badly-concealed pout.</p>
+<p>&quot;Greetings, <em>Sir</em> Pat.&quot; 'Ah. Here we go.'</p>
+<p>&quot;Hello there Francisa. Sorry, I'm a bit late; our meeting went off the rails there a bit.&quot; 'That should do it?'</p>
+<p>&quot;I understand. Do forgive me though, the tea has gone cold. The cakes are still edible however.&quot; She declared, proffering the sweets on the table. &quot;I had offered to acquaint a few of my friends to Sir Pat. Shall we move it to tomorrow evening?&quot;</p>
+<p>&quot;Of course. I'll be happy to meet your friends.&quot; 'No need to antagonize a friendly NPC.' I took a piece of the spongy cake with a fork and placed it in my mouth, sitting down in front of her. &quot;The cake's nice!&quot; I idly commented.</p>
+<p>&quot;I'm sure Anna would've appreciated your words. She'll be departing tomorrow with Sir Divin, however. Though, Hamilton will be glad to convene.&quot; She mused.</p>
+<p>&quot;Hmm... So Francisa, about the dungeon you mentioned...&quot; I shot off one question after another, which she answered promptly and precisely. Francisa was quite the conversationalist once you got her going. Her formality dropped to yesterday's favorable milieu as our discussion continued. We talked at length about prophecies, monsters, magic, and of all things, civil duty and filial responsibilities, among other topics fantastical and mundane.</p>
+<p>Soon, the Sun dipped below the horizon. I failed to notice it last night, but now I realized that instead of candles, the maids had placed magical sticks in the corner. It had Runes! Along with the magical candle came the night's dinner, again in the company of the princess. And again I stuffed myself, just slightly lesser than yesterday. I was never a voracious eater either way. Francisa bid her goodnight, thankfully bereft of any irritation over my tardiness. I still sat in the chair going through my quest list.</p>
+<hr>
+<ul>
+<li>
+<p>Main Quest</p>
+<ul>
+<li>Escape simulation
+<ul>
+<li><s>Complete tutorial</s></li>
+<li>Find Exit. Related to a dungeon somehow.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Side Quests</p>
+<ul>
+<li>Create a new rune</li>
+<li>Extract core password</li>
+<li>Save the world?</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>I glanced at the ring and wand I had kept from the tutorial, set beside the thoroughly cleaned and neatly folded robe.</p>
+<p>'I wonder if there is another exit portal in the dungeon, like it was in the Tutorial? The storyline revolves around it a fair bit. Perhaps after we clear the levels, we can access it? How is it connected to this calamity though?'</p>
+<p>I finally had some information on what the calamity was. Seemingly no one here had seen it, at least no one alive. The last person to have seen it and migrated to Alteraz died a few years ago. There was no shortage of stories, however. Common among them all were monsters - hordes upon hordes of unending waves of monsters. And that was just the beginning. The monsters in this world differed from normal creatures only by their vicious and bloodthirsty nature. &quot;Normal&quot; creatures were terrifying in their own right but usually got aggressive only for food, territory, or mate. As for monsters, aggressive was their default setting. 'Perhaps it is in their special effects?'</p>
+<p>'Speaking of special effects, Divin mentioned some changes in Status. Let's see...' I got up from the chair and lay comfortably on the bed. Swiping a finger up brought my new stats up</p>
+<hr>
+<h3>[Master] Mage - Level 20</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Health</td>
+<td>873/873</td>
+</tr>
+<tr>
+<td>Mana</td>
+<td>2762/2762</td>
+</tr>
+<tr>
+<td>Stamina</td>
+<td>81/81</td>
+</tr>
+<tr>
+<td>Experience</td>
+<td>0/2100</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Attributes</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strength</td>
+<td>21</td>
+</tr>
+<tr>
+<td>Vitality</td>
+<td>21</td>
+</tr>
+<tr>
+<td>Agility</td>
+<td>21</td>
+</tr>
+<tr>
+<td>Dexterity</td>
+<td>22</td>
+</tr>
+<tr>
+<td>Intelligence</td>
+<td>32</td>
+</tr>
+<tr>
+<td>Perception</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Wisdom</td>
+<td>26</td>
+</tr>
+</tbody>
+</table>
+<p><em>Special Effects:</em></p>
+<ul>
+<li>Magic Boost - You get extra Intelligence, Perception, and/or Wisdom points on every Class Upgrade.</li>
+<li>Hero's Boost - You get 100-300% extra experience.</li>
+<li>Test Subject Perk - Unlock special areas.</li>
+<li>Other Worlder Perk - Immune to perpetual illusions and mind control Spells.</li>
+</ul>
+<hr>
+<p>'Woah! What is with these special effects? Huh... Mind control is a thing? Damn. Glad I'm immune.'</p>
+<p>I was a bit disheartened that all the monsters I killed in level 20 gave me no experience at all. Still, my mood lightened with the new special effects.</p>
+<p>'Francisa mentioned I'll be meeting the Royal Mages who drew the Circle tomorrow. Wonder what's in store? Not looking forward to the &quot;parade&quot; though. Ugh. Anyway, gonna get back in the grove come morn. So much to discover!'</p>
+<p>I smiled. In a way, I was glad to be here. 'Magic and code being the same is awesome!'</p>
+<p>And so I slept fitfully, dreaming of Runes of flight and confetti.</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/gs/Chapter 27 - Lay of Land/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapter 27 - Lay of Land
+    </a>
+     
+    <a href="/gs/Chapter 29 - A Hero's Welcome (2)/">
+      Chapter 29 - A Hero's Welcome (2) <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar()
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden"
+        sideNav.remove("hidden")
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll"
+        sideNav.add("hidden")
+      }
+    </script>
+  </body>
+</html>

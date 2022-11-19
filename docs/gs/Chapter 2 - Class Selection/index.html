@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="Chapter 2 - Class Selection" />
+    <meta property="og:description" content="" />
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="Pritesh Tupe's Personal Website" />
+    <meta property="og:url" content="https://www.priteshtupe.com/" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="white" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="black" />
+
+    <link rel="canonical" href="https://www.priteshtupe.com/" />
+    <link rel="icon" href="/assets/icons/favicon.ico" />
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <script>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode()
+      }
+
+      function darkMode() {
+        html.add("dark")
+        localStorage.theme = "dark"
+        if (window.REMARK42) window.REMARK42.changeTheme("dark")
+      }
+
+      function lightMode() {
+        html.remove("dark")
+        localStorage.theme = "light"
+        localStorage.themeColor = "#ffffff"
+        if (window.REMARK42) window.REMARK42.changeTheme("light")
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode()
+      }
+    </script>
+
+    <!---->
+
+    
+    <title>Chapter 2 - Class Selection | Pritesh Tupe</title>
+    
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="absolute md:fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50">
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900">
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()">
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16">
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+      </div>
+      <div class="prose prose-slate dark:prose-invert prose-xl lg:prose-2xl">
+        <ul class="list-none max-h-screen overflow-y-scroll pb-8">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/feed.xml">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 2 - Class Selection</h2>
+<p>I clicked on &quot;Select Class&quot; text. Nothing happened. My hand went through the window. I looked at the interface for a while. I tried touching the tilde symbol. Same nothing. I looked about and saw others going through similar ordeals.</p>
+<p>Eventually, Taro whined impatiently at Betty, &quot;Nothing is happening, my finger goes through it! How do I click on this?&quot; Betty immediately answered, &quot;Physical interaction with the Status Window was phased out 254 major versions ago, to 'click' on an item, simply focus on the same. While a bit unwieldy at first, statistics indicate that such interaction is 28 times more efficient than the previous one.&quot;</p>
+<p>I focused on the text more than I normally would - like how one does when trying to glean the time instead of just looking at a watch face, and immediately the screen was replaced by a bunch of sections - six, to be precise. I slowly scrolled through each section, reading the brief description of each.</p>
+<hr>
+<p>KNIGHT - Base Class</p>
+<p>Knights are adept at mêlée combat; very high Strength attribute with the ability to use quick Skills in addition to a sword and keep up a good defense simultaneously.</p>
+<p>SCOUT - Base Class</p>
+<p>With high Agility and Stealth attributes, Scouts generally prepare for the arrival of the main party - be it by securing the route ahead or scoping out the enemy camp for potential incursion points.</p>
+<p>HEALER - Base Class</p>
+<p>With a good leg up on Intelligence and Endurance attributes, Healers take care of their health, and that of others, by topping it off with pre-defined Skills or customized spells.</p>
+<p>CRAFTSMAN - Base Class</p>
+<p>Low but well-rounded attributes, Craftsmen get an extra utility Skill on each Class Upgrade. They modify or create items, enchantments, and structures from scratch with the right materials and Skills.</p>
+<p>ARCHER - Base Class</p>
+<p>Focusing on Dexterity and Agility, Archers either distracts an opponent so the party can get close or goes in for the fatal shot on a distracted one, adapting to the situation as required.</p>
+<p>MAGE - Base Class</p>
+<p>Very high Intelligence at the cost of other attributes. Instead of getting a pre-defined Skill when leveling up, craft highly specialized and equally deadly personal spells.</p>
+<hr>
+<p>Ha... My Class was set a while ago when Betty mentioned them for the first time. Any RPG game I played, it was always as the high-powered ranged magical attack type character. As Pyromancers, Wizards, Sorcerers, and other similar ones. Here I focused on selecting that Class and the window went back to the main screen describing my Class and current status.</p>
+<hr>
+<h3>[Novice] Mage - Level 0</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Health</td>
+<td>100/100</td>
+</tr>
+<tr>
+<td>Mana</td>
+<td>800/800</td>
+</tr>
+<tr>
+<td>Stamina</td>
+<td>20/20</td>
+</tr>
+<tr>
+<td>Experience</td>
+<td>0/100</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Attributes</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strength</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Vitality</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Agility</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Dexterity</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Intelligence</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Perception</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Wisdom</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><em>Special Effects:</em></p>
+<ul>
+<li>Magic Boost - You get extra Intelligence, Perception, and/or Wisdom Points on every Class Upgrade</li>
+</ul>
+<hr>
+<p>I was feeling quite good about my choice. I looked around to see that others were still absorbed in their screens. I waited a minute, then another. After 5 minutes, I was quite sure something was amiss. I asked Betty about the Tutorial to while away time. According to her, there were 20 levels going down until the &quot;Exit Portal&quot; at the bottom. We were currently on level 0. You couldn't enter a higher level unless you were at that level or higher. She mentioned that the tutorial was tailored to get us to level 20, which was the baseline of adult humans in this (well, the &quot;outer&quot; simulated) world. She wouldn't go in-depth about the environment of any level and other details, so I figured it was more &quot;explore-and-exploit&quot; kind of thing the creators were going for. She wouldn't answer who the creators were, what or who the test was by, and for, or absolutely anything that had nothing to do with the Simulation itself. I tried several different variations but her lips were sealed tight.  This back and forth went on for another few minutes when people started coming to. I looked around to hear what they had chosen. Hopefully, not everyone had chosen the Mage Class.</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>&quot;Man, the Mage Class is so nerfed! And here I was, foolishly looking forward to it.&quot; Taro exclaimed. 'Wait, what?'</p>
+<p>&quot;Yeah,&quot; Carol agreed, &quot;When I looked at the detailed description and attribute distribution, it was even below the Craftsman Class. Anyway, I chose the Scout. What about you two?&quot; 'Heh?'</p>
+<p>&quot;I chose Knight,&quot; he said - as if it should have been obvious, and looked at me expectantly.</p>
+<p>&quot;Ummm, what do you mean when you say the Mage Class is nerfed? And what's this about attribute distribution?&quot; I asked them instead. To which Taro replied, &quot;Well when you focus on a certain Class, you could see in-depth information about their capabilities, roles, and growth potentials. I say Mage is nerfed because that Class does not get any Skills as other Classes do. They have to create spells on their own to use magic. Why would anyone want to do research here?&quot; After a pause, he continued, &quot;Also, all the attributes were lowest I could see compared to others - even craftsmen had a good 3 on most. What's the point of starting with lots of mana when you can't even use it, right? And I don't even know how one would go about building customized spells - sounds like a lot of work to me.&quot; Taro concluded. All I could think of was - 'Well, shit!'</p>
+<p>Carol chimed in, &quot;Yeah, I even got 3 special effects for my Class. I believe Mage had only one. What Skills did you get for the Knight, Taro?&quot; The conversation continued; eventually, the rest of the girls joined in. Arya took the Healer Class, Julie the Archer. Finally, Divin joined in too. Apparently, he had taken the Knight Class as well. There was a bit of hubbub over there not being any Craftsman, but I was too engaged in cursing my own stupidity and impatience to notice much of what was being said at the moment.</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>After a while, I told them that I had taken the Mage Class. All I got were a few confused looks in return. It seems that the attributes were also dependent on the Class. As such, the Knight Class had a &quot;Vigor&quot; attribute that resulted in extra HP regeneration, while the Scout had &quot;Stealth&quot; attribute - I had neither. Healer had an &quot;Attunement&quot; that affected the rate of healing applied to others. I realized I had no clue what effects attributes had, so took another look at the Status Window, this time willing it to show me attribute description.</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Affects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strength</td>
+<td>Physical attack damage dealt and received</td>
+</tr>
+<tr>
+<td>Vitality</td>
+<td>Health Points</td>
+</tr>
+<tr>
+<td>Agility</td>
+<td>Physical speed</td>
+</tr>
+<tr>
+<td>Dexterity</td>
+<td>Physical range</td>
+</tr>
+<tr>
+<td>Intelligence</td>
+<td>Mana Points</td>
+</tr>
+<tr>
+<td>Perception</td>
+<td>Magical range</td>
+</tr>
+<tr>
+<td>Wisdom</td>
+<td>Magical attack damage dealt and received</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>'I see. Brief and not much description about the intricacies but enough for the bad news. I have no special health regeneration; and every monster and their mother would notice me without the stealth attribute.' Others also had a &quot;Skills&quot; section below &quot;Special Effects&quot; with one Skill each already. While I was reading the attribute description, Carol was trying out a Skill to silent her footsteps. With magic. And here I was - a Mage, twiddling my thumbs. Yeah, I was pretty pissed at myself.</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/gs/Chapter 1 - Chat Bot/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapter 1 - Chat Bot
+    </a>
+     
+    <a href="/gs/Chapter 3 - Level 0/">
+      Chapter 3 - Level 0 <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar()
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden"
+        sideNav.remove("hidden")
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll"
+        sideNav.add("hidden")
+      }
+    </script>
+  </body>
+</html>

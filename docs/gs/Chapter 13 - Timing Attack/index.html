@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="Chapter 13 - Timing Attack" />
+    <meta property="og:description" content="" />
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="Pritesh Tupe's Personal Website" />
+    <meta property="og:url" content="https://www.priteshtupe.com/" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="white" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="black" />
+
+    <link rel="canonical" href="https://www.priteshtupe.com/" />
+    <link rel="icon" href="/assets/icons/favicon.ico" />
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <script>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode()
+      }
+
+      function darkMode() {
+        html.add("dark")
+        localStorage.theme = "dark"
+        if (window.REMARK42) window.REMARK42.changeTheme("dark")
+      }
+
+      function lightMode() {
+        html.remove("dark")
+        localStorage.theme = "light"
+        localStorage.themeColor = "#ffffff"
+        if (window.REMARK42) window.REMARK42.changeTheme("light")
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode()
+      }
+    </script>
+
+    <!---->
+
+    
+    <title>Chapter 13 - Timing Attack | Pritesh Tupe</title>
+    
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="absolute md:fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50">
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900">
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()">
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16">
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+      </div>
+      <div class="prose prose-slate dark:prose-invert prose-xl lg:prose-2xl">
+        <ul class="list-none max-h-screen overflow-y-scroll pb-8">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/feed.xml">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 13 - Timing Attack</h2>
+<pre><code class="language-sh">test = echo &quot;Hello, World!&quot;
+</code></pre>
+<p>&quot;Test,&quot; I whispered. A new window opened up.</p>
+<hr>
+<h3>Hello, World!</h3>
+<hr>
+<p>I was almost certain that it would work but still sighed in relief. Then I quickly modified the program, coming to the crux of the issue.</p>
+<pre><code class="language-sh">test = sudo echo &quot;Hello, World!&quot;
+</code></pre>
+<p>I took a deep breath. Crossed my fingers. Whispering with my eyes closed, &quot;Test&quot;. I opened a single eye and my lips unconsciously curled into a smile.</p>
+<hr>
+<h3>Password:</h3>
+<hr>
+<p>'Hallelujah!' I celebrated in my mind. There <em>is</em> a superuser!</p>
+<p>&quot;So it worked?&quot; Arya asked out of nowhere. I beamed at her blankly for a moment. &quot;You did your evil smirk again,&quot; she clarified.</p>
+<p>&quot;Okay, first off, it is a normal smile. And second, yes. I got want I was looking for. As for whether I can use it or not, the jury is still out on that one,&quot; I said.</p>
+<p>&quot;So, can you tell me now what the spell is?&quot; she beamed back. She had grown peculiarly interested in programming. 'Perhaps she wants to make a powerful resurrection spell or something?'</p>
+<p>&quot;Okay. In normal computing, there is a concept of a superuser, who can do stuff normal users cannot. Ummm, for example, think of a corporate building. You have your cleaners, workers, security, and so on. Many people with various roles and access to different rooms and tools. Then there is the owner or an administrator of the building. That one has access to all the rooms and all the stuff of the building. A superuser is something like the administrator. I mean, bad example but close enough. In Windows, the user is called an Administrator; on Unixes it is called a 'root' user,&quot; I tried to explain.</p>
+<p>&quot;Ah, I understand. So, what has your spell got to do with an administrator?&quot; she asked.</p>
+<p>&quot;Hmm, well you must know by now that these spells are nothing but programs, right? If I can get superuser rights, then -&quot;</p>
+<p>&quot;Then you can access tools and do stuff that you normally couldn't!&quot; she cut me off and concluded.</p>
+<p>&quot;Well, yes,&quot; I replied. 'She is quick on the uptake.'</p>
+<p>&quot;So how do you become an admin?&quot; she continued.</p>
+<p>&quot;That is the problem. You need a password,&quot; I said with a bitter smile.</p>
+<p>&quot;And how will we get this password?&quot; she prompted unabashed.</p>
+<p>'Brute force? Nah, I don't have years to spare for it to complete. I don't have handy dictionary either. Hmm, will it be susceptible to attacks though? Even our Earthly systems are so air-tight for the most part, this is an alien super system we are talking about. Maybe...'</p>
+<p>&quot;I'm gonna try something called as timing attack.&quot; I paused, rearranging my thoughts. &quot;It works by checking the time of a system's response against different inputs. Imagine you entered a fully wrong password, like all characters incorrect. And the system denies entry after processing for a bit. Now, you enter a wrong password again, but half your characters are matching the real password. System will deny you entry again, but the time it takes to process your input will vary.&quot;</p>
+<p>&quot;I don't get it, why will the time be different? And how will it give us the password?&quot; she asked.</p>
+<p>&quot;Hmm, perhaps an example will help? Assume the real password is 'abcd'. And the system checks each letter of your input against the real one when verifying. Now, if you enter 'wxyz', the system matches 'w' as first input against 'a', which is incorrect, so it immediately denies request. Next, you put in 'axyz'. It will check if letter of input 'a' with real pass 'a', give okay, move on to next letter 'x' and match against 'b'. It denies again here but the time it took to deny was more that of before because it took more time to process the correct input at the start. Thus, you unravel each letter one by one until your 'wxyz' turns into 'abcd' and voila - you have the password!&quot;</p>
+<p>&quot;Oh wow, that is some neat trick.&quot; She reflected on it for a while. &quot;Hey, my mana is back up, I'm gonna go cast heal. Best of luck with the password.&quot; She went back to her grind. I went back to mine.</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>I was pessimistic. Good thing I had nothing but time on my hands - at least until Arya leveled up. I decided to give some random words a try first, you never know.</p>
+<hr>
+<h3>Password: password</h3>
+<hr>
+<p>I added the password with a thought. The window just vanished. No 'Hello, World!'. I noticed I was down 2 mana. 'Come on, I'm not even doing anything!' I wailed.</p>
+<p>More determined than ever, I tried several more variations. No dice.</p>
+<p>'I can't manually keep entering a password. A few more and I'll forget what I entered previously. Nor would I be able to cover all the characters.' With that thought, I decided to automate it.</p>
+<pre><code class="language-sh">test = while true; do echo &quot;password&quot; | sudo -S echo &quot;password worked&quot;; done;
+</code></pre>
+<p>I cast the spell. One mana point down. I didn't see the window prompting for the password. Another second down, another mana point gone.</p>
+<p>'What is this? A background job? I see. Since the system is unable to determine how many resources this spell will consume, it is taking it in as it requires,' I mused. 'Alright, now that we have a loop, let us get our characters in! First, I need a loop going from 0 to 255 to cover all chars. And I need to stream the output into a file.'</p>
+<pre><code class="language-sh">test = i=0; while [ $i -le 255 ]; do echo &quot;$i&quot; &gt;&gt; password_hack | sudo -S echo; done;
+</code></pre>
+<p>'Now, instead of numbers, let us feed it characters. Maybe the old printf trick?'</p>
+<pre><code class="language-sh">get_char i = printf &quot;\x$(printf %x $i)&quot;
+</code></pre>
+<p>'Alright, this will take a decimal i and return the corresponding character. Next is... Ah right, the &quot;time&quot; function.'</p>
+<pre><code class="language-sh">get_time = date +%s%N
+</code></pre>
+<p>'Right, so this will give us time in nanoseconds. Now to put it all together...'</p>
+<pre><code class="language-sh">
+test = i=0; while [ $i -le 255 ]; do echo &quot;$(get_char $i) $(get_time)&quot; &gt;&gt; password_hack | sudo -S echo; done;
+
+get_char i = printf &quot;\x$(printf %x $i)&quot;
+
+get_time = date +%s%N
+
+</code></pre>
+<p>I ran each function and made sure everything worked. By the time I was done, Arya was looking fixedly at me again. &quot;You were gone for quite a while just now. How's the password hacking going?&quot; she queried. I was getting used to her being a curious cat by now, so I simply replied: &quot;I've got the code down, I think. But I don't have the mana required to run it to the end right now. Maybe later? Quite a shot in the dark though, I don't expect much,&quot; I sated her curiosity, &quot;Are you done?&quot; I queried in return. &quot;Yep, I'm level 3 now!&quot; she exclaimed. &quot;Congratulations,&quot; I smiled in return. &quot;Should we wake the others now or do you wanna rest some?&quot; &quot;Nah, let's get going,&quot; she declared. And so, we woke the others and got going.</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/gs/Chapter 12 - Crocodile Hunters (2)/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapter 12 - Crocodile Hunters (2)
+    </a>
+     
+    <a href="/gs/Chapter 14 - Avian Prosecution (1)/">
+      Chapter 14 - Avian Prosecution (1) <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar()
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden"
+        sideNav.remove("hidden")
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll"
+        sideNav.add("hidden")
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="Chapter 50 - Area of Effect" />
+    <meta property="og:description" content="" />
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="Pritesh Tupe's Personal Website" />
+    <meta property="og:url" content="https://www.priteshtupe.com/" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="white" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="black" />
+
+    <link rel="canonical" href="https://www.priteshtupe.com/" />
+    <link rel="icon" href="/assets/icons/favicon.ico" />
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <script>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode()
+      }
+
+      function darkMode() {
+        html.add("dark")
+        localStorage.theme = "dark"
+        if (window.REMARK42) window.REMARK42.changeTheme("dark")
+      }
+
+      function lightMode() {
+        html.remove("dark")
+        localStorage.theme = "light"
+        localStorage.themeColor = "#ffffff"
+        if (window.REMARK42) window.REMARK42.changeTheme("light")
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode()
+      }
+    </script>
+
+    <!---->
+
+    
+    <title>Chapter 50 - Area of Effect | Pritesh Tupe</title>
+    
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="absolute md:fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50">
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900">
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()">
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16">
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+      </div>
+      <div class="prose prose-slate dark:prose-invert prose-xl lg:prose-2xl">
+        <ul class="list-none max-h-screen overflow-y-scroll pb-8">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/feed.xml">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h1>Chapter 50 - Area of Effect</h1>
+<p>&quot;One fire spell, one ice spell,&quot; I murmured lightly, &quot;one lightning spell, one light spell, one sorta-gravity spell.&quot; I wondered if I should count the others. 'Might as well.' &quot;Two curse derivatives, two utility spells, and finally one no-op hack.&quot;</p>
+<p>I had a total of 7 base attack spells and several variations on how I could use them. I could use them directly or lay 'em series of Rune-traps, I could boost or reduce the effect by controlling the volume of mana supplied. And I could combine the above to multiply my effective repertoire of &quot;Skills&quot;. I was approaching parity with what a Mage could achieve without System getting in their way. In fact, I believed I could further eclipse what &quot;normal&quot; Mages could achieve with an increase in level and my understanding of the System.</p>
+<p>Was I satisfied with the status quo?</p>
+<p>'Hell nawww!'</p>
+<p>From my perspective, I had been given free rein over the underlying nature of this reality that no one else currently enjoyed. 'Parity with same level Mage?' I scoffed, 'I should be pawning them to moon and back.'</p>
+<p>&quot;Sire?&quot; Carla's voice echoed beside me. She had been keeping close to me since the dawn when we started from the camp on our return journey back to the Lohengramm household. Johnathan had received a communication from his dad, who had received one from Francisa's dad. The search for the keys was considered the highest priority mission, and all Heroes were converging back on the palace intent on setting off to the south to retrieve the &quot;Faerie Key&quot; first.</p>
+<p>So the world still behaved according to video-game rules. That was good to know. The Maricha had shaken me enough that I believed our main goal of ending the Calamity would be sidestepped for the other short-term stuff and we'd get lost in innumerable side-quest chains. The main quest was still on. 'Perhaps that would be game-like too, if how many players play it.'</p>
+<p>&quot;Nah, just thinking about my options. What Skills do other Mages around my level usually have?&quot; I had my quest list and spell-repo opened side-by-side. Today, after a long absence, I was back to the activity that brought me the most joy. Experimenting on new spells!</p>
+<p>Carla gave it some thought. I glanced around, noting the small group I was part of for the past few days. Carl was off scouting far ahead, still visible to me so not <em>as</em> far. Julie and John were a few steps behind us, Julie chatting away excitedly while John nodded every once in a while. Something was going on between them but it <em>really</em> wasn't my business, so I hadn't brought the matter up with Julie. Maybe I should mention it to Carol, she will surely -</p>
+<p>&quot;A shield of some kind, I say.&quot; Carla interrupted my thoughts. &quot;I've noticed you have quite the firepower Sire, but little means of defending yourself. Most Mages have a rudimentary shield of some manner against most physical and magical attacks.&quot;</p>
+<p>I nodded. I was working on a defense Circle already, hoping that it could be stitched into clothes or embedded on some artifact. But I barely could get a normal defense Circle to work, let alone a mobile one. Perhaps I was going about it wrong. How would one go about outright blocking attacks? Use the accio spell creatively for physical? That would be deflecting them more than blocking if that would even work. And magical attacks? I'm sure the environment variables had some use-case here but to hell with <em>that</em> waste of time.</p>
+<p>&quot;Mayhap a close range attack would've been nice as well when you get surrounded and lack a proper shield.&quot; She added, nodding to herself.</p>
+<p>Now that, I hadn't thought of it at all. I could use area-of-effect attacks in close range but I would get caught in them as well.</p>
+<p>&quot;Hmm... Interesting.&quot; I immediately scanned my repo for inspiration. Soon enough, I had it! In fact, I had already thought of such a spell before but more so as a joke than as a serious contender for a concrete implementation.</p>
+<p>I waved the quest list away, concentrating on the repo. 'Alrighty, here we go.'</p>
+<pre><code>test_aoe =
+</code></pre>
+<p>I thought about it a bit, more to ensure that I wasn't missing anything crucial. It was as simple as a spell could get.</p>
+<pre><code>test_aoe targets =
+</code></pre>
+<p>That's right. A &quot;universal push&quot; that would punt away everything around me. Well, all the targeted monsters at least. Pushing away a volume of air wouldn't matter. Of course, that meant I was limited to the number of &quot;points&quot; I could select at a time but that was a problem for future Pat.</p>
+<p>Now, on to the nitty-gritty:</p>
+<p>First, the target would be the center of the blast. Or &quot;origin&quot; as I like to designate it. I would have to consciously target a sphere around myself.</p>
+<p>The &quot;targets&quot; would be a list of selected monsters; I'd loop on each and push it further away from me in a direct reverse of accio.</p>
+<p>That's all. 'So simple!'</p>
+<p>&quot;..Oi!&quot; Julie poked me in the side.</p>
+<p>&quot;Oww, what?&quot; I nursed the spot. She hadn't been gentle.</p>
+<p>&quot;The carriage is here, you can have your fun inside, yeah? Carla's been trying to bring you back to your senses for a while.&quot;</p>
+<p>I surged out of the tunnel-vision from my Status Window and noticed the carriage arriving near us, Carl already seated beside the driver. The carriage was supposed to be our ticket to the capital. As I breathed a sigh of relief seeing the lack of visible decorations, I heard Julie gossip behind me: &quot;See, that's how you wake him up. He gets like this sometimes.&quot; 'Oi, what new rumors is this woman spreading.' Julie smirked at me, Carla sending a measuring glance my way.</p>
+<p>&quot;Come, you can gawk at each other later, our ride's here.&quot;</p>
+<p>&quot;W-what?&quot; Carla sputtered. I just sent a withering glance at Julie. She really had changed. I hadn't known her to be the teasing type of gal. Guess all that extra energy had to go <em>somewhere</em>.</p>
+<p>&quot;Let's go.&quot; I sighed and got on the carriage. I'll be seeing Arya, Carol, and Francisa soon. Divin and Taro would arrive later as well. I was quite looking forward to how each had progressed.</p>
+<br />
+<p style="text-align:center"><strong>¤ ¤ ¤</strong></p>
+<br />
+<p>I had my Status Window open, but my attention was on the shifting scenery outside. The carriage was speeding quite fast on the lonely route, despite the poorly maintained state of the road.</p>
+<p>The rapidly moving greenery reminded me of the rides through country roads back home. I held back a sigh, coming back to the task at hand.</p>
+<p>'So, for each target &quot;t&quot;, increase the distance between it and origin.'</p>
+<p>I started off with a simple outer loop to keep it going, then an inner loop through the targets.</p>
+<pre><code>test_aoe targets = while true; do
+  for t in targets;
+    do
+    # todo push here
+    done;
+done;
+</code></pre>
+<p>Now, for the reverse accio logic:</p>
+<pre><code>test_aoe targets = while true; do
+  for t in targets;
+    do
+      t.x++;
+      t.y++;
+      t.z++;
+    done;
+done;
+</code></pre>
+<p>'Aaaaand done!' No need to even check the bounds, they can go to infinity for all I cared. 'Heh, imagine that!'</p>
+<p>&quot;Something the matter, Sire?&quot; Carla piped up from beside me.</p>
+<p>The carriage was not as large as the Royal one, it had enough room for 6 people to squeeze in. With just the four of us inside, we had spread out comfortably. Carla and I took one seat while Julie and John took the other facing us.</p>
+<p>I was momentarily confused by her query. Why would something be the matter? I was just sitting here doing my thing.</p>
+<p>&quot;You smiled out of nowhere,&quot; Julie helpfully supplied with a smirk of her own.</p>
+<p>'Ah.'</p>
+<p>&quot;No matter as such,&quot; I smiled again gently, &quot;Just finished a -&quot; I stopped. 'Should I tell them I can make new Spells on my own? How will it affect the storyline?' I was glad I managed to shut my mouth before my brain caught up. 'How do I spin this?'</p>
+<p>&quot;New Spell, right?&quot; Julie asked innocently.</p>
+<p>'Aargh. What the hell, Julie!'</p>
+<p>Both John and Carla were looking at me with wide eyes. I had to control this immediately. Now, I couldn't outright lie that I didn't have a new Spell.</p>
+<p>&quot;Yeah, a new Spell.&quot; A truth. &quot;I got this book about beginner Spells from Neysaa in Capital.&quot; Another truth. &quot;I've been experimenting with it.&quot; Final truth. And the lie is nicely tied up with a bow on top.</p>
+<p>It was common for new Mages to experiment with their &quot;terminals&quot; or however they saw their Spells. Hell, most of the Mages got their specialized &quot;Skills&quot; from family-heirloom Spellbooks.</p>
+<p>I needed to have a talk with Julie about sensitive information. Thankfully, she kept mum as I vaguely explained to Carla what the &quot;test_aoe&quot; was about. I couldn't keep calling it that though. It needed a new name.</p>
+<p>&quot;What is this Skill called, Sire Hero?&quot; John asked coincidentally.</p>
+<p>I stared at the dipping Sun cresting the tree-line, drowning in the memories long buried. A name rose unbidden to my lips like a blast from the past. With a smile that stretched across my face, I whispered:</p>
+<p>&quot;Depulso&quot;</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/gs/Interlude - Tides of War/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Interlude - Tides of War
+    </a>
+     
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar()
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden"
+        sideNav.remove("hidden")
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll"
+        sideNav.add("hidden")
+      }
+    </script>
+  </body>
+</html>

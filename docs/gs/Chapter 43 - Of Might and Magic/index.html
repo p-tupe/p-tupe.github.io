@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="Chapter 43 - Of Might and Magic" />
+    <meta property="og:description" content="" />
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="Pritesh Tupe's Personal Website" />
+    <meta property="og:url" content="https://www.priteshtupe.com/" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="white" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="black" />
+
+    <link rel="canonical" href="https://www.priteshtupe.com/" />
+    <link rel="icon" href="/assets/icons/favicon.ico" />
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <script>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode()
+      }
+
+      function darkMode() {
+        html.add("dark")
+        localStorage.theme = "dark"
+        if (window.REMARK42) window.REMARK42.changeTheme("dark")
+      }
+
+      function lightMode() {
+        html.remove("dark")
+        localStorage.theme = "light"
+        localStorage.themeColor = "#ffffff"
+        if (window.REMARK42) window.REMARK42.changeTheme("light")
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode()
+      }
+    </script>
+
+    <!---->
+
+    
+    <title>Chapter 43 - Of Might and Magic | Pritesh Tupe</title>
+    
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="absolute md:fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50">
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900">
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()">
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16">
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+      </div>
+      <div class="prose prose-slate dark:prose-invert prose-xl lg:prose-2xl">
+        <ul class="list-none max-h-screen overflow-y-scroll pb-8">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/feed.xml">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 43 - Of Might and Magic</h2>
+<p>'&quot;Not that further ahead,&quot; he said. &quot;Just a little to the southwest, right on the mountains,&quot; he said.' I let loose a tired exhale, glaring at the orange light that spread out over the distant mountain range, the sun having bid goodbye just a while before. 'Would it have hurt to go into a <em>little</em> detail of how further ahead?'</p>
+<p>A human fortress in the mountains. I was pretty sure he meant the High Passes, as the humans called it. The one Francisa mentioned provided passage to the western side of the continent. I had pictured it as a trail among the mountains, not a proper fortified position. 'Oh well, I hope they have stairs.'</p>
+<p>I took another sip from the waterskin. I tended to keep it filled since mana was cheaper than water. While I could not fill it fully in one go, the regeneration more than made up for it. I let the bag hover by my side using accio, as I tied it to the waist rope. It was a bit scary how I was used to having magic already.</p>
+<p>I boosted the Circle on my hood and stretched my perception out, actively scanning for magical signatures. Technically, it was not necessary as they would be detected automatically. But I had formed a habit of doing so anyway. It helped settle the mind, in a way. I did not notice any monsters nearby. Well, except the ones I was about to rain hell on.</p>
+<p>I grimly noted a pack of hyena-like monsters sniffing and heading my way, cautious but unerring. With detachable jaws and teeth like a saw, that I feared were lifted straight from the Resident Evil movies. I first noticed something trailing me a few hours ago. The creatures were going in the opposite direction back then, eastwards. But as I made my way further and further in what could be called the start of a forest, they had changed direction.</p>
+<p>So I decided to hunt them instead.</p>
+<p>From my perch on a fairly high tree branch, I got a clearer view of their visage for the first time. 'Yeaaah, these are carrying the virus for sure.' But the thing I had not noticed before struck out - up close, these creatures were barely the size of large house cats. Identify showed their level at 17. And something about a parasite in special effects. For all my precautions, these things were <em>weak</em>. But they were in a swarm of about a dozen, so I didn't take any chances. 'Fingers crossed they can't climb the trees.' Of course, if they did try to climb, they were in for a nasty shock.</p>
+<p>The first of the creatures came close enough that I could see it's wet snout sniffing the air. 'Just a couple more steps bud, come on.' As if encouraged by my words, it did just that. And was immediately blasted backward, its ragged corpse colliding with a tree with a sickening crunch. 'Even a halfway charged Incendio is nasty!' The other creatures, instead of running away like sane animals, chittered loudly and sniffled harder. 'I guess that is what makes them monsters.'</p>
+<p>Monsters or not, they had <em>some</em> intellect, as they avoided the blasted area and spread around in a loose semi-circle instead. 'Hehehe, I had <em>hours</em> to prepare. As if I was gonna face you without artillery on my side.' I had made use of every single minute of those hours, spreading mundane to complex traps just about everywhere I could think of. Unfortunately, while I could select any space now, I still needed a solid surface to draw my circles. Large surfaces worked the best, like tree trunks, bounders, and the ground itself. Smaller objects tended to disintegrate more often than not. I sensed another critter coming close to a trap I had experimented on for the first time.</p>
+<p>As soon as it laid a paw inside the Circle, it was jerked up into the air and thrown away. As if erupted from a cannon. It squealed in surprise as it happened, the sound progressively diminishing until it was so high up that it was a mere dot in my vision. I admit It was a bit funny. I had used a sort-of &quot;reverse accio&quot; Circle, forming a meter wide conical shape at the ground that pulled anything inside towards the origin, which was high up in the air. Momentum helped throw further, gravity did the rest. I did not hear a thud as the thing landed somewhere far out of my range, but I was pretty sure it was a goner.</p>
+<p>Well, that was two out for the count. The rest were lurking around, as if hesitant to approach further. 'Come on, I have more than a dozen Circles around.' I wanted to see another cannon-ball performance but unfortunately, that Circle was out for the count. Just like the Incendio one. I made my Circles by brute-forcing mana into them for magnified effect, so they needed more mana than usual to recharge. Rendering them effectively single-use for me. Of course, other mages might find it better to use the pre-made Circles instead of wasting Scrolls, but it was a moot point for me.</p>
+<p>I idly selected another region, one that occupied three of the hyenas and its origin hovering over another experimental Circle. &quot;Accio,&quot; I whispered and put half my mana into it. The poor chumps were immediately pulled, one striking against a tree on its path to doom and falling unconscious. The three collided in a heap; one squealing, another chittering, and the last one silent. The spell ran out and they dropped, the trap instantly activating. With a loud whoosh, the air surrounding became super-heated and pulled into the center of the trap, along with those trapped inside. And then a boom, as it blasted out. The leaves of the surrounding trees wobbled in the sudden breeze, and the others of their pack gazed at them with strange attention. Unfortunately, the trap was a bust. All three were alive. At least two were, given their wild chittering. I glanced at my mana again, 'Over a half remaining.' I made sure to top off before engaging, and while it was fun to watch them stumble about, there was always the risk of something worse coming and trampling over all my traps. So I moved the show along.</p>
+<p>The two chittering hyenas immediately noticed the pebble I had strategically placed at the center of Circle of Stupefy, now glowing due to my Lumos. Both raced towards it, and as luck would have it, reached at the same time and got slapped in the snout by what was probably a thousand volts of pure energy. Suffice to say they were as dead as one can get, skin still sizzling in the aftermath.</p>
+<p>Lumos did not take as much mana anymore, so I was still hanging on around half my stores. I contemplated pulling big spells on the remaining ones or taking them out systematically. I was still lost in thought when there was a sudden loud crash somewhere in the depths of the forest behind me. All the hyenas sniffled the air once and uncannily turned tail as one. I scanned, but couldn't sense anything even with a boosted perception.</p>
+<p>There was a deafening roar that shook the trees themselves. <em>Something</em> was around, but my perception wasn't picking it up. The roar was answered with another, a lower-pitched and deeper roar that set my bones vibrating. 'Right, not all monsters can be scanned. Fuck.'</p>
+<p>The pandemonium was closing in on my position. I took a split-second decision and scrambled down from the tree, intent on absconding the hell away. I moved smoothly from amongst the several strategically laid Circles and set off running in the direction away from both the unknown roars and the hyenas. I had just about left the area when I heard another almighty crash and all my Circles lit up simultaneously.</p>
+<p>I risked a look behind, turning only for a second to get a glimpse of the creature enough to cast an Identify.</p>
+<br />
+<hr>
+<h3>[Adult] Poison Wyrm - Level ???</h3>
+<hr>
+<br />
+<p>'Fucking huge!' It was easily the size of an elephant. I glanced for but a moment, but I noticed the dull grey-green scales and vapid stream of toxin as my traps exhausted themselves without effect, just as I had feared just a while ago. The one I identified was fighting another of its species, laying waste to the surrounding grove. I did not linger to spectate.</p>
+<p>I ran as far as I could, the noise of the brawl now far off. Most of the monsters had fled, so there was no need to avoid anything in particular. I continued traveling parallel to the mountain range, now looking for a safe place to camp for the night.</p>
+<br />
+<p style="text-align:center"><strong>¤ ¤ ¤</strong></p>
+<br />
+<p>'Hmm, so air blast is out.' I muttered to myself, chewing on a fried piece of meat from last night. 'Maybe I need more volume? Or make the air hotter?'</p>
+<p>While I tried to focus on making more creative traps, I soon realized that my efforts were better utilized in a more defensive measure. The altercation of the wyrms had certainly left an impression. 'I wonder why they were out so far, and fighting each other?' The monsters on the &quot;edge&quot; weren't supposed to be so out of my league. 'Anyway, a barrier.' I thought for a moment about what exactly I wanted, going back to the metaphorical drawing board.</p>
+<p>'Alright, so what do I want? An area of protection around me so I don't get turned into a snack in my sleep.' Obviously, if a big-ass monster crashed into camp, there wasn't much I could do. I decided to focus on what I could. 'Assume I would be attacked by something like the vultures, hyenas, or the moles.' That brought the air, land, and underground assaults to the fore. 'So I need to select a whole sphere around me.' Now, since I would be asleep, it would have to be a Circle.' And since my Circles were effectively consumables, I needed something that would wake me up as well, in addition to acting as a barrier. An alarm of sorts. 'Well, Incendio and Stupefy are both pretty loud.' And I was a light enough sleeper. 'Cannot use Incendio though or it will blow me up as well.'</p>
+<p>So that left me with a Circle of Stupefy that targeted a hollow sphere instead of my usual in-circle range. That was the pinch though. First, all my Circles selected targets <em>inside</em> their perimeter. Second, the area included me as well. I had no idea how to un-target myself from the effect. That being said, I had an intuition that it was a trivial matter, as the system seemed to have an inbuilt protocol for the same that I had yet to explore. The first issue was more of a blocker, as I would need to work <em>around</em> the system to implement it. So far, I had not seen a single Rune that could be triggered remotely. Or at least targeted beyond its surrounding area.</p>
+<p>I wasn't keen on sleeping, despite being tired. I realized that my stamina points were doing unsung wonders. Earlier I would have been winded from a simple run. But I had been trekking, fighting, and sprinting sporadically for a whole day yet had enough juice left to experiment. I challenged myself to produce a working prototype before the sun came up, and got to work.</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/gs/Chapter 42 - A Proper Mage/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapter 42 - A Proper Mage
+    </a>
+     
+    <a href="/gs/Chapter 44 - Reunion/">
+      Chapter 44 - Reunion <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar()
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden"
+        sideNav.remove("hidden")
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll"
+        sideNav.add("hidden")
+      }
+    </script>
+  </body>
+</html>

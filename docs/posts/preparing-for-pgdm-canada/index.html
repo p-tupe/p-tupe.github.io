@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="Preparing for PGDM in Canada" />
+    <meta property="og:description" content="" />
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="Pritesh Tupe's Personal Website" />
+    <meta property="og:url" content="https://www.priteshtupe.com/" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="white" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="black" />
+
+    <link rel="canonical" href="https://www.priteshtupe.com/" />
+    <link rel="icon" href="/assets/icons/favicon.ico" />
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <script>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode()
+      }
+
+      function darkMode() {
+        html.add("dark")
+        localStorage.theme = "dark"
+        if (window.REMARK42) window.REMARK42.changeTheme("dark")
+      }
+
+      function lightMode() {
+        html.remove("dark")
+        localStorage.theme = "light"
+        localStorage.themeColor = "#ffffff"
+        if (window.REMARK42) window.REMARK42.changeTheme("light")
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode()
+      }
+    </script>
+
+    <!---->
+
+    
+    <title>Preparing for PGDM in Canada | Pritesh Tupe</title>
+    
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="absolute md:fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50">
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900">
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()">
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16">
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+      </div>
+      <div class="prose prose-slate dark:prose-invert prose-xl lg:prose-2xl">
+        <ul class="list-none max-h-screen overflow-y-scroll pb-8">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/feed.xml">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose prose-slate dark:prose-invert mx-auto py-16 prose md:prose-lg px-4 md:px-0">
+  <h1>Preparing for PGDM in Canada</h1>
+
+  <p><img src="/assets/imgs/canada-flag.jpg" alt="Canadian Flag"></p>
+<em>
+This is a rough outline of the steps I took preparing for my journey to Canada for my studies. I'm outlining them below to give a sort of holistic view of the whole process for those who intend to do the same. Please do not base your entire plan on this single post; I highly recommend contacting a consulting agency. They provide all information for __free__!
+</em>
+<br />
+<br />
+<blockquote>
+<p>All the advice in blocks like this is my personal opinion for the rest of this post.</p>
+</blockquote>
+<blockquote>
+<p>If you are anywhere in Navi Mumbai, seek out Avani Patel <a href="mailto:avani.patel@idp.com">avani.patel@idp.com</a> at IDP Vashi. She was instrumental in getting my admission and visa stuff done on time.</p>
+</blockquote>
+<h2>Phase 1: Prepare for Admission</h2>
+<ol>
+<li>
+<p>The first step is to give an IELTS (Computer-Academic) exam that assesses your English skills.</p>
+<ul>
+<li>
+<p>It consists of a reading + writing + speaking trio of tests.</p>
+</li>
+<li>
+<p>It is required to get a score of at least 6 out of 9 overall.</p>
+</li>
+<li>
+<p>All information regarding IELTS can be found on <a href="https://www.ielts.org/">ielts.org</a> and <a href="https://ielts.idp.com/">ielts.idp.com</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Apply to colleges.</p>
+<ul>
+<li>
+<p>Checkout colleges and courses in Ontario on <a href="https://www.ontariocolleges.ca/en/colleges">ontariocolleges.ca</a></p>
+</li>
+<li>
+<p>Apply to at least 5 colleges, to have a chance of getting admitted to one.</p>
+</li>
+</ul>
+<blockquote>
+<p>Ideally, you should apply for a 2 years course, so you get a 3-year work permit for it. You can also apply for two 1 year courses for the same benefit. Note however that for a single 1-year course, only a 1-year work permit is allowed. And you can only get a work permit via study <em>once</em>.</p>
+</blockquote>
+</li>
+<li>
+<p>Wait for Admission Approval</p>
+<blockquote>
+<p>While you can't take out a loan without an admission letter, I recommend having some funds on hand as colleges usually ask for some amount (mine was 2,300$) to book a seat and let you pay the rest (a year's worth of fees) in the coming months.</p>
+</blockquote>
+</li>
+</ol>
+<h2>Phase 2: Prepare for Visa</h2>
+<ol>
+<li>
+<p>Apply for GIC.</p>
+<ul>
+<li>GIC is a sort of &quot;guarantee&quot; to the Canadian govt that you have money to support yourself here. You pay an upfront 10,000$ (was ~6L Rupees for me) into a Canadian bank in form of a sorta-fixed FD that you get disbursed into your account (that will be opened after you arrive in Canada) every month or so.</li>
+</ul>
+<blockquote>
+<p>Most common options for opening GIC are Scotia and CIBC. I opened a CIBC because I had a referral from a friend. Can't really go wrong with either.</p>
+</blockquote>
+</li>
+<li>
+<p>Get your VISA Photo &amp; Statement of Purpose ready.</p>
+<ul>
+<li>
+<p>VISA photo is <em>slightly</em> different from the Passport photo. See details here <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/temporary-resident-visa-application-photograph-specifications.html">Visa Photograph Specifications</a></p>
+</li>
+<li>
+<p>The Statement of Purpose has some mandatory requirements (Doublecheck with your agent):</p>
+<ul>
+<li>College/Course/Dates clearly stated</li>
+<li>A little Family Background</li>
+<li>A bit about academics (previous scores and GPA etc)</li>
+<li>Professional experience, if any</li>
+<li>Reasoning for why the specific course and why Canada?</li>
+<li>Some financial background, stating GIC and Fees paid details</li>
+<li>Some stuff about the &quot;what after&quot; course ends. To convince you won't overstay your visa.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>CDC Medical Checkup</p>
+<ul>
+<li>To book a medical appointment, you have to email the CDC center <a href="mailto:info.north@cdcgroup.co.in">info.north@cdcgroup.co.in</a> with the location you wish to get the checkup done (and dates, if you have a preference). They will reply with a free date/time and you have to confirm the appointment.</li>
+</ul>
+<blockquote>
+<p>They might say it takes only a couple of hours for a checkup, but if I were you I'd block out the whole day for it. There is a <em>lot</em> of crowd.</p>
+</blockquote>
+</li>
+<li>
+<p>Biometrics registration</p>
+<ul>
+<li>
+<p>Basically to digitally store your fingerprints and irises. Can book your appointment here <a href="https://www.vfsglobal.ca/IRCC-AppointmentWave1/">vfsglobal.ca</a></p>
+</li>
+<li>
+<p>IMPORTANT: Biometrics must be done within 30 days of getting a BIL after submitting VISA forms (in the next step). Plan accordingly.</p>
+</li>
+</ul>
+<blockquote>
+<p>They might try to sell you a &quot;VIP&quot; treatment at the place. It's not that different than normal. Up to you though.</p>
+</blockquote>
+</li>
+<li>
+<p>Visa Forms</p>
+<ul>
+<li>A very important step. You need to create an account on IRCC and submit your forms for the Visa/Permit application.</li>
+</ul>
+<blockquote>
+<p>I am not attaching any link here because I highly recommend doing it with your agent. It's a tedious process and a lot can go wrong here.</p>
+</blockquote>
+</li>
+<li>
+<p>Wait for Visa Approval</p>
+<ul>
+<li>You get your submission confirmation within 24 hours.</li>
+<li>You get your UCI and BIL within 48 hours.</li>
+<li>Your medical records get updated in the week preceding PPR.</li>
+<li>Your PPR comes within 2-3 months (depends, covid so the timings were whack!)</li>
+</ul>
+</li>
+<li>
+<p>Once you get approved (your Passport Request comes in, send your passport out for stamping)</p>
+</li>
+</ol>
+<h2>Phase 3: Prepare for Departure</h2>
+<ol>
+<li>
+<p>Buy a ticket.</p>
+<blockquote>
+<p>Most wait for their visa to arrive before booking a ticket. Fair enough, but the problem with that is the prices skyrocket by then. If possible, try to book a &quot;refundable&quot; ticket well in advance. I paid around 60k Rupees for a single-layover ticket when I booked it 4 months earlier (Granted, I had my passport stamped by then), but a friend of mine booked only a month later for twice the amount. And another friend booked it 2 months before departure for over 1.5L. You get the picture.</p>
+</blockquote>
+</li>
+<li>
+<p>College-specific documents (Visa Proof, Vaccination Proof, etc)</p>
+<blockquote>
+<p>Hopefully, covid won't still be a thing when you're reading this.</p>
+</blockquote>
+</li>
+<li>
+<p>Buy a SIM card</p>
+<blockquote>
+<p>Majority of people buy their SIM after coming to Canada. I got mine while still in India. I did not need to pay anything upfront, simply filled out their forms and uploaded some docs. The SIM arrived home a week later. The advantage of this is that you get immediate internet/telephone access after you arrive in Canada. The last link in the point below is where I registered. I was helped with the process by the Customer Care Exec named Priyanka, her business number is &lt;+1-647-309-5658&gt;.</p>
+</blockquote>
+<ul>
+<li>
+<p>Some helpful links:</p>
+<ul>
+<li><a href="https://www.comparecellular.ca/compare-plans-in-ontario/prepaid-phones-and-sim-cards">CompareCellular.ca</a></li>
+<li><a href="https://canadiansim.com/">Canadiansim.com</a></li>
+<li><a href="https://www.fido.ca/">Fido.ca</a></li>
+</ul>
+</li>
+<li>
+<p>The SIM that I currently have, FIDO, also has referral bonuses where both those who refer and the one who is referred get one month free of cost irrespective of plans. This is my referral link: <a href="https://referme.to/pritesht-11">referme.to/pritesht-11</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Get CAD cash or Forex Card</p>
+<ul>
+<li>This is only for emergencies. If you have your room booked and travel arrangements made, then you won't really need any of it.</li>
+</ul>
+<blockquote>
+<p>I brought around 500$ in cash with me, most of which I deposited back in the bank after opening my account. You can bring up to 10,000$ dollars cash, beyond which you need to submit a declaration at customs and what-have-yous.</p>
+</blockquote>
+</li>
+<li>
+<p>Find a room</p>
+<ul>
+<li>I found my room through a WhatsApp group. I recommend joining similar groups on Facebook and Instagram as well.</li>
+<li>Beyond social media, you can rent a place from <a href="https://www.kijiji.ca">kijiji.ca</a> and <a href="https://www.airbnb.ca/">airbnb</a></li>
+</ul>
+<blockquote>
+<p>Try not to get pressured into a long-term lease, if you must move elsewhere after a few months for any reason. Also, ensure to have a video call to check the property first. There may be some token amount for booking, but do not pay it before verifying everything.</p>
+</blockquote>
+</li>
+<li>
+<p>Get RTO Extract (For those who have a driving license)</p>
+<ul>
+<li>
+<p>Just submit a letter to an RTO where you got your license and they will give you a printout of your extract.</p>
+</li>
+<li>
+<p>You can use this extract to expedite your Canadian driving license process.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Update ArriveCAN details (2 days before the flight)</p>
+<ul>
+<li>ArriveCAN is used as the official app for traveler verification in Canada. More info <a href="https://www.canada.ca/en/border-services-agency/services/arrivecan.html">here</a></li>
+</ul>
+</li>
+<li>
+<p>Shopping and Packing</p>
+<ul>
+<li><a href="https://nextcloud.priteshtupe.com/s/iLimMZPn7RYXt6z">Generic Packing List 1</a></li>
+<li><a href="https://nextcloud.priteshtupe.com/s/FEG9NdJ9qaRgnnN">Generic Packing List 2</a></li>
+<li><a href="https://nextcloud.priteshtupe.com/s/8wMDfK3HapNjxZs">My Personal Packing List</a></li>
+</ul>
+</li>
+</ol>
+<h2>Phase 4: Post Arrival</h2>
+<ol>
+<li>
+<p>Undergo Immigration Check</p>
+<ul>
+<li>They may ask a few questions regarding your stay, college, course, financial status, etc. In return, you get a printed copy of your Study Permit (and Co-Op Work permit if your course has it).</li>
+</ul>
+</li>
+<li>
+<p>Activate Bank Account</p>
+<ul>
+<li>I had to book an appointment for CIBC; For Scotia, I heard it was walk-in. Either way, you'll know what to do when you submit your GIC.</li>
+</ul>
+</li>
+<li>
+<p>Activate SIM Card</p>
+<ul>
+<li>As I mentioned before, I got my SIM while I was still in India. It was activated automatically a day before my flight, so after touching Canada, I simply popped it into my phone and I had access.</li>
+</ul>
+</li>
+<li>
+<p>Get a SIN Card</p>
+<ul>
+<li>
+<p>A SIN Card is like Social Security (or Aadhar) Card. If you get a job in Canada, your employer will ask for SIN to put your records and payments against. More about SIN <a href="https://www.canada.ca/en/employment-social-development/services/sin.html">here</a></p>
+</li>
+<li>
+<p>While a majority of people coming here apply for SIN by visiting Service Canada in person, it is not known by many that we can get SIN by applying online too! I did mine online and got it within 2 weeks. There is no difference in either, except that in-person you get it same day but have to stand in a line for hours.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>College-specific stuff</p>
+<ul>
+<li>I received my College ID from college; it also doubles as a bus pass. You'll also get your health care and other college-related stuff done in the first few weeks.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>And that is all folks! I hope the outline above gives you some sense of where you stand and what next steps you need to take. Feel free to comment in the box below if you have some questions. Happy Journey!</p>
+
+
+  <!---->
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+     
+    <a href="/posts/setting-up-haskell-development-environment-for-neovim/">
+      Setting up Haskell development environment for Neovim (2022) <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+
+  <hr />
+
+  <div id="remark42"></div>
+</div>
+
+<script>
+  // Commenting System remark42
+  var remark_config = {
+    host: "https://remark42.priteshtupe.com",
+    site_id: "remark",
+    theme: localStorage.theme,
+  }
+
+  !(function (e, n) {
+    for (var o = 0; o < e.length; o++) {
+      var r = n.createElement("script"),
+        c = ".js",
+        d = n.head || n.body
+      "noModule" in r ? ((r.type = "module"), (c = ".mjs")) : (r.async = !0),
+        (r.defer = !0),
+        (r.src = remark_config.host + "/web/" + e[o] + c),
+        d.appendChild(r)
+    }
+  })(remark_config.components || ["embed"], document)
+</script>
+
+
+    <script defer>
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar()
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden"
+        sideNav.remove("hidden")
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll"
+        sideNav.add("hidden")
+      }
+    </script>
+  </body>
+</html>

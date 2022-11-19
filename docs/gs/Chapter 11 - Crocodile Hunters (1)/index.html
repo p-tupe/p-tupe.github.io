@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="Chapter 11 - Crocodile Hunters (1)" />
+    <meta property="og:description" content="" />
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="Pritesh Tupe's Personal Website" />
+    <meta property="og:url" content="https://www.priteshtupe.com/" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="white" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="black" />
+
+    <link rel="canonical" href="https://www.priteshtupe.com/" />
+    <link rel="icon" href="/assets/icons/favicon.ico" />
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <script>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode()
+      }
+
+      function darkMode() {
+        html.add("dark")
+        localStorage.theme = "dark"
+        if (window.REMARK42) window.REMARK42.changeTheme("dark")
+      }
+
+      function lightMode() {
+        html.remove("dark")
+        localStorage.theme = "light"
+        localStorage.themeColor = "#ffffff"
+        if (window.REMARK42) window.REMARK42.changeTheme("light")
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode()
+      }
+    </script>
+
+    <!---->
+
+    
+    <title>Chapter 11 - Crocodile Hunters (1) | Pritesh Tupe</title>
+    
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="absolute md:fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50">
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900">
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()">
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16">
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+      </div>
+      <div class="prose prose-slate dark:prose-invert prose-xl lg:prose-2xl">
+        <ul class="list-none max-h-screen overflow-y-scroll pb-8">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/feed.xml">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 11 - Crocodile Hunters (1)</h2>
+<p>Taro, Divin, and I were moving forward with the ladies trailing behind us at a distance. This was our new formation, where the three guys had become meat shields for some reason.</p>
+<p>The hullabaloo of previous Levels was absent, instead filled with deceptive tranquility. Despite our strain, or perhaps because of it, we were having a light conversation. Taro had initiated it, asking me about my home town. Currently, we were on the topic of his school.</p>
+<p>&quot;... Oh you know, it's not like they teach anything meaningful. Plus, I had my exams coming up next week. I was summoned at a perfect time. Now I don't have to study anymore!&quot; he grinned.</p>
+<p>&quot;Haha,&quot; I laughed softly, choosing not to mention the time difference again. &quot;What about you Divin? What sort of business do you own?&quot; I switched the conversation to Divin.</p>
+<p>&quot;Hmm, you know. Odds and ends...&quot; He waved it off. &quot;I see,&quot; I said. I didn't. Thinking about it now, on the spectrum of most talkative on the right to least on left, Divin would sit on the extreme left. Carol would probably be on the other end, followed closely by Taro. I guess Julie, myself and Arya were somewhere in between, in that order.</p>
+<p>Pretty soon, we reached the place where we had ran back from before. Looking off to the left, I scanned the caves for signs of a crocodile. I didn't have to search for long. I soon saw it, just at the mouth of the cave sitting still with its mouth wide open, half-concealed by the long shadows of evening. Forget a balloon, it could pop my head like a bubble; that is how large it was. We stood and stared at it watchfully. It didn't move a muscle.</p>
+<p>As we stood, the girls made their way to our position. Then they gawked the reptile as well. It still didn't move. Eventually, Taro looked around the group and nodded. 'No man, don't!' I almost shouted, but I knew we had no choice. I decided to move as well, given I had the highest damage rate with my spells. I had to hit it first like I usually did at the start of every fight against monsters. Divin wavered for a bit, then joined us as well. We were back in our new formation, the girls trailing at a distance. Time to get a closer look at our next supposed prey.</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p>
+<br />
+<p>A very large crocodile, perhaps 6 meters in length, laid still on the ground. During our advance, it had slowly closed its large snout. If we hadn't seen it open beforehand, perhaps we would've been fooled into thinking that it hadn't moved at all!</p>
+<p>We were about 20 meters away from it. It didn't move. We moved ahead haltingly, reaching almost 10 meters near it. 'Damn, this thing is HUGE!' I thought to myself. I guessed it came close in size to some of the largest crocodiles on our planet. We stopped there, hesitant to move forward. I could now actually see the monster appraise us. There was a glint of beastly intellect in its eyes that you see only in apex predators.</p>
+<p>I lifted my hand, hoping to get a selection. Nope. I inched closer, praying it wouldn't suddenly jump out and grab at me. I couldn't select it still, but this time, the monster moved. Ever so slowly, it lifted its front leg and moved it forward. With a characteristic flex of its body, it moved the other leg ahead. I couldn't see the hind legs, shrouded in shadow as they were. It moved excruciatingly slow. I was tense as a drawn bowstring, ready to scamper off at the slightest hint of trouble.</p>
+<p>As we watched it amble towards us languidly, we realized that the thing moved as if in slow motion. Perhaps it was bogged down by its own weight. I still kept my hand lifted though, and perhaps it was about 6 meters away from us when I could suddenly feel something different. I was able to select it! 'Wow, my level up must've affected my range more than I thought.' I quickly cast Identify on it.</p>
+<hr>
+<h3>Kin of Sobek - Level ?</h3>
+<p><em>Special Effect</em></p>
+<ul>
+<li>Transient Life: You are a temporary variable in a short-lived calculation.</li>
+</ul>
+<hr>
+<p>Before I could process what was written on the screen, my caution overwhelmed my curiosity. The crocodile was no more than 5 meters ahead of me and I wasn't about to let it get any closer. With my palm already pointing at its snout, I shouted out the name of my most damaging spell - &quot;INCENDIO!&quot;</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>If you have ever felt stupid in life, think of what I had just done. I had cast a heat spell on a cold-blooded reptile monster when it was but a few meters away from me and heading in my direction for a light snack. The effect was immediate. It first spent a couple of seconds as if enjoying the heat spread through its thick body and then it raced towards us instantly.</p>
+<p>I had never in my life ran faster than when I did after being chased by a goddamn dinosaur. I gave no thought to Taro, nor to Divin. In my Usain B. moment, I hazily noticed that the girls were already gone. I reached the entrance within what felt like hours and seconds at the same time. The other guys were at my heels, apparently. The girls stood just beyond, panting on the bridge. Looking back, the crocodile had given up chase after barely a few meters, now languishing back in its nest; perhaps deciding to conserve its heat.</p>
+<p>I felt ludicrous about my actions. I was also utterly drained from my sprint. I felt like the stupidest bum if there ever was one. But for some reason, I started laughing. Yes, I felt incredibly dumb. Yes, my life was in danger, if only for a couple of seconds. Yet I couldn't help it at all. I snorted loudly, then burst into full-blown laughter. Soon, I was joined by Carol, Taro, and Arya as well. While I did not see them in my mirth, I bet Julie and Divin had grins on their faces as well.</p>
+<p>&quot;Well, that was stupid,&quot; I said after our giggle-fit died down. &quot;Yeah, but at least now we have a fighting chance,&quot; Divin said. &quot;I agree,&quot; I said thinking about how Petrificus would affect these things. &quot;So what exactly happened?&quot; Julie asked, with Arya and Carol perking their ears. Taro took the responsibility to regale them with our hilarious and deadly adventure. Slightly exaggerating it in the process, of course.</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>'Transient Life, eh?' I thought about the special effect on the creature. 'I guess these things are explicitly created for the purpose of this tutorial. I wonder what will happen to the place after we leave?' I asked Betty the same. &quot;Yes, the level and monsters in it are garbage collected after you pass on to the next level,&quot; she replied, &quot;Level 0 and 1, along with creatures inhabiting them, now no longer exist.&quot;</p>
+<p>For some reason, I felt sad about it. But then again, that is how these things work. 'Temporary variables for sure,' I thought as I brooded over the matter for a while.</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/gs/Chapter 10 - Id/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapter 10 - Id
+    </a>
+     
+    <a href="/gs/Chapter 12 - Crocodile Hunters (2)/">
+      Chapter 12 - Crocodile Hunters (2) <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar()
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden"
+        sideNav.remove("hidden")
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll"
+        sideNav.add("hidden")
+      }
+    </script>
+  </body>
+</html>

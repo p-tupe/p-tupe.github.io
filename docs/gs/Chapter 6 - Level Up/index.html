@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="Chapter 6 - Level Up" />
+    <meta property="og:description" content="" />
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="Pritesh Tupe's Personal Website" />
+    <meta property="og:url" content="https://www.priteshtupe.com/" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="white" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="black" />
+
+    <link rel="canonical" href="https://www.priteshtupe.com/" />
+    <link rel="icon" href="/assets/icons/favicon.ico" />
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/output.css" />
+
+    <script>
+      /*
+       * Theme toggle (Dark - Light Mode)
+       */
+      const html = document.documentElement.classList
+
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        darkMode()
+      }
+
+      function darkMode() {
+        html.add("dark")
+        localStorage.theme = "dark"
+        if (window.REMARK42) window.REMARK42.changeTheme("dark")
+      }
+
+      function lightMode() {
+        html.remove("dark")
+        localStorage.theme = "light"
+        localStorage.themeColor = "#ffffff"
+        if (window.REMARK42) window.REMARK42.changeTheme("light")
+      }
+
+      function toggleTheme() {
+        localStorage.theme === "dark" ? lightMode() : darkMode()
+      }
+    </script>
+
+    <!---->
+
+    
+    <title>Chapter 6 - Level Up | Pritesh Tupe</title>
+    
+  </head>
+
+  <body class="bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50">
+    <div class="absolute md:fixed flex flex-row w-full justify-between pt-4 px-4">
+  <div class="flex flex-row">
+    
+    <div
+      title="Home"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400 mr-4"
+      onclick="window.location.href = '/'"
+    >
+      <svg width="22" height="22" class="fill-current" viewBox="0 0 16 16">
+        <path
+          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"
+        />
+      </svg>
+    </div>
+    
+
+    <div
+      title="Dark Mode Toggle"
+      class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+      onclick="toggleTheme()"
+    >
+      <svg width="24px" height="24px" viewBox="0 0 24 24" class="fill-current">
+        <path
+          d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div
+    title="Side Menu Toggle"
+    class="text-slate-400 hover:text-slate-700 dark:text-slate-700 dark:hover:text-indigo-400"
+    onclick="toggleNavBar()"
+  >
+    <svg class="fill-current" width="24px" height="24px" viewBox="0 0 512 512">
+      <path
+        d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"
+      />
+    </svg>
+  </div>
+</div>
+ <div
+  id="side-nav"
+  class="transition-transform fixed hidden h-full w-full m-0 p-0 z-50">
+  <div class="flex flex-row">
+    <div
+      class="w-0 md:w-2/3 lg:w-4/5 h-full bg-black opacity-90 fixed left-0"
+      onclick="toggleNavBar()"></div>
+    <div
+      class="p-4 w-full md:w-1/3 lg:w-1/5 h-full bg-slate-100 fixed right-0 dark:bg-zinc-900">
+      <div
+        class="float-right text-slate-400 hover:text-slate-700 dark:hover:text-indigo-400"
+        onclick="toggleNavBar()">
+        <svg
+          width="32"
+          height="32"
+          class="fill-current fixed right-4 top-4"
+          viewBox="0 0 16 16">
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+      </div>
+      <div class="prose prose-slate dark:prose-invert prose-xl lg:prose-2xl">
+        <ul class="list-none max-h-screen overflow-y-scroll pb-8">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li>Web Novels</li>
+          <ul class="list-none">
+            <li><a href="/foa">Fate of Arda</a></li>
+            <li><a href="/gs">Grand Simulation</a></li>
+          </ul>
+          <li>Open Source Projects</li>
+          <ul class="list-none">
+            <li>
+              <a href="https://github.com/EMPAT94/creatures">Creatures</a>
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/binary-clock">Binary Clock</a>
+            </li>
+            <li><a href="https://github.com/EMPAT94/nvim-rss">Nvim Rss</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/impossible-xo"
+                >Impossible XO</a
+              >
+            </li>
+            <li><a href="https://github.com/EMPAT94/pingmon">Pingmon</a></li>
+            <li>
+              <a href="https://github.com/EMPAT94/zettel-merken"
+                >Zettel Merken</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/EMPAT94/flashcards">Flashcards</a>
+            </li>
+          </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/feed.xml">Rss</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div
+  class="prose mx-auto py-16 px-4 md:px-0 prose prose-slate dark:prose-invert md:prose-lg"
+>
+  <h2>Chapter 6 - Level Up</h2>
+<p>We had gathered around Arya, as she stood scrutinizing her updated Status Window. When she was done, we all looked at her expectantly.</p>
+<p>&quot;Umm, there isn't much actually. Nothing new.&quot; she grumbled, &quot;I just got an extra point on all my attributes. My stats have increased a bit as well. That's it.&quot;</p>
+<p>&quot;No new Skills?&quot; Taro asked. &quot;None&quot; she replied.</p>
+<p>&quot;What about a Class upgrade? Did you get that?&quot; I questioned. She replied in a negative. 'On second thoughts, what is a Class upgrade anyway?' Apparently, Divin thought the same, as he questioned Betty about it.</p>
+<p>Betty's wispy form shone brightly for a split second, then she said, &quot;Where a Level Upgrade is a quantitative change in your Class, a Class Upgrade is a qualitative one. There are 5 upgrades that you can get every 5 Level Ups for inital evolution starting with Novice at Level 0, Competent on Level 5, Proficient on Level 10, Expert on Level 15, finally Master on Level 20.&quot;</p>
+<p>&quot;So... All we get are extra points on Level Ups? And what do you mean <em>qualitative change</em>?&quot; Julie asked.</p>
+<p>&quot;Yes, Level Ups affect only your attribute points. Generally, you get plus one on every attribute; however, depending on your Special Effects, it may be incremented or decremented further. While it does <em>look</em> like a numerical change, it has many subtle effects that I recommend you explore on your own. As for the Class Upgrades, they are heavily dependent on what Class and Special Effects you have in place and produce a distinct change in your Status. It would take quite a while to list all possibilities. I am sure you will understand when you undergo the same.&quot; Betty concluded.</p>
+<p>Arya suddenly exclaimed, &quot;She's right. Even if it's just a plus one in numbers, it changes a lot of things. I just tried casting a Heal and not only can I cast it from further away, but it also takes less mana! Now that I have more mana as well, I can keep going with shorter breaks!&quot;</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>Our short interlude soon came to a head and we got back into the fight. Many of us were close to leveling up now. Half the field was clear of slimes as well! I popped a murky slime trying to trip Carol, froze another trying to latch onto Taro, and took a step back to get a broader view of the fight. Divin and Julie were doing fine on the left. Arya kept her distance, so she was safe for now. The freeze spell was handy; it cost a bit less mana at 240 and was quite effective at slowing the bouncy balls down for a while. The frozen slime eventually shivered a bit and got back to bouncing on Taro. I froze it again so Taro could get a clear shot at the core, and that's when it happened. I don't know <em>how</em> it happened. But I knew - I had leveled up. It certainly was a surprise to me, given I was behind everyone in XP at the start.</p>
+<p>&quot;Guys, I leveled up as well! I'm gonna go take a look at my stats,&quot; I shouted and retreated, after ensuring they didn't need my support. Not much I could do on low mana anyway. The others continued on their fight; I noticed Julie didn't draw any more slimes towards us.</p>
+<p>I ran back way behind even Arya and opened my Status Window. I had hidden my attributes previously, so I made them visible again and saw what had changed.</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Attributes</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strength</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Vitality</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Agility</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Dexterity</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Intelligence</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Perception</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Wisdom</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>'I see, plus one on each. Nothing more, nothing less. Not surprising, I suppose.' I thought. I hid them again and went back to my Status Window.</p>
+<hr>
+<h3>[Novice] Mage - Level 1</h3>
+<table>
+<thead>
+<tr>
+<th>HP</th>
+<th>MP</th>
+<th>SP</th>
+<th>XP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>97/120</td>
+<td>40/880</td>
+<td>12/25</td>
+<td>6/200</td>
+</tr>
+</tbody>
+</table>
+<p><em>Spells</em></p>
+<ul>
+<li>Incendio</li>
+<li>Petrificus Totalus</li>
+</ul>
+<p><em>Special Effects</em></p>
+<ul>
+<li>Magic Boost - You get extra Intelligence, Perception, and/or Wisdom points on every Class Upgrade</li>
+</ul>
+<hr>
+<p>'Ugh, I understand my low SP. Never was high on endurance training. But still only 120 HP!?! I'm pretty sure everyone else has way more than me. Also, XP requirement changed, eh? Makes sense.'</p>
+<p>I made my way back to the scene of the fight. Divin and Julie were about to finish off a bluish head-sized slime while Carol and Taro were nipping at another. Arya was healing a wound on Carol's shoulder, at least whenever she paused from hopping about. I stood there, pensively watching the fight waiting for my stats to recover.</p>
+<br />
+ <p style="text-align:center"><strong>¤ ¤ ¤</strong></p> 
+<br />
+<p>I got back in the fight again, after we all had another break to recover. I noticed that my spells were taking about 10 less mana. With the increased mana pool, I could now cast 3 successive Incendios and still have some mana left. Neat!</p>
+<p>Another few hours went by in a flash. Fight, recover, repeat. The rest of the merry band had leveled up as well. Despite that, we didn't change our strategy. It was working, and it was working <em>well</em>.</p>
+<p>While the cheer brought by our level-ups kept our stress at bay for a bit, it could only hold for so long. I was wondering how far we would make it when Julie sighted the exit. 'Good eyes on you, Miss Archer. Wait, does she have a Skill that lets her see far away or something?' I pondered as I tried to make out the exit myself.</p>
+<p>I saw it. Another damn bridge. Well, at least this one was wider than the makeshift ledge the last one was. I was puzzled as to why it was called a Dungeon when there were no stairs going up and down anywhere. Perhaps my idea of a Dungeon was skewed.</p>
+<p>We eventually made our way there. Not only were all of us level 1, but some of us were also halfway to level 2 - myself included. The field was mostly clear of slimes, a few still meandering at the edges. While the ground seemed psychedelic with color nearer to us, further on, it was returning to its natural color. It was a brown blur back where we had started from. We gazed at the ground where we had spent however many hours fighting magical ooze of fantasy, then turned our back on the field that granted us our first level up.</p>
+
+  <!---->
+
+     
+  <div class="flex flex-col md:flex-row w-full justify-between mt-16">
+    
+    <a href="/gs/Chapter 5 - Slime Fest/">
+      <div class="text-slate-500 inline">
+  <svg
+    width="16"
+    height="16"
+    class="fill-current inline-block mr-1"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+    />
+  </svg>
+</div>
+ Chapter 5 - Slime Fest
+    </a>
+     
+    <a href="/gs/Chapter 7 - Settling down/">
+      Chapter 7 - Settling down <div class="text-slate-500 inline">
+  <svg width="16" height="16" class="fill-current inline-block ml-1" viewBox="0 0 16 16">
+    <path
+      fill-rule="evenodd"
+      d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+    />
+  </svg>
+</div>
+
+    </a>
+    
+  </div>
+  
+</div>
+
+
+    <script defer>
+      /*
+       * Side Nav Bar Toggle
+       */
+      const sideNav = document.getElementById("side-nav").classList
+
+      function toggleNavBar() {
+        sideNav.contains("hidden") ? showNavBar() : hideNavBar()
+      }
+
+      function showNavBar() {
+        document.body.style.overflow = "hidden"
+        sideNav.remove("hidden")
+      }
+
+      function hideNavBar() {
+        document.body.style.overflow = "scroll"
+        sideNav.add("hidden")
+      }
+    </script>
+  </body>
+</html>
