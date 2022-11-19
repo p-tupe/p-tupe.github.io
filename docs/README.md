@@ -6,8 +6,9 @@
 
 - [x] The website has at minimum a homepage and a contact page that uses the HTML form tag. (If working in a group, the website has approx. 2 extra pages worth of content per additional team member)
 
-  - Homepage: priteshtupe.com
-  - Contact: priteshtupe.com/about
+  - Homepage: https://www.priteshtupe.com
+  - Contact: https://www.priteshtupe.com/about
+  - HTML forms are at the bottom of contact page
 
 - [x] The website uses images effectively and all images have alt tags
 
