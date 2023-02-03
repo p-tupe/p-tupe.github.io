@@ -1,8 +1,20 @@
 # Git
 
+## Stash
+
+> Stash the changes in a dirty working directory away
+
+- Show all saved points: `git stash list`
+
+- Quickly stash current changes: `git stash`
+
+- Quickly unstash latest save: `git stash pop`
+
+- 
+
 ## Tags
 
-- Tags: Mark a point in commit history (useful for releases and such)
+> Mark a point in commit history (useful for releases and such)
 
 - [Docs](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
 
