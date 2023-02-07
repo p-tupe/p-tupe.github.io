@@ -6,11 +6,31 @@
 
 - Show all saved points: `git stash list`
 
-- Quickly stash current changes: `git stash`
+- Quickly stash current changes: `git stash [push]`
 
 - Quickly unstash latest save: `git stash pop`
 
-- 
+- Clear all saved stashes: `git stash clear`
+
+- Save with a specific name: `git stash save <name>`
+
+- Apply a specific stash: `git stash apply <n>`
+
+  - where "n" is the stash@{n} you see after listing all stashes
+
+## Manual Rebase
+
+- If changed committed in latest commit: `git reset --soft HEAD~1`
+
+- Stash working state: `git stash`
+
+- Pull latest from upstream: `git pull origin ...`
+
+- Pop working state: `git stash pop`
+
+- Create a commit: `git commit`
+
+- Force push: `git push -f origin ...`
 
 ## Tags
 
