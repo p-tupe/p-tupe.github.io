@@ -26,7 +26,7 @@
 
 - Example, to rebase a featurex branch on main: `git checkout featurex; git rebase main; git push -f origin featurex`
 
-- <span style="color: red">IMPORTANT!</span> Do not rebase on shared public branch!
+- <span style="color: red">IMPORTANT!</span> Do not rebase on shared public branches!
 
 ### Manual Rebase
 
@@ -72,7 +72,7 @@
 
 ## Submodules
 
-- Submodules: Make a repository a subdirectory of another repository
+> Make a repository a subdirectory of another repository
 
 - [Docs](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
@@ -110,9 +110,7 @@
 
 ## Worktrees
 
-- [Docs](https://git-scm.com/docs/git-worktree)
-
-- Worktrees: Make a directory for each working branch
+> Make a directory for each working branch
 
 - Useful when working on multiple branches, to avoid stash/pop unmerged paths confusion and work without disturbing other branches. Parallel branches ftw!
 
