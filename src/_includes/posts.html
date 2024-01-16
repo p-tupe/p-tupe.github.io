@@ -5,9 +5,16 @@ title: Posts
 
 <div
   class="prose prose-slate dark:prose-invert mx-auto py-16 prose md:prose-lg px-4 md:px-0">
-  <h1>{{ title }}</h1>
+  <div class="text-center">
+    <h1>{{ title }}</h1>
+    <h5>{{ date | date: "%B %Y" }}</h5>
+  </div>
+
+  <hr />
 
   {{ content }}
+
+  <hr />
 
   <!---->
   {% assign sorted = collections.post | reverse %} {% assign prev = sorted |
