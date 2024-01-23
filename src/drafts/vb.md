@@ -1,78 +1,33 @@
-# Vladimir Bloodsworn Alpha Draft
+Purple lightning flashed outside Vlad's window, lighting up the night sky in an eerie glow.
 
-> Don't try to split into chapters initially (or at all)
+At first he thought it part of his hazy dream, lying half awake on the threadbare mattress. All day he had felt restless, for reasons that his young mind struggled to put into words.
 
-## Sorta Timeline
+He unconsciously squeezed his little sister closer; Anya had sneaked into his room earlier - just as uneasy as him. He felt movement from her, something like a chocked sob shaking her fragile frame. She clutched his thin shirt tighter in response to his squeeze.
 
-Be Prologue? Vlad aged 12 [Anya 6]
+It was nothing new. His sister sometimes had trouble sleeping. He would gently coax her into it. But today, sleep eluded his mind as well. Dreams of indescribable creatures hunting out in the dark touched his mind. The dark sometimes cut through by flashes of bright light.
 
-1. Middle of nowhere, Heavenly Sect A and Demonic Sect B have a skirmish that orphans Vlady and Anya. Explore the sibling's "sense". And how Anya is stronger than Vlady.
+When the thunder hit their modest hut like an earthquake, Vlad sat up straight fully awake. Anya, still clutching on to his torso with all her might, was dragged upright with him. A half scream escaped her lips, which she smothered immediately. Vlad looked down at her tear streaked face and held a steady hand above her head. At less than half his age, she was truly tiny.
 
-2. Both head towards Capital city Y as refuges. Spies trying to take over the city.
+"Vlady? Is Anya with you?" his mother peeked inside. He didn't need to answer as her gaze landed on her in the next moment.
 
-3. Heavenly sect A succeeds but sect B seeks revenge and go on a killing spree. Sect B Elder/Some artifact etc confront Vlady and Anya, Sect A elder comes to the "rescue"; Vlady goes over to Sect B and Anya goes to A. Anya thinks maybe Vlady died?
+"Where's Da?" Vlad replied instead. The restless feeling just wouldn't go away. He had a light sweat growing on his brow even in the chill of an early Spring night.
 
-For Beginnings
+"He went out to check what's all the commotion about. I'm going out to speak with Auntie Anna, both of you stay put here alright? Anya?" his mother sent a concerned glance at her daughter. She was well aware of her episodes as well, and while both she and their father had tried often, somehow being with Vlad always seemed to calm her down the best.
 
-1. Vlady fitting into Sect B; Go over sect organizations, or lack thereof. Something like the dark sides one-v-one, on a sect scale?
+"Yes Ma", Vlad replied automatically for both himself and his sister. Her tears hadn't stopped yet. He started caressing her head slowly. "We'll stay put."
 
-2. Mentor explains Ascention progression (how many?). Go over next ascention.
+"Alright", their mother gave one last glance as the pair, "I'll be right back."
 
-3. Introduce friend(s?). Explore Demonic side relationships. Innocent -> Betrayal?
+After their mother left, silence reigned for a while. Vlad considered the idea of going back to sleep and discarded it; He was well and truly awake now. Instead he focused his efforts on calming his distraught sister.
 
-4. Anya meets at -1 level; Demonic sects progress faster at a cost. Anya/Vlad confrontation #1. She begs him to return, he's set on the route (because of something that he does to protect her? but she doesn't know.)
+The purple lightning still split the sky every now and then. It seemed to be coming closer. His sister shuddered every time the sky flashed. The restless he felt earlier was now a tight grip on his heart. He desperately wanted to run away somewhere, anywhere. But the thought of Anya, and his Ma and Da kept him grounded.
 
-In Middle
+An explosion pierced the still night just as Anya screamed hoarsely into his chest. He pulled her into a hug, wrapping both his arms around her, even while his own body shivered with unknown dread. The thin shirt stuck to his back as he tried to get up from the suddenly shaky floor. Or was it his legs? With some effort, they both crawled into the corner of their room, sweating and shivering freely.
 
-1. War heating up. Explore political arrangement of sects and kindgoms.
+Another explosion rocked their world, vision going purple white for an instant. An unnatural howl of pain rose in response. It was close by.
 
-2. Consider war-missions and how Vlady ties them in with ascention.
+Anya had stopped screaming, her body cold with fright. She had her eyes closed tight and her little hands had gone pale white with the forceful grip on Vlad's shirt. Vlad still had his arms wrapped around her, heart held in a vice, eyes bouncing from his small window towards his door.
 
-3. Vlad meets Anna(?). Maybe a romantic spin? Couple of missions on how they trick Heavenly sects and progress faster.
+"Ma will be back soon," he whispered into Anya's ear. He wasn't sure how long it had been, but Auntie Anna lived right next door. "Soon," he whispered, more to himself.
 
-4. Vlady goes undercover into sister's sect.
-
-Towards the End Year
-
-1. End of Bloodsworn sect. Vlad is the last Bloodsworn.
-
-1. Vlad gets acquinted with neice?
-
-1. War ends with Vlady; or he ends the war. Anya sacrifice?
-
-1. Big showdown? Best if he uses both sects to reach Final Stage.
-
----
-
-Should focus on Anya sometime? Maybe interludes?
-
-Sect B = Bloodsworn sect
-
----
-
-## Progression/Ascention
-
-- Ascention Progression
-
-  0. Mortal
-  1. Mind Refinement (Mist/Fog)
-  2. Body Refinement (Water/Ocean)
-  3. Soul Refinement (Ice/Crystal)
-  4. Pre-Immortal Stage 1 (Star)
-  5. Pre-Immortal Stage 2 (Moon)
-  6. Pre-Immortal Stage 3 (Sun)
-  7. Immortal Stage 1 (Grasp a Concept)
-  8. Immortal Stage 2 (Make Law/Mark the world)
-  9. Immortal Final Stage (?)
-
-- Clan Progression
-
-  1. Initiate (Ascention 1)
-  2. Outer disciple (Ascention 2)
-  3. Inner disciple (Ascention 3)
-  4. Elder (Ascention 4-6)
-  5. Peak Head (not in Demonic)
-  6. Council Elder (not in Demonic)
-  7. Sect Head (Whoever is at the top)
-
-- Tribulations; Perhaps only after Ascention 3?
+He wasn't sure how many purple explosions or nightmarish howls they heard, or how long it had been. But they were receding into distance when he
