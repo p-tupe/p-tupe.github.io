@@ -329,25 +329,31 @@
 
 - Convert a mov to mp4 (with compression):
 
-```shell
-ffmpeg -i video.mov -vcodec h264 -acodec mp2 video.mp4
-```
+  ````sh
+  ffmpeg -i video.mov -vcodec h264 -acodec mp2 video.mp4
+  ```
+
+  ````
+
+- Trim media from/to
+
+  ```sh
+  ffmpeg -ss <start_seconds> -i "input.mp3" -t <end_second> "output.mp3"
+  ```
 
 ## vlc [cli mode]
 
 - Start vlc with ncurses interface
 
   ```sh
-  vlc --intf ncurses --random --loop --audio --recursive --no-video ~/Music/
+    vlc --intf ncurses --random --loop --audio --recursive --no-video ~/Music/
   ```
 
   - `recursive` is so subdirs in playlist expand instead of just sitting there; gui is preferences > all > playlist > subdir behav > expand
 
 ## youtube-dl
 
-- Download songs from youtube
-
-  [https://youtube-dl.org/](https://youtube-dl.org/)
+- Download songs from youtube using [youtube-dl](https://youtube-dl.org/)
 
   Only audio:
 
@@ -425,3 +431,14 @@ ffmpeg -i video.mov -vcodec h264 -acodec mp2 video.mp4
 - Start an emulator: `emulator @<device_name>`
 
 - Some useful options: `emulator @<device> -no-boot-anim -memory <size> -logcat <regex>`
+
+## SSHFS (macos setup)
+
+```bash
+$ brew install --cask macfuse
+$ brew tap gromgit/fuse && brew install gromgit/fuse/sshfs-mac
+$ sshfs -V # test if installed
+$ sshfs -o allow_other,default_permissions <server-dir> <local-dir> # follow prompts for permission
+```
+
+> On linux, sshfs should be preinstalled, if not just use default package manager
