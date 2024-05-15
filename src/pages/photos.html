@@ -1,0 +1,46 @@
+---
+title: Photos
+metaDescription: Flora, Fauna, Foods, Landscapes...
+permalink: "/photos/"
+---
+
+<div class="container pt-16 prose prose-slate dark:prose-invert mx-auto">
+  <h1 class="text-center">Photography Archive Scroll</h1>
+</div>
+
+<div class="container m-auto pt-10 grid grid-cols-2 gap-2">
+  {%- for photo in photos -%}
+
+  <div class="relative group">
+    <img
+      src="{{ photo.src }}"
+      alt="{{ photo.title }}"
+      class="h-full rounded-xl opacity-90 transition duration-200 hover:scale-125 hover:opacity-100 cursor-pointer"
+      onclick="toggleFullscreen()" />
+    <div
+      class="absolute w-full bottom-5 p-10 bg-black opacity-80 group-hover:invisible">
+      <h2 class="text-xl text-white font-bold">{{ photo.title }}</h2>
+      <span class="text-sm text-white">
+        {{ photo.location }} | {{ photo.datetime }}
+      </span>
+    </div>
+  </div>
+
+  {%- endfor -%}
+</div>
+
+<script>
+  function toggleFullscreen() {
+    let elem = document.querySelector("img")
+
+    if (!document.fullscreenElement) {
+      elem.requestFullscreen().catch(err => {
+        alert(
+          `Error attempting to enable fullscreen mode: ${err.message} (${err.name})`,
+        )
+      })
+    } else {
+      document.exitFullscreen()
+    }
+  }
+</script>

@@ -2,8 +2,6 @@ const pluginRss = require("@11ty/eleventy-plugin-rss")
 const sitemap = require("@quasibit/eleventy-plugin-sitemap")
 const lunr = require("lunr")
 
-const { write, unlink } = require("fs/promises")
-
 const card = require("./src/_includes/components/card.js")
 const { writeFile } = require("fs")
 
@@ -12,7 +10,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy("src/site.webmanifest")
   eleventyConfig.addPassthroughCopy("src/robots.txt")
   eleventyConfig.addPassthroughCopy("src/CNAME")
-  // Do not use while assets/, else css is included as well.
+  // Do not use whole assets/, else css is included as well.
   eleventyConfig.addPassthroughCopy("src/assets/icons/")
   eleventyConfig.addPassthroughCopy("src/assets/imgs/")
   eleventyConfig.addPassthroughCopy("src/assets/docs/")
