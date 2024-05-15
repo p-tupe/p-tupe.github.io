@@ -8,19 +8,20 @@ permalink: "/photos/"
   <h1 class="text-center">Photography Archive Scroll</h1>
 </div>
 
-<div class="container m-auto pt-10 grid grid-cols-2 gap-2">
+<div class="container m-auto p-10 grid grid-cols-1 lg:grid-cols-2 gap-2">
   {%- for photo in photos -%}
 
-  <div class="relative group">
+  <div class="relative group mb-20 rounded-xl lg:mb-0">
     <img
+      loading="lazy"
       src="{{ photo.src }}"
       alt="{{ photo.title }}"
-      class="h-full rounded-xl opacity-90 transition duration-200 hover:scale-125 hover:opacity-100 cursor-pointer"
+      class="lg:h-full rounded-xl lg:shadow-md lg:opacity-90 lg:transition lg:duration-200 lg:hover:scale-125 lg:hover:opacity-100 cursor-pointer"
       onclick="toggleFullscreen()" />
     <div
-      class="absolute w-full bottom-5 p-10 bg-black opacity-80 group-hover:invisible">
-      <h2 class="text-xl text-white font-bold">{{ photo.title }}</h2>
-      <span class="text-sm text-white">
+      class="w-full prose prose-slate dark:prose-invert lg:absolute lg:bottom-5 lg:p-10 lg:bg-black dark:lg:bg-white lg:opacity-80 lg:group-hover:invisible">
+      <h2 class="font-bold lg:text-white">{{ photo.title }}</h2>
+      <span class="lg:text-white">
         {{ photo.location }} | {{ photo.datetime }}
       </span>
     </div>
