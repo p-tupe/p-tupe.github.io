@@ -8,19 +8,19 @@ permalink: "/photos/"
   <h1 class="text-center">Photography Archive Scroll</h1>
 </div>
 
-<div class="container m-auto p-10 grid grid-cols-1 lg:grid-cols-2 gap-2 h-dvh">
+<div class="columns-1 lg:columns-2 gap-4 p-4 space-y-4 sm:mb-10">
   {%- for photo in photos -%}
 
-  <div class="relative group mb-20 rounded-xl lg:mb-0 inline-block h-fit">
+  <div class="relative group rounded-xl">
     <img
       loading="lazy"
       src="{{ photo.src }}"
       alt="{{ photo.title }}"
       class="rounded-xl lg:shadow-md lg:opacity-90 lg:transition lg:duration-200 lg:hover:scale-125 lg:hover:opacity-100 cursor-pointer"
-      onclick="toggleFullscreen()" />
+      onclick="toggleFullscreen(this)" />
     <div
-      class="w-full prose prose-slate dark:prose-invert lg:absolute lg:bottom-5 lg:p-10 lg:bg-black lg:opacity-80 lg:group-hover:invisible">
-      <h2 class="font-bold lg:text-white">{{ photo.title }}</h2>
+      class="m-10 prose prose-slate dark:prose-invert lg:m-0 lg:absolute lg:bottom-5 lg:p-10 lg:bg-black lg:opacity-80 lg:group-hover:invisible">
+      <h2 class="mb-0 font-bold lg:text-white lg:mb-5">{{ photo.title }}</h2>
       <span class="lg:text-white">
         {{ photo.location }} | {{ photo.datetime }}
       </span>
@@ -31,9 +31,7 @@ permalink: "/photos/"
 </div>
 
 <script>
-  function toggleFullscreen() {
-    let elem = document.querySelector("img")
-
+  function toggleFullscreen(elem) {
     if (!document.fullscreenElement) {
       elem.requestFullscreen().catch(err => {
         alert(
