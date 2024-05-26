@@ -1,3 +1,14 @@
+/*
+  {
+    src: "",
+    location: "",
+    title: "",
+    description: "",
+    datetime: "",
+    tags: [],
+  }
+*/
+
 module.exports = [
   {
     src: "https://imgur.com/DweBLu9.jpg",
@@ -7,7 +18,30 @@ module.exports = [
     datetime: "Sat May 25, 2024 10:41 am",
     tags: ["heritage", "house", "landscape"],
   },
-
+  {
+    src: "https://i.imgur.com/bwdjZG2.jpg",
+    location: "Prince William St, Saint John, NB",
+    title: "Tulips at Three Sisters Lamp",
+    description: "",
+    datetime: "Sat May 25, 2024 6:48 pm",
+    tags: [],
+  },
+  {
+    src: "https://imgur.com/w4fiaxD.jpg",
+    location: "1333 South Park St, Halifax, NS B3J 2K9",
+    title: "Le Bistro By Liz",
+    description: "",
+    datetime: "Sun May 5, 2024 12:03 pm",
+    tags: [],
+  },
+  {
+    src: "https://i.imgur.com/L56gpvW.jpg",
+    location: "312 Harbourview Dr, North Rustico, PE C0A 1X0",
+    title: "Blue Mussel Cafe",
+    description: "",
+    datetime: "Mon May 20, 2024 5:48 pm",
+    tags: [],
+  },
   {
     src: "https://i.imgur.com/cAKYBCP.jpg",
     location: "Twillingate, NL",
