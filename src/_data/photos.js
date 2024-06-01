@@ -11,6 +11,14 @@
 
 module.exports = [
   {
+    src: "https://i.imgur.com/bdXd4mm.jpg",
+    location: "131 Discovery Rd, Hopewell Cape, NB E4H 4Z5",
+    title: "Hopewell Rocks Provincial Park ",
+    description: "",
+    datetime: "Sat 1 Jun, 2024 11:14 am",
+    tags: ["landscape"],
+  },
+  {
     src: "https://imgur.com/DweBLu9.jpg",
     location: "8619 Cavendish Rd, Cavendish, PE C0A 1N0",
     title: "Green Gables Heritage Place",
@@ -24,7 +32,7 @@ module.exports = [
     title: "Tulips at Three Sisters Lamp",
     description: "",
     datetime: "Sat May 25, 2024 6:48 pm",
-    tags: [],
+    tags: ["flowers"],
   },
   {
     src: "https://imgur.com/w4fiaxD.jpg",
@@ -32,7 +40,7 @@ module.exports = [
     title: "Le Bistro By Liz",
     description: "",
     datetime: "Sun May 5, 2024 12:03 pm",
-    tags: [],
+    tags: ["food"],
   },
   {
     src: "https://i.imgur.com/L56gpvW.jpg",
@@ -40,7 +48,7 @@ module.exports = [
     title: "Blue Mussel Cafe",
     description: "",
     datetime: "Mon May 20, 2024 5:48 pm",
-    tags: [],
+    tags: ["food"],
   },
   {
     src: "https://i.imgur.com/cAKYBCP.jpg",
