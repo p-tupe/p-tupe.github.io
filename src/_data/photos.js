@@ -11,6 +11,22 @@
 
 module.exports = [
   {
+    src: "https://i.imgur.com/UaWpymE.jpg",
+    location: "Rte de l'Île, Saint-Siméon-de-Bonaventure, QC G0C 3A0",
+    title: "Plage de l'Île",
+    description: "",
+    datetime: "Mon Jun 3, 2024 8:01 pm",
+    tags: [],
+  },
+  {
+    src: "https://i.imgur.com/aWfcssz.jpg",
+    location: "La Côte-de-Gaspé Regional County Municipality, Quebec",
+    title: "Grand Greve",
+    description: "",
+    datetime: "Mon Jun 3, 2024 4:12 pm",
+    tags: [],
+  },
+  {
     src: "https://i.imgur.com/bdXd4mm.jpg",
     location: "131 Discovery Rd, Hopewell Cape, NB E4H 4Z5",
     title: "Hopewell Rocks Provincial Park ",
