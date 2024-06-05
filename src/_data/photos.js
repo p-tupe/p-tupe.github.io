@@ -11,6 +11,14 @@
 
 module.exports = [
   {
+    src: "https://i.imgur.com/rEuK15c.jpg",
+    location: "99, av de Grand-Pré, Bonaventure, Quebec G0C 1E0",
+    title: "Église catholique Saint-Bonaventure",
+    description: "",
+    datetime: "Tue Jun 4, 2024 10:00 pm",
+    tags: [],
+  },
+  {
     src: "https://i.imgur.com/UaWpymE.jpg",
     location: "Rte de l'Île, Saint-Siméon-de-Bonaventure, QC G0C 3A0",
     title: "Plage de l'Île",
@@ -51,14 +59,6 @@ module.exports = [
     tags: ["flowers"],
   },
   {
-    src: "https://imgur.com/w4fiaxD.jpg",
-    location: "1333 South Park St, Halifax, NS B3J 2K9",
-    title: "Le Bistro By Liz",
-    description: "",
-    datetime: "Sun May 5, 2024 12:03 pm",
-    tags: ["food"],
-  },
-  {
     src: "https://i.imgur.com/L56gpvW.jpg",
     location: "312 Harbourview Dr, North Rustico, PE C0A 1X0",
     title: "Blue Mussel Cafe",
@@ -89,6 +89,14 @@ module.exports = [
     title: "Breakfast Bagel with a side of Fruit bowl",
     description: "",
     datetime: "Sun May 12, 2024 9:09 am",
+    tags: ["food"],
+  },
+  {
+    src: "https://imgur.com/w4fiaxD.jpg",
+    location: "1333 South Park St, Halifax, NS B3J 2K9",
+    title: "Le Bistro By Liz",
+    description: "",
+    datetime: "Sun May 5, 2024 12:03 pm",
     tags: ["food"],
   },
 ]
