@@ -1,15 +1,31 @@
 /*
   {
     src: "",
-    location: "",
     title: "",
-    description: "",
+    location: "",
     datetime: "",
+    description: "",
     tags: [],
-  }
+  },
 */
 
 module.exports = [
+  {
+    src: "https://i.imgur.com/pYMJ17A.jpg",
+    location: "100 Chem. du Havre, La Malbaie, QC G5A 2Y9",
+    title: "La jetée de Pointe-au-Pic",
+    description: "",
+    datetime: "Mon Jun 10, 2024 4:20 pm",
+    tags: ["landscape", "sea"],
+  },
+  {
+    src: "https://i.imgur.com/wIMxwmV.jpg",
+    location: "10 Chem. du Havre, La Malbaie, QC G5A 2Y8",
+    title: "Musée de Charlevoix",
+    description: "",
+    datetime: "Mon Jun 10, 2024 4:02 pm",
+    tags: [],
+  },
   {
     src: "https://i.imgur.com/rEuK15c.jpg",
     location: "99, av de Grand-Pré, Bonaventure, Quebec G0C 1E0",
