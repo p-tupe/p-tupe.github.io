@@ -83,7 +83,7 @@ module.exports = [
     tags: ["food"],
   },
   {
-    src: "PXL_20240517_215926701.PORTRAIT~2.jpg",
+    src: "PXL_20240518_190329718~2.jpg",
     location: "Off-road",
     title: "Daily Driver",
     description: "",
