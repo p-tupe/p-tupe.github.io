@@ -11,7 +11,7 @@
 
 module.exports = [
   {
-    src: "https://i.imgur.com/pYMJ17A.jpg",
+    src: "https://static.priteshtupe.com/PXL_20240610_202012941.jpg",
     location: "100 Chem. du Havre, La Malbaie, QC G5A 2Y9",
     title: "La jetée de Pointe-au-Pic",
     description: "",
