@@ -11,7 +11,7 @@
 
 module.exports = [
   {
-    src: "https://static.priteshtupe.com/PXL_20240610_202012941.jpg",
+    src: "PXL_20240610_202012941.jpg",
     location: "100 Chem. du Havre, La Malbaie, QC G5A 2Y9",
     title: "La jetée de Pointe-au-Pic",
     description: "",
@@ -19,7 +19,7 @@ module.exports = [
     tags: ["landscape", "sea"],
   },
   {
-    src: "https://i.imgur.com/wIMxwmV.jpg",
+    src: "PXL_20240610_200205092.jpg",
     location: "10 Chem. du Havre, La Malbaie, QC G5A 2Y8",
     title: "Musée de Charlevoix",
     description: "",
@@ -27,7 +27,7 @@ module.exports = [
     tags: [],
   },
   {
-    src: "https://i.imgur.com/rEuK15c.jpg",
+    src: "PXL_20240605_020039078~2.jpg",
     location: "99, av de Grand-Pré, Bonaventure, Quebec G0C 1E0",
     title: "Église catholique Saint-Bonaventure",
     description: "",
@@ -35,7 +35,7 @@ module.exports = [
     tags: [],
   },
   {
-    src: "https://i.imgur.com/UaWpymE.jpg",
+    src: "PXL_20240604_000156837~2.jpg",
     location: "Rte de l'Île, Saint-Siméon-de-Bonaventure, QC G0C 3A0",
     title: "Plage de l'Île",
     description: "",
@@ -43,7 +43,7 @@ module.exports = [
     tags: [],
   },
   {
-    src: "https://i.imgur.com/aWfcssz.jpg",
+    src: "PXL_20240603_201220762.jpg",
     location: "La Côte-de-Gaspé Regional County Municipality, Quebec",
     title: "Grand Greve",
     description: "",
@@ -51,7 +51,7 @@ module.exports = [
     tags: [],
   },
   {
-    src: "https://i.imgur.com/bdXd4mm.jpg",
+    src: "PXL_20240601_141415600~2.jpg",
     location: "131 Discovery Rd, Hopewell Cape, NB E4H 4Z5",
     title: "Hopewell Rocks Provincial Park ",
     description: "",
@@ -59,7 +59,7 @@ module.exports = [
     tags: ["landscape"],
   },
   {
-    src: "https://imgur.com/DweBLu9.jpg",
+    src: "PXL_20240525_134153388~2.jpg",
     location: "8619 Cavendish Rd, Cavendish, PE C0A 1N0",
     title: "Green Gables Heritage Place",
     description: "From Anne of Green Gables",
@@ -67,7 +67,7 @@ module.exports = [
     tags: ["heritage", "house", "landscape"],
   },
   {
-    src: "https://i.imgur.com/bwdjZG2.jpg",
+    src: "PXL_20240525_214846571~2.jpg",
     location: "Prince William St, Saint John, NB",
     title: "Tulips at Three Sisters Lamp",
     description: "",
@@ -75,7 +75,7 @@ module.exports = [
     tags: ["flowers"],
   },
   {
-    src: "https://i.imgur.com/L56gpvW.jpg",
+    src: "PXL_20240520_210613758~2.jpg",
     location: "312 Harbourview Dr, North Rustico, PE C0A 1X0",
     title: "Blue Mussel Cafe",
     description: "",
@@ -83,7 +83,15 @@ module.exports = [
     tags: ["food"],
   },
   {
-    src: "https://i.imgur.com/cAKYBCP.jpg",
+    src: "PXL_20240517_215926701.PORTRAIT~2.jpg",
+    location: "Off-road",
+    title: "Daily Driver",
+    description: "",
+    datetime: "Sat May 18, 2024 8:06 pm",
+    tags: ["animals", "cat"],
+  },
+  {
+    src: "PXL_20240517_215926701.PORTRAIT~2.jpg",
     location: "Twillingate, NL",
     title: "Paddy",
     description: "",
@@ -91,7 +99,7 @@ module.exports = [
     tags: ["animals", "cat"],
   },
   {
-    src: "https://i.imgur.com/094QjfB.jpg",
+    src: "PXL_20240517_200117607~2.jpg",
     location:
       "Twillingate Lighthouse, Lighthouse Rd, NL-340, Crow Head, NL A0G 4M0",
     title: "On the edge",
@@ -100,7 +108,7 @@ module.exports = [
     tags: ["landscape", "sea"],
   },
   {
-    src: "https://i.imgur.com/T22Gr0a.jpg",
+    src: "PXL_20240514_113938889.jpg",
     location: "The Bagel Cafe, 246 Duckworth St, St. John's, NL A1C 1G8",
     title: "Breakfast Bagel with a side of Fruit bowl",
     description: "",
@@ -108,7 +116,7 @@ module.exports = [
     tags: ["food"],
   },
   {
-    src: "https://imgur.com/w4fiaxD.jpg",
+    src: "PXL_20240505_150332824~2.jpg",
     location: "1333 South Park St, Halifax, NS B3J 2K9",
     title: "Le Bistro By Liz",
     description: "",
