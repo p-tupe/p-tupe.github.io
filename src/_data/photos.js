@@ -11,6 +11,22 @@
 
 module.exports = [
   {
+    src: "PXL_20240612_203354229~3.jpg",
+    title: "Off-road beauty #2",
+    location: "Chem. de la Croix, Clermont, QC G4A 1E8",
+    datetime: "Wed Jun 12, 2024 4:33 pm",
+    description: "",
+    tags: ["landscape", "car"],
+  },
+  {
+    src: "PXL_20240612_202013427~2.jpg",
+    title: "Site Patrimonial de la Montagne de la Croix",
+    location: "Chem. de la Croix, Clermont, QC G4A 1E8",
+    datetime: "Wed Jun 12, 2024 4:20 pm",
+    description: "",
+    tags: ["landscape", "mountains"],
+  },
+  {
     src: "PXL_20240610_202012941.jpg",
     location: "100 Chem. du Havre, La Malbaie, QC G5A 2Y9",
     title: "La jetée de Pointe-au-Pic",
@@ -24,7 +40,7 @@ module.exports = [
     title: "Musée de Charlevoix",
     description: "",
     datetime: "Mon Jun 10, 2024 4:02 pm",
-    tags: [],
+    tags: ["museum"],
   },
   {
     src: "PXL_20240605_020039078~2.jpg",
@@ -32,7 +48,7 @@ module.exports = [
     title: "Église catholique Saint-Bonaventure",
     description: "",
     datetime: "Tue Jun 4, 2024 10:00 pm",
-    tags: [],
+    tags: ["architecture"],
   },
   {
     src: "PXL_20240604_000156837~2.jpg",
@@ -40,7 +56,7 @@ module.exports = [
     title: "Plage de l'Île",
     description: "",
     datetime: "Mon Jun 3, 2024 8:01 pm",
-    tags: [],
+    tags: ["landscape", "sea"],
   },
   {
     src: "PXL_20240603_201220762.jpg",
@@ -48,7 +64,7 @@ module.exports = [
     title: "Grand Greve",
     description: "",
     datetime: "Mon Jun 3, 2024 4:12 pm",
-    tags: [],
+    tags: ["landscape", "sea"],
   },
   {
     src: "PXL_20240601_141415600~2.jpg",
@@ -88,7 +104,7 @@ module.exports = [
     title: "Daily Driver",
     description: "",
     datetime: "Sat May 18, 2024 8:06 pm",
-    tags: ["animals", "cat"],
+    tags: ["car", "landscape"],
   },
   {
     src: "PXL_20240517_215926701.PORTRAIT~2.jpg",
