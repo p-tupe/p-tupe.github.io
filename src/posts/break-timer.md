@@ -47,8 +47,8 @@ end)
 And finally, let's lock the screen automatically 5 seconds after the notification is shown. We can do that using the `hs.caffeinate` module, leading to our final break-timer implementation:
 
 ```lua
-hs.timer.doevery(60 * 50, function()
-	hs.alert.show("take a break!")
+hs.timer.doevery(60 * 25, function()
+	hs.alert.show("Time to take a break!")
 	hs.timer.doafter(5, function()
 		hs.caffeinate.lockscreen()
 	end)
