@@ -11,6 +11,14 @@
 
 module.exports = [
   {
+    src: "PXL_20240616_130505903~2.jpg",
+    title: "La Grande Roue de Montréal",
+    location: "362 Rue de la Commune E, Montréal, QC H2Y 0B4",
+    datetime: "Sun Jun 16, 2024 9:05 am",
+    description: "",
+    tags: [],
+  },
+  {
     src: "PXL_20240612_203354229~3.jpg",
     title: "Off-road beauty #2",
     location: "Chem. de la Croix, Clermont, QC G4A 1E8",
