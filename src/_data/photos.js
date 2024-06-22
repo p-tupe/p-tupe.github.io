@@ -11,6 +11,30 @@
 
 module.exports = [
   {
+    src: "PXL_20240622_014253219",
+    title: "Near Lac de l'Achigan",
+    location: "La Vallée-de-la-Gatineau Regional County Municipality, QC",
+    datetime: "Fri Jun 21, 2024 9:42 pm",
+    description: "Out Camping",
+    tags: ["landscape", "forest"],
+  },
+  {
+    src: "PXL_20240620_192624461",
+    title: "Sandwich Mi Bao",
+    location: "1073 Saint Denis St, Montreal, Quebec H2X 3J3",
+    datetime: "Thu Jun 20, 2024 3:26 pm",
+    description: "General Tao Bahn Mi",
+    tags: ["food"],
+  },
+  {
+    src: "PXL_20240616_210457514",
+    title: "Montreal Biodome",
+    location: "4777 Pierre-de Coubertin Ave, Montreal, Quebec H1V 1B3",
+    datetime: "Sun Jun 16, 2024 5:05 pm",
+    description: "",
+    tags: ["animals"],
+  },
+  {
     src: "PXL_20240616_130505903~2.jpg",
     title: "La Grande Roue de Montréal",
     location: "362 Rue de la Commune E, Montréal, QC H2Y 0B4",
