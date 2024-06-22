@@ -11,7 +11,7 @@
 
 module.exports = [
   {
-    src: "PXL_20240622_014253219",
+    src: "PXL_20240622_014253219.jpg",
     title: "Near Lac de l'Achigan",
     location: "La Vallée-de-la-Gatineau Regional County Municipality, QC",
     datetime: "Fri Jun 21, 2024 9:42 pm",
@@ -19,7 +19,7 @@ module.exports = [
     tags: ["landscape", "forest"],
   },
   {
-    src: "PXL_20240620_192624461",
+    src: "PXL_20240620_192624461.jpg",
     title: "Sandwich Mi Bao",
     location: "1073 Saint Denis St, Montreal, Quebec H2X 3J3",
     datetime: "Thu Jun 20, 2024 3:26 pm",
@@ -27,7 +27,7 @@ module.exports = [
     tags: ["food"],
   },
   {
-    src: "PXL_20240616_210457514",
+    src: "PXL_20240616_210457514.jpg",
     title: "Montreal Biodome",
     location: "4777 Pierre-de Coubertin Ave, Montreal, Quebec H1V 1B3",
     datetime: "Sun Jun 16, 2024 5:05 pm",
