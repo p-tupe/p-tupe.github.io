@@ -11,6 +11,14 @@
 
 module.exports = [
   {
+    src: "PXL_20240627_001641504~2.jpg",
+    title: "Backwater Paradise",
+    location: "Lake Hope Rd, Algoma, ON",
+    datetime: "Wed Jun 24, 2024 8:34 pm",
+    description: "Backwater Paradise Easy Tent Site 2",
+    tags: ["landscape", "lake", "campground"],
+  },
+  {
     src: "PXL_20240622_014253219.jpg",
     title: "Near Lac de l'Achigan",
     location: "La Vallée-de-la-Gatineau Regional County Municipality, QC",
