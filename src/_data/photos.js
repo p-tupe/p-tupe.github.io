@@ -11,6 +11,14 @@
 
 module.exports = [
   {
+    src: "PXL_20240701_225506057.LONG_EXPOSURE-01.COVER~2",
+    title: "High Falls on Pigen River",
+    location: "High Falls Trail, South Gillies, ON P0T 2V0",
+    datetime: "Mon Jul 1, 2024 6:55 pm",
+    description: "",
+    tags: ["landscape", "river"],
+  },
+  {
     src: "PXL_20240627_001641504~2.jpg",
     title: "Backwater Paradise",
     location: "Lake Hope Rd, Algoma, ON",
