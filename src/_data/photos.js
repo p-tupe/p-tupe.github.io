@@ -11,6 +11,14 @@
 
 module.exports = [
   {
+    src: "PXL_20240709_211033659~2.jpg",
+    title: "Center of Canada",
+    location: "Taché, MB R0A 0Y0",
+    datetime: "Tue Jul 9, 2024 4:20 pm",
+    description: "",
+    tags: ["landscape", "park"],
+  },
+  {
     src: "PXL_20240701_225506057.LONG_EXPOSURE-01.COVER~2.jpg",
     title: "High Falls on Pigen River",
     location: "High Falls Trail, South Gillies, ON P0T 2V0",
