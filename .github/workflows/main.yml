@@ -12,19 +12,18 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - name: Get env variables
-        run: |
-          touch .env
-          echo PERSONAL_WEBSITE_MEDIA=${{ secrets.PERSONAL_WEBSITE_MEDIA }} >> .env
-
       - name: Build
         uses: actions/setup-node@v3
         with:
           node-version: "20"
         env:
           NODE_ENV: "production"
-      - run: npm install
-      - run: npm run build
+          PERSONAL_WEBSITE_MEDIA: ${{ secrets.PERSONAL_WEBSITE_MEDIA }}
+      - run: |
+          touch .env
+          echo PERSONAL_WEBSITE_MEDIA=${{ secrets.PERSONAL_WEBSITE_MEDIA }} >> .env
+          npm ci
+          npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
