@@ -11,6 +11,15 @@
 
 module.exports = [
   {
+    src: "PXL_20240717_014452146.jpg",
+    title: "A Herd",
+    location: "Near Chelan Hillcrest Cemetery, Bjorkdale No. 426, SK S0E 0N0",
+    datetime: "Tue Jul 16, 2024 7:44 pm",
+    description: "",
+    tags: ["landscape", "animals"],
+  },
+
+  {
     src: "PXL_20240709_211033659~2.jpg",
     title: "Center of Canada",
     location: "Taché, MB R0A 0Y0",
