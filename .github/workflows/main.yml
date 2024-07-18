@@ -16,12 +16,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "20"
-        env:
-          NODE_ENV: "production"
-          PERSONAL_WEBSITE_MEDIA: ${{ secrets.PERSONAL_WEBSITE_MEDIA }}
       - run: |
-          touch .env
-          echo PERSONAL_WEBSITE_MEDIA=${{ secrets.PERSONAL_WEBSITE_MEDIA }} >> .env
           npm ci
           npm run build
 

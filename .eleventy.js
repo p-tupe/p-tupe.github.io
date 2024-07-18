@@ -87,7 +87,8 @@ function buildNotesIndex(all_notes) {
 function addImageShortCode(eleventyConfig) {
   console.log("Caching images...")
 
-  const IMAGE_URL = process.env.PERSONAL_WEBSITE_MEDIA
+  const IMAGE_URL =
+    process.env.PERSONAL_WEBSITE_MEDIA || "https://static.priteshtupe.com/"
 
   eleventyConfig.addShortcode(
     "image",
