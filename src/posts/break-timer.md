@@ -3,6 +3,10 @@ date: "2024-06-16T00:00:00Z"
 title: MacOS custom break-timer in Hammerspoon
 ---
 
+## Definition
+
+What exactly is a "break-timer"? For our purposes, let's say it's a timer that runs for 25 minutes and then shows up a notification with a message: "Time to take a break!". After the notification is shown for a few seconds, the screen locks automatically. That should be enough to get us started.
+
 ## Pre-requisites
 
 First, get [Hammerspoon](https://www.hammerspoon.org/). Quoted from the site:
@@ -16,12 +20,6 @@ hs.hotkey.bind({ "alt" }, "r", function()
 	hs.reload()
 end)
 ```
-
-Now, let's get started.
-
-## Definition
-
-What exactly is a "break-timer"? For our purposes, let's say it's a timer that runs for 25 minutes and then shows up a notification with a message: "Time to take a break!" After the notification is shown for a few seconds, the screen locks automatically. That should be enough to get us started.
 
 ## Implementation
 
