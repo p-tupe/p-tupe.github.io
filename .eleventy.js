@@ -6,6 +6,16 @@ const lunr = require("lunr")
 
 const card = require("./src/_includes/components/card.js")
 
+const linkNotes = require("markdown-it")({
+  html: true,
+  linkify: true,
+  typographer: true,
+}).use(require("markdown-it-replace-link"), {
+  processHTML: true,
+  replaceLink: link =>
+    link.replace(/^\.{1,2}(\S*)\.md$/, "https://www.priteshtupe.com/notes$1/"),
+})
+
 let indexBuilt = false
 module.exports = eleventyConfig => {
   addCollections(eleventyConfig)
@@ -19,6 +29,8 @@ module.exports = eleventyConfig => {
       hostname: "https://priteshtupe.com",
     },
   })
+
+  eleventyConfig.setLibrary("md", linkNotes)
 
   addImageShortCode(eleventyConfig)
 

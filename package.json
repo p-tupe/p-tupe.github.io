@@ -48,6 +48,7 @@
   "dependencies": {
     "@11ty/eleventy-img": "^4.0.2",
     "dotenv": "^16.4.5",
-    "lunr": "^2.3.9"
+    "lunr": "^2.3.9",
+    "markdown-it-replace-link": "^1.2.1"
   }
 }
