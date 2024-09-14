@@ -125,12 +125,12 @@ function addImageShortCode(eleventyConfig) {
 }
 
 function addPassthroughCopy(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("src/site.webmanifest")
-  eleventyConfig.addPassthroughCopy("src/robots.txt")
-  eleventyConfig.addPassthroughCopy("src/CNAME")
   // Do not use whole assets/, else css is included as well.
   eleventyConfig.addPassthroughCopy("src/assets/icons/")
   eleventyConfig.addPassthroughCopy("src/assets/imgs/")
   eleventyConfig.addPassthroughCopy("src/assets/docs/")
   eleventyConfig.addPassthroughCopy("src/assets/js/")
+  eleventyConfig.addPassthroughCopy("src/site.webmanifest")
+  eleventyConfig.addPassthroughCopy("src/robots.txt")
+  eleventyConfig.addPassthroughCopy("src/CNAME")
 }
