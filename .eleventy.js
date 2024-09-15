@@ -109,6 +109,9 @@ function addImageShortCode(eleventyConfig) {
         formats: ["webp"],
         outputDir: "./docs/assets/imgs",
         urlPath: "/assets/imgs",
+        cacheOptions: {
+          cacheDuration: "30d",
+        },
       })
 
       let imageAttributes = {
