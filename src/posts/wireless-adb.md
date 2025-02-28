@@ -1,20 +1,30 @@
 ---
 date: "2020-09-16T00:00:00Z"
 title: Wireless adb
+updated: "Fri Feb 28 10:00:49 EST 2025"
 ---
 
 ## How to use adb wirelessly
 
+### Option 1
+
+1. Enable Wireless Debugging in Developer Options
+2. In the Wireless Debugging menu, open "Pair device with pairing code"
+3. On host machine, enter `adb pair address:port code` from the popup menu
+4. Done!
+
+### Option 2
+
 1. Connect your system to the phone via adb using cable (how-to below)
 2. Enter the following in shell `adb tcpip 5555`
 3. Your adb server should restart; now type the following `adb connect <phone-ip>:5555`
-where phone-ip is the wireless internet address of your phone
+   where phone-ip is the wireless internet address of your phone
 4. Enter `adb devices` again, it should show your phone's ip
 5. Remove cable. Done!
 
-*Wireless adb will work until you reboot the phone*
+_Wireless adb will work until you reboot the phone_
 
-*Your phone and laptop/pc should be on the same network*
+_Your phone and laptop/pc should be on the same network_
 
 ## How to connect laptop/pc to phone with adb
 
@@ -31,9 +41,9 @@ where phone-ip is the wireless internet address of your phone
 3. Go to Settings again, Developer Options > Toggle USB Debugging
 4. Click allow on the pop-up. Done, debugging is now enabled, yay!
 
-*While the overall process is same on all phones, the placement of setting options may be different. You can use the search option in your Settings*
+_While the overall process is same on all phones, the placement of setting options may be different. You can use the search option in your Settings_
 
 ## Useful links
 
-* [Wiki ADB](https://en.wikipedia.org/wiki/Android_software_development#Android_Debug_Bridge_(ADB))
-* [Android Docs ADB](https://developer.android.com/studio/command-line/adb)
+- [Wiki ADB](<https://en.wikipedia.org/wiki/Android_software_development#Android_Debug_Bridge_(ADB)>)
+- [Android Docs ADB](https://developer.android.com/studio/command-line/adb)
