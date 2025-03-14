@@ -1,9 +1,9 @@
 module.exports = (content, title, img_src, img_alt) =>
-  ` <div class="flex flex-col lg:flex-row w-full rounded-lg bg-white dark:bg-black shadow-lg hover:shadow-xl dark:shadow-stone-800">` +
+  ` <div class="flex flex-col md:flex-row w-full rounded-lg bg-white dark:bg-black shadow-lg hover:shadow-xl dark:shadow-stone-800">` +
   (img_src
-    ? `<div class="lg:w-2/3">
+    ? `<div class="md:w-2/3">
     <img
-      class="rounded-t-lg lg:rounded-r-none lg:rounded-l-lg h-fit"
+      class="rounded-t-lg md:rounded-r-none md:rounded-l-lg h-fit"
       src="${img_src}"
       alt="${img_alt}"
     />

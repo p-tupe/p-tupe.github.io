@@ -20,7 +20,7 @@
     </div>
 
     <div
-      class="lg:visible mx-auto py-16 prose prose-slate prose-sm dark:prose-invert flex flex-row justify-evenly w-full">
+      class="md:visible mx-auto py-16 prose prose-slate prose-sm dark:prose-invert flex flex-row justify-evenly w-full">
       <div><a href="/notes">Notes</a></div>
       <div><a href="/travels">Travels</a></div>
       <div><a href="/photos">Photos</a></div>
@@ -91,91 +91,114 @@
     id="projects"
     class="snap-start flex flex-col justify-between min-h-screen w-full">
     <div class="hidden md:block">{% include "partials/arrow-up.html" %}</div>
-    <div
-      class="prose max-w-none prose-slate dark:prose-invert grow flex flex-col md:flex-row justify-evenly flex-wrap mx-auto w-10/12">
+    <div class="prose max-w-none prose-slate dark:prose-invert grow">
       <h1 class="w-full text-center pt-8">Projects</h1>
+      <div
+        id="projectList"
+        class="flex flex-col md:flex-row justify-evenly flex-wrap mx-auto w-10/12"></div>
+    </div>
+  </section>
 
-      <a href="/gs" class="decoration-transparent w-full md:w-[45%] mb-4">
-        {% card "Grand Simulation (Ongoing) [Web Novel]" %}
-        <p class="font-bold mb-0 my-3">A programmer trapped in a simulation!</p>
-        <p class="m-0">
+  <script>
+    const projects = [
+      {
+        title: "Grand Simulation (Ongoing) [Web Novel]",
+        titleLink: "/gs",
+        content: `<p>
+          <span class="font-bold">A programmer trapped in a simulation!</span>
           He and a band of misfits selected as "test subjects" must successfully
           complete the "test run" to be able to return to their world or die
           trying. Follow along on his journey where he matches his wits against
           the creators and their eerily familiar creations in a vast fantastical
           world, seeking a way back home.
-        </p>
-        {% endcard %}
-      </a>
-
-      <a href="/foa" class="decoration-transparent w-full md:w-[45%] mb-4">
-        {% card "Fate of Arda (Discontinued) [Web Novel]" %}
-        <p class="mb-0">
+        </p>`,
+      },
+      {
+        title: "Fate of Arda (Discontinued) [Web Novel]",
+        titleLink: "/foa",
+        content: `<p>
           About a boy with a strange past, becoming a linchpin in a conflict
           spanning across realms. A coming of age with ancient blood with tragic
           power. A tale of love, courage and heartbreak.
-        </p>
-        {% endcard %}
-      </a>
-
-      <a
-        href="https://github.com/EMPAT94/zettel-merken"
-        class="decoration-transparent w-full md:w-[45%] mb-4">
-        {% card "Zettel Merken [Self-Help]" %}
-        <p class="mb-0">
+        </p>`,
+      },
+      {
+        title: "Zettel Merken [Self-Help]",
+        titleLink: "https://github.com/p-tupe/zettel-merken",
+        content: `<p>
           Supercharge your Supercharge your learning by combining two of the
           most revolutionary ideas in knowledge enhancement!
-        </p>
-        {% endcard %}
-      </a>
 
-      <a
-        href="https://github.com/EMPAT94/creatures"
-        class="decoration-transparent w-full md:w-[45%] mb-4">
-        {% card "Creatures [Canvas Simulation]" %}
-        <p class="mb-0">
-          A simulation of an environment where different creatures interact with
-          the surroundings and each other
-        </p>
-        {% endcard %}
-      </a>
+        <a href="https://www.github.com/p-tupe/zettel-merken"
+          target="_blank">
+          Source
+        </a>
+        </p>`,
+      },
+      {
+        title: "Creatures [Canvas Simulation]",
+        titleLink: "https://p-tupe.github.io/creatures",
+        content: `<p>
+        A simulation of an environment where different creatures interact with
+        the surroundings and each other.
 
-      <a
-        href="https://github.com/EMPAT94/nvim-rss"
-        class="decoration-transparent w-full md:w-[45%] mb-4">
-        {% card "Nvim Rss [Editor Plugin]" %}
-        <p class="mb-0">A simple RSS Reader plugin for Neovim!</p>
-        {% endcard %}
-      </a>
-
-      <a
-        href="https://github.com/EMPAT94/pingmon"
-        class="decoration-transparent w-full md:w-[45%] mb-4">
-        {% card "Pingmon [Monitoring Tool]" %}
-        <p class="mb-0">
+        <a href="https://www.github.com/p-tupe/creatures"
+          target="_blank">
+          Source
+        </a>
+      </p>`,
+      },
+      {
+        title: "nvim.rss [Editor Plugin]",
+        titleLink: "https://www.github.com/p-tupe/nvim-rss",
+        content: `<p>
+        A simple RSS Reader plugin for Neovim!
+        <a href="https://www.github.com/p-tupe/nvim-rss" target="_blank"
+          >Source</a
+        >
+      </p>`,
+      },
+      {
+        title: "Pingmon [Monitoring Tool]",
+        titleLink: "https://github.com/p-tupe/pingmon",
+        content: `<p>
           Self-hosted web-site and jobs monitoring, with downtime notifications
           pushed to Slack.
-        </p>
-        {% endcard %}
-      </a>
-
-      <a
-        href="https://github.com/EMPAT94/impossible-xo"
-        class="decoration-transparent w-full md:w-[45%] mb-4">
-        {% card "Impossible XO [Game Script]" %}
-        <p class="mb-0">A tic-tac-toe game that is impossible to win!</p>
-        {% endcard %}
-      </a>
-
-      <a
-        href="https://github.com/EMPAT94/binary-clock"
-        class="decoration-transparent w-full md:w-[45%] mb-4">
-        {% card "Binary Clock [Script]" %}
-        <p class="mb-0">
+          <a href="https://www.github.com/p-tupe/pingmon" target="_blank"
+            >Source</a
+          >
+        </p>`,
+      },
+      {
+        title: "Impossible XO [Board Game]",
+        titleLink: "https://p-tupe.github.io/impossible-xo",
+        content: `<p>
+          A tic-tac-toe game that is impossible to win!
+          <a href="https://www.github.com/p-tupe/impossible-xo" target="_blank"> Source </a>
+        </p>`,
+      },
+      {
+        title: "Binary Clock ",
+        titleLink: "https://p-tupe.github.io/binary-clock",
+        content: `<p>
           A Binary Coded Decimal representation of current time.
-        </p>
-        {% endcard %}
-      </a>
-    </div>
-  </section>
+          <a href="https://www.github.com/p-tupe/binary-clock" target="_blank"
+            >Source</a
+          >
+        </p>`,
+      },
+    ]
+
+    const projectsHTML = p => `
+<div class="flex flex-col md:flex-row h-fit w-full md:w-[45%] mb-4 rounded-lg bg-white dark:bg-black shadow-lg hover:shadow-xl dark:shadow-stone-800 h-fitcursor-pointer relative">
+  <div class="prose prose-slate dark:prose-invert p-4 md:p-8 max-w-none flex flex-col justify-center align-middle">
+<h3 class="my-3"><a class="hover:text-stone-400" href="${p.titleLink}" target="_blank">${p.title}</a></h3>
+    ${p.content}
+  </div>
+</div>
+`
+
+    projectListDiv = document.getElementById("projectList")
+    projectListDiv.innerHTML = projects.map(projectsHTML).join("")
+  </script>
 </div>

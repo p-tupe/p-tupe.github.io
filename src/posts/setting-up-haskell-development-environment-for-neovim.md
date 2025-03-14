@@ -21,7 +21,7 @@ _Note: one tick = installed, another tick = default_
 
 ## In neovim
 
-> I'm using built-in LSP along with nvim-lsp-installer plugin for convenience. Check [this file](https://github.com/EMPAT94/dotfiles/blob/main/nvim/.config/nvim/lua/plugins/lsp-installer.lua) full setup.
+> I'm using built-in LSP along with nvim-lsp-installer plugin for convenience. Check [this file](https://github.com/p-tupe/dotfiles/blob/main/nvim/.config/nvim/lua/plugins/lsp-installer.lua) full setup.
 
 1. Open a `temp.hs` file
 

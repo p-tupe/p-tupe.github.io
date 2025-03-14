@@ -10,13 +10,13 @@ permalink: "/photos/"
 
 <div
   id="scroll-container"
-  class="gap-4 p-4 space-y-4 mb-10 lg:mx-32 columns-1 lg:columns-2">
+  class="gap-4 p-4 space-y-4 mb-10 md:mx-32 columns-1 md:columns-2">
   {%- for photo in photos -%}
 
   <div class="relative group rounded-xl bg-white dark:bg-black shadow-lg">
-    {% image photo.src, photo.title, "rounded-t-xl lg:rounded-xl lg:shadow-md lg:opacity-90 lg:transition lg:duration-200 lg:hover:scale-105 lg:hover:opacity-100 cursor-pointer", "toggleFullscreen(this)" %}
+    {% image photo.src, photo.title, "rounded-t-xl md:rounded-xl md:shadow-md md:opacity-90 md:transition md:duration-200 md:hover:scale-105 md:hover:opacity-100 cursor-pointer", "toggleFullscreen(this)" %}
     <div
-      class="p-5 prose prose-slate dark:prose-invert lg:m-0 lg:absolute lg:bottom-5 lg:p-10 lg:bg-white lg:dark:bg-black lg:opacity-80 lg:group-hover:invisible">
+      class="p-5 prose prose-slate dark:prose-invert md:m-0 md:absolute md:bottom-5 md:p-10 md:bg-white md:dark:bg-black md:opacity-80 md:group-hover:invisible">
       <h2 class="font-bold m-0">{{ photo.title }}</h2>
       <span class="mb-5 text-xs">
         {{ photo.location }} | {{ photo.datetime }}
