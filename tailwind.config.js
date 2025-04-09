@@ -19,4 +19,6 @@ module.exports = {
     },
   },
   plugins: [require("@tailwindcss/typography")],
+  // For photo.html when they are dynamically applied
+  safelist: ["md:columns-2", "md:columns-3", "md:columns-4"],
 }
