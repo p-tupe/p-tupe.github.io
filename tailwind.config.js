@@ -1,8 +1,6 @@
-const colors = require("tailwindcss/colors");
-const defaultTheme = require("tailwindcss/defaultTheme");
+const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
-  // mode: "jit",
   content: ["./src/**/*.{html,js}"],
   darkMode: "class",
   theme: {
@@ -21,4 +19,4 @@ module.exports = {
     },
   },
   plugins: [require("@tailwindcss/typography")],
-};
+}
