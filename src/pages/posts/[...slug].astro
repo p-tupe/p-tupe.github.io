@@ -9,7 +9,7 @@ export async function getStaticPaths() {
 
   return posts.map((post, i) => ({
     params: { slug: post.id },
-    props: { post, next: posts[i - 1], prev: posts[i + 1] },
+    props: { post, next: posts[i - 1] || {}, prev: posts[i + 1] || {} },
   }))
 }
 
