@@ -1,0 +1,29 @@
+---
+const { subtitle, title, url } = Astro.props
+---
+
+<li>
+  <a href={url}>
+    {subtitle && <span class="subtitle">{subtitle} | </span>}
+    <span class="title">{title}</span>
+  </a>
+</li>
+
+<style>
+  li {
+    margin: 1em;
+    color: var(--subcontent-color);
+
+    a {
+      text-decoration: none;
+    }
+
+    .subtitle {
+      color: var(--subcontent-color);
+    }
+
+    .title {
+      color: var(--content-color);
+    }
+  }
+</style>

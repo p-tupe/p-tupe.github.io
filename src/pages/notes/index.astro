@@ -1,0 +1,62 @@
+---
+import { getCollection } from "astro:content"
+
+import BaseLayout from "../../layouts/BaseLayout.astro"
+
+const notes = (await getCollection("notes")).sort()
+---
+
+<BaseLayout>
+  <h1 style="text-align: center;">All Notes</h1>
+
+  <ul class="cloud">
+    {notes.length && notes.map((note) => <a href={`/notes/${note.id}`}>{note.id}</a>)}
+  </ul>
+</BaseLayout>
+
+<style>
+  fieldset.search {
+    border: none;
+    width: 100%;
+    display: flex;
+    gap: 1em;
+
+    input {
+      border: none;
+      border-radius: 0.5em;
+      height: 3em;
+      flex: 1;
+    }
+
+    button[type="submit"] {
+      color: var(--emphasis-color);
+    }
+    button[type="reset"] {
+      color: var(--content-color);
+    }
+  }
+
+  ul.cloud {
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      display: block;
+      cursor: pointer;
+      padding: 0.5em;
+      margin: 0.5em;
+      border-radius: 0.5em;
+      border: 1px solid var(--subcontent-color);
+      color: var(--content-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      border: 1px solid var(--link-color);
+      color: var(--link-color);
+    }
+  }
+</style>

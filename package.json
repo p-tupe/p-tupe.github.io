@@ -1,54 +1,24 @@
 {
-  "name": "p-tupe.github.io",
-  "version": "1.0.0",
-  "description": "Personal Website",
-  "main": "index.js",
+  "name": "personal-website",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "build": "NODE_ENV=production npm run build:eleventy && npm run build:tailwind",
-    "build:eleventy": "npx @11ty/eleventy",
-    "build:tailwind": "npx tailwind -i ./src/assets/css/style.css -o ./docs/assets/css/output.css --minify",
-    "start": "concurrently \"npm:process:*\"",
-    "process:eleventy": "npx @11ty/eleventy --serve --quiet",
-    "process:tailwind": "TAILWIND_MODE=watch npx tailwind -i ./src/assets/css/style.css -o  ./docs/assets/css/output.css --watch"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/p-tupe/p-tupe.github.io.git"
-  },
-  "keywords": [
-    "personal",
-    "website",
-    "blog",
-    "articles"
-  ],
-  "author": "Pritesh Tupe <mail@priteshtupe.com>",
-  "bugs": {
-    "url": "https://github.com/p-tupe/p-tupe.github.io/issues"
-  },
-  "homepage": "https://www.priteshtupe.com",
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-plugin-rss": "^1.1.2",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
-    "@photogabble/eleventy-plugin-word-stats": "^1.0.0",
-    "@quasibit/eleventy-plugin-sitemap": "^2.1.5",
-    "@tailwindcss/typography": "^0.5.2",
-    "autoprefixer": "^10.4.7",
-    "concurrently": "^7.2.1",
-    "postcss-cli": "^9.1.0",
-    "sharp": "^0.33.4",
-    "tailwindcss": "^3.0.24"
-  },
-  "prettier": {
-    "semi": false,
-    "quoteProps": "consistent",
-    "bracketSameLine": true,
-    "arrowParens": "avoid"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@11ty/eleventy-img": "^4.0.2",
-    "dotenv": "^16.4.5",
-    "lunr": "^2.3.9",
-    "markdown-it-replace-link": "^1.2.1"
+    "@astrojs/rss": "^4.0.11",
+    "@astrojs/sitemap": "^3.3.1",
+    "@astrolib/seo": "^1.0.0-beta.8",
+    "astro": "^5.7.10",
+    "astro-compressor": "^1.0.0",
+    "astro-robots-txt": "^1.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "wrangler": "^4.14.1"
   }
 }

@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content"
+import ListItem from "../components/ListItem.astro"
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import InfoCard from "../components/InfoCard.astro"
+
+import GSImage from "../../images/Grand_Simulation.jpeg"
+
+const allChapters = (await getCollection("gs")).sort(
+  (a, b) => a.data.part - b.data.part,
+)
+---
+
+<BaseLayout>
+  <h1 style="text-align: center;">Grand Simulation</h1>
+  <InfoCard title="A programmer trapped in a simulation!" imageUrl={GSImage}>
+    <p>
+      He and a band of misfits selected as "test subjects" must successfully
+      complete the "test run" to be able to return to their world or die trying.
+      Follow along on his journey where he matches his wits against the creators
+      and their eerily familiar creations in a vast fantastical world, seeking a
+      way back home.
+    </p>
+    <p>
+      <strong>
+        Update twice per week (usually on Wednesday &amp; Saturday).</strong
+      > I will be posting this story on RoyalRoad.com (https://www.royalroad.com/fiction/38540/grand-simulation)
+      as well, you continue there to keep track of progress, post comments, and mingle
+      with the community!
+    </p>
+  </InfoCard>
+  <h2>All Chapters</h2>
+  <section class="list">
+    <ul class="list">
+      {
+        allChapters.map((ch) => (
+          <ListItem title={ch.data.title} url={`/gs/${ch.id}`} />
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>

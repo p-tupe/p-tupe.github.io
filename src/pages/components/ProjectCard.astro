@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets"
+
+const { imageUrl, title, content, link, isLinkExternal } = Astro.props
+---
+
+<div class="card-container">
+  <a href={link || "#"} target={isLinkExternal ? "_blank" : "_self"}>
+    {
+      imageUrl && (
+        <Image
+          src={imageUrl}
+          alt={title}
+          width={2000}
+          height={200}
+          fit="contain"
+        />
+      )
+    }
+    <div class="title">{title}</div>
+    <div class="content" set:html={content} />
+  </a>
+</div>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+
+  div.card-container {
+    background-color: var(--background-color);
+    box-shadow: 0 1px 2px 1px var(--subcontent-color);
+    border-radius: 1em;
+    filter: brightness(1.02);
+
+    img {
+      height: auto;
+      border-radius: 1em 1em 0 0;
+    }
+  }
+
+  html.dark {
+    div.card-container {
+      filter: brightness(0.8);
+    }
+  }
+
+  div.card-container:hover {
+    transform: scale(1.01);
+    transition-duration: 0.3s;
+  }
+
+  div.title {
+    padding: 1em;
+    color: var(--link-color);
+  }
+
+  div.content {
+    padding: 0 1em 1em 1em;
+    color: var(--content-color);
+  }
+</style>

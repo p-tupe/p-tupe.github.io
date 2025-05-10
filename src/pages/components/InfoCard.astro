@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets"
+
+const { imageUrl, title } = Astro.props
+---
+
+<div class="card-container">
+  {imageUrl && <Image src={imageUrl} alt={title} width={3000} height={300} />}
+  <div class="card-content">
+    {title && <p class="title">{title}</p>}
+    <slot />
+  </div>
+</div>
+
+<style>
+  div.card-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: space-evenly;
+    width: 100%;
+
+    background-color: var(--background-color);
+    box-shadow: 0 1px 2px 1px var(--subcontent-color);
+    border-radius: 1em;
+    filter: brightness(1.02);
+
+    img {
+      max-width: 300px;
+      height: auto;
+      border-radius: 1em 0 0 1em;
+    }
+
+    div.card-content {
+      width: 100%;
+      p.title {
+        font-weight: bold;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    div.card-container {
+      flex-direction: column;
+      img {
+        max-width: 100%;
+        border-radius: 1em 1em 0 0;
+      }
+    }
+  }
+
+  html.dark {
+    div.card-container {
+      filter: brightness(0.8);
+    }
+  }
+</style>
