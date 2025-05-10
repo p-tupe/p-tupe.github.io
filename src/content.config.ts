@@ -19,8 +19,16 @@ const gs = defineCollection({
   }),
 })
 
+const foa = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/collections/foa" }),
+  schema: z.object({
+    title: z.string(),
+    part: z.number(),
+  }),
+})
+
 const notes = defineCollection({
   loader: glob({ pattern: "**/[^_]*.md", base: "./src/collections/notes" }),
 })
 
-export const collections = { posts, gs, notes }
+export const collections = { posts, gs, foa, notes }

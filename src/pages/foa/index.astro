@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content"
+import ListItem from "../components/ListItem.astro"
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import InfoCard from "../components/InfoCard.astro"
+
+import FOAImage from "../../images/foa.png"
+
+const allChapters = (await getCollection("foa")).sort(
+  (a, b) => a.data.part - b.data.part,
+)
+---
+
+<BaseLayout>
+  <h1 style="text-align: center;">Fate of Arda</h1>
+  <InfoCard title="" imageUrl={FOAImage}>
+    <p>
+      About a boy with a strange past, becoming a linchpin in a conflict
+      spanning across realms. A coming of age with ancient blood with tragic
+      power. A tale of love, courage and heartbreak.
+    </p>
+  </InfoCard>
+  <h2>All Chapters</h2>
+  <section class="list">
+    <ul class="list">
+      {
+        allChapters.map((ch) => (
+          <ListItem title={ch.data.title} url={`/foa/${ch.id}`} />
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>
