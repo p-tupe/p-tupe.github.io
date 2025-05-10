@@ -1,17 +1,24 @@
 ---
 import { getCollection, render } from "astro:content"
 import BaseLayout from "../../layouts/BaseLayout.astro"
+import CommentBox from "../../pages/components/CommentBox.astro"
 
 export async function getStaticPaths() {
-  const chapters = await getCollection("gs")
-  return chapters.map((chapter) => ({
+  const chapters = (await getCollection("gs")).sort((a, b) => b.data.part - a.data.part)
+  return chapters.map((chapter, i) => ({
     params: { slug: chapter.id },
-    props: { chapter },
+    props: { chapter, next: chapters[i+1], prev: chapters[i-1] },
   }))
 }
 
-const { chapter } = Astro.props
+const { chapter, prev, next } = Astro.props
 const { Content } = await render(chapter)
 ---
 
-<BaseLayout> <Content /> </BaseLayout>
+<BaseLayout> <Content />  <hr style="color:var(--subcontent-color);" />
+  <div style="display: flex; width: 100% ; justify-content: space-between; padding: 1em 2em 2em 1em;">
+    {prev && <a href=`/gs/${prev.id}`>&lt; {prev.data.title}</a> }
+    { next && <a href=`/gs/${next.id}`>{next.data.title} &gt;</a>}
+  </div>
+  <CommentBox placeholder="Love the chapter? Say hi to the author..." pageTitle={chapter.id} />
+ </BaseLayout>

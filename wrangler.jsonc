@@ -1,9 +1,0 @@
-{
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "personal-website",
-  // Update to today's date
-  "compatibility_date": "2025-05-06",
-  "assets": {
-    "directory": "./dist",
-  },
-}

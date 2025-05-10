@@ -10,6 +10,7 @@ import InstagramIcon from "../icons/instagram.svg"
 import YoutubeIcon from "../icons/youtube.svg"
 import MailIcon from "../icons/mail.svg"
 import FeedIcon from "../icons/feed.svg"
+import CommentBox from "./components/CommentBox.astro"
 
 const pageTitle = "About Me"
 ---
@@ -62,13 +63,7 @@ const pageTitle = "About Me"
 
     <h2>Or send a message directly:</h2>
 
-    <InfoCard>
-      <textarea
-        required
-        id="msgTextarea"
-        placeholder="Write your message here..."></textarea>
-      <button id="msgBtn" type="button" onclick="sendMessage()">Send</button>
-    </InfoCard>
+    <CommentBox placeholder="Write your message here..." pageTitle={pageTitle} />
   </section>
 
   <section class="story">
@@ -159,41 +154,6 @@ const pageTitle = "About Me"
   </section>
 </BaseLayout>
 
-<script is:inline>
-  function sendMessage() {
-    const msgTxtarea = document.getElementById("msgTextarea")
-    const text = msgTxtarea.value
-    if (!text) {
-      alert("Please enter a message!")
-      return
-    }
-
-    fetch("https://api.priteshtupe.com/slack/", {
-      method: "POST",
-      headers: [
-        ["content-type", "application/json"],
-        ["authorization", "c2VydmljZS1tb25pdG9yaW5nLW1lc3NhZ2VzCg=="],
-      ],
-      body: JSON.stringify({ text }),
-    })
-      .then((res) => {
-        if (res.ok) {
-          const msgBtn = document.getElementById("msgBtn")
-          msgBtn.setAttribute("disabled", true)
-          msgBtn.style.backgroundColor = "var(--subcontent-color)"
-          msgBtn.innerText = "Sent!"
-        } else {
-          console.error(res)
-          alert("Unexpected error while sending message")
-        }
-      })
-      .catch((err) => {
-        console.error(err)
-        alert("Unexpected error while sending message")
-      })
-  }
-</script>
-
 <style>
   section {
     margin-bottom: 2em;
@@ -208,35 +168,6 @@ const pageTitle = "About Me"
       .contact-icon {
         fill: var(--content-color);
       }
-    }
-
-    textarea {
-      color: var(--content-color);
-      width: 85%;
-      border: none;
-      overflow: auto;
-      outline: none;
-
-      -webkit-box-shadow: none;
-      -moz-box-shadow: none;
-      box-shadow: none;
-
-      resize: none;
-      border-radius: 1em;
-      padding: 1em;
-      background-color: var(--background-color);
-    }
-
-    button {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      background-color: var(--link-color);
-      color: var(--background-color);
-      height: 100%;
-      padding: 0 1em 0 1em;
-      font-size: 1em;
-      border-radius: 0 1em 1em 0;
     }
   }
 

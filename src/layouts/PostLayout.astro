@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "./BaseLayout.astro"
-const { frontmatter } = Astro.props
+import CommentBox from "../pages/components/CommentBox.astro"
+const { data, next, prev } = Astro.props
 
 function timeAgo(input: any) {
   const ranges = {
@@ -30,9 +31,15 @@ function timeAgo(input: any) {
 ---
 
 <BaseLayout>
-  <h1 style="text-align: center; margin-bottom: 0em;">{frontmatter.title}</h1>
+  <h1 style="text-align: center; margin-bottom: 0em;">{data.title}</h1>
   <p style="text-align: center; color: var(--subcontent-color);">
-    Written {timeAgo(frontmatter.date)}
+    Written {timeAgo(data.date)}
   </p>
   <slot />
+  <hr style="color:var(--subcontent-color);" />
+  <div style="display: flex; width: 100% ; justify-content: space-between; padding: 1em 2em 2em 1em;">
+    {prev && <a href=`/posts/${prev}`>&lt; {prev}</a> }
+    { next && <a href=`/posts/${next}`>{next} &gt;</a>}
+  </div>
+  <CommentBox placeholder="Send feedback..." pageTitle={data.title} />
 </BaseLayout>
