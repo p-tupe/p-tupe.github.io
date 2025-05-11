@@ -1,11 +1,13 @@
 ---
-import { getImage } from "astro:assets"
 import BaseLayout from "../layouts/BaseLayout.astro"
 import Image from "astro/components/Image.astro"
 
+const IMAGE_URL =
+  import.meta.env.PERSONAL_WEBSITE_MEDIA || "https://static.priteshtupe.com/"
+
 const photos = [
   {
-    src: "PXL_20240905_195053783.jpg",
+    src: IMAGE_URL + "PXL_20240905_195053783.jpg",
     title: "Just another road",
     location: "M4R4+GWX Shabaqua Corners, Ontario",
     datetime: "Thu Sep 5, 2024 3:50 pm",
@@ -13,7 +15,7 @@ const photos = [
     tags: ["landscape", "road"],
   },
   {
-    src: "PXL_20240830_015709315.jpg",
+    src: IMAGE_URL + "PXL_20240830_015709315.jpg",
     title: "Salmon at work",
     location: "MGQ7+9V8 Port Hardy, British Columbia",
     datetime: "Fri Aug 30, 2024 6:57 pm",
@@ -21,7 +23,7 @@ const photos = [
     tags: ["landscape", "bridge"],
   },
   {
-    src: "PXL_20240828_144659123.jpg",
+    src: IMAGE_URL + "PXL_20240828_144659123.jpg",
     title: "Backpackers' Backyard",
     location: "2081 Peninsula Rd, Ucluelet, BC V0R 3A0",
     datetime: "Wed Aug 27, 2024 7:46 am",
@@ -29,7 +31,7 @@ const photos = [
     tags: ["landscape", "lake", "mountain"],
   },
   {
-    src: "PXL_20240824_231251978.jpg",
+    src: IMAGE_URL + "PXL_20240824_231251978.jpg",
     title: "Horseshoe Bay",
     location: "6409 Bay St, West Vancouver, BC V7W 3H5",
     datetime: "Sat Aug 24, 2024 4:12 pm",
@@ -37,7 +39,7 @@ const photos = [
     tags: ["landscape", "sea", "mountain"],
   },
   {
-    src: "PXL_20240824_225325578.jpg",
+    src: IMAGE_URL + "PXL_20240824_225325578.jpg",
     title: "Spot the Seals",
     location: "6709 Nelson Ave, West Vancouver, BC V7W 2B2",
     datetime: "Sat Aug 24, 2024 3:53 pm",
@@ -45,7 +47,7 @@ const photos = [
     tags: ["landscape", "sea", "animals"],
   },
   {
-    src: "PXL_20240818_003307526.jpg",
+    src: IMAGE_URL + "PXL_20240818_003307526.jpg",
     title: "Vancouver Rowing Club",
     location: "450 Stanley Park Dr, Vancouver, BC V6G 3E2",
     datetime: "Sat Aug 18, 2024 5:33 pm",
@@ -53,7 +55,7 @@ const photos = [
     tags: ["landscape", "sea", "cityscape"],
   },
   {
-    src: "PXL_20240817_001740941.jpg",
+    src: IMAGE_URL + "PXL_20240817_001740941.jpg",
     title: "Inn Towne",
     location: "510 Trans-Canada Hwy, Hope, BC V0X 1L0",
     datetime: "Fri Aug 17, 2024 5:17 pm",
@@ -61,7 +63,7 @@ const photos = [
     tags: ["mascot"],
   },
   {
-    src: "PXL_20240816_013241117.jpg",
+    src: IMAGE_URL + "PXL_20240816_013241117.jpg",
     title: "Pandosy Pier",
     location: "3096 Walnut St, Kelowna, BC V1W 3V1",
     datetime: "Thu Aug 16, 2024 6:32 pm",
@@ -69,7 +71,7 @@ const photos = [
     tags: ["landscape", "lake"],
   },
   {
-    src: "PXL_20240814_030520226.LONG_EXPOSURE-01.COVER.jpg",
+    src: IMAGE_URL + "PXL_20240814_030520226.LONG_EXPOSURE-01.COVER.jpg",
     title: "Tranquille River",
     location: "QFCP+2MC Kamloops, British Columbia",
     datetime: "Tue Aug 13, 2024 8:05 pm",
@@ -77,7 +79,7 @@ const photos = [
     tags: ["landscape", "river", "waterfall"],
   },
   {
-    src: "PXL_20240811_235922056.jpg",
+    src: IMAGE_URL + "PXL_20240811_235922056.jpg",
     title: "Juniper Beach",
     location: "QWR7+R4Q Walhachin, British Columbia",
     datetime: "Sun Aug 11, 2024 4:59 pm",
@@ -85,7 +87,7 @@ const photos = [
     tags: ["landscape", "desert"],
   },
   {
-    src: "PXL_20240809_175820739~2.jpg",
+    src: IMAGE_URL + "PXL_20240809_175820739~2.jpg",
     title: "Rise and shine and ride",
     location: "7PJH+3V Prince Rupert, British Columbia",
     datetime: "Fri Aug 9, 2024 10:58 am",
@@ -93,7 +95,7 @@ const photos = [
     tags: ["landscape", "sky", "mountain"],
   },
   {
-    src: "PXL_20240807_193703532.jpg",
+    src: IMAGE_URL + "PXL_20240807_193703532.jpg",
     title: "Skyfall",
     location: "222 1st Ave W, Prince Rupert, BC V8J 1A8",
     datetime: "Wed Aug 7, 2024 12:37 pm",
@@ -101,7 +103,7 @@ const photos = [
     tags: ["landscape", "sky", "sea"],
   },
   {
-    src: "PXL_20240806_050652716~2.jpg",
+    src: IMAGE_URL + "PXL_20240806_050652716~2.jpg",
     title: "Bears mural",
     location: "413 Cow Bay Rd, Prince Rupert, BC V8J 1K7",
     datetime: "Mon Aug 5, 2024 10:06 pm",
@@ -109,7 +111,7 @@ const photos = [
     tags: ["art"],
   },
   {
-    src: "PXL_20240804_032607711.jpg",
+    src: IMAGE_URL + "PXL_20240804_032607711.jpg",
     title: "Cow Bay Marina",
     location: "209 Cow Bay Rd, Prince Rupert, BC V8J 1A2",
     datetime: "Sat Aug 3, 2024 8:26 pm",
@@ -117,7 +119,7 @@ const photos = [
     tags: ["landscape", "sea"],
   },
   {
-    src: "PXL_20240803_180436956.jpg",
+    src: IMAGE_URL + "PXL_20240803_180436956.jpg",
     title: "Granisle Cutoff Rd",
     location: "Granisle Cutoff Rd, Granisle, BC V0J 1W0",
     datetime: "Sat Aug 3, 2024 2:04 pm",
@@ -125,7 +127,7 @@ const photos = [
     tags: ["landscape", "mountain", "road"],
   },
   {
-    src: "PXL_20240802_190237192.jpg",
+    src: IMAGE_URL + "PXL_20240802_190237192.jpg",
     title: "Center of BC",
     location: "Vanderhoof, BC V0J 3A0",
     datetime: "Fri Aug 2, 2024 12:02 pm",
@@ -133,7 +135,7 @@ const photos = [
     tags: ["landmark"],
   },
   {
-    src: "PXL_20240802_021411591.jpg",
+    src: IMAGE_URL + "PXL_20240802_021411591.jpg",
     title: "Purden Lake Provincial Park Beach",
     location: "Fraser-Fort George F, BC V0J 3M0",
     datetime: "Thu Aug 1, 2024 7:14 pm",
@@ -141,7 +143,7 @@ const photos = [
     tags: ["landscape", "lake"],
   },
   {
-    src: "PXL_20240731_021716411.jpg",
+    src: IMAGE_URL + "PXL_20240731_021716411.jpg",
     title: "Crystal Lake",
     location: "9202 121 Ave, Grande Prairie, AB T8X 1J1",
     datetime: "Tue Jul 30, 2024 7:17 pm",
@@ -149,7 +151,7 @@ const photos = [
     tags: ["landscape", "lake"],
   },
   {
-    src: "PXL_20240729_194720763.jpg",
+    src: IMAGE_URL + "PXL_20240729_194720763.jpg",
     title: "Murphy's Flats",
     location: "Twp Rd 821.5, Northern Sunrise County, AB T0H 2N0",
     datetime: "Mon Jul 29, 2024 12:47 pm",
@@ -157,7 +159,7 @@ const photos = [
     tags: ["landscape", "river"],
   },
   {
-    src: "PXL_20240728_153251926.jpg",
+    src: IMAGE_URL + "PXL_20240728_153251926.jpg",
     title: "I am Groot!",
     location: "45 Rutland Ave, Marie-Reine, AB T0H 2N0",
     datetime: "Sun Jul 28, 2024 8:32 am",
@@ -165,7 +167,7 @@ const photos = [
     tags: ["mascot"],
   },
   {
-    src: "PXL_20240727_200309610.jpg",
+    src: IMAGE_URL + "PXL_20240727_200309610.jpg",
     title: "Two Creeks",
     location: "43, Division No. 18, Alberta, Canada",
     datetime: "Sat Jul 27, 2024 1:03 pm",
@@ -173,7 +175,7 @@ const photos = [
     tags: ["landscape"],
   },
   {
-    src: "PXL_20240725_215855321.jpg",
+    src: IMAGE_URL + "PXL_20240725_215855321.jpg",
     title: "Near Waterford House",
     location: "10545 Saskatchewan Dr NW, Edmonton, AB T6E 4S1",
     datetime: "Thu Jul 25, 2024 2:58 pm",
@@ -181,7 +183,7 @@ const photos = [
     tags: ["landscape", "cityscape"],
   },
   {
-    src: "PXL_20240721_141207007~2.jpg",
+    src: IMAGE_URL + "PXL_20240721_141207007~2.jpg",
     title: "High Level Bridge of Edmonton",
     location: "109 St NW &, 97 Ave NW, Edmonton, AB",
     datetime: "Sun Jul 21, 2024 9:40 am",
@@ -189,7 +191,7 @@ const photos = [
     tags: ["landscape", "cityscape"],
   },
   {
-    src: "PXL_20240717_014452146.jpg",
+    src: IMAGE_URL + "PXL_20240717_014452146.jpg",
     title: "A Herd",
     location: "Near Chelan Hillcrest Cemetery, Bjorkdale No. 426, SK S0E 0N0",
     datetime: "Tue Jul 16, 2024 7:44 pm",
@@ -197,7 +199,7 @@ const photos = [
     tags: ["landscape", "animals"],
   },
   {
-    src: "PXL_20240709_211033659~2.jpg",
+    src: IMAGE_URL + "PXL_20240709_211033659~2.jpg",
     title: "Center of Canada",
     location: "Taché, MB R0A 0Y0",
     datetime: "Tue Jul 9, 2024 4:20 pm",
@@ -205,7 +207,7 @@ const photos = [
     tags: ["landscape", "park"],
   },
   {
-    src: "PXL_20240701_225506057.LONG_EXPOSURE-01.COVER~2.jpg",
+    src: IMAGE_URL + "PXL_20240701_225506057.LONG_EXPOSURE-01.COVER~2.jpg",
     title: "High Falls on Pigen River",
     location: "High Falls Trail, South Gillies, ON P0T 2V0",
     datetime: "Mon Jul 1, 2024 6:55 pm",
@@ -213,7 +215,7 @@ const photos = [
     tags: ["landscape", "river"],
   },
   {
-    src: "PXL_20240627_001641504~2.jpg",
+    src: IMAGE_URL + "PXL_20240627_001641504~2.jpg",
     title: "Backwater Paradise",
     location: "Lake Hope Rd, Algoma, ON",
     datetime: "Wed Jun 24, 2024 8:34 pm",
@@ -221,7 +223,7 @@ const photos = [
     tags: ["landscape", "lake", "campground"],
   },
   {
-    src: "PXL_20240622_014253219.jpg",
+    src: IMAGE_URL + "PXL_20240622_014253219.jpg",
     title: "Near Lac de l'Achigan",
     location: "La Vallée-de-la-Gatineau Regional County Municipality, QC",
     datetime: "Fri Jun 21, 2024 9:42 pm",
@@ -229,7 +231,7 @@ const photos = [
     tags: ["landscape", "forest"],
   },
   {
-    src: "PXL_20240620_192624461.jpg",
+    src: IMAGE_URL + "PXL_20240620_192624461.jpg",
     title: "Sandwich Mi Bao",
     location: "1073 Saint Denis St, Montreal, Quebec H2X 3J3",
     datetime: "Thu Jun 20, 2024 3:26 pm",
@@ -237,7 +239,7 @@ const photos = [
     tags: ["food"],
   },
   {
-    src: "PXL_20240616_210457514.jpg",
+    src: IMAGE_URL + "PXL_20240616_210457514.jpg",
     title: "Montreal Biodome",
     location: "4777 Pierre-de Coubertin Ave, Montreal, Quebec H1V 1B3",
     datetime: "Sun Jun 16, 2024 5:05 pm",
@@ -245,7 +247,7 @@ const photos = [
     tags: ["animals"],
   },
   {
-    src: "PXL_20240616_130505903~2.jpg",
+    src: IMAGE_URL + "PXL_20240616_130505903~2.jpg",
     title: "La Grande Roue de Montréal",
     location: "362 Rue de la Commune E, Montréal, QC H2Y 0B4",
     datetime: "Sun Jun 16, 2024 9:05 am",
@@ -253,7 +255,7 @@ const photos = [
     tags: [],
   },
   {
-    src: "PXL_20240612_203354229~3.jpg",
+    src: IMAGE_URL + "PXL_20240612_203354229~3.jpg",
     title: "Off-road beauty #2",
     location: "Chem. de la Croix, Clermont, QC G4A 1E8",
     datetime: "Wed Jun 12, 2024 4:33 pm",
@@ -261,7 +263,7 @@ const photos = [
     tags: ["landscape", "car"],
   },
   {
-    src: "PXL_20240612_202013427~2.jpg",
+    src: IMAGE_URL + "PXL_20240612_202013427~2.jpg",
     title: "Site Patrimonial de la Montagne de la Croix",
     location: "Chem. de la Croix, Clermont, QC G4A 1E8",
     datetime: "Wed Jun 12, 2024 4:20 pm",
@@ -269,7 +271,7 @@ const photos = [
     tags: ["landscape", "mountains"],
   },
   {
-    src: "PXL_20240610_202012941.jpg",
+    src: IMAGE_URL + "PXL_20240610_202012941.jpg",
     location: "100 Chem. du Havre, La Malbaie, QC G5A 2Y9",
     title: "La jetée de Pointe-au-Pic",
     description: "",
@@ -277,7 +279,7 @@ const photos = [
     tags: ["landscape", "sea"],
   },
   {
-    src: "PXL_20240610_200205092.jpg",
+    src: IMAGE_URL + "PXL_20240610_200205092.jpg",
     location: "10 Chem. du Havre, La Malbaie, QC G5A 2Y8",
     title: "Musée de Charlevoix",
     description: "",
@@ -285,7 +287,7 @@ const photos = [
     tags: ["museum"],
   },
   {
-    src: "PXL_20240605_020039078~2.jpg",
+    src: IMAGE_URL + "PXL_20240605_020039078~2.jpg",
     location: "99, av de Grand-Pré, Bonaventure, Quebec G0C 1E0",
     title: "Église catholique Saint-Bonaventure",
     description: "",
@@ -293,7 +295,7 @@ const photos = [
     tags: ["architecture"],
   },
   {
-    src: "PXL_20240604_000156837~2.jpg",
+    src: IMAGE_URL + "PXL_20240604_000156837~2.jpg",
     location: "Rte de l'Île, Saint-Siméon-de-Bonaventure, QC G0C 3A0",
     title: "Plage de l'Île",
     description: "",
@@ -301,7 +303,7 @@ const photos = [
     tags: ["landscape", "sea"],
   },
   {
-    src: "PXL_20240603_201220762.jpg",
+    src: IMAGE_URL + "PXL_20240603_201220762.jpg",
     location: "La Côte-de-Gaspé Regional County Municipality, Quebec",
     title: "Grand Greve",
     description: "",
@@ -309,7 +311,7 @@ const photos = [
     tags: ["landscape", "sea"],
   },
   {
-    src: "PXL_20240601_141415600~2.jpg",
+    src: IMAGE_URL + "PXL_20240601_141415600~2.jpg",
     location: "131 Discovery Rd, Hopewell Cape, NB E4H 4Z5",
     title: "Hopewell Rocks Provincial Park ",
     description: "",
@@ -317,7 +319,7 @@ const photos = [
     tags: ["landscape"],
   },
   {
-    src: "PXL_20240525_134153388~2.jpg",
+    src: IMAGE_URL + "PXL_20240525_134153388~2.jpg",
     location: "8619 Cavendish Rd, Cavendish, PE C0A 1N0",
     title: "Green Gables Heritage Place",
     description: "From Anne of Green Gables",
@@ -325,7 +327,7 @@ const photos = [
     tags: ["heritage", "house", "landscape"],
   },
   {
-    src: "PXL_20240525_214846571~2.jpg",
+    src: IMAGE_URL + "PXL_20240525_214846571~2.jpg",
     location: "Prince William St, Saint John, NB",
     title: "Tulips at Three Sisters Lamp",
     description: "",
@@ -333,7 +335,7 @@ const photos = [
     tags: ["flowers"],
   },
   {
-    src: "PXL_20240520_210613758~2.jpg",
+    src: IMAGE_URL + "PXL_20240520_210613758~2.jpg",
     location: "312 Harbourview Dr, North Rustico, PE C0A 1X0",
     title: "Blue Mussel Cafe",
     description: "",
@@ -341,7 +343,7 @@ const photos = [
     tags: ["food"],
   },
   {
-    src: "PXL_20240518_190329718~2.jpg",
+    src: IMAGE_URL + "PXL_20240518_190329718~2.jpg",
     location: "Off-road",
     title: "Daily Driver",
     description: "",
@@ -349,7 +351,7 @@ const photos = [
     tags: ["car", "landscape"],
   },
   {
-    src: "PXL_20240517_215926701.PORTRAIT~2.jpg",
+    src: IMAGE_URL + "PXL_20240517_215926701.PORTRAIT~2.jpg",
     location: "Twillingate, NL",
     title: "Paddy",
     description: "",
@@ -357,16 +359,16 @@ const photos = [
     tags: ["animals", "cat"],
   },
   {
-    src: "PXL_20240517_200117607~2.jpg",
+    src: IMAGE_URL + "PXL_20240517_200117607~2.jpg",
     location:
-      "Twillingate Lighthouse, Lighthouse Rd, NL-340, Crow Head, NL A0G 4M0",
+    "Twillingate Lighthouse, Lighthouse Rd, NL-340, Crow Head, NL A0G 4M0",
     title: "On the edge",
     description: "View along the small trail",
     datetime: "Fri May 12, 2024 6:48 pm",
     tags: ["landscape", "sea"],
   },
   {
-    src: "PXL_20240514_113938889.jpg",
+    src: IMAGE_URL + "PXL_20240514_113938889.jpg",
     location: "The Bagel Cafe, 246 Duckworth St, St. John's, NL A1C 1G8",
     title: "Breakfast Bagel with a side of Fruit bowl",
     description: "",
@@ -374,7 +376,7 @@ const photos = [
     tags: ["food"],
   },
   {
-    src: "PXL_20240505_150332824~2.jpg",
+    src: IMAGE_URL + "PXL_20240505_150332824~2.jpg",
     location: "1333 South Park St, Halifax, NS B3J 2K9",
     title: "Le Bistro By Liz",
     description: "",
@@ -382,59 +384,186 @@ const photos = [
     tags: ["food"],
   },
 ]
-
-const IMAGE_URL =
-  import.meta.env.PERSONAL_WEBSITE_MEDIA || "https://static.priteshtupe.com/"
 ---
 
 <BaseLayout>
   <h1 style="text-align:center;">Photography Archive</h1>
-  <div class="gallery">
-    {
-      photos.map((p) => (
-        <Image
-          src={IMAGE_URL + p.src}
-          alt={p.title}
-          width={1000}
-          height={1000}
-        />
-      ))
-    }
+  <div id="gallery" data-photos={JSON.stringify(photos)}>
+    {photos.map((p, idx) => (
+    <Image
+      src={p.src}
+      alt={p.title}
+      width={500}
+      height={500}
+      onclick={"toggleSlideShow(" + (idx + 1) +")"}
+    />
+    ))}
+  </div>
+
+  <div id="slideShow" class="hidden">
+    <div id="slideShowImg"></div>
+    <button id="closeBtn" onclick="toggleSlideShow()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <button id="nextBtn" onclick="nextImage()"><svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="chevron-right"
+    >
+      <polyline points="9 18 15 12 9 6" />
+    </svg></button>
+    <button id="prevBtn" onclick="prevImage()"><svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="chevron-left"
+    >
+      <polyline points="15 18 9 12 15 6" />
+    </svg></button>
   </div>
 </BaseLayout>
 
-<style is:global>
-  main {
-    max-width: 100%;
+<script is:inline>
+let currentImageIndex = -1;
+
+const gallery = document.getElementById("gallery")
+const photos = JSON.parse(gallery.dataset.photos)
+
+const slideShowEle = document.getElementById("slideShow");
+const imgDiv = slideShowEle.firstElementChild
+
+function toggleSlideShow(index) {
+  if (index) {
+    currentImageIndex = index;
+    showImage(index - 1)
+    slideShowEle?.classList.remove("hidden")
+  } else {
+    currentImageIndex = -1
+    imgDiv.innerHTML = ""
+    slideShowEle?.classList.add("hidden")
   }
-</style>
+}
+
+function showImage(index) {
+  const photo = photos[index]
+  const img = `<img
+fill="contain"
+id="slideShowImg"
+src="${'http://localhost:4321/_image?href=' + photo.src}"
+alt="${photo.title}" />`
+  imgDiv.innerHTML = img
+}
+
+function nextImage() { if (currentImageIndex < photos.length) showImage(currentImageIndex++) }
+
+function prevImage() {if (currentImageIndex > 0) showImage(currentImageIndex--) }
+
+</script>
 
 <style>
-  div.gallery {
-    columns: 3;
+:global(main) {
+  max-width: 100%;
+}
+
+div#gallery {
+  columns: 3;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 1em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div#gallery {
+    columns: 2;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  div#gallery {
+    columns: 4;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  div#gallery {
+    columns: 5;
+  }
+}
+
+div#slideShow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(0, 0, 0, 0.95);
+  overflow: hidden;
+
+  button {
+    font-size:1.5em;
+    border-radius: 99px;
+    background-color: rgb(0, 0, 0, 0.5);
+  }
+
+  #closeBtn {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+  }
+
+  #prevBtn {
+    position: absolute;
+    top: 50%;
+    left: 1em;
+  }
+
+  #nextBtn {
+    position: absolute;
+    top: 50%;
+    right: 1em;
+  }
+
+  #slideShowImg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
 
     img {
       width: 100%;
-      height: auto;
-      border-radius: 1em;
+      height: 100%;
+      object-fit: contain;
     }
   }
-
-  @media screen and (max-width: 768px) {
-    div.gallery {
-      columns: 2;
-    }
-  }
-
-  @media screen and (min-width: 1200px) {
-    div.gallery {
-      columns: 4;
-    }
-  }
-
-  @media screen and (min-width: 1400px) {
-    div.gallery {
-      columns: 5;
-    }
-  }
+}
 </style>
