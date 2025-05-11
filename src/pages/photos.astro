@@ -361,7 +361,7 @@ const photos = [
   {
     src: IMAGE_URL + "PXL_20240517_200117607~2.jpg",
     location:
-    "Twillingate Lighthouse, Lighthouse Rd, NL-340, Crow Head, NL A0G 4M0",
+      "Twillingate Lighthouse, Lighthouse Rd, NL-340, Crow Head, NL A0G 4M0",
     title: "On the edge",
     description: "View along the small trail",
     datetime: "Fri May 12, 2024 6:48 pm",
@@ -389,15 +389,17 @@ const photos = [
 <BaseLayout>
   <h1 style="text-align:center;">Photography Archive</h1>
   <div id="gallery" data-photos={JSON.stringify(photos)}>
-    {photos.map((p, idx) => (
-    <Image
-      src={p.src}
-      alt={p.title}
-      width={500}
-      height={500}
-      onclick={"toggleSlideShow(" + (idx + 1) +")"}
-    />
-    ))}
+    {
+      photos.map((p, idx) => (
+        <Image
+          src={p.src}
+          alt={p.title}
+          width={500}
+          height={500}
+          onclick={"toggleSlideShow(" + (idx + 1) + ")"}
+        />
+      ))
+    }
   </div>
 
   <div id="slideShow" class="hidden">
@@ -418,152 +420,159 @@ const photos = [
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
     </button>
-    <button id="nextBtn" onclick="nextImage()"><svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="chevron-right"
+    <button id="nextBtn" onclick="nextImage()"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="chevron-right"
+      >
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg></button
     >
-      <polyline points="9 18 15 12 9 6" />
-    </svg></button>
-    <button id="prevBtn" onclick="prevImage()"><svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="chevron-left"
+    <button id="prevBtn" onclick="prevImage()"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="chevron-left"
+      >
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg></button
     >
-      <polyline points="15 18 9 12 15 6" />
-    </svg></button>
   </div>
 </BaseLayout>
 
 <script is:inline>
-let currentImageIndex = -1;
+  let currentImageIndex = -1
 
-const gallery = document.getElementById("gallery")
-const photos = JSON.parse(gallery.dataset.photos)
+  const gallery = document.getElementById("gallery")
+  const photos = JSON.parse(gallery.dataset.photos)
 
-const slideShowEle = document.getElementById("slideShow");
-const imgDiv = slideShowEle.firstElementChild
+  const slideShowEle = document.getElementById("slideShow")
+  const imgDiv = slideShowEle.firstElementChild
 
-function toggleSlideShow(index) {
-  if (index) {
-    currentImageIndex = index;
-    showImage(index - 1)
-    slideShowEle?.classList.remove("hidden")
-  } else {
-    currentImageIndex = -1
-    imgDiv.innerHTML = ""
-    slideShowEle?.classList.add("hidden")
+  function toggleSlideShow(index) {
+    if (index) {
+      currentImageIndex = index
+      showImage(index - 1)
+      slideShowEle?.classList.remove("hidden")
+    } else {
+      currentImageIndex = -1
+      imgDiv.innerHTML = ""
+      slideShowEle?.classList.add("hidden")
+    }
   }
-}
 
-function showImage(index) {
-  const photo = photos[index]
-  const img = `<img
+  function showImage(index) {
+    const photo = photos[index]
+    const img = `<img
 fill="contain"
 id="slideShowImg"
-src="${'http://localhost:4321/_image?href=' + photo.src}"
+src="${photo.src}"
 alt="${photo.title}" />`
-  imgDiv.innerHTML = img
-}
+    imgDiv.innerHTML = img
+  }
 
-function nextImage() { if (currentImageIndex < photos.length) showImage(currentImageIndex++) }
+  function nextImage() {
+    if (currentImageIndex < photos.length) showImage(currentImageIndex++)
+  }
 
-function prevImage() {if (currentImageIndex > 0) showImage(currentImageIndex--) }
-
+  function prevImage() {
+    if (currentImageIndex > 0) showImage(currentImageIndex--)
+  }
 </script>
 
 <style>
-:global(main) {
-  max-width: 100%;
-}
-
-div#gallery {
-  columns: 3;
-
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 1em;
+  :global(main) {
+    max-width: 100%;
   }
-}
 
-@media screen and (max-width: 768px) {
   div#gallery {
-    columns: 2;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  div#gallery {
-    columns: 4;
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  div#gallery {
-    columns: 5;
-  }
-}
-
-div#slideShow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100vw;
-  min-height: 100vh;
-  background-color: rgb(0, 0, 0, 0.95);
-  overflow: hidden;
-
-  button {
-    font-size:1.5em;
-    border-radius: 99px;
-    background-color: rgb(0, 0, 0, 0.5);
-  }
-
-  #closeBtn {
-    position: absolute;
-    top: 1em;
-    right: 1em;
-  }
-
-  #prevBtn {
-    position: absolute;
-    top: 50%;
-    left: 1em;
-  }
-
-  #nextBtn {
-    position: absolute;
-    top: 50%;
-    right: 1em;
-  }
-
-  #slideShowImg {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    max-width: 100vw;
-    max-height: 100vh;
+    columns: 3;
 
     img {
       width: 100%;
-      height: 100%;
-      object-fit: contain;
+      height: auto;
+      border-radius: 1em;
     }
   }
-}
+
+  @media screen and (max-width: 768px) {
+    div#gallery {
+      columns: 2;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    div#gallery {
+      columns: 4;
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    div#gallery {
+      columns: 5;
+    }
+  }
+
+  div#slideShow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(0, 0, 0, 0.95);
+    overflow: hidden;
+
+    button {
+      font-size: 1.5em;
+      border-radius: 99px;
+      background-color: rgb(0, 0, 0, 0.5);
+    }
+
+    #closeBtn {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+    }
+
+    #prevBtn {
+      position: absolute;
+      top: 50%;
+      left: 1em;
+    }
+
+    #nextBtn {
+      position: absolute;
+      top: 50%;
+      right: 1em;
+    }
+
+    #slideShowImg {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      max-width: 100vw;
+      max-height: 100vh;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
 </style>
