@@ -5,7 +5,7 @@ title: Backup Strategy
 
 > Everything worth backing up follows 3-2-1 strategy : Atleast 3 copies, 2 local and 1 remote
 
-![Backup Strategy](/images/backup_strategy.svg)
+![Backup Strategy](../../images/backup_strategy.svg)
 
 ## Notes:
 
