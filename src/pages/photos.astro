@@ -92,8 +92,10 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 
   function toggleSlideShow(e) {
     if (e) {
+      document.documentElement.requestFullscreen()
       showImage(e)
     } else {
+      if (document.fullscreenElement) document.exitFullscreen()
       hideImage()
     }
   }
@@ -119,6 +121,37 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   function prevImage() {
     if (currentImage?.previousSibling) showImage(currentImage.previousSibling)
   }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") return nextImage()
+    if (event.key === "ArrowRight") return prevImage()
+    if (event.key === "Escape") return toggleSlideShow()
+    if (event.key === "Backspace") return toggleSlideShow()
+    // if (event.key === "Enter") return toggleSlideShow()
+  })
+
+  let startX, startY
+  slideShowImg.addEventListener("touchstart", (event) => {
+    startX = event.touches[0].clientX
+    startY = event.touches[0].clientY
+  })
+
+  slideShowImg.addEventListener("touchend", (event) => {
+    const moveX = event.changedTouches[0].clientX
+    const moveY = event.changedTouches[0].clientY
+    const diffX = startX - moveX
+    const diffY = startY - moveY
+
+    if (diffX > 50) {
+      nextImage()
+    } else if (diffX < -50) {
+      prevImage()
+    } else if (diffY < 50) {
+      toggleSlideShow()
+      // event.preventDefault()
+      // event.stopPropagation()
+    }
+  })
 </script>
 
 <style>
