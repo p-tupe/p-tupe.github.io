@@ -1,3 +1,7 @@
+---
+import ExtLinkIcon from "../../icons/external-link.svg"
+---
+
 <div class="hamburger">
   <button onclick="toggleSideMenu()">
     <svg
@@ -43,121 +47,127 @@
         <li><a href="/">Home</a></li>
         <li><a href="/posts">Posts</a></li>
         <li><a href="/notes">Notes</a></li>
-        <li><a href="/photos">Photos</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/rss.xml">Rss</a></li>
-        <li><a href="/sitemap-index.xml">Sitemap</a></li>
-      </ul>
-      <h3>Web Novels</h3>
-      <ul>
-        <li><a href="/foa">Fate of Arda</a></li>
-        <li><a href="/gs">Grand Simulation</a></li>
-      </ul>
-      <h3>Projects</h3>
-      <ul>
         <li>
-          <a href="https://p-tupe.github.io/creatures" target="_blank"
-            >Creatures</a
+          <a
+            href="https://cloud.priteshtupe.com/share/fwX95Ul_9x8eYtH0-GzfzoCJl2MCLNHmAU6Pg1hRNnUfXwuyrb2tqxcUwtqzbDnDFrU"
+            >Photos <ExtLinkIcon style="fill:var(--link-color)" /></a
           >
+          <li><a href="/about">About</a></li>
+          <li><a href="/rss.xml">Rss</a></li>
+          <li><a href="/sitemap-index.xml">Sitemap</a></li>
         </li>
-        <li>
-          <a href="https://p-tupe.github.io/binary-clock" target="_blank"
-            >Binary Clock</a
-          >
-        </li>
-        <li>
-          <a href="https://github.com/p-tupe/nvim-rss" target="_blank"
-            >Nvim Rss</a
-          >
-        </li>
-        <li>
-          <a href="https://p-tupe.github.io/impossible-xo" target="_blank"
-            >Impossible XO</a
-          >
-        </li>
-        <li>
-          <a href="https://github.com/p-tupe/pingmon" target="_blank">Pingmon</a
-          >
-        </li>
-        <li>
-          <a href="https://github.com/p-tupe/zettel-merken" target="_blank"
-            >Zettel Merken</a
-          >
-        </li>
-        <li>
-          <a href="https://p-tupe.github.io/flashcards" target="_blank"
-            >Flashcards</a
-          >
-        </li>
+        <h3>Web Novels</h3>
+        <ul>
+          <li><a href="/foa">Fate of Arda</a></li>
+          <li><a href="/gs">Grand Simulation</a></li>
+        </ul>
+        <h3>Projects</h3>
+        <ul>
+          <li>
+            <a href="https://p-tupe.github.io/creatures" target="_blank"
+              >Creatures <ExtLinkIcon style="fill:var(--link-color)" /></a
+            >
+          </li>
+          <li>
+            <a href="https://p-tupe.github.io/binary-clock" target="_blank"
+              >Binary Clock <ExtLinkIcon style="fill:var(--link-color)" /></a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/p-tupe/nvim-rss" target="_blank"
+              >Nvim Rss <ExtLinkIcon style="fill:var(--link-color)" /></a
+            >
+          </li>
+          <li>
+            <a href="https://p-tupe.github.io/impossible-xo" target="_blank"
+              >Impossible XO <ExtLinkIcon style="fill:var(--link-color)" /></a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/p-tupe/pingmon" target="_blank"
+              >Pingmon <ExtLinkIcon style="fill:var(--link-color)" /></a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/p-tupe/zettel-merken" target="_blank"
+              >Zettel Merken <ExtLinkIcon style="fill:var(--link-color)" /></a
+            >
+          </li>
+          <li>
+            <a href="https://p-tupe.github.io/flashcards" target="_blank"
+              >Flashcards <ExtLinkIcon style="fill:var(--link-color)" /></a
+            >
+          </li>
+        </ul>
       </ul>
     </div>
   </div>
-</nav>
 
-<style>
-  .hamburger {
-    cursor: pointer;
-  }
+  <style>
+    .hamburger {
+      cursor: pointer;
+    }
 
-  nav.nav-links {
-    background-color: var(--background-color);
-    position: absolute;
-    z-index: 9;
-    top: 0;
-    left: 0;
-    width: 100%;
-    font-size: 1.2rem;
-    overflow: hidden;
-
-    .mask {
-      position: fixed;
-      height: 100%;
+    nav.nav-links {
+      background-color: var(--background-color);
+      position: absolute;
+      z-index: 9;
+      top: 0;
+      left: 0;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.85);
+      font-size: 1.2rem;
+      overflow: hidden;
 
-      .side-menu {
-        position: relative;
-        padding: 2em;
+      .mask {
+        position: fixed;
         height: 100%;
-        background-color: var(--background-color);
-        z-index: 99;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        overflow-x: auto;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
 
-        .closeBtn {
-          position: absolute;
-          top: 1em;
-          right: 1em;
+        .side-menu {
+          position: relative;
+          padding: 2em;
+          height: 100%;
+          background-color: var(--background-color);
+          z-index: 99;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          overflow-x: auto;
+
+          .closeBtn {
+            position: absolute;
+            top: 1em;
+            right: 1em;
+          }
         }
       }
     }
-  }
 
-  .hidden {
-    display: none;
-  }
-
-  li {
-    list-style: circle;
-    color: var(--link-color);
-  }
-
-  h3 {
-    margin-bottom: 0;
-  }
-
-  @media screen and (min-width: 768px) {
-    .side-menu {
-      margin-left: 75%;
-      border-radius: 1em 0 0 1em;
+    .hidden {
+      display: none;
     }
-  }
-</style>
 
-<script is:inline>
-  const toggleSideMenu = () => {
-    document.querySelector("nav.nav-links")?.classList.toggle("hidden")
-  }
-</script>
+    li {
+      list-style: circle;
+      color: var(--link-color);
+    }
+
+    h3 {
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: 768px) {
+      .side-menu {
+        margin-left: 75%;
+        border-radius: 1em 0 0 1em;
+      }
+    }
+  </style>
+
+  <script is:inline>
+    const toggleSideMenu = () => {
+      document.querySelector("nav.nav-links")?.classList.toggle("hidden")
+    }
+  </script>
+</nav>

@@ -12,6 +12,7 @@ import CreaturesImage from "../images/creatures.png"
 import FOAImage from "../images/foa.png"
 import XOImage from "../images/xo.png"
 import BCDImage from "../images/bcd.png"
+import ExtLinkIcon from "../icons/external-link.svg"
 
 const pageTitle = "Home Page"
 
@@ -112,7 +113,11 @@ const projects = [
 
     <div style="width: 100%; display: flex; justify-content: space-evenly;">
       <a href="/notes">Notes</a>
-      <a href="/photos">Photos</a>
+      <a
+        style="align-items: center;"
+        href="https://cloud.priteshtupe.com/share/fwX95Ul_9x8eYtH0-GzfzoCJl2MCLNHmAU6Pg1hRNnUfXwuyrb2tqxcUwtqzbDnDFrU"
+        target="_blank">Photos <ExtLinkIcon style="fill:var(--link-color)" /></a
+      >
       <a href="/about">About</a>
       <a href="/rss.xml">RSS</a>
     </div>
