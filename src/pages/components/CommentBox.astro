@@ -23,13 +23,13 @@ const { placeholder } = Astro.props
     msgBtn.style.backgroundColor = "var(--subcontent-color)"
     msgBtn.innerText = "Sending..."
 
-    fetch("https://api.priteshtupe.com/slack/", {
+    fetch("https://api.priteshtupe.com/default", {
       method: "POST",
       headers: [
-        ["content-type", "application/json"],
-        ["authorization", "c2VydmljZS1tb25pdG9yaW5nLW1lc3NhZ2VzCg=="],
+        // ['Authorization', 'Basic ' + btoa(username + ":" + password)),
+        ["x-auth-token", "MCe5xu0yovUwin4FNynQ3Y8XAzsNGln-nkvhgjBFg2w="],
       ],
-      body: JSON.stringify({ text }),
+      body: text,
     })
       .then((res) => {
         if (res.ok) {
