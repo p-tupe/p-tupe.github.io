@@ -32,7 +32,7 @@
   - client request -> parse URI -> match longest location string -> append <value> and respond
   - Eg, 2 locations : /data/html /data/images with following config:
 
-    ```nginx
+    ```
     server {
       location / {
         root /data/html;
@@ -49,7 +49,7 @@
 
   - Regular expression:
 
-    ```nginx
+    ```
     location ~ \.(gif|jpg|png)$ {
       root /data/images;
     }
@@ -61,7 +61,7 @@
   - Client request -> Forward to specific server -> Receive reply from server -> Client response
   - Eg, request come on /proxy-this and need to be sent to a separate server on port 8080, and /proxy-that on port 8081, then config would be:
 
-    ```nginx
+    ```
     server {
         listen 80;
         server_name somedomain.com; # This is optional
@@ -78,7 +78,7 @@
 
   - Helpful directives:
 
-    ```nginx
+    ```
     proxy_http_version 1.1;
     proxy_set_header Upgrade $http_upgrade;
     proxy_set_header Connection 'upgrade';
@@ -90,7 +90,7 @@
 
 - Load balancing: This config will start balancing requests on 3 addresses (default round robin)
 
-  ```nginx
+  ```
   http {
     upstream poxy-server {
       server server_addr1;
