@@ -31,4 +31,11 @@ const notes = defineCollection({
   loader: glob({ pattern: "**/[^_]*.md", base: "./src/collections/notes" }),
 })
 
-export const collections = { posts, gs, foa, notes }
+const codeExamples = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.md",
+    base: "./src/collections/notes/examples",
+  }),
+})
+
+export const collections = { posts, gs, foa, notes, codeExamples }
