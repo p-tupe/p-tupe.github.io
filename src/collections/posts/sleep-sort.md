@@ -47,35 +47,41 @@ package main
 
 import (
 	"fmt"
+	"sync"
 	"time"
 )
 
 func main() {
+	var wg sync.WaitGroup
 	arr := []int{1, 5, 9, 7, 2, 8, 4, 3, 6}
-	rec := make(chan int)
 
 	for _, n := range arr {
+		wg.Add(1)
 		go (func() {
 			time.Sleep(time.Duration(n) * time.Second)
-			rec <- n
+			fmt.Println(n)
+			wg.Done()
 		})()
 	}
 
-	go (func() {
-		time.Sleep(10 * time.Second)
-		close(rec)
-	})()
-
-	for {
-		n, ok := <-rec
-		if ok {
-			fmt.Println(n)
-		} else {
-			fmt.Println("Voila!")
-			break
-		}
-	}
+	wg.Wait()
+	fmt.Println("Voila!")
 }
+```
+
+and another in `bash`, probably where "sleep" originated:
+
+```bash
+#!/usr/bin/env bash
+
+arr=(1 5 9 7 2 8 4 3 6)
+
+for i in ${arr[*]}; do
+  sleep $i && echo $i &
+done
+
+wait
+echo "Voila!"
 ```
 
 <br />
