@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# code-notes
+src/collections/notes/.gitignore
+src/collections/notes/LICENSE
+src/collections/notes/README.md
+src/collections/notes/notes.json
