@@ -48,13 +48,19 @@ STAGED=$(git diff --cached --name-only --diff-filter=d | xargs)
 
 # Lint
 yarn eslint --fix $STAGED
+
 # Format
 yarn prettier --write $STAGED
+
 # Type check
 yarn tsc --noEmit
+
 # Test
 yarn jest
-# Re-stage
+
+# NOTE: This re-stages ALL the previously staged files
+# So any "chunks" that were discarded get staged as well.
+# May skip if that behaviour is not required.
 git add $STAGED
 ```
 
