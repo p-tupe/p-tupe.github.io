@@ -1,6 +1,7 @@
 ---
 date: "2024-01-13T00:00:00Z"
 title: A quick look at Git Hooks
+update: "Mon Jul 28 15:01:05 EDT 2025"
 ---
 
 ## What are git hooks?
@@ -42,7 +43,8 @@ Sure, I have a pre-commit git hook written that... Well, let me just show you:
 
 set -euo pipefail
 
-STAGED=$(git diff --cached --name-only | xargs)
+# Get all staged file names (except deleted)
+STAGED=$(git diff --cached --name-only --diff-filter=d | xargs)
 
 # Lint
 yarn eslint --fix $STAGED
