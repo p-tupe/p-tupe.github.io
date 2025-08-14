@@ -126,7 +126,7 @@
 
 - If Statements:
 
-  ```
+  ```go
   // Syntax (no brackets around conditions)
   if <condition> {}
   else if <condition> {}
@@ -135,11 +135,11 @@
 
 - Switch Statements:
 
-  ```
+  ```go
   // Syntax
   switch <expression> {
       case <val>: <statements>
-      ...
+      // ...
       default: <statement>
     }
   ```
@@ -150,13 +150,13 @@
 - For Loops:
   - Syntax 1 (same old):
 
-    ```
+    ```go
     for i := 0; i < <some_int>; i++ { }
     ```
 
   - Syntax 2 (for _each_):
 
-    ```
+    ```go
     for x, y := range <map | slice> {
       // x = key | index
       // y = value
@@ -165,7 +165,7 @@
 
   - Syntax 3 (while like):
 
-    ```
+    ```go
     for <condition> {
       // break and continue work as expected
     }
@@ -173,7 +173,7 @@
 
 - Functions:
 
-  ```
+  ```go
   func <name>(<args>) <return_type> {}
   ```
 
@@ -203,6 +203,23 @@
 
 ## How to
 
+### Hello World!
+
+<div>
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, World!")
+}
+```
+
+<codapi-snippet sandbox="go" editor="basic" url="http://app.priteshtupe.com/v1"  />
+</div>
+
 ### Structure a project?
 
 ### Write a minimal webserver?
@@ -222,15 +239,3 @@
 ### Use HTMX?
 
 ### Build a smaller binary?
-
-```go
-package main
-
-import "fmt"
-
-func main() {
-    fmt.Println("Hello, World!")
-}
-```
-
-<codapi-snippet sandbox="go" editor="basic" url="http://app.priteshtupe.com/v1" />
