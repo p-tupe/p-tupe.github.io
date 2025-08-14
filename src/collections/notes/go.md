@@ -24,6 +24,8 @@
 
 - https://goperf.dev/
 
+- https://antonz.org/go-concurrency/#contents
+
 ## Notes
 
 ### From "A tour of Go"
@@ -38,7 +40,6 @@
 ### From LinkedIn Learning "Learning Go" tutorial
 
 - Go has 3 things (from OOP perspective):
-
   1. Type - Definition of a thing
   2. Struct - Data of a thing
   3. Interface - Behavior of a thing
@@ -46,7 +47,6 @@
   Everything in Go has a type, every type has an interface.
 
 - Go _doesn't_ have these:
-
   1. No (type) inheritance (Also, no classes/objects, duh)
   2. No overloading
   3. No "structured" exception handling (try/catch/finally)
@@ -57,7 +57,6 @@
 - Builtin functions: [golang.org/pkg/builtin](https://golang.org/pkg/builtin)
 
 - Types:
-
   - Everything has a type
   - Some built-in data types: `bool` `string` `[u]int(8 | 16 | 32 | 64)` `float(32 | 64)` `complex(64 | 128)`
   - Some built-in data type aliases: `[u]int` = `[u]int(32 | 64)` `byte` `uintptr` `rune`
@@ -67,37 +66,31 @@
   - Note that strings are in double quotes `""` and _characters_ (int32 | byte) in single `''` like Java
 
 - Variables:
-
   - Declaration: `var <name> <type>`; Example: `var someString string`
   - Initialization: `<name> = <value>`; Example: `someString = "this is a string"`
   - Shortcut: `<name> := <value>`; Example: `anotherStr = "this is another string"`
     - Shortcut only works inside functions.
 
 - Constants:
-
   - Definition: `const <name> <type> = <value>`
   - Cannot be reassigned
 
 - `new()` vs `make()`
-
   - `new` is used to return a pointer of a "type" to an uninitialized memory location
   - `make` is used specifically with slices, maps and chans to allocate and initialize memory; it returns the object (as opposed to the pointer)
 
 - Pointers:
-
   - Declare a pointer: `var ptr *int`
   - Declare & Initialize a pointer to val: `ptr := &val`
   - Address of val : `&val` == `ptr`
   - Value of val : `val` == `*ptr`
 
 - Arrays:
-
   - Syntax: `var <name> = [<capacity>]<type>`, Example: `var rgb = [3]string`
   - Shorter syntax with Initialization: `rgb := [3]string{"red", "green", "blue"}`
   - Arrays are not usually preferred, since they cannot be sorted or capacity-changed
 
 - Slices:
-
   - Slices used Arrays behind the scene, but are preferred over Arrays because their capacity can be changed at runtime
   - The syntax for slices is same as arrays, except the omission of `<capacity>` in square brackets
   - Another syntax: `<name> := make([]<type>, <init_size>, [<capacity>])`
@@ -108,7 +101,6 @@
     - `sort.<type>(<slice>)` - Sort slice
 
 - Maps:
-
   - Like Object in JS, Dict in Python, Hash Table
   - Syntax: `<name> := make(map[<key_type>]<value_type>)` (Here, `[]` does not mean optional, is part of the definition)
   - Example: `countryCodes := make(map[string]string)` `countryCodes["CA"] = "Canada"`
@@ -116,7 +108,6 @@
     - `delete(<map_name>, <key>)` - deletes `key` from `map_name`
 
 - Structs:
-
   - Like a Class in Java, Can encapsulate both data and methods (optional)
   - Example:
 
@@ -157,7 +148,6 @@
   - must add `fallthrough` explicitly at the end of case statements
 
 - For Loops:
-
   - Syntax 1 (same old):
 
     ```
@@ -188,7 +178,6 @@
   ```
 
 - I/O:
-
   - Console:
 
     ```go
@@ -201,17 +190,47 @@
   - File:
 
 - Math:
-
   - `import "math"`
   - [Go Math Package](https://pkg.go.dev/math)
   - Arithmetic built-in: `+` `-` `*` `/` `%`
   - Bitwise built-in: `&` `|` `^` `&^` `<<` `>>`
 
 - Date/Time:
-
   - `import "time"`
   - [Go Math Package](https://pkg.go.dev/time)
   - `time.Now()`
   - `time.Date(...)`
 
-## Build an executable without debug (smaller size)
+## How to
+
+### Structure a project?
+
+### Write a minimal webserver?
+
+### Parse CLI flags/subcommands?
+
+### Use go:stringer, and when?
+
+### Use go:embed, and when?
+
+### Use slog?
+
+### Use templates?
+
+### Use templ?
+
+### Use HTMX?
+
+### Build a smaller binary?
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, World!")
+}
+```
+
+<codapi-snippet sandbox="go" editor="basic" url="http://app.priteshtupe.com/v1" />

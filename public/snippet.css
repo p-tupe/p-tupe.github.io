@@ -1,0 +1,57 @@
+codapi-snippet {
+  --toolbar-gap: 1em;
+  --toolbar-margin-bottom: 1em;
+  display: block;
+}
+codapi-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--toolbar-gap);
+  margin-bottom: var(--toolbar-margin-bottom);
+
+  button {
+    color: var(--background-color) !important;
+    background-color: var(--link-color);
+    padding: 0.5em 1em 0.5em 1em;
+    font-size: 1em;
+    border-radius: 1em;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+codapi-status {
+  display: block;
+  white-space: nowrap;
+  color: var(--subcontent-color);
+}
+codapi-output {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  border: 1px solid var(--subcontent-color);
+  border-radius: 1em;
+
+  a {
+    text-decoration: none;
+  }
+}
+codapi-output[hidden] {
+  display: none;
+}
+codapi-output a[href="#close"] {
+  position: absolute;
+  top: 0.25em;
+  right: 0.25em;
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+codapi-ref {
+  display: none;
+}
