@@ -55,3 +55,7 @@ codapi-output a[href="#close"] {
 codapi-ref {
   display: none;
 }
+code[contenteditable="true"] {
+  outline: none;
+  font-weight: bold;
+}
