@@ -1,4 +1,18 @@
 export const LANG_CODES = {
+  ab: {
+    language: "Abkhaz",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#ccc"/>
+                    <text x="12" y="10" font-size="8" text-anchor="middle" fill="#333">?</text>
+                </svg>`,
+  },
+  ace: {
+    language: "Acehnese",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#ccc"/>
+                    <text x="12" y="10" font-size="8" text-anchor="middle" fill="#333">?</text>
+                </svg>`,
+  },
   af: {
     language: "Afrikaans",
     flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
@@ -12,6 +26,14 @@ export const LANG_CODES = {
     flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
                     <rect width="24" height="16" fill="#A00"/>
                     <polygon points="12,0 15,6 24,6 17,10 20,16 12,12 4,16 7,10 0,6 9,6" fill="#FFB600"/>
+                </svg>`,
+  },
+  am: {
+    language: "Amharic",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#007A33"/>
+                    <rect width="24" height="8" fill="#FFD700"/>
+                    <rect width="24" height="4" y="6" fill="#FF0000"/>
                 </svg>`,
   },
   ar: {
@@ -38,12 +60,26 @@ export const LANG_CODES = {
                     <rect width="24" height="4" y="6" fill="#FFB600"/>
                 </svg>`,
   },
+  bm: {
+    language: "Bambara",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#ccc"/>
+                    <text x="12" y="10" font-size="8" text-anchor="middle" fill="#333">?</text>
+                </svg>`,
+  },
   eu: {
     language: "Basque",
     flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
                     <rect width="24" height="16" fill="#FF0000"/>
                     <rect width="24" height="4" y="6" fill="#00A859"/>
                     <rect width="24" height="4" y="10" fill="#00A859"/>
+                </svg>`,
+  },
+  be: {
+    language: "Belarusian",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#A00"/>
+                    <rect width="24" height="8" fill="#FFFFFF"/>
                 </svg>`,
   },
   bn: {
@@ -60,6 +96,14 @@ export const LANG_CODES = {
                     <polygon points="0,0 0,16 24,8" fill="#FFD700"/>
                 </svg>`,
   },
+  bg: {
+    language: "Bulgarian",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#FFFFFF"/>
+                    <rect width="24" height="8" fill="#00966E"/>
+                    <rect width="24" height="4" y="8" fill="#D62612"/>
+                </svg>`,
+  },
   ca: {
     language: "Catalan",
     flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
@@ -68,6 +112,13 @@ export const LANG_CODES = {
                       height="4" y="4" fill="#FFD700"/>
                     <rect width="24" height="4" y="8" fill="#FF0000"/>
                     <rect width="24" height="4" y="12" fill="#FFD700"/>
+                </svg>`,
+  },
+  zh: {
+    language: "Chinese",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#FF0000"/>
+                    <polygon points="12,4 14,10 8,7 16,7 10,10" fill="#FFD700"/>
                 </svg>`,
   },
   hr: {
@@ -102,16 +153,16 @@ export const LANG_CODES = {
                     <rect width="24" height="4" y="10" fill="#AE1C28"/>
                 </svg>`,
   },
-  // "en": {
-  //     "language": "English",
-  //     "flag": `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
-  //                 <rect width="24" height="16" fill="#00247D"/>
-  //                 <rect width="24" height="2" y="7" fill="#FFFFFF"/>
-  //                 <rect width="2" height="16" x="10" fill="#FFFFFF"/>
-  //                 <rect width="24" height="1" y="5" fill="#C8102E"/>
-  //                 <rect width="1" height="16" x="11" fill="#C8102E"/>
-  //             </svg>`
-  // },
+  en: {
+    language: "English",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                  <rect width="24" height="16" fill="#00247D"/>
+                  <rect width="24" height="2" y="7" fill="#FFFFFF"/>
+                  <rect width="2" height="16" x="10" fill="#FFFFFF"/>
+                  <rect width="24" height="1" y="5" fill="#C8102E"/>
+                  <rect width="1" height="16" x="11" fill="#C8102E"/>
+              </svg>`,
+  },
   eo: {
     language: "Esperanto",
     flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
@@ -128,6 +179,14 @@ export const LANG_CODES = {
                 </svg>`,
   },
   tl: {
+    language: "Filipino",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#0038A8"/>
+                    <polygon points="0,0 0,16  12,8" fill="#FFD700"/>
+                    <circle cx="4" cy="8" r="2" fill="#FFD700"/>
+                </svg>`,
+  },
+  fil: {
     language: "Filipino",
     flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
                     <rect width="24" height="16" fill="#0038A8"/>
@@ -214,6 +273,15 @@ export const LANG_CODES = {
                     <polygon points="12,0 15,6 9,3 15,3 12,6 15,9 9,6 12,9 6,6 9,3 3,6 6,9 0,6" fill="#0038A8"/>
                 </svg>`,
   },
+  iw: {
+    language: "Hebrew",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#FFFFFF"/>
+                    <rect width="24" height="2" y="6" fill="#0038A8"/>
+                    <rect width="24" height="2" y="10" fill="#0038A8"/>
+                    <polygon points="12,0 15,6 9,3 15,3 12,6 15,9 9,6 12,9 6,6 9,3 3,6 6,9 0,6" fill="#0038A8"/>
+                </svg>`,
+  },
   hi: {
     language: "Hindi",
     flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
@@ -269,6 +337,14 @@ export const LANG_CODES = {
     flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
                     <rect width="24" height="16" fill="#FFFFFF"/>
                     <circle cx="12" cy="8" r="4" fill="#BC002D"/>
+                </svg>`,
+  },
+  jv: {
+    language: "Javanese",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#FF0000"/>
+                    <rect width="24" height="8" fill="#FFFFFF"/>
+                    <rect width="24" height="4" y="6" fill="#00843D"/>
                 </svg>`,
   },
   jw: {
@@ -364,6 +440,13 @@ export const LANG_CODES = {
                     <polygon points="12,0 15,6 24,6 17,10 20,16 12,12 4,16 7,10 0,6 9,6" fill="#FFD700"/>
                 </svg>`,
   },
+  ms: {
+    language: "Malay",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#ccc"/>
+                    <text x="12" y="10" font-size="8" text-anchor="middle" fill="#333">?</text>
+                </svg>`,
+  },
   ml: {
     language: "Malayalam",
     flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
@@ -457,13 +540,6 @@ export const LANG_CODES = {
                     <rect width="24" height="4" y="6" fill="#FF0000"/>
                 </svg>`,
   },
-  pa: {
-    language: "Punjabi",
-    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
-                    <rect width="24" height="16" fill="#FF9933"/>
-                    <circle cx="8" cy="8" r="5" fill="#FF0000"/>
-                </svg>`,
-  },
   pl: {
     language: "Polish",
     flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
@@ -476,6 +552,13 @@ export const LANG_CODES = {
     flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
                     <rect width="24" height="16" fill="#009C3B"/>
                     <rect width="24" height="8" fill="#FFD500"/>
+                </svg>`,
+  },
+  pa: {
+    language: "Punjabi",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#FF9933"/>
+                    <circle cx="8" cy="8" r="5" fill="#FF0000"/>
                 </svg>`,
   },
   ro: {
@@ -492,6 +575,42 @@ export const LANG_CODES = {
                     <rect width="24" height="16" fill="#FFFFFF"/>
                     <rect width="24" height="8" fill="#0033A0"/>
                     <rect width="24" height="8" fill="#A40000"/>
+                </svg>`,
+  },
+  sm: {
+    language: "Samoan",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#ccc"/>
+                    <text x="12" y="10" font-size="8" text-anchor="middle" fill="#333">?</text>
+                </svg>`,
+  },
+  sa: {
+    language: "Sanskrit",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#ccc"/>
+                    <text x="12" y="10" font-size="8" text-anchor="middle" fill="#333">?</text>
+                </svg>`,
+  },
+  sr: {
+    language: "Serbian",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#C6363C"/>
+                    <rect width="24" height="8" fill="#0C4076"/>
+                    <rect width="24" height="4" y="6" fill="#FFFFFF"/>
+                </svg>`,
+  },
+  sn: {
+    language: "Shona",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#ccc"/>
+                    <text x="12" y="10" font-size="8" text-anchor="middle" fill="#333">?</text>
+                </svg>`,
+  },
+  sd: {
+    language: "Sindhi",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#ccc"/>
+                    <text x="12" y="10" font-size="8" text-anchor="middle" fill="#333">?</text>
                 </svg>`,
   },
   si: {
@@ -513,6 +632,13 @@ export const LANG_CODES = {
     flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
                     <rect width="24" height="16" fill="#FFFFFF"/>
                     <rect width="24" height="8" fill="#FF0000"/>
+                </svg>`,
+  },
+  so: {
+    language: "Somali",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#4189DD"/>
+                    <polygon points="12,4 14,10 8,7 16,7 10,10" fill="#FFFFFF"/>
                 </svg>`,
   },
   es: {
@@ -572,6 +698,22 @@ export const LANG_CODES = {
                     <rect width="24" height="8" y="8" fill="#FFD700"/>
                 </svg>`,
   },
+  ur: {
+    language: "Urdu",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#006600"/>
+                    <circle cx="16" cy="8" r="4" fill="#FFFFFF"/>
+                    <path d="M12,4 a6,6 0 0,0 0,8" fill="#FFFFFF"/>
+                </svg>`,
+  },
+  uz: {
+    language: "Uzbek",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#0099B5"/>
+                    <rect width="24" height="8" fill="#FFFFFF"/>
+                    <rect width="24" height="4" y="8" fill="#CE1126"/>
+                </svg>`,
+  },
   vi: {
     language: "Vietnamese",
     flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
@@ -579,11 +721,32 @@ export const LANG_CODES = {
                     <polygon points="12,4 14,10 8,7 16,7 10,10" fill="#FFD700"/>
                 </svg>`,
   },
-  zh: {
-    language: "Chinese",
+  cy: {
+    language: "Welsh",
     flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
-                    <rect width="24" height="16" fill="#FF0000"/>
-                    <polygon points="12,4 14,10 8,7 16,7 10,10" fill="#FFD700"/>
+                    <rect width="24" height="16" fill="#ccc"/>
+                    <text x="12" y="10" font-size="8" text-anchor="middle" fill="#333">?</text>
+                </svg>`,
+  },
+  xh: {
+    language: "Xhosa",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#ccc"/>
+                    <text x="12" y="10" font-size="8" text-anchor="middle" fill="#333">?</text>
+                </svg>`,
+  },
+  yi: {
+    language: "Yiddish",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#ccc"/>
+                    <text x="12" y="10" font-size="8" text-anchor="middle" fill="#333">?</text>
+                </svg>`,
+  },
+  yo: {
+    language: "Yoruba",
+    flag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+                    <rect width="24" height="16" fill="#ccc"/>
+                    <text x="12" y="10" font-size="8" text-anchor="middle" fill="#333">?</text>
                 </svg>`,
   },
   zu: {
@@ -593,4 +756,4 @@ export const LANG_CODES = {
                     <rect width="24" height="8" fill="#FFD700"/>
                 </svg>`,
   },
-}
+};

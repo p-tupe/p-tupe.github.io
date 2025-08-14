@@ -49,6 +49,7 @@ const { pageTitle } = Astro.props
 
     <link rel="icon" href="/favicon.ico" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="stylesheet" href="/snippet.css" />
 
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
@@ -56,6 +57,7 @@ const { pageTitle } = Astro.props
     <meta name="description" content="Pritesh Tupe's personal website" />
 
     <title>Pritesh Tupe</title>
+
     <script>
       const theme = (() => {
         const localStorageTheme = localStorage?.getItem("theme") ?? ""
@@ -97,5 +99,7 @@ const { pageTitle } = Astro.props
     <main>
       <slot />
     </main>
+
+    <script src="/snippet.js" type="text/javascript"></script>
   </body>
 </html>

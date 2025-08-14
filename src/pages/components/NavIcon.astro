@@ -53,10 +53,7 @@ const isHome = Astro.url.pathname === "/"
       >
     </button>
     <div id="langOptions" onchange="openTranslation(this.value)">
-      <span style="font-size: 12px;color: var(--subcontent-color);"
-        >Uses google translate magic <ExtLinkIcon
-          style="fill:var(--content-color)"
-        />
+      <span>Uses google translate <ExtLinkIcon style="fill:var(--content-color)" />
       </span>
       <button class="closeBtn" onclick="toggleLangDropdown()"
         ><CrossIcon />
@@ -106,9 +103,16 @@ const isHome = Astro.url.pathname === "/"
     background-color: var(--background-color);
     box-shadow: 0 1px 4px 1px var(--subcontent-color);
     border-radius: 1em;
-    filter: brightness(0.8);
+    filter: brightness(1.2);
     max-height: 400px;
+    min-width: 250px;
     overflow-y: auto;
+
+    span {
+      font-weight: 100;
+      font-size: 12px;
+      color: var(--content-color);
+    }
 
     option:hover {
       color: var(--subcontent-color);
