@@ -217,7 +217,7 @@ func main() {
 }
 ```
 
-<codapi-snippet sandbox="go" editor="basic" url="http://codapi.priteshtupe.com/v1"  />
+<codapi-snippet sandbox="go" editor="basic" url="https://codapi.priteshtupe.com/v1"  />
 </div>
 
 ### Structure a project?
