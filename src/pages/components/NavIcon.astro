@@ -53,7 +53,8 @@ const isHome = Astro.url.pathname === "/"
       >
     </button>
     <div id="langOptions" onchange="openTranslation(this.value)">
-      <span>Uses google translate <ExtLinkIcon style="fill:var(--content-color)" />
+      <span>
+        Uses google translate <ExtLinkIcon style="fill:var(--content-color)" />
       </span>
       <button class="closeBtn" onclick="toggleLangDropdown()"
         ><CrossIcon />
