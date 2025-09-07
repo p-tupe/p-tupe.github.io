@@ -54,6 +54,14 @@ Error: Type 'Color.Green' does not satisfy the expected type 'never'.
 
 Easy peasy!
 
+...Okay, but how does it work exactly?
+
+> When narrowing, you can reduce the options of a union to a point where you have removed all possibilities and have nothing left. In those cases, TypeScript will use a never type to represent a state which shouldn’t exist.
+
+See the [typescript handbook - never type](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#the-never-type) for authoritative info and more use cases for `never`.
+
+## More resources
+
 - [More on stackoverflow](https://stackoverflow.com/questions/39419170/how-do-i-check-that-a-switch-block-is-exhaustive-in-typescript)
 
 - [More Typescript notes](/notes/typescript)

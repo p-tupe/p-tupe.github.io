@@ -19,3 +19,25 @@
   - It shows up by name in error messages.
   - `type` can alias existing types (or interfaces): `type Username = string | IUsername`.
   - `type ColorAndCircle = Color & Circle` is an intersection of two interfaces.
+
+## Exhaustive Type Checking
+
+```typescript
+enum Color {
+  Red,
+  Blue,
+  Green,
+}
+
+function whichColor(c: Color): string {
+  switch (c) {
+    case Color.Red:
+      return "Red"
+    case Color.Blue:
+      return "Blue"
+    default:
+      c satisfies never // <-- This line is required
+      return "Unknown color"
+  }
+}
+```
