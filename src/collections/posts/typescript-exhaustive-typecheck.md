@@ -56,9 +56,13 @@ Easy peasy!
 
 ...Okay, but how does it work exactly?
 
-> When narrowing, you can reduce the options of a union to a point where you have removed all possibilities and have nothing left. In those cases, TypeScript will use a never type to represent a state which shouldn’t exist.
+> "When narrowing, you can reduce the options of a union to a point where you have removed all possibilities and have nothing left. In those cases, TypeScript will use a never type to represent a state which shouldn’t exist."
 
 See the [typescript handbook - never type](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#the-never-type) for authoritative info and more use cases for `never`.
+
+> Satisfies is like `as const` without `readonly` and `: Type` without type widening.
+
+See [learningtypescript - the satisfies operator](https://www.learningtypescript.com/articles/the-satisfies-operator) for what the `satisfies` operator does.
 
 ## More resources
 
