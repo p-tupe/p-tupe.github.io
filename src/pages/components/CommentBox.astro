@@ -23,8 +23,11 @@ const { placeholder } = Astro.props
     msgBtn.style.backgroundColor = "var(--subcontent-color)"
     msgBtn.innerText = "Sending..."
 
-    fetch("https://ntfy.priteshtupe.com/default", {
+    fetch("https://app.priteshtupe.com/mail", {
       method: "POST",
+      headers: [
+        ["Authorization", "+ugwY4jSfRC2dx3RwPYR7dDwFT0ilK42TrhOUGpjqOA4Cg=="],
+      ],
       body: text,
     })
       .then((res) => {
