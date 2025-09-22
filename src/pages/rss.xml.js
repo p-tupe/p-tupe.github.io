@@ -1,8 +1,8 @@
-import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
+import rss from "@astrojs/rss"
+import { getCollection } from "astro:content"
 
 export async function GET(context) {
-  const posts = await getCollection("posts");
+  const posts = await getCollection("posts")
   return rss({
     title: "Pritesh Tupe's Feed",
     description: "Pritesh Tupe's Blogs and Stories",
@@ -10,8 +10,9 @@ export async function GET(context) {
     items: posts.map((p) => ({
       title: p.data.title,
       pubDate: p.data.date,
-      link: `/posts/${posts.id}`,
+      description: p.body.slice(0, 200) + "...",
+      link: `/posts/${p.id}`,
     })),
     customData: `<language>en-us</language>`,
-  });
+  })
 }
