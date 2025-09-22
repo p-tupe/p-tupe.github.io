@@ -50,6 +50,12 @@ const { pageTitle } = Astro.props
     <link rel="icon" href="/favicon.ico" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="stylesheet" href="/snippet.css" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Pritesh Tupe's Website"
+      href={new URL("rss.xml", Astro.site)}
+    />
 
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
