@@ -1,0 +1,51 @@
+---
+date: "Sun Oct  5 20:52:55 EDT 2025"
+title: "Text Generation using Markov Chains"
+---
+
+import MarkovChainSvg from "../../images/markov-chain.svg"
+import MarkovChainInput from "../../pages/components/MarkovChainInput.astro"
+
+## What is a "Markov Chain"?
+
+> [...] processes involving random outcomes that can be described by probabilities are called Markov Chains.
+>
+> ~ [math.libretexts.org](<https://math.libretexts.org/Bookshelves/Applied_Mathematics/Applied_Finite_Mathematics_(Sekhon_and_Bloom)/10%3A_Markov_Chains/10.01%3A_Introduction_to_Markov_Chains>)
+
+What does that mean though? Well, in the context of this post (for text generation) let's consider the following sentences:
+
+```txt
+This is a cat. This is a dog. That is a rat.
+```
+
+Where we want to create a model for text generation using the above as seed data. Thus, we consider the transition matrix for each word - what is the probability that we get a word X given that previous word was Y.
+
+```txt
+Y\X->  this  that  is  a   cat   dog   rat
+this   0     0     1   0   0     0     0
+that   0     0     1   0   0     0     0
+is     0     0     0   1   0     0     0
+a      0     0     0   0   0.33  0.33  0.33
+cat    1     0     0   0   0     0     0
+dog    0     1     0   0   0     0     0
+rat    0     0     0   0   0     0     0
+```
+
+Or, represented as a markov chain diagram:
+
+<div style="width: 100%; text-align: center; padding: 2em; color: var(--emphasis-color)">
+<MarkovChainSvg />
+</div>
+
+Such that, when you give a starting word (init state), it'll start generating a string of words that are almost realistic phrases.
+
+## I wanna see it for myself...
+
+Sure, go ahead. Copy some random bunch of text from somewhere (the more the better), then click generate to see it in action.
+
+> This will choose a random word to start with and a max length of 200 words. Click it again to see different outputs.
+
+<br />
+<MarkovChainInput />
+<div id="markovOp" style="color: var(--subcontent-color)"></div>
+<br />

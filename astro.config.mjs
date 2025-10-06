@@ -5,6 +5,8 @@ import sitemap from "@astrojs/sitemap"
 import robotsTxt from "astro-robots-txt"
 import compressor from "astro-compressor"
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   image: {
@@ -23,5 +25,5 @@ export default defineConfig({
   },
   site: "https://www.priteshtupe.com",
   devToolbar: { enabled: false },
-  integrations: [sitemap(), robotsTxt(), compressor()],
+  integrations: [sitemap(), robotsTxt(), compressor(), mdx()],
 })

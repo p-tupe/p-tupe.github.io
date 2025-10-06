@@ -1,0 +1,122 @@
+---
+import Textbox from "./Textbox.astro"
+
+const { placeholder } = Astro.props
+---
+
+<Textbox
+  onclick="submitText()"
+  textareaId="chainTextarea"
+  placeholder={placeholder}
+  btnId="chainBtn"
+  btnTxt="Generate"
+/>
+
+<script is:inline>
+  const stripWord = (w) => w.replace(/[^\p{L}\p{N}\p{Z}]/gu, "").toLowerCase()
+
+  class MarkovChain {
+    #model = {}
+    #timer = false
+
+    generateChain(seedTxt) {
+      const words = seedTxt.split(" ")
+
+      for (let i = 0; i < words.length - 1; i++) {
+        const currWord = stripWord(words[i])
+        const nextWord = stripWord(words[i + 1])
+
+        if (!this.#model[currWord]) {
+          this.#model[currWord] = {
+            [nextWord]: 1,
+          }
+        }
+
+        if (!this.#model[nextWord]) {
+          this.#model[nextWord] = {}
+          continue
+        }
+
+        if (!this.#model[currWord][nextWord]) {
+          this.#model[currWord][nextWord] = 1
+        } else {
+          this.#model[currWord][nextWord]++
+        }
+      }
+    }
+
+    generateText(withWord, wordLimit, markovOp) {
+      if (!withWord) {
+        withWord = Object.keys(this.#model)[
+          Math.floor(Math.random() * Object.keys(this.#model).length)
+        ]
+      }
+
+      markovOp.textContent += withWord + " "
+
+      const node = this.#model[withWord]
+      const sumCnt = Object.values(node).reduce((s, c) => (s += c), 0)
+      const rand = Math.floor(Math.random() * sumCnt + 1)
+
+      let foundNext = false
+      let sumCum = 0
+      for (const [word, count] of Object.entries(node)) {
+        sumCum += count
+        if (sumCum >= rand) {
+          withWord = word
+          foundNext = true
+          break
+        }
+      }
+
+      if (!foundNext) {
+        withWord = Object.keys(this.#model)[
+          Math.floor(Math.random() * Object.keys(this.#model).length)
+        ]
+      }
+
+      this.#timer = setTimeout(
+        () => this.generateText(withWord, wordLimit - 1, markovOp),
+        200,
+      )
+    }
+
+    stopGeneration() {
+      clearTimeout(this.#timer)
+    }
+  }
+
+  const c1 = new MarkovChain()
+
+  function submitText() {
+    const chainBtn = document.getElementById("chainBtn")
+    const markovOp = document.querySelector("div#markovOp")
+
+    if (chainBtn.innerText === "Clear") {
+      chainBtn.textContent = "Generate"
+      markovOp.textContent = ""
+      markovOp.style.padding = "0"
+      markovOp.style.margin = "0"
+      markovOp.style.border = "none"
+      markovOp.style.borderRadius = "18px"
+      c1.stopGeneration()
+      return
+    }
+
+    const chainTextarea = document.getElementById("chainTextarea")
+    if (!chainTextarea.value?.trim()) {
+      alert("Please enter some text to generate from!")
+      return
+    }
+
+    chainBtn.textContent = "Clear"
+
+    markovOp.style.padding = "1em"
+    markovOp.style.margin = "1em"
+    markovOp.style.border = "1px solid var(--content-color)"
+    markovOp.style.borderRadius = "18px"
+
+    c1.generateChain(chainTextarea.value.trim())
+    c1.generateText(null, 200, markovOp)
+  }
+</script>

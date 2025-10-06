@@ -1,23 +1,26 @@
 ---
-import InfoCard from "./InfoCard.astro"
+import Textbox from "./Textbox.astro"
 
 const { placeholder } = Astro.props
 ---
 
-<InfoCard>
-  <textarea required id="msgTextarea" placeholder={placeholder}></textarea>
-  <button id="msgBtn" type="button" onclick="sendMessage()">Send</button>
-</InfoCard>
+<Textbox
+  onclick="sendMessage()"
+  textareaId="msgTextarea"
+  placeholder={placeholder}
+  btnId="msgBtn"
+  btnTxt="Send"
+/>
 
 <script is:inline>
   function sendMessage() {
-    const msgTxtarea = document.getElementById("msgTextarea")
-    if (!msgTxtarea.value) {
+    const msgTextarea = document.getElementById("msgTextarea")
+    if (!msgTextarea.value) {
       alert("Please enter a message!")
       return
     }
 
-    const text = `priteshtupe.com: ` + msgTxtarea.value
+    const text = `priteshtupe.com: ` + msgTextarea.value
     const msgBtn = document.getElementById("msgBtn")
     msgBtn.setAttribute("disabled", true)
     msgBtn.style.backgroundColor = "var(--subcontent-color)"
@@ -48,34 +51,3 @@ const { placeholder } = Astro.props
       })
   }
 </script>
-
-<style>
-  textarea {
-    color: var(--content-color);
-    width: 85%;
-    border: none;
-    overflow: auto;
-    outline: none;
-
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-
-    resize: none;
-    border-radius: 1em;
-    padding: 1em;
-    background-color: var(--background-color);
-  }
-
-  button {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background-color: var(--link-color);
-    color: var(--background-color);
-    height: 100%;
-    padding: 0 1em 0 1em;
-    font-size: 1em;
-    border-radius: 0 1em 1em 0;
-  }
-</style>
