@@ -38,8 +38,8 @@ function timeAgo(input: any) {
   <slot />
   <hr style="color:var(--subcontent-color);" />
   <div style="display: flex; width: 100% ; justify-content: space-between; padding: 1em 2em 2em 1em;">
-    {prev && <a href=`/posts/${prev}`>&lt; {prev}</a> }
-    { next && <a href=`/posts/${next}`>{next} &gt;</a>}
+    {"id" in prev && <a href=`/posts/${prev.id}`>&lt; {prev.data.title}</a> }
+    {"id" in next && <a href=`/posts/${next.id}`>{next.data.title} &gt;</a>}
   </div>
   <CommentBox placeholder="Send feedback..." pageTitle={data.title} />
 </BaseLayout>
