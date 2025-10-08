@@ -20,7 +20,7 @@ const { placeholder } = Astro.props
       return
     }
 
-    const text = `priteshtupe.com: ` + msgTextarea.value
+    const text = window.location.href + ": " + msgTextarea.value
     const msgBtn = document.getElementById("msgBtn")
     msgBtn.setAttribute("disabled", true)
     msgBtn.style.backgroundColor = "var(--subcontent-color)"
