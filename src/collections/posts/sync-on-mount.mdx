@@ -1,0 +1,97 @@
+---
+date: "Sun Oct 19 14:02:44 EDT 2025"
+title: "On syncing external ssd on-mount with rsync & launchd on MacOS"
+---
+
+## Problem Statement
+
+I wish to backup my stuff on an external SSD; however, I don't want to manually copy-paste files hither and thither every time I connect my ssd to my laptop. So, how do I automatically and efficiently sync all the data I wish from my laptop after connecting my disk?
+
+Let's break it down into two parts:
+1. Script for actual syncing of data
+2. Automatic running of the syncing script when disk is mounted
+
+## rsync
+
+Create a new `sync-disk.sh` in `PATH` somewhere, like `~/.local/bin/`. Give it `chmod u+x sync-disk.sh` permissions.
+
+I like to use `rsync` for efficiency. This is the script as it exists on my machine (modify as per your usage):
+
+```bash
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+osascript -e 'display notification "Syncing Sandisk"'
+
+if [[ ! -e /Volumes/Sandisk ]]; then
+osascript -e 'display notification "Sandisk not mounted"'
+exit
+fi
+
+rsync \
+--archive \
+--partial \
+--recursive \
+--delete \
+--exclude='.*' \
+$HOME/Documents \
+$HOME/Music \
+$HOME/Notes \
+$HOME/Pictures \
+$HOME/Ebooks \
+$HOME/.dotfiles \
+/Volumes/Sandisk
+
+osascript -e 'display notification "Sandisk synced successfully!"'
+```
+
+
+This script, ran as `command ~/.local/bin/sync-disk.sh`, will synchronize mentioned folders between my Macbook and Sandisk SSD. Now, let's make it run automatically on mount.
+
+## launchd
+
+Much like `systemd` on linux, MacOS comes with `launchd`. Create a new service called `com.<username>.sync-on-mount.plist` that watches for SSD to be mounted in `~/Library/LaunchAgents/`:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>com.pritesh.sync-on-mount</string>
+
+    <key>Program</key>
+    <string>/Users/pritesh/.local/bin/sync-disk.sh</string>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StartOnMount</key>
+    <true/>
+  </dict>
+</plist>
+```
+
+
+Save and exit. Now to start the service:
+
+```bash
+# Verify if OK
+plutil ~/Library/LaunchAgents/com.pritesh.sync-on-mount.plist
+
+# Load and forget
+launchctl load ~/Library/LaunchAgents/com.pritesh.sync-on-mount.plist
+```
+
+At first, it may show "Sandisk not mounted" notification (if it isn't connected already). Try attaching your disk and see if it works!
+
+## Resources
+
+- [Stackoverflow: how-to-start-an-application-when-a-specific-disk-is-mounted](https://apple.stackexchange.com/questions/365477/how-to-start-an-application-when-a-specific-disk-is-mounted)
+
+- [launchd.info](https://launchd.info/)
+
+- [rsync notes](/notes/rsync/)
+
+- [launchd notes](/notes/launchd/)
