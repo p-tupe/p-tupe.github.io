@@ -2,19 +2,15 @@
 import BaseLayout from "./BaseLayout.astro"
 import CommentBox from "../pages/components/CommentBox.astro"
 import timeAgo from "../utils/timeAgo"
-const { data, next, prev } = Astro.props
+const { data } = Astro.props
 ---
 
 <BaseLayout>
   <h1 style="text-align: center; margin-bottom: 0em;">{data.title}</h1>
   <p style="text-align: center; color: var(--subcontent-color);">
-    Written {timeAgo(data.date)}
+    Last updated more than {timeAgo(data.modifiedTimeStr)}
   </p>
   <slot />
-  <hr style="color:var(--subcontent-color);" />
-  <div style="display: flex; width: 100% ; justify-content: space-between; padding: 1em 2em 2em 1em;">
-    {"id" in prev && <a href=`/posts/${prev.id}`>&lt; {prev.data.title}</a> }
-    {"id" in next && <a href=`/posts/${next.id}`>{next.data.title} &gt;</a>}
-  </div>
+  <hr />
   <CommentBox placeholder="Send feedback..." pageTitle={data.title} />
 </BaseLayout>

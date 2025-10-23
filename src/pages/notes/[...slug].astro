@@ -1,17 +1,29 @@
 ---
 import { getCollection, render } from "astro:content"
-import BaseLayout from "../../layouts/BaseLayout.astro"
+import NoteLayout from "../../layouts/NoteLayout.astro"
+import modifiedTime from "../../utils/modifiedTime"
 
 export async function getStaticPaths() {
   const notes = await getCollection("notes")
-  return notes.map((note) => ({
-    params: { slug: note.id },
-    props: { note },
-  }))
+  return notes.map((note) => {
+    if (note.filePath) {
+      note.data.modifiedTimeStr = modifiedTime(note.filePath)
+      console.log(
+        `Adding modified time for ${note.id} as ${note.data.modifiedTimeStr}`,
+      )
+    } else {
+      note.data.modifiedTimeStr = ""
+    }
+
+    return {
+      params: { slug: note.id },
+      props: { note },
+    }
+  })
 }
 
 const { note } = Astro.props
 const { Content } = await render(note)
 ---
 
-<BaseLayout> <Content /> </BaseLayout>
+<NoteLayout data={note.data}> <Content /> </NoteLayout>
