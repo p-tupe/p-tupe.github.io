@@ -8,9 +8,6 @@ export async function getStaticPaths() {
   return notes.map((note) => {
     if (note.filePath) {
       note.data.modifiedTimeStr = modifiedTime(note.filePath)
-      console.log(
-        `Adding modified time for ${note.id} as ${note.data.modifiedTimeStr}`,
-      )
     } else {
       note.data.modifiedTimeStr = ""
     }
