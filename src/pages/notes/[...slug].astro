@@ -1,17 +1,10 @@
 ---
 import { getCollection, render } from "astro:content"
 import NoteLayout from "../../layouts/NoteLayout.astro"
-import modifiedTime from "../../utils/modifiedTime"
 
 export async function getStaticPaths() {
   const notes = await getCollection("notes")
   return notes.map((note) => {
-    if (note.filePath) {
-      note.data.modifiedTimeStr = modifiedTime(note.filePath)
-    } else {
-      note.data.modifiedTimeStr = ""
-    }
-
     return {
       params: { slug: note.id },
       props: { note },
