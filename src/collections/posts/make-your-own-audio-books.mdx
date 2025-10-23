@@ -1,0 +1,68 @@
+---
+date: "Thu Oct 23 14:24:11 EDT 2025"
+title: "Make Your Own Audiobooks"
+---
+
+# Or, How to turn any text into audio files
+
+I am fond of reading light novels. So much so, that I once wrote a script that pulls chapters from any story I'm currently inhaling from [RoyalRoad](https://www.royalroad.com), which is a website for sharing the same, so I can read when I'm on the go.
+
+I have a couple of variations of said script (in [`typescript`](https://github.com/p-tupe/dev-log/blob/master/examples/typescript/royal-road-scraper.ts) and [`go`](https://github.com/p-tupe/dev-log/blob/master/examples/go/royal-road-scraper/scrape.go)); however, both essentially do the same thing: Get the story from the website into a local txt file.
+
+I was okay with this setup for a while, until I realized I couldn't actually "read" them while driving (or any activity where I was otherwise busy).
+
+I've tried several options like using the built-in tts (MacOS's `say` command, or Android's accessibility) to websites that proffer to convert text to speech but I was always let down either by the robotic read-back, the pricing, the word-count, or some other limitations that I couldn't work around reliably.
+
+And yet, I may have found a solution. Recently, I came across something called [`kokoro-tts`](https://github.com/nazdridoy/kokoro-tts). I finagled with the source for a bit but the easiest way to get it on your system (if have [`uv`](https://docs.astral.sh/uv/getting-started/installation/) installed) is:
+
+```bash
+uv tool install kokoro-tts
+```
+
+It also requires a couple of helper files that you could download here:
+
+- [kokoro-v1.0.onnx](https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx)
+
+- [voices-v1.0.bin](https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin)
+
+How you set it up can vary, but here's what I did:
+
+1. Move both files into `~/.local/share/kokoro-tts/` folder (so it aligns with my [`.dotfiles`](https://github.com/p-tupe/dotfiles) repository structure)
+2. Add a shell function in your shell config (my [`.aliases`](https://github.com/p-tupe/dotfiles/blob/macos/zsh/.config/zsh/.aliases)) to link to said files like so:
+
+```bash
+# Usage: tts input.txt --> output.wav
+tts() {
+  kokoro-tts $1 "$(basename "$1" .txt).wav" \
+    --model ~/.local/share/kokoro-tts/kokoro-v1.0.onnx \
+    --voices ~/.local/share/kokoro-tts/voices-v1.0.bin \
+    --voice af_heart
+}
+```
+
+And that's it! To test, try this:
+
+
+```bash
+echo "Hello, this is a tts voice test" > test-file.txt && tts test-file.txt
+```
+
+It should output a `test-file.wav` - an audio file that you can play!
+
+## So... audio-books?
+
+Yes yes, I'm getting there. Remember how I mentioned I built scrapers to pull the story that I'm reading? 
+
+Ah, I see you already connected the dots!
+
+Regardless, here's a snapshot of how I turn a story from RoyalRoad into an audiobook I can play whilst driving:
+
+```bash
+go run scrape.go https://www.royalroad.com/fiction/17731/i-never-wanted-you-dead/chapter/209061/i-never-wanted-you-dead && tts story.txt
+```
+
+Yes, that's all it takes (after you've got the rest of the plumbing down, of course).
+
+Besides, you don't need my scraper to get the text down. There are websites like [webpage-content-extractor](https://yourgpt.ai/tools/webpage-content-extractor) (just as an example) to turn a website's content into text files, and then feed them to the tts.
+
+And there you have it - your own audiobooks (with a lovely voice to boot!). Have fun!
