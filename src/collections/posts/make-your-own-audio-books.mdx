@@ -3,6 +3,15 @@ date: "Thu Oct 23 14:24:11 EDT 2025"
 title: "Make Your Own Audiobooks"
 ---
 
+import bella from "../../audio/af_bella.wav"
+import heart from "../../audio/af_heart.wav"
+import nicole from "../../audio/af_nicole.wav"
+import michael from "../../audio/am_michael.wav"
+import emma from "../../audio/bf_emma.wav"
+import isabella from "../../audio/bf_isabella.wav"
+import george from "../../audio/bm_george.wav"
+import lewis from "../../audio/bm_lewis.wav"
+
 # Or, How to turn any text into audio files
 
 I am fond of reading light novels. So much so, that I once wrote a script that pulls chapters from any story I'm currently inhaling from [RoyalRoad](https://www.royalroad.com), which is a website for sharing the same, so I can read when I'm on the go.
@@ -25,7 +34,15 @@ It also requires a couple of helper files that you could download here:
 
 - [voices-v1.0.bin](https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin)
 
-How you set it up can vary, but here's what I did:
+And here's how you turn an `input.txt` text file into an `output.wav` audio file:
+
+```bash
+kokoro-tts input.txt output.wav \
+  --model /path/to/kokoro-v1.0.onnx \
+  --voices /path/to/voices-v1.0.bin
+```
+
+I made the setup more ergonomic for use:
 
 1. Move both files into `~/.local/share/kokoro-tts/` folder (so it aligns with my [`.dotfiles`](https://github.com/p-tupe/dotfiles) repository structure)
 2. Add a shell function in your shell config (my [`.aliases`](https://github.com/p-tupe/dotfiles/blob/macos/zsh/.config/zsh/.aliases)) to link to said files like so:
@@ -36,22 +53,50 @@ tts() {
   kokoro-tts $1 "$(basename "$1" .txt).wav" \
     --model ~/.local/share/kokoro-tts/kokoro-v1.0.onnx \
     --voices ~/.local/share/kokoro-tts/voices-v1.0.bin \
-    --voice af_heart
+    --voice af_bella
 }
 ```
 
 And that's it! To test, try this:
 
-
 ```bash
-echo "Hello, this is a tts voice test" > test-file.txt && tts test-file.txt
+echo -e "Then he spoke. “I agree to go on an adventure on Renavor.”
+
+A strange sensation flowed through him in the same moment, the golden light expanding around their arms before wisps of light floated out and away. Veron held on as searing runes burned into his forearm. He grit his teeth and breathed out. The smell of iron was in the air.
+
+“The pact, is sealed. Rise now, Bestowed, and forge your path, to the end of the world,” Envolon said, his tone carrying weight beyond what he had displayed so far. He stood straight and let go of Veron’s hand. He raised his four arms and started moving his fingers into vaguely geometrical shapes, deep blue light appearing as a strange energy thrummed to life between his hands.
+
+The end of the world? I hope that’s just a figure of speech.
+
+“Any last advice?” Veron asked.
+
+“Be wary of monsters, be wary of those not of your kind, and be wary of the night, when the moon is brightest.”
+
+“That’s all very vague, Envolon.”
+
+“I suppose it is.”" > test-file.txt && tts test-file.txt
 ```
 
-It should output a `test-file.wav` - an audio file that you can play!
+It should output a `test-file.wav` in the same directory.
+
+Here's the sample with some different voices:
+
+<ul style="display: flex; flex-direction: column; gap: 0.5em">
+  {[
+  bella,
+  heart,
+  nicole,
+  michael,
+  emma,
+  isabella,
+  george,
+  lewis,
+  ].map(voice => <li style="display: flex; align-items: center; gap: 0.5em"> - {voice.split("/").pop()} <audio controls><source src={voice} type="audio/wav" /></audio> </li>)}
+</ul>
 
 ## So... audio-books?
 
-Yes yes, I'm getting there. Remember how I mentioned I built scrapers to pull the story that I'm reading? 
+Yes yes, I'm getting there. Remember how I mentioned I built scrapers to pull the story that I'm reading?
 
 Ah, I see you already connected the dots!
 
