@@ -1,6 +1,7 @@
 ---
 import ExtLinkIcon from "../../icons/external-link.svg"
 import CrossIcon from "../../icons/cross.svg"
+import projects from "../../collections/projects"
 ---
 
 <div class="hamburger">
@@ -54,41 +55,15 @@ import CrossIcon from "../../icons/cross.svg"
 
       <h3>Projects</h3>
       <ul>
-        <li>
-          <a href="https://p-tupe.github.io/creatures" target="_blank"
-            >Creatures <ExtLinkIcon style="fill:var(--link-color)" /></a
-          >
-        </li>
-        <li>
-          <a href="https://p-tupe.github.io/binary-clock" target="_blank"
-            >Binary Clock <ExtLinkIcon style="fill:var(--link-color)" /></a
-          >
-        </li>
-        <li>
-          <a href="https://github.com/p-tupe/nvim-rss" target="_blank"
-            >Nvim Rss <ExtLinkIcon style="fill:var(--link-color)" /></a
-          >
-        </li>
-        <li>
-          <a href="https://p-tupe.github.io/impossible-xo" target="_blank"
-            >Impossible XO <ExtLinkIcon style="fill:var(--link-color)" /></a
-          >
-        </li>
-        <li>
-          <a href="https://github.com/p-tupe/pingmon" target="_blank"
-            >Pingmon <ExtLinkIcon style="fill:var(--link-color)" /></a
-          >
-        </li>
-        <li>
-          <a href="https://github.com/p-tupe/zettel-merken" target="_blank"
-            >Zettel Merken <ExtLinkIcon style="fill:var(--link-color)" /></a
-          >
-        </li>
-        <li>
-          <a href="https://p-tupe.github.io/flashcards" target="_blank"
-            >Flashcards <ExtLinkIcon style="fill:var(--link-color)" /></a
-          >
-        </li>
+        {
+          projects.map((p) => (
+            <li>
+              <a href={p.link} target="_blank">
+                {p.title} <ExtLinkIcon style="fill:var(--link-color)" />
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>
@@ -109,7 +84,7 @@ import CrossIcon from "../../icons/cross.svg"
     top: 0;
     left: 0;
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     overflow: hidden;
 
     .mask {
@@ -148,6 +123,7 @@ import CrossIcon from "../../icons/cross.svg"
     li {
       list-style: "∙ ";
       color: var(--link-color);
+      margin-top: 0.5em;
     }
   }
 

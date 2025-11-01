@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets"
+import ExtLinkIcon from "../../icons/external-link.svg"
 
 const { imageUrl, title, content, link, isLinkExternal } = Astro.props
 ---
@@ -11,13 +12,17 @@ const { imageUrl, title, content, link, isLinkExternal } = Astro.props
         <Image
           src={imageUrl}
           alt={title}
-          width={2000}
+          width="10000"
           height={200}
           fit="contain"
+          style={title.includes("gtask.nvim") ? "padding: 2em" : ""}
         />
       )
     }
-    <div class="title">{title}</div>
+    <div class="title">
+      {title}
+      {isLinkExternal && <ExtLinkIcon style="fill:var(--link-color)" />}
+    </div>
     <div class="content" set:html={content} />
   </a>
 </div>
