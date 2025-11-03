@@ -70,16 +70,16 @@ Let's not install it right away though. First, create a new file `main.go` and i
 package main
 
 import (
-	"fyne.io/fyne/v2/app"
-	"fyne.io/fyne/v2/widget"
+  "fyne.io/fyne/v2/app"
+  "fyne.io/fyne/v2/widget"
 )
 
 func main() {
-	a := app.New()
-	w := a.NewWindow("Hello World")
+  a := app.New()
+  w := a.NewWindow("Hello World")
 
-	w.SetContent(widget.NewLabel("Hello World!"))
-	w.ShowAndRun()
+  w.SetContent(widget.NewLabel("Hello World!"))
+  w.ShowAndRun()
 }
 ```
 
@@ -97,7 +97,7 @@ Now, for the first run:
 go run .
 ```
 
-If everything went fine, you should see a cute window like so:
+If everything went fine, you should see a cute little window like so:
 
 <div style="width: 100%; text-align: center; padding: 0em; color: var(--emphasis-color)">
 
