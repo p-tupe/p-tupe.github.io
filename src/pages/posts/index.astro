@@ -8,8 +8,22 @@ const allPosts = (await getCollection("posts")).sort(
 )
 ---
 
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+<script src="/pagefind/pagefind-ui.js" is:inline></script>
+
 <BaseLayout>
+  <script is:inline>
+    window.addEventListener("DOMContentLoaded", () => {
+      const search = new PagefindUI({
+        element: "#postSearch",
+        showSubResults: true,
+        showImages: false,
+      })
+      search.triggerFilters({ collection: ["posts"] })
+    })
+  </script>
   <h1 style="text-align: center;">All Posts</h1>
+  <div id="postSearch"></div>
   <section class="list">
     <ul class="list">
       {

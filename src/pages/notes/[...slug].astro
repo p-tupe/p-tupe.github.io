@@ -16,4 +16,8 @@ const { note } = Astro.props
 const { Content } = await render(note)
 ---
 
-<NoteLayout data={note.data}> <Content /> </NoteLayout>
+<NoteLayout data={note.data}>
+  <div data-pagefind-body data-pagefind-filter="collection:notes">
+    <Content />
+  </div>
+</NoteLayout>

@@ -4,8 +4,7 @@ import { defineConfig } from "astro/config"
 import sitemap from "@astrojs/sitemap"
 import robotsTxt from "astro-robots-txt"
 import compressor from "astro-compressor"
-
-import mdx from "@astrojs/mdx";
+import mdx from "@astrojs/mdx"
 
 // https://astro.build/config
 export default defineConfig({
