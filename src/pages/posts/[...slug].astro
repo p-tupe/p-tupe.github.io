@@ -18,5 +18,7 @@ const { Content } = await render(post)
 ---
 
 <PostLayout data={post.data} next={next} prev={prev}>
-  <Content />
+  <div data-pagefind-body data-pagefind-filter="collection:posts">
+    <Content />
+  </div>
 </PostLayout>

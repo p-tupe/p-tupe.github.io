@@ -4,9 +4,10 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && npm run pagefind",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "pagefind": "npx pagefind --site dist --root-selector main --force-language en --verbose"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.6",
@@ -16,6 +17,7 @@
     "astro": "^5.14.4",
     "astro-compressor": "^1.0.0",
     "astro-robots-txt": "^1.0.0",
+    "pagefind": "^1.4.0",
     "wrangler": "^4.25.0"
   },
   "devDependencies": {
