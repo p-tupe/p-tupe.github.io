@@ -26,6 +26,9 @@ const latestChapters = (await getCollection("gs"))
   <section class="landing">
     <div style="text-align: center">
       <Image
+        width={300}
+        height={300}
+        fetchpriority="high"
         style="background: black;"
         loading="eager"
         src={ProfilePic2}
@@ -41,10 +44,12 @@ const latestChapters = (await getCollection("gs"))
 
     <blockquote class="quote">
       With all its sham, drudgery, and broken dreams, it is still a beautiful
-      world. Be cheerful. Strive to be happy. &nbsp;<a
+      world. Be cheerful. Strive to be happy. &nbsp; <span
         style="color: var(--subcontent-color);text-decoration: none;"
-        href="https://desiderata.com/">~ Desiderata</a
+        title="https://desiderata.com/"
       >
+        ~ Desiderata
+      </span>
     </blockquote>
 
     <div style="width: 100%; display: flex; justify-content: space-evenly;">
