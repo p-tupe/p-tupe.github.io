@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
-import ProfilePic from "../images/profilePic.jpg"
+import ProfilePic3 from "../images/profilePic-3.jpg"
 import InfoCard from "./components/InfoCard.astro"
 
 import GithubIcon from "../icons/gihub.svg"
@@ -17,14 +17,15 @@ const pageTitle = "About Me"
 
 <BaseLayout pageTitle={pageTitle}>
   <h1 style="text-align: center;">About me!</h1>
-  <section class="intro">
+  <section>
     <InfoCard
-      imageUrl={ProfilePic}
+      imageUrl={ProfilePic3}
+      imageAlt="Pritesh Tupe year 2025"
       title="Hi! I am Pritesh Tupe. Friends call me Pat."
     >
       <p>
         I am a Full Stack Developer, focused on Web and Mobile application
-        development. With 7+ years of industry experience across various
+        development. With near decade of industry experience across various
         projects, teams, and environments, I constantly seek to better myself
         and my work.
       </p>
@@ -63,7 +64,10 @@ const pageTitle = "About Me"
 
     <h2>Or send a message directly:</h2>
 
-    <CommentBox placeholder="Write your message here..." pageTitle={pageTitle} />
+    <CommentBox
+      placeholder="Write your message here..."
+      pageTitle={pageTitle}
+    />
   </section>
 
   <section class="story">
@@ -111,7 +115,7 @@ const pageTitle = "About Me"
       multinational IT consulting firm through a hackathon. There I worked in
       Innovations across varied projects for several clients and even dabbled in
       some social experiments. Later on, I joined an IoT startup as a back-end
-      Nodejs developer, swiftly moving on to front-end React development as
+      Node.js developer, swiftly moving on to front-end React development as
       well. Eventually, I found my way into React-Native platform, and thus my
       professional moniker: Full Stack Web and Mobile App Developer, which
       succinctly covers the core of what I do even today.
@@ -133,7 +137,7 @@ const pageTitle = "About Me"
       and learned more about myself and my place in this world. Thence emerged
       my current new passions: Diving and Camping. I became a certified open
       water diver, and started taking every opportunity I could to dive into the
-      depths. Same for camping, although I only ever did single night campings.
+      depths. Same for camping, although I only ever did single night camping.
     </div>
 
     <div>
@@ -141,7 +145,7 @@ const pageTitle = "About Me"
       with some of the best teams in the industry ever since I landed in Canada.
       With the freedom of both time and finance, I went on some of the biggest
       trips of my life so far - a trans-Canada coast-to-coast road trip,
-      Thailand, Indonesia, Dubai, Georgia etc. And so here I am, experincing all
+      Thailand, Indonesia, Dubai, Georgia etc. And so here I am, experiencing all
       that life has to offer and looking forward to what's to come. I've never
       been more content.
 

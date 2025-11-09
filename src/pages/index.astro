@@ -3,7 +3,7 @@ import { getCollection } from "astro:content"
 import { Image } from "astro:assets"
 
 import BaseLayout from "../layouts/BaseLayout.astro"
-import ProfilePic from "../images/profilePic.jpg"
+import ProfilePic2 from "../images/profilePic-2.jpg"
 import ListItem from "./components/ListItem.astro"
 import ProjectCard from "./components/ProjectCard.astro"
 import ExtLinkIcon from "../icons/external-link.svg"
@@ -28,8 +28,8 @@ const latestChapters = (await getCollection("gs"))
       <Image
         style="background: black;"
         loading="eager"
-        src={ProfilePic}
-        alt="Pritesh Tupe's Profile"
+        src={ProfilePic2}
+        alt="Pritesh Tupe's Profile Pic year 2025"
         class="profilePic"
       />
 
@@ -126,8 +126,9 @@ const latestChapters = (await getCollection("gs"))
       max-width: 300px;
       height: auto;
       margin: 0 auto;
-      border-radius: 999px;
-      box-shadow: 0 1px 12px 1px var(--content-color);
+      border-radius: 50%;
+      box-shadow: 0 1px 10px 0px var(--content-color);
+      opacity: 0.8;
     }
   }
 
