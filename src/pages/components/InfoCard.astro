@@ -1,11 +1,11 @@
 ---
 import { Image } from "astro:assets"
 
-const { imageUrl, title } = Astro.props
+const { imageUrl, imageAlt, title } = Astro.props
 ---
 
 <div class="card-container">
-  {imageUrl && <Image src={imageUrl} alt={title} width={3000} height={300} />}
+  {imageUrl && <Image src={imageUrl} alt={imageAlt || title} width={3000} height={300} />}
   <div class="card-content">
     {title && <p class="title">{title}</p>}
     <slot />
