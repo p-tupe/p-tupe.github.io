@@ -12,9 +12,9 @@ const { data, next, prev } = Astro.props
   </p>
   <slot />
   <hr style="color:var(--subcontent-color);" />
-  <div style="display: flex; width: 100% ; justify-content: space-between; padding: 1em 2em 2em 1em;">
+  <aside style="display: flex; width: 100% ; justify-content: space-between; padding: 1em 2em 2em 1em;">
     {"id" in prev && <a href=`/posts/${prev.id}`>&lt; {prev.data.title}</a> }
     {"id" in next && <a href=`/posts/${next.id}`>{next.data.title} &gt;</a>}
-  </div>
+  </aside>
   <CommentBox placeholder="Send feedback..." pageTitle={data.title} />
 </BaseLayout>
