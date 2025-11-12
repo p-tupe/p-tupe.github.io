@@ -7,7 +7,8 @@
     "build": "astro build && npm run pagefind",
     "preview": "astro preview",
     "astro": "astro",
-    "pagefind": "npx pagefind --site dist --root-selector main --force-language en --verbose"
+    "pagefind": "npx pagefind --site dist --root-selector main --force-language en --verbose",
+    "serve": "npm run build && npm run preview"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.6",

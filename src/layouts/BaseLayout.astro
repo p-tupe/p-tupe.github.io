@@ -10,7 +10,6 @@ import Header from "../pages/components/Header.astro"
 
     <link rel="icon" href="/favicon.ico" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="stylesheet" href="/snippet.css" />
     <link
       rel="alternate"
       type="application/rss+xml"
@@ -24,12 +23,6 @@ import Header from "../pages/components/Header.astro"
     <meta name="description" content="Pritesh Tupe's personal website" />
 
     <title>Pritesh Tupe</title>
-
-    <script
-      is:inline
-      defer
-      src="https://umami.priteshtupe.com/script.js"
-      data-website-id="28c33d6c-4c72-4117-a32e-d89d0349e84e"></script>
 
     <script>
       const theme = (() => {
@@ -73,6 +66,14 @@ import Header from "../pages/components/Header.astro"
       <slot />
     </main>
 
-    <script src="/snippet.js" type="text/javascript" is:inline></script>
+    <script src="/codeapi.js" type="text/javascript" is:inline defer async
+    ></script>
+
+    <script
+      is:inline
+      async
+      defer
+      src="https://umami.priteshtupe.com/script.js"
+      data-website-id="28c33d6c-4c72-4117-a32e-d89d0349e84e"></script>
   </body>
 </html>

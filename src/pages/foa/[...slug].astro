@@ -17,8 +17,8 @@ const { Content } = await render(chapter)
 
 <BaseLayout> <Content />  <hr style="color:var(--subcontent-color);" />
   <div style="display: flex; width: 100%; justify-content: space-between; padding: 1em 2em 2em 1em;">
-    {prev && <a href=`/foa/${prev.id}`>&lt; {prev.data.title}</a> }
-    { next && <a href=`/foa/${next.id}`>{next.data.title} &gt;</a>}
+    {prev && <a href=`/foa/${prev.id}`>◀ {prev.data.title}</a> }
+    { next && <a href=`/foa/${next.id}`>{next.data.title} ▶</a>}
   </div>
   <CommentBox placeholder="Love the chapter? Say hi to the author..." pageTitle={chapter.id} />
 </BaseLayout>
