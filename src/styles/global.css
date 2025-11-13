@@ -20,6 +20,10 @@ html.dark {
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   background-color: var(--background-color);
   color: var(--content-color);
@@ -27,20 +31,20 @@ html {
   scroll-behavior: smooth;
   line-height: 1.6;
   font-family: Tahoma, Verdana, Geneva, sans-serif;
+}
 
-  a,
-  button {
-    color: var(--link-color);
-  }
+a,
+button {
+  color: var(--link-color);
+}
 
-  h1,
-  h2,
-  h3,
-  h4 {
-    color: var(--emphasis-color);
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    letter-spacing: -1.5px;
-  }
+h1,
+h2,
+h3,
+h4 {
+  color: var(--emphasis-color);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  letter-spacing: -1px;
 }
 
 blockquote {
@@ -69,15 +73,24 @@ body {
   margin: 0;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 main {
   margin: 0 auto;
   width: 100%;
   max-width: 80ch;
   padding: 2.5em 1em 2em 1em;
+}
+
+article {
+  letter-spacing: 0.05em;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-font-smoothing: antialiased !important;
+  text-rendering: optimizelegibility !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 h1 {
@@ -132,11 +145,6 @@ section.list {
       padding: 1em;
     }
   }
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }
 
 .hidden {
