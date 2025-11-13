@@ -11,11 +11,11 @@
     "serve": "npm run build && npm run preview"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.6",
-    "@astrojs/rss": "^4.0.12",
-    "@astrojs/sitemap": "^3.4.1",
+    "@astrojs/mdx": "^4.3.10",
+    "@astrojs/rss": "^4.0.13",
+    "@astrojs/sitemap": "^3.6.0",
     "@astrolib/seo": "^1.0.0-beta.8",
-    "astro": "^5.14.4",
+    "astro": "^5.15.6",
     "astro-compressor": "^1.0.0",
     "astro-robots-txt": "^1.0.0",
     "pagefind": "^1.4.0",
