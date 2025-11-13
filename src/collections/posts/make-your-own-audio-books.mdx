@@ -81,7 +81,7 @@ It should output a `test-file.wav` in the same directory.
 
 Here's the sample with some different voices:
 
-<ul style="display: flex; flex-direction: column; gap: 0.5em">
+<table style="padding: 1em; border: 1px var(--subcontent-color)">
   {[
   bella,
   heart,
@@ -91,8 +91,11 @@ Here's the sample with some different voices:
   isabella,
   george,
   lewis,
-  ].map(voice => <li style="display: flex; align-items: center; gap: 0.5em"> - {voice.split("/").pop()} <audio controls><source src={voice} type="audio/wav" /></audio> </li>)}
-</ul>
+  ].map(voice => <tr style="">
+    <td>{voice.split("/").pop().split(".")[0]}: </td>
+    <td><audio controls><source src={voice} type="audio/wav" /></audio></td>
+  </tr>)}
+</table>
 
 ## So... audio-books?
 
