@@ -1,0 +1,79 @@
+---
+date: "Thu Nov 13 23:59:47 EST 2025"
+title: "Building an Android App in Go using Fyne - Part 3: Storage"
+---
+
+In the previous part, we built the UI for a user to enter fuel logs. But wait, where are we saving them? We aren't. Let's fix that in this part.
+
+> Check out the previous part where we built our UI here: [Part 2](/posts/go-fyne-part-2)
+
+## Where shall we store our data?
+
+Instead of adding a database as most apps tend to do, we'll be saving our logs in a humble (csv) file. Why? Because we don't really need a database, that's why. We won't be saving millions of rows, nor do we need super-fast convoluted queries.
+
+For saving to a file, Fyne has a convenient [storage](https://docs.fyne.io/api/v2/storage/package/) package. Go through it once; it's not too long. Don't worry, I'll wait...
+
+...
+
+Done? Cool. Let's go ahead and create a file to store our logs.
+
+If you have your editor open on `main.go` file, add the following:
+
+```go
+// import "fyne.io/fyne/v2/storage"
+
+func main() {
+  // ...
+  w := a.NewWindow("Duri")
+
+  // ---------- //
+
+  logFileURL := storage.NewFileURI("./fuellogs.csv")
+
+  logFile, err := storage.Appender(logFileURL)
+  if err != nil {
+    log.Fatalln(err)
+  }
+  defer logFile.Close()
+
+  // ---------- //
+
+  odoInput := widget.NewEntry()
+  // ...
+}
+```
+
+With `NewFileURI` we created a persistent storage for our fuel logs, in an eponymous `fuellogs.csv` in the app directory.
+
+Notice the `Appender` function - it means the file is open in append-only mode. No data will be updated/removed, only added. This should be enough for now, although it does mean we won't be able to remove or modify fuel logs once entered. Yet.
+
+> Always ensure all errors are handled and resources are freed up.
+
+Now, to actually add the fuel log into our file. Replace the code inside `OnSubmit`; create a byte dump instead and write it into the csv file:
+
+```go
+// import "fmt"
+
+OnSubmit: func() {
+  dump := fmt.Appendf(make([]byte, 0), "%s,%s,%s\n", odoInput.Text, fuelInput.Text, dateInput.Text)
+  _, err = logFile.Write(dump)
+  if err != nil {
+    log.Fatalln(err)
+  }
+}
+```
+
+The `Write` function of our `Appender` takes in a slice of bytes. Which we supply using the `Appendf` function of [`fmt`](https://pkg.go.dev/fmt#Appendf) package in the std-lib.
+
+Go ahead and `go run .`. Add a couple of fuel logs. You should see a `fuellogs.csv` (well, it'll be created immediately on app start) with the data you entered. In my case, it looked like so:
+
+```csv
+200,12.24,02/11/2025
+300,12.27,03/11/2025
+```
+
+Don't worry about the unused `FuelLog` struct and the conversion functions. That will be helpful when we parse the data back.
+
+> If you cannot shake off your worry though, feel free to write a method that returns a `[]byte` slice for `FuelLog` type, so we reuse the previous `fl` instance instead of creating a `dump` separately.
+
+Regardless, that is enough for this part. We have a working input page that saves data persistently!
