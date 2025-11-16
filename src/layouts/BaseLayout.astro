@@ -69,6 +69,22 @@ import Header from "../pages/components/Header.astro"
     <script src="/codeapi.js" type="text/javascript" is:inline defer async
     ></script>
 
+    <script>
+      document.querySelectorAll("pre > code").forEach((el) => {
+        if (!el) return
+        const btn = document.createElement("div")
+        btn.className = "copy-button"
+        btn.onclick = () => {
+          document
+            .querySelectorAll(".copied")
+            .forEach((el) => el.classList.remove("copied"))
+          navigator.clipboard.writeText(el.textContent || "")
+          btn.classList.add("copied")
+        }
+        el?.parentNode?.append(btn)
+      })
+    </script>
+
     <script
       is:inline
       async
