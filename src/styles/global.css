@@ -43,7 +43,7 @@ h2,
 h3,
 h4 {
   color: var(--emphasis-color);
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   letter-spacing: -1px;
 }
 
@@ -126,6 +126,7 @@ h3 {
 pre {
   padding: 1em;
   border-radius: 1em;
+  font-size: 0.8em;
 }
 
 section.list {
@@ -151,7 +152,6 @@ section.list {
   display: none;
 }
 
-/* Searchbar */
 .pagefind-ui {
   --pagefind-ui-primary: var(--content-color);
   --pagefind-ui-text: var(--content-color);

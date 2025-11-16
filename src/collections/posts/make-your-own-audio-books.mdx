@@ -3,14 +3,16 @@ date: "Thu Oct 23 14:24:11 EDT 2025"
 title: "Make Your Own Audiobooks"
 ---
 
-import bella from "../../audio/af_bella.wav"
-import heart from "../../audio/af_heart.wav"
-import nicole from "../../audio/af_nicole.wav"
-import michael from "../../audio/am_michael.wav"
-import emma from "../../audio/bf_emma.wav"
-import isabella from "../../audio/bf_isabella.wav"
-import george from "../../audio/bm_george.wav"
-import lewis from "../../audio/bm_lewis.wav"
+import bella from "../../audio/af_bella.mp3"
+import heart from "../../audio/af_heart.mp3"
+import nicole from "../../audio/af_nicole.mp3"
+import michael from "../../audio/am_michael.mp3"
+import emma from "../../audio/bf_emma.mp3"
+import isabella from "../../audio/bf_isabella.mp3"
+import george from "../../audio/bm_george.mp3"
+import lewis from "../../audio/bm_lewis.mp3"
+
+import AudioPlayer from "../../pages/components/AudioPlayer.astro"
 
 # Or, How to turn any text into audio files
 
@@ -92,8 +94,8 @@ Here's the sample with some different voices:
   george,
   lewis,
   ].map(voice => <tr style="">
-    <td>{voice.split("/").pop().split(".")[0]}: </td>
-    <td><audio controls><source src={voice} type="audio/wav" /></audio></td>
+    <td>{voice.split("/").pop().split(".")[0]}</td>
+    <td><AudioPlayer src={voice} hideBorder /></td>
   </tr>)}
 </table>
 
