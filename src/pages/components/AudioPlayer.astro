@@ -1,0 +1,40 @@
+---
+const { label = "", src, hideBorder = false } = Astro.props
+---
+
+<div class={"audio-player-div " + (hideBorder ? "" : "withBorder")}>
+  <div>
+    <a href={src} download title="Download" aria-label="download audio">▼</a>
+    <label>{label}</label>
+  </div>
+  <audio controls preload="metadata" src={src}></audio>
+</div>
+
+<style>
+  div.audio-player-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+    margin: 0.5em;
+
+    label {
+      color: var(--subcontent-color);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      justify-content: flex-start;
+    }
+  }
+
+  div.withBorder {
+    border: 1px dotted var(--subcontent-color);
+    padding: 1em;
+    border-radius: 1em;
+  }
+</style>
