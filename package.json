@@ -15,7 +15,7 @@
     "@astrojs/rss": "^4.0.13",
     "@astrojs/sitemap": "^3.6.0",
     "@astrolib/seo": "^1.0.0-beta.8",
-    "astro": "^5.15.6",
+    "astro": "^5.15.9",
     "astro-compressor": "^1.0.0",
     "astro-robots-txt": "^1.0.0",
     "pagefind": "^1.4.0",
