@@ -1,0 +1,146 @@
+---
+date: "Tue Nov 25 16:26:55 EST 2025"
+title: "Useful (Neo)Vim Digraphs"
+---
+
+## What are **digraphs**?
+
+> Digraphs are used to enter characters that normally cannot be entered by
+an ordinary keyboard.
+>
+> [neovim docs](https://neovim.io/doc/user/digraph.html)
+
+Basically, a bunch of useful symbols (or characters) that aren't usually present on keyboards.
+
+Like this nice cross/close: ×
+
+Or this arrow: →
+
+Or a snowflake: ※
+
+Or some greek symbols: α β ε ζ
+
+You get the idea.
+
+Normally, when I need one (like say I wanted to add an arrow button to the "next"/"prev" buttons in the footer below), I'd just do
+
+```vim
+:digraph
+```
+
+to open up the list of builtin symbols and pick one that suits. This however, given the darkmode theme on my terminal and grayscale display of the symbols, is murder on my eyes. So, here's a list of (potentially useful) digraphs nicely diplayed for future use:
+
+| char | digraph | hex  | dec   | official name                              |
+| ---- | ------- | ---- | ----- | ------------------------------------------ |
+| @    | At      | 0x40 | 64    | COMMERCIAL AT                              |
+| ¤    | Cu      | 0xa4 | 164   | CURRENCY SIGN                              |
+| ©    | Co      | 0xa9 | 169   | COPYRIGHT SIGN                             |
+| «    | \<\<    | 0xab | 171   | LEFT-POINTING DOUBLE ANGLE QUOTATION MARK  |
+| °    | DG      | 0xb0 | 176   | DEGREE SIGN                                |
+| ±    | +-      | 0xb1 | 177   | PLUS-MINUS SIGN                            |
+| ·    | .M      | 0xb7 | 183   | MIDDLE DOT                                 |
+| »    | >>      | 0xbb | 187   | RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK |
+| ×    | *X      | 0xd7 | 215   | MULTIPLICATION SIGN                        |
+| ÷    | -:      | 0xf7 | 247   | DIVISION SIGN                              |
+| Σ    | S*      | 03A3 | 0931  | GREEK CAPITAL LETTER SIGMA                 |
+| Φ    | F*      | 03A6 | 0934  | GREEK CAPITAL LETTER PHI                   |
+| Ω    | W*      | 03A9 | 0937  | GREEK CAPITAL LETTER OMEGA                 |
+| α    | a*      | 03B1 | 0945  | GREEK SMALL LETTER ALPHA                   |
+| β    | b*      | 03B2 | 0946  | GREEK SMALL LETTER BETA                    |
+| ε    | e*      | 03B5 | 0949  | GREEK SMALL LETTER EPSILON                 |
+| θ    | h*      | 03B8 | 0952  | GREEK SMALL LETTER THETA                   |
+| λ    | l*      | 03BB | 0955  | GREEK SMALL LETTER LAMDA (aka LAMBDA)      |
+| μ    | m*      | 03BC | 0956  | GREEK SMALL LETTER MU                      |
+| π    | p*      | 03C0 | 0960  | GREEK SMALL LETTER PI                      |
+| ρ    | r*      | 03C1 | 0961  | GREEK SMALL LETTER RHO                     |
+| ϝ    | m3      | 03DD | 0989  | GREEK SMALL LETTER DIGAMMA                 |
+| ‖    | !2      | 2016 | 8214  | DOUBLE VERTICAL LINE                       |
+| ‘    | '6      | 2018 | 8216  | LEFT SINGLE QUOTATION MARK                 |
+| ’    | '9      | 2019 | 8217  | RIGHT SINGLE QUOTATION MARK                |
+| ‚    | .9      | 201A | 8218  | SINGLE LOW-9 QUOTATION MARK                |
+| ‛    | 9'      | 201B | 8219  | SINGLE HIGH-REVERSED-9 QUOTATION MARK      |
+| “    | "6      | 201C | 8220  | LEFT DOUBLE QUOTATION MARK                 |
+| ”    | "9      | 201D | 8221  | RIGHT DOUBLE QUOTATION MARK                |
+| „    | :9      | 201E | 8222  | DOUBLE LOW-9 QUOTATION MARK                |
+| ‟    | 9"      | 201F | 8223  | DOUBLE HIGH-REVERSED-9 QUOTATION MARK      |
+| †    | /-      | 2020 | 8224  | DAGGER                                     |
+| ‡    | /=      | 2021 | 8225  | DOUBLE DAGGER                              |
+| •    | oo      | 2022 | 8226  | BULLET                                     |
+| …    | ,.      | 2026 | 8230  | HORIZONTAL ELLIPSIS                        |
+| ‰    | %0      | 2030 | 8240  | PER MILLE SIGN                             |
+| ‹    | \<1     | 2039 | 8249  | SINGLE LEFT-POINTING ANGLE QUOTATION MARK  |
+| ›    | >1      | 203A | 8250  | SINGLE RIGHT-POINTING ANGLE QUOTATION MARK |
+| ※    | :X      | 203B | 8251  | REFERENCE MARK                             |
+| ™    | TM      | 2122 | 8482  | TRADE MARK SIGN                            |
+| Ω    | Om      | 2126 | 8486  | OHM SIGN                                   |
+| ←    | \<-     | 2190 | 8592  | LEFTWARDS ARROW                            |
+| ↑    | -!      | 2191 | 8593  | UPWARDS ARROW                              |
+| →    | ->      | 2192 | 8594  | RIGHTWARDS ARROW                           |
+| ↓    | -v      | 2193 | 8595  | DOWNWARDS ARROW                            |
+| ↔    | \<>     | 2194 | 8596  | LEFT RIGHT ARROW                           |
+| ↕    | UD      | 2195 | 8597  | UP DOWN ARROW                              |
+| ⇐    | \<=     | 21D0 | 8656  | LEFTWARDS DOUBLE ARROW                     |
+| ⇒    | =>      | 21D2 | 8658  | RIGHTWARDS DOUBLE ARROW                    |
+| ⇔    | ==      | 21D4 | 8660  | LEFT RIGHT DOUBLE ARROW                    |
+| ∅    | /0      | 2205 | 8709  | EMPTY SET                                  |
+| ∆    | DE      | 2206 | 8710  | INCREMENT                                  |
+| ∇    | NB      | 2207 | 8711  | NABLA                                      |
+| ∗    | *-      | 2217 | 8727  | ASTERISK OPERATOR                          |
+| √    | RT      | 221A | 8730  | SQUARE ROOT                                |
+| ∝    | 0(      | 221D | 8733  | PROPORTIONAL TO                            |
+| ∞    | 00      | 221E | 8734  | INFINITY                                   |
+| ≤    | =\<     | 2264 | 8804  | LESS-THAN OR EQUAL TO                      |
+| ≥    | >=      | 2265 | 8805  | GREATER-THAN OR EQUAL TO                   |
+| ≪    | \<*     | 226A | 8810  | MUCH LESS-THAN                             |
+| ≫    | *>      | 226B | 8811  | MUCH GREATER-THAN                          |
+| ⊙    | 0.      | 2299 | 8857  | CIRCLED DOT OPERATOR                       |
+| ⊚    | 02      | 229A | 8858  | CIRCLED RING OPERATOR                      |
+| ─    | hh      | 2500 | 9472  | BOX DRAWINGS LIGHT HORIZONTAL              |
+| ━    | HH      | 2501 | 9473  | BOX DRAWINGS HEAVY HORIZONTAL              |
+| │    | vv      | 2502 | 9474  | BOX DRAWINGS LIGHT VERTICAL                |
+| ┃    | VV      | 2503 | 9475  | BOX DRAWINGS HEAVY VERTICAL                |
+| ▲    | UT      | 25B2 | 9650  | BLACK UP-POINTING TRIANGLE                 |
+| △    | uT      | 25B3 | 9651  | WHITE UP-POINTING TRIANGLE                 |
+| ▶    | PR      | 25B6 | 9654  | BLACK RIGHT-POINTING TRIANGLE              |
+| ▷    | Tr      | 25B7 | 9655  | WHITE RIGHT-POINTING TRIANGLE              |
+| ▼    | Dt      | 25BC | 9660  | BLACK DOWN-POINTING TRIANGLE               |
+| ▽    | dT      | 25BD | 9661  | WHITE DOWN-POINTING TRIANGLE               |
+| ◀    | PL      | 25C0 | 9664  | BLACK LEFT-POINTING TRIANGLE               |
+| ◁    | Tl      | 25C1 | 9665  | WHITE LEFT-POINTING TRIANGLE               |
+| ◆    | Db      | 25C6 | 9670  | BLACK DIAMOND                              |
+| ◇    | Dw      | 25C7 | 9671  | WHITE DIAMOND                              |
+| ○    | 0m      | 25CB | 9675  | WHITE CIRCLE                               |
+| ◎    | 0o      | 25CE | 9678  | BULLSEYE                                   |
+| ●    | 0M      | 25CF | 9679  | BLACK CIRCLE                               |
+| ◐    | 0L      | 25D0 | 9680  | CIRCLE WITH LEFT HALF BLACK                |
+| ◑    | 0R      | 25D1 | 9681  | CIRCLE WITH RIGHT HALF BLACK               |
+| ★    | *2      | 2605 | 9733  | BLACK STAR                                 |
+| ☆    | *1      | 2606 | 9734  | WHITE STAR                                 |
+| ☜    | \<H     | 261C | 9756  | WHITE LEFT POINTING INDEX                  |
+| ☞    | >H      | 261E | 9758  | WHITE RIGHT POINTING INDEX                 |
+| ☺    | 0u      | 263A | 9786  | WHITE SMILING FACE                         |
+| ☻    | 0U      | 263B | 9787  | BLACK SMILING FACE                         |
+| ☼    | SU      | 263C | 9788  | WHITE SUN WITH RAYS                        |
+| ♀    | Fm      | 2640 | 9792  | FEMALE SIGN                                |
+| ♂    | Ml      | 2642 | 9794  | MALE SIGN                                  |
+| ♠    | cS      | 2660 | 9824  | BLACK SPADE SUIT                           |
+| ♡    | cH      | 2661 | 9825  | WHITE HEART SUIT                           |
+| ♢    | cD      | 2662 | 9826  | WHITE DIAMOND SUIT                         |
+| ♣    | cC      | 2663 | 9827  | BLACK CLUB SUIT                            |
+| ♩    | Md      | 2669 | 9833  | QUARTER NOTE                               |
+| ♪    | M8      | 266A | 9834  | EIGHTH NOTE                                |
+| ♫    | M2      | 266B | 9835  | BEAMED EIGHTH NOTES                        |
+| ♭    | Mb      | 266D | 9837  | MUSIC FLAT SIGN                            |
+| ✓    | OK      | 2713 | 10003 | CHECK MARK                                 |
+| ✗    | XX      | 2717 | 10007 | BALLOT X                                   |
+| ✠    | -X      | 2720 | 10016 | MALTESE CROSS                              |
+
+## How do I use these digraphs?
+
+Oh, basically in insert mode, just go `<C-k>` _which is Ctrl + k btw_ and enter the characters like `:X` (note the capital) for snowflake. Easy peasy.
+
+> Some symbols may look weird on your browser; try in the editor.
+
+If you'd like to use the hex representation just do (in insert mode) Ctrl + V, then enter u, finally followed by the hex code for the digraph.
+
+Here's a stackexchange link for entering different base inputs in vim: [how-to-enter-non-ascii-characters](https://unix.stackexchange.com/questions/61118/how-to-enter-non-ascii-characters-using-hex-or-octal-codes-in-vi)
