@@ -144,3 +144,46 @@ Oh, basically in insert mode, just go `<C-k>` _which is Ctrl + k btw_ and enter 
 If you'd like to use the hex representation just do (in insert mode) Ctrl + V, then enter u, finally followed by the hex code for the digraph.
 
 Here's a stackexchange link for entering different base inputs in vim: [how-to-enter-non-ascii-characters](https://unix.stackexchange.com/questions/61118/how-to-enter-non-ascii-characters-using-hex-or-octal-codes-in-vi)
+
+## Bonus Content!
+
+One usecase for digraphs is to use them as [conceal](https://neovim.io/doc/user/syntax.html#%3Asyn-conceal) characters. Say you have some go code like so:
+
+```go
+func main() {
+  doX()
+  go doY()
+  doZtoo()
+}
+
+func doX()
+func doY()
+func doZtoo()
+```
+
+you can use the `ϝ` symbol to substitue for the repeated `func` keyword using following:
+
+```vim
+syntax match goFunction 'func' conceal cchar=ϝ | set conceallevel=2
+```
+
+to turn the code into:
+
+```go
+ϝ main() {
+  doX()
+  go doY()
+  doZtoo()
+}
+
+ϝ doX()
+ϝ doY()
+ϝ doZtoo()
+```
+
+This one's a freebie - don't forget to experiment. Perhaps `λ` in python?
+
+> Don't forget the builtin help: `:h digraph` or `:h conceal`
+
+Have fun, cheers!
+
