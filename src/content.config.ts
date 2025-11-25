@@ -31,10 +31,13 @@ const foa = defineCollection({
 })
 
 const notes = defineCollection({
-  loader: glob({ pattern: "**/[^_]*.md", base: "./src/collections/notes" }),
+  loader: glob({
+    pattern: ["**/[^_]*.md", "!README.md"],
+    base: "./src/collections/notes",
+  }),
   schema: z.object({
     modified: z.string(),
-  })
+  }),
 })
 
 export const collections = { posts, gs, foa, notes }
