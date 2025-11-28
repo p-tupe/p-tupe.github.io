@@ -5,7 +5,11 @@ const { imageUrl, imageAlt, title } = Astro.props
 ---
 
 <div class="card-container">
-  {imageUrl && <Image src={imageUrl} alt={imageAlt || title} width={3000} height={300} />}
+  {
+    imageUrl && (
+      <Image src={imageUrl} alt={imageAlt || title} width={3000} height={300} />
+    )
+  }
   <div class="card-content">
     {title && <p class="title">{title}</p>}
     <slot />
@@ -32,6 +36,7 @@ const { imageUrl, imageAlt, title } = Astro.props
     }
 
     div.card-content {
+      position: relative;
       width: 98%;
       p {
         padding: 0.5em;
