@@ -15,3 +15,9 @@ alias show-public-ip="curl ipecho.net/plain; echo";
 ```
 
 While the **show-private-ip** command is I assume, macOS specific, the **show-public-ip** works universally; as long as you have curl installed.
+
+To show your public IPv6, if you have one:
+
+```bash
+curl -6 icanhazip.com
+```

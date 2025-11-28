@@ -1,11 +1,16 @@
 ---
 import InfoCard from "./InfoCard.astro"
 
-const { placeholder, textareaId, btnId, btnTxt, textAreaStyle, ...rest } = Astro.props
+const { placeholder, textareaId, btnId, btnTxt, textAreaStyle, ...rest } =
+  Astro.props
 ---
 
 <InfoCard>
-  <textarea required id={textareaId || ""} placeholder={placeholder || ""} style={textAreaStyle}></textarea>
+  <textarea
+    required
+    id={textareaId || ""}
+    placeholder={placeholder || ""}
+    style={textAreaStyle}></textarea>
   <button id={btnId || ""} type="button" {...rest}>{btnTxt || "Submit"}</button>
 </InfoCard>
 
@@ -30,7 +35,7 @@ const { placeholder, textareaId, btnId, btnTxt, textAreaStyle, ...rest } = Astro
   button {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: -0.5em;
     background-color: var(--link-color);
     color: var(--background-color);
     height: 100%;
