@@ -1,8 +1,11 @@
 ---
 date: "2022-01-13T00:00:00Z"
-title: A "from scratch" guide to setting up Nextcloud + Postgresql + Nginx secure
+title:
+  A "from scratch" guide to setting up Nextcloud + Postgresql + Nginx secure
   reverse proxy using docker on Ubuntu 20.04
 ---
+
+> See [nextcloud setup 2025](/posts/nextcloud-setup-2025) for latest update
 
 <blockquote>
 Disclaimer: This post begins (and ends) with the assumption that you are familiar with the words in the title. If you do not know <i>any</i> of those, perhaps this isn't for you yet. If you understand <i>some</i> but not all, I highly recommend reading about them elsewhere before continuing, I'll add links to the bottom for convenience.

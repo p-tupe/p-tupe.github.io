@@ -1,0 +1,179 @@
+---
+date: "Fri Nov 28 16:44:16 EST 2025"
+title: A frustrated user's guide to setting up Nextcloud with no frills in 2025
+---
+
+## Rant Incoming (may skip)
+
+Alright, I'm just gonna go ahead and say it - as much as I love Nextcloud, upgrading it is an absolute pain in the behind!
+
+> Forgive the snappy tone, I just spent a whole day trying to get things back up.
+
+There! I said it. Why?
+
+Well, I've had Nextcloud for several years now. Docker + Ubuntu setup the same as in my last post. I did move to caddy a while back, which is magnitudes simpler than nginx.
+
+> See my previous post [here](/posts/nextcloud-setup)
+
+Everything was working fine. Until one day, I decided to upgrade Nextcloud (I was several major versions behind). Fine, no biggie. Just `docker compose pull` latest be done, right?
+
+NO!
+
+I had to upgrade one version at a time... And cross my fingers nothing broke. And kudos to the folks at Nextcloud, they handled the migration pretty well.
+
+But god forbid things every just work out. No, I got some issues with the Postgres database that I had at the time (v14?).
+
+I know I messed up several things along the way of upgrading the database to v17; and Nextcloud to v28(?) - several warnings in the admin console. But... Things worked! And I was happy that all my efforts were not in vain.
+
+Fast forward to today.
+
+Docker pull - upgrade Nextcloud to latest - all good. But wait, why am I not able to connect? Check logs. Some database issue. Grrr. No worries, just take a dump, bump from v17 to v18, and restore.
+
+Easy, right?
+
+I somehow ended up nuking all my data. I do have the backup dump, no worries. But IT. JUST. WONT. WORK.
+
+And I don't care about all this enough to dig into the whys - I just want my cloud backup (which is what I use Nextcloud for) to work so I can forget about it.
+
+But no. It didn't. So I started caring. And ended up making an absolute minimal "no frills" build that future me will thank me for. Here's how it goes, from the top -
+
+## Backup files (skip if first setup)
+
+I had my uploaded files in a docker volume named "nextcloud_app_data"; I did a `docker volume inspect nextcloud_app_data` to see the actual path of the data folder.
+
+> `docker volume ls` lists all volumes
+
+Some `ls`es later, I found the place where all my files were placed. I moved them outside of the docker container and erased the container with `docker volume rm nextcloud_app_data` after ensuring all the related containers and images were removed too.
+
+## Reverse Proxy - ~Nginx~ Caddy!
+
+Nginx is a nice piece of software. But these days, I have come to love Caddy. It has a lot of features (that you need and don't have to configure), and thus end up with an extremely minimal config. Here's my `Caddyfile` for Nextcloud proxy:
+
+```caddy
+nextcloud.priteshtupe.com {
+    encode zstd gzip
+    redir /.well-known/carddav /remote.php/dav/ 301
+    redir /.well-known/caldav /remote.php/dav/ 301
+    header {
+        Strict-Transport-Security max-age=31536000;
+    }
+    reverse_proxy localhost:8000
+}
+```
+
+That's it! If you search the web, you might find some setups where caddy is part of Nextcloud's compose file (or place in the same directory etc). That's fine if you're gonna use Caddy _only_ for Nextcloud and nothing else. I doubt it, setup Caddy separately regardless. There's no need to tie those two together. See below for more.
+
+## Database - ~Postgres~ SQLite!
+
+The main pain point of my setup, I think. I removed all the Postgres stuff from the docker-compose file. SQLite is pretty awesome to be honest, I dunno why I wanted anything more complicated. Besides, backup it up is as easy as just copying the file. Also, I moved to the stable version (instead of pinning a number or latest) of Nextcloud. My docker-compose file was reduced to:
+
+```yaml
+services:
+  app:
+    image: nextcloud:stable
+    ports:
+      - "8000:80"
+    volumes:
+      - "app_data:/var/www/html"
+    restart: unless-stopped
+
+volumes:
+  app_data:
+```
+
+That's it! Yes, really!
+
+## Putting Humpty Dumpty back together again
+
+In case you're wondering where each file went, here's a low-down:
+
+```text
+├── caddy/
+│   ├── Caddyfile
+│   ├── docker-compose.yml
+│   └── site/
+└── nextcloud/
+   └── docker-compose.yml
+```
+
+The extra folder you see in the `caddy/` directory is required in the caddy's docker-compose (where I host some static stuff from).
+Here is the docker-compose for Caddy btw:
+
+```yaml
+services:
+  caddy:
+    image: caddy:latest
+  network_mode: host
+  volumes:
+    - $PWD/Caddyfile:/etc/caddy/Caddyfile
+    - $PWD/site:/srv:ro
+    - caddy_data:/data
+    - caddy_config:/config
+  restart: unless-stopped
+
+volumes:
+  caddy_data:
+  caddy_config:
+```
+
+And there you have it, all the docker-compose'es and the Caddyfile setup nice and easy. Caddy's network mode host is my escape hatch. Feel free to dig into docs for what/why.
+
+And now, all you have to do is `docker compose up -d` in both `caddy/` and `nextcloud/` directories. If everything worked well, you should see you Nextcloud instance up on your domain and begging for a new password - I'm not getting into how to setup a domain...
+
+Ignore the SQLite warning, Skip the recommended apps, Delete all the pre-populated files. And here we have a blank slate!
+
+At this point, you are done. Any future update should be a piece of cake. Hopefully! I'll see if I get any issues with SQLite, and if I do, I'll update the post.
+
+### Re-moving (heh) the files back into Nextcloud
+
+I just `mv`ed the files back into their previous location. To ensure they are recognized by Nextcloud, grab a cup of coffee and:
+
+```bash
+docker compose exec -it app php occ files:scan --all
+# Starting scan for user ...
+```
+
+Done? Nice. Now, going to Profile -> Administrative Settings revealed a bunch of red and yellow lines. Let's see if we can fix those.
+
+### Error: The reverse proxy header configuration is incorrect
+
+```bash
+docker compose exec -it app php occ config:system:set trusted_proxies 1 --value="127.0.0.1"
+# System config value trusted_proxies => 1 set to string 127.0.0.1
+```
+
+Our Caddy reverse proxy runs locally (network mode host), so add localhost to trusted_proxies.
+
+### Error: Accessing site insecurely via HTTP.
+
+```bash
+docker compose exec -it app php occ config:system:set overwriteprotocol  --value="https"
+# System config value overwriteprotocol set to string https
+```
+
+### Warn: Server has no maintenance window start time configured.
+
+```bash
+docker compose exec -it app php occ config:system:set maintenance_window_start --type=integer --value=1
+# System config value maintenance_window_start set to integer 1
+```
+
+### Warn: One or more mimetype migrations are available.
+
+```bash
+docker compose exec -it app php occ maintenance:repair --include-expensive
+# ...
+```
+
+I ended up doing other maintenance tasks as well, since I was there anyway.
+
+### Warn: SQLite is currently being used as the backend database.
+
+We ignore this 'coz we cool.
+
+## That's all folks!
+
+After all of above, do a quick `docker compose restart`, wait for a couple mins, and reload the admin page on your browser. All the errors should be gone.
+
+One minimal, headache free Nextcloud service all ready to go!
+
