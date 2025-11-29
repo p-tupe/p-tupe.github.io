@@ -19,7 +19,6 @@ This is a rough outline of the steps I took preparing for my journey to Canada f
 ## Phase 1: Prepare for Admission
 
 1. The first step is to give an IELTS (Computer-Academic) exam that assesses your English skills.
-
    - It consists of a reading + writing + speaking trio of tests.
 
    - It is required to get a score of at least 6 out of 9 overall.
@@ -27,7 +26,6 @@ This is a rough outline of the steps I took preparing for my journey to Canada f
    - All information regarding IELTS can be found on [ielts.org](https://www.ielts.org/) and [ielts.idp.com](https://ielts.idp.com/)
 
 1. Apply to colleges.
-
    - Checkout colleges and courses in Ontario on [ontariocolleges.ca](https://www.ontariocolleges.ca/en/colleges)
 
    - Apply to at least 5 colleges, to have a chance of getting admitted to one.
@@ -41,17 +39,14 @@ This is a rough outline of the steps I took preparing for my journey to Canada f
 ## Phase 2: Prepare for Visa
 
 1. Apply for GIC.
-
    - GIC is a sort of "guarantee" to the Canadian govt that you have money to support yourself here. You pay an upfront 10,000$ (was ~6L Rupees for me) into a Canadian bank in form of a sorta-fixed FD that you get disbursed into your account (that will be opened after you arrive in Canada) every month or so.
 
    > Most common options for opening GIC are Scotia and CIBC. I opened a CIBC because I had a referral from a friend. Can't really go wrong with either.
 
 1. Get your VISA Photo & Statement of Purpose ready.
-
    - VISA photo is _slightly_ different from the Passport photo. See details here [Visa Photograph Specifications](https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/temporary-resident-visa-application-photograph-specifications.html)
 
    - The Statement of Purpose has some mandatory requirements (Doublecheck with your agent):
-
      - College/Course/Dates clearly stated
      - A little Family Background
      - A bit about academics (previous scores and GPA etc)
@@ -61,13 +56,11 @@ This is a rough outline of the steps I took preparing for my journey to Canada f
      - Some stuff about the "what after" course ends. To convince you won't overstay your visa.
 
 1. CDC Medical Checkup
-
    - To book a medical appointment, you have to email the CDC center <info.north@cdcgroup.co.in> with the location you wish to get the checkup done (and dates, if you have a preference). They will reply with a free date/time and you have to confirm the appointment.
 
    > They might say it takes only a couple of hours for a checkup, but if I were you I'd block out the whole day for it. There is a _lot_ of crowd.
 
 1. Biometrics registration
-
    - Basically to digitally store your fingerprints and irises. Can book your appointment here [vfsglobal.ca](https://www.vfsglobal.ca/IRCC-AppointmentWave1/)
 
    - IMPORTANT: Biometrics must be done within 30 days of getting a BIL after submitting VISA forms (in the next step). Plan accordingly.
@@ -75,13 +68,11 @@ This is a rough outline of the steps I took preparing for my journey to Canada f
    > They might try to sell you a "VIP" treatment at the place. It's not that different than normal. Up to you though.
 
 1. Visa Forms
-
    - A very important step. You need to create an account on IRCC and submit your forms for the Visa/Permit application.
 
    > I am not attaching any link here because I highly recommend doing it with your agent. It's a tedious process and a lot can go wrong here.
 
 1. Wait for Visa Approval
-
    - You get your submission confirmation within 24 hours.
    - You get your UCI and BIL within 48 hours.
    - Your medical records get updated in the week preceding PPR.
@@ -101,67 +92,56 @@ This is a rough outline of the steps I took preparing for my journey to Canada f
 
 1. Buy a SIM card
 
-   > Majority of people buy their SIM after coming to Canada. I got mine while still in India. I did not need to pay anything upfront, simply filled out their forms and uploaded some docs. The SIM arrived home a week later. The advantage of this is that you get immediate internet/telephone access after you arrive in Canada. The last link in the point below is where I registered. I was helped with the process by the Customer Care Exec named Priyanka, her business number is <+1-647-309-5658>.
-
+   > Majority of people buy their SIM after coming to Canada. I got mine while still in India. I did not need to pay anything upfront, simply filled out their forms and uploaded some docs. The SIM arrived home a week later. The advantage of this is that you get immediate internet/telephone access after you arrive in Canada. The last link in the point below is where I registered.
    - Some helpful links:
-
      - [CompareCellular.ca](https://www.comparecellular.ca/compare-plans-in-ontario/prepaid-phones-and-sim-cards)
      - [Canadiansim.com](https://canadiansim.com/)
      - [Fido.ca](https://www.fido.ca/)
 
-   - The SIM that I currently have, FIDO, also has referral bonuses where both those who refer and the one who is referred get one month free of cost irrespective of plans. This is my referral link: [referme.to/pritesht-11](https://referme.to/pritesht-11)
-
 1. Get CAD cash or Forex Card
-
    - This is only for emergencies. If you have your room booked and travel arrangements made, then you won't really need any of it.
 
    > I brought around 500$ in cash with me, most of which I deposited back in the bank after opening my account. You can bring up to 10,000$ dollars cash, beyond which you need to submit a declaration at customs and what-have-yous.
 
 1. Find a room
-
    - I found my room through a WhatsApp group. I recommend joining similar groups on Facebook and Instagram as well.
    - Beyond social media, you can rent a place from [kijiji.ca](https://www.kijiji.ca) and [airbnb](https://www.airbnb.ca/)
 
    > Try not to get pressured into a long-term lease, if you must move elsewhere after a few months for any reason. Also, ensure to have a video call to check the property first. There may be some token amount for booking, but do not pay it before verifying everything.
 
 1. Get RTO Extract (For those who have a driving license)
-
    - Just submit a letter to an RTO where you got your license and they will give you a printout of your extract.
 
    - You can use this extract to expedite your Canadian driving license process.
 
 1. Update ArriveCAN details (2 days before the flight)
-
    - ArriveCAN is used as the official app for traveler verification in Canada. More info [here](https://www.canada.ca/en/border-services-agency/services/arrivecan.html)
 
 1. Shopping and Packing
 
-   - [Generic Packing List 1](https://nextcloud.priteshtupe.com/s/iLimMZPn7RYXt6z)
-   - [Generic Packing List 2](https://nextcloud.priteshtupe.com/s/FEG9NdJ9qaRgnnN)
-   - [My Personal Packing List](https://nextcloud.priteshtupe.com/s/8wMDfK3HapNjxZs)
+Just google for shopping lists, you'll find a bunch of 'em.
+
+- [~Generic Packing List 1~]()
+- [~Generic Packing List 2~]()
+- [~My Personal Packing List~]()
 
 ## Phase 4: Post Arrival
 
 1. Undergo Immigration Check
-
    - They may ask a few questions regarding your stay, college, course, financial status, etc. In return, you get a printed copy of your Study Permit (and Co-Op Work permit if your course has it).
 
 1. Activate Bank Account
-
    - I had to book an appointment for CIBC; For Scotia, I heard it was walk-in. Either way, you'll know what to do when you submit your GIC.
 
 1. Activate SIM Card
-
    - As I mentioned before, I got my SIM while I was still in India. It was activated automatically a day before my flight, so after touching Canada, I simply popped it into my phone and I had access.
 
 1. Get a SIN Card
-
    - A SIN Card is like Social Security (or Aadhar) Card. If you get a job in Canada, your employer will ask for SIN to put your records and payments against. More about SIN [here](https://www.canada.ca/en/employment-social-development/services/sin.html)
 
    - While a majority of people coming here apply for SIN by visiting Service Canada in person, it is not known by many that we can get SIN by applying online too! I did mine online and got it within 2 weeks. There is no difference in either, except that in-person you get it same day but have to stand in a line for hours.
 
 1. College-specific stuff
-
    - I received my College ID from college; it also doubles as a bus pass. You'll also get your health care and other college-related stuff done in the first few weeks.
 
 ---
