@@ -1,0 +1,111 @@
+---
+date: "Sat Nov 29 10:40:06 EST 2025"
+title: "Building an Android App in Go using Fyne - Part 5: Navigation"
+---
+
+import NavVideo from "../../video/go-fyne-part-5.mp4"
+
+In part 4, we got our list page up to show content from our store. But our app is still just a couple of disconnected pages, and utterly unusable. Let's fix that in this part.
+
+> Check out the previous part here: [Part 4](/posts/go-fyne-part-4)
+
+## How to navigate in fyne?
+
+Our List page has a + button at the bottom to go to the Input page. And clicking on cancel/submit on Input page brings up back to the List page.
+
+> The starting point of the code is [GitHub Diff](https://github.com/p-tupe/Duri/commit/1c398676b4c2222b26654b944f8d577f35102d7e)
+
+Well, earlier I had some hacks with StackLayout in mind, but in the latest and greatest v2.7 of fyne we have.. drumroll please... [Navigation](https://docs.fyne.io/api/v2/container/navigation)! Woohoo!!!
+
+> Make sure to run `go get -u` to update to latest versions
+
+## Let's add that + button
+
+Go into `GetList` function and update it to return a new container with a button attached like so:
+
+```go
+func GetList(logFile fyne.URIReadCloser) *fyne.Container {
+  //...
+
+  list := widget.NewList(
+    func() int {
+      return len(fls)
+    },
+    func() fyne.CanvasObject {
+      return widget.NewLabel("All Logs")
+    },
+    func(i widget.ListItemID, o fyne.CanvasObject) {
+      o.(*widget.Label).SetText(fls[i].String())
+    })
+
+  btn := widget.NewButtonWithIcon("", theme.ContentAddIcon(), func() {
+    // TODO
+  })
+
+  return container.NewVBox(list, btn)
+}
+```
+
+Aaannd, that it! `go run .` it and check if you spy that + icon. It doesn't do anything yet, so let's fix that shall we?
+
+## Navigation ftw!
+
+Right, the main part of this part. Let's go to main.go then. Heh.
+
+First, declare a `nav` variable for type `*container.Navigation`. Then we add a couple of functions as params to both widgets - in form we add a "go back" and in list we have a "go forth" (in the form of pushing form on stack). Update widgets to accept these new params and call 'em on button clicks. The new code looks like so:
+
+`main.go`
+```go
+func main() {
+  var nav *container.Navigation
+
+  // ...
+  form := GetForm(logFileWriter, func() {
+    nav.OnBack()
+  })
+
+  // ...
+  list := GetList(logFileReader, func() {
+    nav.Push(form)
+  })
+
+  nav = container.NewNavigation(list)
+
+  w.Resize(fyne.NewSize(512, 512))
+  w.SetContent(nav)
+  w.ShowAndRun()
+}
+```
+
+`widget.go`
+```go
+func GetForm(logFile fyne.URIWriteCloser, showList func()) *widget.Form {
+  // ...
+  OnSubmit: func() {
+    // ...
+    showList()
+  },
+  OnCancel: func() {
+    showList()
+  },
+}
+
+func GetList(logFile fyne.URIReadCloser, showForm func()) *fyne.Container {
+  // ...
+  btn := widget.NewButtonWithIcon("", theme.ContentAddIcon(), func() {
+    showForm()
+  })
+
+  return container.NewVBox(list, btn)
+}
+```
+
+Go on, try a run and see what it shows. Does it look something like this?
+
+<video src={NavVideo} alt="Navigation Video" style="max-width: 300px;" autoplay muted loop controls />
+
+If yes, congratulations. You've successfully connected the two pages! Granted it shifts our app from unusable to barely usable and it still looks buck ugly but hey, baby steps.
+
+If no... God be with you. And this [diff](https://github.com/p-tupe/Duri/commit/33784a39511e030f3d417a74df8dc7fcc2a1ea03). Mostly the diff. I hope you won't just pray for it to run.
+
+Regardless, we've a fair bit to cover next. Not to mention the main purpose of our app - to calculate the mileage, if you've missed it somehow. Let's see what comes up in the next part. See ya there!
