@@ -21,7 +21,7 @@ NO!
 
 I had to upgrade one version at a time... And cross my fingers nothing broke. And kudos to the folks at Nextcloud, they handled the migration pretty well.
 
-But god forbid things every just work out. No, I got some issues with the Postgres database that I had at the time (v14?).
+But god forbid things ever just work out. No, I got some issues with the Postgres database that I had at the time (v14?).
 
 I know I messed up several things along the way of upgrading the database to v17; and Nextcloud to v28(?) - several warnings in the admin console. But... Things worked! And I was happy that all my efforts were not in vain.
 
@@ -31,7 +31,7 @@ Docker pull - upgrade Nextcloud to latest - all good. But wait, why am I not abl
 
 Easy, right?
 
-I somehow ended up nuking all my data. I do have the backup dump, no worries. But IT. JUST. WONT. WORK.
+I somehow ended up nuking all my data. I do have the backup dump, of course. But IT. JUST. WONT. WORK.
 
 And I don't care about all this enough to dig into the whys - I just want my cloud backup (which is what I use Nextcloud for) to work so I can forget about it.
 
@@ -43,11 +43,11 @@ I had my uploaded files in a docker volume named "nextcloud_app_data"; I did a `
 
 > `docker volume ls` lists all volumes
 
-Some `ls`es later, I found the place where all my files were placed. I moved them outside of the docker container and erased the container with `docker volume rm nextcloud_app_data` after ensuring all the related containers and images were removed too.
+Some `ls`es later, I found the place where all my files were stored. I moved them outside of the docker container and erased the container with `docker volume rm nextcloud_app_data` after ensuring all the related containers and images were removed too.
 
 ## Reverse Proxy - ~Nginx~ Caddy!
 
-Nginx is a nice piece of software. But these days, I have come to love Caddy. It has a lot of features (that you need and don't have to configure), and thus end up with an extremely minimal config. Here's my `Caddyfile` for Nextcloud proxy:
+Nginx is a nice piece of software. But these days, I have come to love Caddy. It has a lot of features (that you need but don't have to configure), and thus end up with an extremely minimal config. Here's my `Caddyfile` for Nextcloud proxy:
 
 ```nginx
 nextcloud.priteshtupe.com {
@@ -61,11 +61,11 @@ nextcloud.priteshtupe.com {
 }
 ```
 
-That's it! If you search the web, you might find some setups where caddy is part of Nextcloud's compose file (or place in the same directory etc). That's fine if you're gonna use Caddy _only_ for Nextcloud and nothing else. I doubt it, setup Caddy separately regardless. There's no need to tie those two together. See below for more.
+That's it! If you search the web, you might find some setups where caddy is part of Nextcloud's compose file (or place in the same directory etc). That's fine if you're gonna use Caddy _only_ for Nextcloud and nothing else. I doubt it; setup Caddy separately regardless. There's no need to tie those two together.
 
 ## Database - ~Postgres~ SQLite!
 
-The main pain point of my setup, I think. I removed all the Postgres stuff from the docker-compose file. SQLite is pretty awesome to be honest, I dunno why I wanted anything more complicated. Besides, backup it up is as easy as just copying the file. Also, I moved to the stable version (instead of pinning a number or latest) of Nextcloud. My docker-compose file was reduced to:
+The main pain point of my setup, I think. I removed all the Postgres stuff from the docker-compose file. SQLite is pretty awesome to be honest, I dunno why I wanted anything more complicated. My docker-compose file was reduced to:
 
 ```yaml
 services:
@@ -96,20 +96,20 @@ In case you're wondering where each file went, here's a low-down:
    └── docker-compose.yml
 ```
 
-The extra folder you see in the `caddy/` directory is required in the caddy's docker-compose (where I host some static stuff from).
+The extra folder you see in the `caddy/` directory is required in the caddy's docker-compose (where I host some unrelated static stuff from).
 Here is the docker-compose for Caddy btw:
 
 ```yaml
 services:
   caddy:
     image: caddy:latest
-  network_mode: host
-  volumes:
-    - $PWD/Caddyfile:/etc/caddy/Caddyfile
-    - $PWD/site:/srv:ro
-    - caddy_data:/data
-    - caddy_config:/config
-  restart: unless-stopped
+    network_mode: host
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/site:/srv:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    restart: unless-stopped
 
 volumes:
   caddy_data:
