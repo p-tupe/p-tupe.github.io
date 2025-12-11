@@ -49,7 +49,7 @@ Some `ls`es later, I found the place where all my files were placed. I moved the
 
 Nginx is a nice piece of software. But these days, I have come to love Caddy. It has a lot of features (that you need and don't have to configure), and thus end up with an extremely minimal config. Here's my `Caddyfile` for Nextcloud proxy:
 
-```caddy
+```nginx
 nextcloud.priteshtupe.com {
     encode zstd gzip
     redir /.well-known/carddav /remote.php/dav/ 301
@@ -70,7 +70,7 @@ The main pain point of my setup, I think. I removed all the Postgres stuff from 
 ```yaml
 services:
   app:
-    image: nextcloud:stable
+    image: nextcloud:latest
     ports:
       - "8000:80"
     volumes:
@@ -166,6 +166,13 @@ docker compose exec -it app php occ maintenance:repair --include-expensive
 ```
 
 I ended up doing other maintenance tasks as well, since I was there anyway.
+
+### Warn: Database missing indices.
+
+```bash
+docker compose exec -it app php occ db:add-missing-indices
+# ...
+```
 
 ### Warn: SQLite is currently being used as the backend database.
 
