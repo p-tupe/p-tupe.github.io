@@ -19,6 +19,7 @@
     "astro": "^5.16.5",
     "astro-compressor": "^1.0.0",
     "astro-robots-txt": "^1.0.0",
+    "flag-icons": "^7.5.0",
     "pagefind": "^1.4.0",
     "typescript": "^5.9.3",
     "wrangler": "^4.25.0"

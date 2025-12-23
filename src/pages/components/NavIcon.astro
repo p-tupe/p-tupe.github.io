@@ -2,6 +2,7 @@
 import ExtLinkIcon from "../../icons/external-link.svg"
 import CrossIcon from "../../icons/cross.svg"
 import { LANG_CODES } from "../../utils/translationData"
+import "flag-icons/css/flag-icons.min.css"
 const isHome = Astro.url.pathname === "/"
 ---
 
@@ -70,17 +71,17 @@ const isHome = Astro.url.pathname === "/"
 
       {
         Object.keys(LANG_CODES).map((code) => {
-          const { language, flag } =
+          const { language, countryCode } =
             LANG_CODES[code as unknown as keyof typeof LANG_CODES]
           return (
-            <option
-              value={code}
-              style="cursor: pointer;"
-              onclick="openTranslation(this.value)"
+            <button
+              class="langOption"
+              data-lang={code}
+              onclick="openTranslation(this.getAttribute('data-lang'))"
             >
-              <span set:html={flag} />
-              {language}
-            </option>
+              {countryCode && <span class={`fi fi-${countryCode}`} />}
+              <span class="language-name">{language}</span>
+            </button>
           )
         })
       }
@@ -121,12 +122,35 @@ const isHome = Astro.url.pathname === "/"
 
     span {
       font-weight: 100;
-      font-size: 12px;
+      font-size: 14px;
       color: var(--content-color);
     }
 
-    option:hover {
-      color: var(--subcontent-color);
+    .langOption {
+      display: flex;
+      align-items: center;
+      gap: 0.75em;
+      padding: 0.5em;
+      text-align: left;
+      color: var(--content-color);
+      transition: all 0.2s;
+      border-radius: 0.5em;
+
+      &:hover {
+        color: var(--link-color);
+        background-color: var(--subcontent-color);
+        opacity: 0.8;
+      }
+
+      .fi {
+        width: 1.5em;
+        height: 1.125em;
+        flex-shrink: 0;
+      }
+
+      .language-name {
+        flex: 1;
+      }
     }
 
     .closeBtn {
