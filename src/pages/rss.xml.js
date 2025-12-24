@@ -7,12 +7,16 @@ export async function GET(context) {
     title: "Pritesh Tupe's Feed",
     description: "Pritesh Tupe's Blogs and Stories",
     site: context.site,
-    items: posts.map((p) => ({
-      title: p.data.title,
-      pubDate: p.data.date,
-      description: p.body.slice(0, 200) + "...",
-      link: `/posts/${p.id}`,
-    })),
+    items: posts
+      .map((p) => ({
+        title: p.data.title,
+        pubDate: p.data.date,
+        description: p.body.slice(0, 200) + "...",
+        link: `/posts/${p.id}`,
+      }))
+      .sort(
+        (a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime(),
+      ),
     customData: `<language>en-us</language>`,
     stylesheet: "/rss/styles.xsl",
   })
