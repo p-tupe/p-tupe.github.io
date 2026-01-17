@@ -1,5 +1,5 @@
 ---
-modified: "Thu Dec 11 20:23:34 EST 2025"
+modified: "Sat Jan 17 15:09:40 EST 2026"
 ---
 
 # Go
@@ -68,6 +68,11 @@ fmt.Printf("%q\n", re.FindString("seafood fool"))
 re := regexp.MustCompile(`a(x*)b`)
 fmt.Printf("%q\n", re.FindAllStringSubmatch("-ab-", -1))
 fmt.Printf("%q\n", re.FindAllStringSubmatch("-axxb-", -1))
+
+// Replace A with X, B with Y, C with Z
+replaceMap := map[string]string{"A": "X", "B": "Y", "C": "Z"}
+re := regexp.MustCompile(`(A|C|G|T)`)
+re.ReplaceAllStringFunc("ABCCCBBAAABC", func(s string) string { return replaceMap[s] })
 ```
 
 ### Write a Test
@@ -138,10 +143,108 @@ Alright, let's break it down. Remember basic variable definition? `var <name> <t
 
 And thus, if `A` does not implement `Xer` by way of `X()` method, we will get an error. More importantly, any packages (and linters, lsps, etc) that use `A` now know that it implements `Xer`!
 
+### Use `go run` as a shell script
+
+> [stackoverflow.com/whats-the-appropriate-go-shebang-line](https://stackoverflow.com/questions/7707178/whats-the-appropriate-go-shebang-line)
+
+Add this at the top of file (even before `package main`):
+
+```bash
+//usr/bin/env go run "$0" "$@"; exit "$?"
+```
+
+`chmod` and then your `./script.go` just works!
+
+> <span style="color:orange">IMPORTANT!</span> go will complain if you have multiple files with `main` func
+
+### Ignore multiple `main` functions in same package
+
+Best option I found is to simply keep packages in different directories as different modules; You can then `go install .` them to run from wherever.
+
 ### Structure a project?
+
+For all projects, start with:
+
+```bash
+mkdir project-name && cd project-name
+go mod init whatever/project-name
+touch project-name.go # package main
+```
+
+If it's a short script, this is enough. If you need to split code, say separate some utilities:
+
+```bash
+mkdir internal/utils/utils.go # contains a function X
+```
+
+and inside `project-name.go`, import utils like so:
+
+```go
+// Import the internal utils package
+import "whatever/project-name/internal/utils"
+// And use the function like so:
+utils.X()
+```
+
+If it's an CLI/API, by convention that code goes into a `cmd` dir, while for a website, it goes into a `web` dir (sibling to `internal`).
+
+### How to gracefully shut down a go app?
+
+> https://go.dev/wiki/SignalHandling
+
+```go
+package main
+
+func main() {
+    // Make a context tha returns a cancel fn
+	ctx, cancelJobs := context.WithTimeout(context.Background(), 3*time.Second)
+    defer cancelJobs()
+
+    // Create a chan that wait on a signal
+    sig := make(chan os.Signal, 1)
+	signal.Notify(quitChannel, syscall.SIGINT, syscall.SIGTERM)
+
+    // At the end of main, wait on the chan for the signal
+    <-sig
+	log.Println("Shutting down gracefully")
+}
+```
+
+### How to use a template (in html web-server)?
+
+> See [dev-log/go]() and [pingmon/web]() for reference. See [go.dev/text/template](https://pkg.go.dev/text/template) and [go.dev/html/template](https://pkg.go.dev/html/template) for documentation.
+
+### How to run an external command?
+
+> See [go.dev/os/exec](https://pkg.go.dev/os/exec) for package docs
+
+```go
+// For normal run, but show error if not:
+cmd := exec.Command("echo", "hello, world!")
+if err := cmd.Run(); err != nil {
+    log.Println(err)
+}
+
+// For when combined (stdour/err) output is needed:
+cmd := exec.Command("echo", "hello, world!")
+if op, err := cmd.CombinedOutput(); err != nil {
+    log.Fatalf("Error while running cmd: %v", err)
+} else {
+    log.Println(string(op))
+}
+
+// For when a cmd struct is necessary (for customization):
+cmd := exec.Cmd{
+    // See https://pkg.go.dev/os/exec#Cmd
+    Path:   "/bin/echo",
+    Args:   []string{"echo", "hello,", "world"},
+    Stdout: os.Stdout,
+}
+if err := cmd.Run(); err != nil {
+    log.Fatalf("Error while running cmd: %v", err)
+}
+```
 
 ### Use go:stringer, and when?
 
 ### Use go:embed, and when?
-
-### Build a smaller binary?
