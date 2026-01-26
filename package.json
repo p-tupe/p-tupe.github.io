@@ -13,10 +13,10 @@
   "dependencies": {
     "@astrojs/check": "^0.9.6",
     "@astrojs/mdx": "^4.3.13",
-    "@astrojs/rss": "^4.0.14",
-    "@astrojs/sitemap": "^3.6.1",
+    "@astrojs/rss": "^4.0.15",
+    "@astrojs/sitemap": "^3.7.0",
     "@astrolib/seo": "^1.0.0-beta.8",
-    "astro": "^5.16.9",
+    "astro": "^5.16.15",
     "astro-compressor": "^1.0.0",
     "astro-robots-txt": "^1.0.0",
     "flag-icons": "^7.5.0",

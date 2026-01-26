@@ -1,0 +1,106 @@
+---
+date: "Mon Jan 26 13:42:20 EST 2026"
+title: "Building an Android App in Go using Fyne - Part 6: MVP!"
+---
+
+import MVPVideo from "../../video/go-fyne-part-6.mp4"
+
+Alright folks, time for the home run!
+
+If you've been following along, then in the previous [part 5](/posts/go-fyne-part-5) we joined together both our screens with navigation and made our app slightly usable.
+
+But we have several usability issues left to fix yet, not to mention our main feature - mileage calculation. Also, we have accumulated some technical debt in form of random project structure.
+
+And yet we're tantalizingly close to the first working prototype. Let's make a to-do list for what we'll do in this part to reach just that.
+
+## To-Dos:
+
+1. Fix tech debt - mostly restructure files to make more sense (and follow convention)
+2. Get mileage calculation in there somewhere somehow
+3. Our list of logs isn't quite visible - make it stretch the whole screen
+4. Make logs immediately visible on form submit
+5. Ensure logs are saved and restored from our CSV file saved on disk
+
+That should do it.
+
+> Run `go get -u` to get latest package versions.
+
+At this point, it doesn't make sense to add all the code changes in a blog post. I'll add excerpt where necessary but I'd strongly recommend referring to this [diff](https://github.com/p-tupe/Duri/commit/95d110dc2ae61edc5c435d8066e459b9b6b66d0e) here for what changed.
+
+### Restructure project
+
+First, we moved all `.go` files except `main.go` into an `internal/` directory. I also went ahead and renamed `logFile.go` to a more standard `store.go`. Import the internal package into `main.go` like so:
+
+```go
+import i "github.com/p-tupe/duri/internal"
+```
+
+And then use `i.GetForm(...)` to use the functions as required.
+
+> Ensure that the app runs after refactor by using `go run .`
+
+### Make logs list stretch the screen
+
+Our `list` container has 2 canvas objects (`List` and `Btn`) inside a `Vbox` layout.
+
+> Vertical Box arranges items in a vertical column. Every element will have the same width (the width of the widest item in the container) and objects will be top-aligned at their minimum height.
+>
+> ~ [Fyne docs](https://docs.fyne.io/explore/layouts/)
+
+What we can replace it with is a `Border` layout which no, does not add a border, but aligns widgets to a border.
+
+Say you have a widget `w1` that goes at the bottom, and a main widget `mw` that takes up the rest of space, then you'd use the `Border` layout like so:
+
+```go
+container.NewBorder(nil, w1, nil, nil, mw)
+```
+
+Doesn't that sound eerily  similar to what we want? Why, sure it does. Just replace `w1` with `btn` and `mw` with `list` and voila!
+
+### Make logs immediately visible on submit
+
+Fun as it is to restart the app to see a new entry, we should gaiety in other forms.
+
+Why aren't our logs visible? Because we aren't actually showing the updated ones. If you glance at the `OnSubmit` function of our form widget, you can see we're just dumping it in our CSV file.
+
+One option would be to simple read the CSV file anew every time we save, which is a bit... Yuck.
+
+What we _could_ do instead is read the file when our app starts, keep a working copy of latest fuel logs in memory, and when the app is closed we flush if back to the file. Less yuck, more yum.
+
+Let's dig into our newly christened `store.go`, remove the reader/writer functions (we don't really need them); add instead functions to read from CSV -> go and flush from go -> CSV.
+
+> Do note the `fuellogs` variable that works as "global state" of sorts.
+
+Call the CSV -> go in `main.go` immediately after app is defined, and the flusher at the end after app is closed. For reference, those functions are named `readFromStore` and `FlushToStore` respectively in my `store.go`.
+
+Now, to decouple our widgets from our store - remove the logfile parameter from both `GetList` and `GetForm` calls. Instead, use the global `fuellogs` to provide data. Remove both the file read/write from there as well, duh.
+
+> Notice the `Add()` function of `FuelLog` type!
+
+At this point, your app _should_ show fuel logs in real-time but if it doesn't, that's fine too. Let's add mileage and then you can refer to the commit for working code.
+
+### Our main feature: Mileage Calculation
+
+Let's spruce up our `FuelLog` struct - add some comments to document each value; add a `mlg` key of type `float64` to store our mileage. Ensure that it is set to `0` inside our `NewFuelLog` function.
+
+As for how to calculate mileage? We, here we go:
+
+```
+mileage = (current odometer reading - previous odometer reading) / fuel consumed
+```
+
+We assume fuel consumed = the amount of fuel entered in a log entry. That each entry is done with a full tank.
+
+Also, ensure that entries are ordered by date in ascending order.
+
+Now, just call the `calculateMileage` function that works on our `fuellogs` slice.
+
+There, that should take care of all our to-dos. Yep, we sneakily took care of #5 inside #4. Heh.
+
+> As for any bugs you encounter, I'll leave it as an exercise. It won't feel worth it otherwise, if you don't solve any. Plus, you have the commit to refer to anytime.
+
+Here's our MVP in all its bland glory:
+
+<video src={MVPVideo} alt="MVP Video" style="max-width: 300px;" autoplay muted loop controls />
+
+While we've got our MVP, our app still looks bland like a slate oatmeal about to go moldy. Let's add some shineys to app in the next part!
