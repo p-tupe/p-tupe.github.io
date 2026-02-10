@@ -20,18 +20,11 @@ export default [
     isLinkExternal: false,
   },
   {
-    title: "Zettel Merken [Self-Help]",
+    title: "Supernote Toolkit [Application]",
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Zettelkasten_paper_schematic.png/960px-Zettelkasten_paper_schematic.png",
-    link: "https://github.com/p-tupe/zettel-merken",
-    content: `<p> Supercharge your Supercharge your learning by combining two of the most revolutionary ideas in knowledge enhancement! </p>`,
-    isLinkExternal: true,
-  },
-  {
-    title: "Creatures [Canvas Simulation]",
-    imageUrl: CreaturesImage,
-    link: "https://p-tupe.github.io/creatures",
-    content: `<p> A simulation of an environment where different creatures interact with the surroundings and each other. </p>`,
+      "https://raw.githubusercontent.com/p-tupe/supernote-toolkit/refs/heads/main/Icon.png",
+    link: "https://github.com/p-tupe/supernote-toolkit",
+    content: `<p> A collection of tools for supernote devices. </p>`,
     isLinkExternal: true,
   },
   {
@@ -51,6 +44,14 @@ export default [
     isLinkExternal: true,
   },
   {
+    title: "Zettel Merken [Self-Help]",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Zettelkasten_paper_schematic.png/960px-Zettelkasten_paper_schematic.png",
+    link: "https://github.com/p-tupe/zettel-merken",
+    content: `<p> Supercharge your Supercharge your learning by combining two of the most revolutionary ideas in knowledge enhancement! </p>`,
+    isLinkExternal: true,
+  },
+  {
     title: "Impossible XO [Board Game]",
     imageUrl: XOImage,
     link: "https://p-tupe.github.io/impossible-xo",
@@ -58,17 +59,17 @@ export default [
     isLinkExternal: true,
   },
   {
-    title: "Binary Clock ",
+    title: "Binary Clock [Concept]",
     imageUrl: BCDImage,
     link: "https://p-tupe.github.io/binary-clock",
     content: `<p> A Binary Coded Decimal representation of current time. </p>`,
     isLinkExternal: true,
   },
   {
-    title: "Pingmon [Monitoring Tool]",
-    link: "https://github.com/p-tupe/pingmon",
-    content: `<p> Self-hosted web-site and jobs monitoring, with downtime notifications pushed to Slack and Email.
-        </p>`,
+    title: "Creatures [Canvas Simulation]",
+    imageUrl: CreaturesImage,
+    link: "https://p-tupe.github.io/creatures",
+    content: `<p> A simulation of an environment where different creatures interact with the surroundings and each other. </p>`,
     isLinkExternal: true,
   },
 ]
