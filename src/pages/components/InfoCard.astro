@@ -7,7 +7,7 @@ const { imageUrl, imageAlt, title } = Astro.props
 <div class="card-container">
   {
     imageUrl && (
-      <Image src={imageUrl} alt={imageAlt || title} width={3000} height={300} />
+      <Image src={imageUrl} alt={imageAlt || title} />
     )
   }
   <div class="card-content">

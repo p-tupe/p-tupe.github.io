@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content"
-import { AstroSeo } from "@astrolib/seo"
+import {  SEO } from "astro-seo"
 import ListItem from "../components/ListItem.astro"
 import BaseLayout from "../../layouts/BaseLayout.astro"
 
@@ -9,7 +9,7 @@ const allPosts = (await getCollection("posts")).sort(
 )
 ---
 
-<AstroSeo
+<SEO
   title="Pritesh Tupe | All Posts"
   description="A list of all blog posts written by Pritesh Tupe"
   canonical="https://www.priteshtupe.com/posts"
