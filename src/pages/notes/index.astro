@@ -1,12 +1,12 @@
 ---
 import { getCollection } from "astro:content"
-import { AstroSeo } from "@astrolib/seo"
+import {  SEO } from "astro-seo"
 import BaseLayout from "../../layouts/BaseLayout.astro"
 
 const notes = (await getCollection("notes")).sort()
 ---
 
-<AstroSeo
+<SEO
   title="Pritesh Tupe | All Notes (Dev-Log)"
   description="A list of all notes related to day-to-day programming stuff"
   canonical="https://www.priteshtupe.com/notes"
