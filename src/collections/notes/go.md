@@ -1,5 +1,5 @@
 ---
-modified: "Sat Jan 17 15:09:40 EST 2026"
+modified: "Wed Mar 18 12:39:46 EDT 2026"
 ---
 
 # Go
@@ -45,6 +45,12 @@ modified: "Sat Jan 17 15:09:40 EST 2026"
 ### Read from console/terminal
 
 ```go
+// Word scanner version
+var c string
+fmt.Print("Continue? [y/n]: ")
+fmt.Scan(&c)
+
+// Line scanner version
 ip := bufio.NewReader(os.Stdin)
 fmt.Print("Enter something: ")
 name, _ := ip.ReadString('\n')
@@ -98,6 +104,22 @@ func TestFn(t *testing.T) {
 ```
 
 You can then test this with `go test .` assuming a `go.mod` is in place.
+
+### Write a Benchmark
+
+> [b-loop](https://go.dev/blog/testing-b-loop)
+
+In `whatever_test.go`, simply write:
+
+```go
+func BenchmarkX(b *testing.B) {
+    for b.Loop() {
+        // ... stuff to test
+    }
+}
+```
+
+then just `go test -bench=. whatever_test.go` to see the output.
 
 ### Compile time assertion for a type implementing an interface
 
@@ -161,7 +183,7 @@ Add this at the top of file (even before `package main`):
 
 Best option I found is to simply keep packages in different directories as different modules; You can then `go install .` them to run from wherever.
 
-### Structure a project?
+### Structure a project
 
 For all projects, start with:
 
@@ -188,7 +210,7 @@ utils.X()
 
 If it's an CLI/API, by convention that code goes into a `cmd` dir, while for a website, it goes into a `web` dir (sibling to `internal`).
 
-### How to gracefully shut down a go app?
+### Gracefully shut down a go app
 
 > https://go.dev/wiki/SignalHandling
 
@@ -210,7 +232,7 @@ func main() {
 }
 ```
 
-### How to use a template (in html web-server)?
+### Use a template (in html web-server)
 
 > See [dev-log/go]() and [pingmon/web]() for reference. See [go.dev/text/template](https://pkg.go.dev/text/template) and [go.dev/html/template](https://pkg.go.dev/html/template) for documentation.
 
@@ -245,6 +267,92 @@ if err := cmd.Run(); err != nil {
 }
 ```
 
-### Use go:stringer, and when?
+### Accept an array of options in go flag
 
-### Use go:embed, and when?
+```go
+// This is a simpler way with no parsing
+flag.Parse()
+inputs := flag.Args() // inputs contains all options
+```
+
+- [Source](https://beta.stackoverflow.com/questions/28322997/how-to-get-a-list-of-values-into-a-flag-in-golang)
+
+```go
+// This is a more involved one
+package main
+
+import "flag"
+
+type arrayFlags []string
+
+// String is an implementation of the flag.Value interface
+func (i *arrayFlags) String() string {
+    return fmt.Sprintf("%v", *i)
+}
+
+// Set is an implementation of the flag.Value interface
+func (i *arrayFlags) Set(value string) error {
+    *i = append(*i, value)
+    return nil
+}
+
+func main() {
+    var myFlags arrayFlags
+    flag.Var(&myFlags, "list1", "Some description for this param.")
+    flag.Parse()
+}
+```
+
+### Run a fn every X seconds
+
+```go
+ticker := time.Tick(3 * time.Second)
+for range ticker { /*...*/ }
+```
+
+## Slices gotchas
+
+- Ranging on a slices creates a _copy_ of each item; so modifying a slices goes like so:
+
+```go
+for idx, item := range allItems {
+    // This won't work, will only modify a locally copied item
+    item.key = value
+
+    // Use this instead to modify the slice
+    allItems[i].key = value
+}
+```
+
+- Variadic args do no pass a copy, don't modify assuming a clone
+
+```go
+func x() {
+    og := []int{1, 2, 3}
+    y(og...)
+    fmt.Println(og) // 1, 2, 9
+}
+
+func y(arr ...int) {
+    arr[2] = 9 // arr points to same underlying memory as og
+    fmt.Println(arr)
+}
+```
+
+- Slices delete function _zeroes elements_ in memory and _returns_ a modified slice.
+
+```go
+sliceA := []int{2, 4, 3, 1, 6}
+// Slice A here:  [2 4 3 1 6]
+
+sliceB := slices.DeleteFunc(sliceA, func(i int) bool {
+    return i == 4 || i == 1
+})
+// Slice A after: [2 3 6 0 0]
+// Slice B after: [2 3 6]
+
+sliceC := slices.Delete(sliceB, 1, 2)
+// Slice A now: [2 6 0 0 0]
+// Slice B now: [2 6 0]
+// Slice C now: [2 6]
+```
