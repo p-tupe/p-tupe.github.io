@@ -76,26 +76,29 @@ struct Payload {
 }
 
 fn spawn_readability_parser() -> mpsc::Sender<Payload> {
-    let (tx, rx) = mpsc::channel();
+    // changed var name to distinguish b/w request/response channels
+    let (request_tx, request_rx) = mpsc::channel();
 
     std::thread::spawn(move || {
         let readability = Readability::new().unwrap();
-        let mut itr = rx.iter();
+        let mut itr = request_rx.iter();
 
         loop {
-            let Payload {
+            let Some(Payload {
                 response_tx,
                 // ...
-            } = itr.next().unwrap();
+            }) = itr.next() else {
+                break
+            };
 
             // do the parsing with readability.parse(),
             // then respond
 
-            response_chan.send(/* whatever */).unwrap();
+            response_tx.send(/* whatever */).unwrap();
         }
     });
 
-    tx
+    request_tx
 }
 
 // assuming somewhere else you're creating a oneshot channel and 
