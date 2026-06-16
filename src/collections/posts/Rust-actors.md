@@ -3,12 +3,13 @@ date: "Fri Jun  5 18:26:47 EDT 2026"
 title: Actor Model Pattern in Rust
 ---
 
-
 ## Introduction
 
 [Actor Model Pattern](https://en.wikipedia.org/wiki/Actor_model) is when the logical architecture of a program is based around "actors". An actor is an entity that holds some state, and accepts messages to act on said state, sometimes returning a response in turn.
 
 I will not be going deep into the pattern itself; there are resources out there that express it better than I ever could. What I plan to elaborate upon however, is a certain problem that cropped up during my development of [tio](https://github.com/p-tupe/talk-it-out) and how I naturally converged on Actor Model as a solution.
+
+> Udate: I have since moved from Rust to Go for TIO; however, you can reference this [commit](https://github.com/p-tupe/talk-it-out/commit/7d5dfd5e5293c46e157e829aa68fbc84bb5494ea) for the purpose of this blog post.
 
 ## The Problem
 
@@ -32,7 +33,11 @@ But those can be a bit overwhelming for a beginner who's still trying to get a h
 
 ### First, The Actor
 
-We "spawn" a readability-js actor function that, when called, returns a "sender" channel - a channel where you can only send messages on. It's the result of an `mpsc::channel()` where mpsc stands for multiple producers single consume i.e. multiple requests can send to a single receiver inside the actor. It looks something like so:
+We "spawn" a readability-js actor function that, when called, returns a "sender" channel - a channel where you can only send messages on. It's the result of an [`mpsc::channel()`](https://doc.rust-lang.org/std/sync/mpsc/fn.channel.html) where mpsc stands for multiple producers single consume i.e. multiple requests can send to a single receiver inside the actor.
+
+> I'm using std mspc (thread-safe) instead of tokio's mpsc (thread/await-safe) for brevity. Core idea is same regardless.
+
+It looks something like so:
 
 ```rust
 fn spawn_readability_parser() -> mpsc::Sender<_> {
@@ -67,7 +72,7 @@ I was stuck on this point for a while, and granted I should have just read those
 
 It's pretty simple once you know it - in the payload, you send a channel to reply back on!
 
-There's this [`oneshot`]() channel that seems tailor-made for this use case. Let's see what the code looks like with that in -
+There's this [`oneshot`](https://docs.rs/tokio/latest/tokio/sync/oneshot/) channel that seems tailor-made for this use case. Let's see what the code looks like with that in -
 
 ```rust
 struct Payload {
@@ -104,7 +109,7 @@ fn spawn_readability_parser() -> mpsc::Sender<Payload> {
 // assuming somewhere else you're creating a oneshot channel and 
 // sending the data on tx; here's a contrived example:
 fn main() {
-    let parser = spawn_readability_parser(); 
+    let parser = spawn_readability_parser();
     let (response_tx, response_rx) = oneshot::channel();
     parser.send(Payload { response_tx, /* message */ }).unwrap(); // Send message
     let _ = response_rx.await.unwrap(); // Received message
