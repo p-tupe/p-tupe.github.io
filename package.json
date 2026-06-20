@@ -23,7 +23,7 @@
     "flag-icons": "^7.5.0",
     "pagefind": "^1.4.0",
     "typescript": "^5.9.3",
-    "wrangler": "^4.25.0"
+    "wrangler": "^4.103.0"
   },
   "devDependencies": {
     "prettier": "^3.5.3",
