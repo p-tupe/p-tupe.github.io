@@ -32,7 +32,7 @@ const foa = defineCollection({
 
 const notes = defineCollection({
   loader: glob({
-    pattern: ["**/[^_]*.md", "!README.md"],
+    pattern: ["**/[^_]*.{md,mdx}", "!README.md"],
     base: "./src/collections/notes",
   }),
   schema: z.object({
