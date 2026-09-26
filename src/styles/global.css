@@ -29,7 +29,7 @@ html {
   color: var(--content-color);
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
-  line-height: 1.6;
+  line-height: 1.75;
   font-family: Tahoma, Verdana, Geneva, sans-serif;
 }
 
