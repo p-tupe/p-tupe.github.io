@@ -22,7 +22,7 @@ export default defineConfig({
       },
     },
   },
-  site: "https://www.priteshtupe.com",
+  site: "https://priteshtupe.com",
   devToolbar: { enabled: false },
   integrations: [sitemap(), robotsTxt(), compressor(), mdx()],
 })
