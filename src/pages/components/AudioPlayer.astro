@@ -1,8 +1,10 @@
 ---
-const { label = "", src, hideBorder = false } = Astro.props
+const { label = "", src, hideBorder = false, hideDownload = false } = Astro.props
 ---
 
 <div class={"audio-player-div " + (hideBorder ? "" : "withBorder")}>
+  {
+  hideDownload ? <></> :
   <div>
     <a href={src} download title="Download" aria-label="download audio">
       <svg
@@ -27,9 +29,9 @@ const { label = "", src, hideBorder = false } = Astro.props
           fill="currentColor"></path>
       </svg>
     </a>
-
     <label>{label}</label>
   </div>
+  }
   <audio controls preload="metadata" src={src}></audio>
 </div>
 
@@ -44,6 +46,10 @@ const { label = "", src, hideBorder = false } = Astro.props
 
     a {
       text-decoration: none;
+    }
+
+    audio {
+      flex-grow: 1;
     }
 
     @media screen and (max-width: 768px) {

@@ -1,0 +1,47 @@
+---
+date: "Thu Oct  8 09:23:03 EDT 2026"
+title: Boost your language learning journey
+---
+
+import sample from "../../audio/multi_lang_sample.mp3"
+import AudioPlayer from "../../pages/components/AudioPlayer.astro"
+
+### ...with multi-lang local audio generation
+
+For a given file (with snippets of different languages) like so:
+
+```plain
+fr: Bonjour en: Good day
+
+fr: Comment ça va?
+en: How are you?
+
+fr:
+Je m'appelle Pat.
+
+Et Vous?
+
+en:
+My name is Pat.
+
+And you?
+
+fr: Qui c'est?
+en: Who's that?
+```
+
+Generate an audio file like so:
+
+<AudioPlayer src={sample} hideDownload />
+
+### How in the...!?!
+
+Right now I just wanted to share it. Writing a full blog post explaining it all... not up for it today. Perhaps will replace this section someday.
+
+Regardless, there's two pieces that work together.
+
+First is the file parser [parse-lang-file](https://github.com/p-tupe/dotfiles/blob/main/scripts/.local/bin/parse-lang-file) - a rust script that splits an input file by language tags, sends each chunk to a TTS engine, then concats those chucks back into one audio file using [ffmpeg](https://ffmpeg.org/).
+
+The TTS engine in question is [talk-it-out](https://github.com/p-tupe/talk-it-out) - I use [piper](https://github.com/OHF-Voice/piper1-gpl) for French and [kokoro](https://github.com/nazdridoy/kokoro-tts) for English (because I like the way each sounds, you can use one or the other only if you prefer). Hosted via server so each chunk does not load the whole binary on ram per run.
+
+That's all you need. Cheers!
