@@ -30,8 +30,13 @@ const { placeholder } = Astro.props
       method: "POST",
       headers: [
         ["Authorization", "ecfd4b2f-eabf-4577-95f3-470d7832b35c"],
+        ["Content-Type", "application/json"],
       ],
-      body: text,
+      body: JSON.stringify({
+        to: "mail@priteshtupe.com",
+        subject: "Personal Website Comment",
+        contents: text,
+      }),
     })
       .then((res) => {
         if (res.ok) {

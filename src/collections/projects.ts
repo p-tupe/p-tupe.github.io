@@ -28,6 +28,14 @@ export default [
     isLinkExternal: true,
   },
   {
+    title: "Zettel Merken [Self-Help]",
+    imageUrl:
+      "https://raw.githubusercontent.com/p-tupe/zettel-merken/refs/heads/main/logo.png",
+    link: "https://github.com/p-tupe/zettel-merken",
+    content: `<p> Supercharge your Supercharge your learning by combining two of the most revolutionary ideas in knowledge enhancement! </p>`,
+    isLinkExternal: true,
+  },
+  {
     title: "nvim.rss [Editor Plugin]",
     imageUrl:
       "https://raw.githubusercontent.com/p-tupe/nvim-rss/refs/heads/main/logo.svg",
@@ -44,11 +52,19 @@ export default [
     isLinkExternal: true,
   },
   {
-    title: "Zettel Merken [Self-Help]",
+    title: "Simple Heart Counter [Website Plugin]",
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Zettelkasten_paper_schematic.png/960px-Zettelkasten_paper_schematic.png",
-    link: "https://github.com/p-tupe/zettel-merken",
-    content: `<p> Supercharge your Supercharge your learning by combining two of the most revolutionary ideas in knowledge enhancement! </p>`,
+      "https://raw.githubusercontent.com/p-tupe/simple-heart-counter/refs/heads/main/logo.png",
+    link: "https://github.com/p-tupe/simple-heart-counter",
+    content: `<p> A hassle-free plug-n-play heart counter widget for websites </p>`,
+    isLinkExternal: true,
+  },
+  {
+    title: "Talk It Out [Text-to-Speech]",
+    imageUrl:
+      "https://raw.githubusercontent.com/p-tupe/talk-it-out/refs/heads/main/logo.png",
+    link: "https://github.com/p-tupe/talk-it-out",
+    content: `<p> Turn any web page into an audio stream with a plug and play widget </p>`,
     isLinkExternal: true,
   },
   {

@@ -396,7 +396,8 @@ docker run --platform linux/arm64 --rm \
     rust:latest cargo build --release
 ```
 
-> Note the `--platform` value, the `arm64` (aka `aarch64`) is a match for `uname -m` on my server. Yours might be different (like `x86_64`, use `amd64` in that case), so adjust accordingly.
+> Note the `--platform` value, the `arm64` (aka `aarch64`) is a match for `uname -m` on my server.
+> Yours might be different (like `x86_64` - use `amd64` in that case), so adjust accordingly.
 
 If you're following along, you'll find a pretty little `garage-sale-tutorial` tucked away in your `target/release` sub-dir.
 

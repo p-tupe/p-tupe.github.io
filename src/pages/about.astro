@@ -5,11 +5,8 @@ import InfoCard from "./components/InfoCard.astro"
 
 import GithubIcon from "../icons/gihub.svg"
 import LinkedInIcon from "../icons/linkedin.svg"
-import FacebookIcon from "../icons/facebook.svg"
-import InstagramIcon from "../icons/instagram.svg"
-import YoutubeIcon from "../icons/youtube.svg"
 import MailIcon from "../icons/mail.svg"
-import FeedIcon from "../icons/feed.svg"
+import ExtLinkIcon from "../icons/external-link.svg"
 import CommentBox from "./components/CommentBox.astro"
 
 const pageTitle = "About Me"
@@ -35,13 +32,13 @@ const pageTitle = "About Me"
         hi, please contact me on any of the platforms below.
       </p>
 
-      <div style="width:100%; display: flex; justify-content: center; position: absolute; bottom: 1em;">
-      <a
+      <div style="width:100%; display: flex; justify-content: center;">
+        <a
           href="/resume.pdf"
-        style="border: 1px solid var(--content-color); padding: 1em; border-radius: 1em;"
+          style="padding: 1em; margin: 0.5em; border-radius: 1em;    background-color: var(--link-color); color: var(--background-color); text-decoration: none;"
           target="_blank"
         >
-          Resume
+          Resume <ExtLinkIcon />
         </a>
       </div>
     </InfoCard>
@@ -52,32 +49,21 @@ const pageTitle = "About Me"
 
     <div class="contact-icon-list">
       <a target="_blank" href="https://github.com/p-tupe"
-        ><GithubIcon class="contact-icon" /></a
+        ><GithubIcon class="contact-icon" /> https://github.com/p-tupe</a
       >
+
       <a target="_blank" href="https://www.linkedin.com/in/priteshtupe/"
-        ><LinkedInIcon class="contact-icon" /></a
+        ><LinkedInIcon class="contact-icon" /> https://www.linkedin.com/in/priteshtupe/</a
       >
+
       <a target="_blank" href="mailto:mail@priteshtupe.com"
-        ><MailIcon class="contact-icon" /></a
+        ><MailIcon class="contact-icon" /> mail@priteshtupe.com</a
       >
-      <a target="_blank" href="https://facebook.com/pritesh.tupe/"
-        ><FacebookIcon class="contact-icon" /></a
-      >
-      <a target="_blank" href="https://instagram.com/pritesh.tupe/"
-        ><InstagramIcon class="contact-icon" /></a
-      >
-      <a target="_blank" href="https://www.youtube.com/@PriteshTupe"
-        ><YoutubeIcon class="contact-icon" /></a
-      >
-      <a target="_blank" href="/rss.xml"><FeedIcon class="contact-icon" /></a>
     </div>
 
     <h2>Or send a message directly:</h2>
 
-    <CommentBox
-      placeholder="Write your message here..."
-      pageTitle={pageTitle}
-    />
+    <CommentBox placeholder="Your message..." pageTitle={pageTitle} />
   </section>
 
   <section class="story">
@@ -176,11 +162,22 @@ const pageTitle = "About Me"
   section.connect {
     div.contact-icon-list {
       display: flex;
+      flex-direction: column;
       width: 100%;
-      justify-content: space-evenly;
+      font-size: 0.8em;
+      justify-content: center;
+      align-items: flex-start;
 
-      .contact-icon {
-        fill: var(--content-color);
+      a {
+        gap: 16px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        justify-content: space-between;
+        padding: 1em;
+        .contact-icon {
+          fill: var(--link-color);
+        }
       }
     }
   }
