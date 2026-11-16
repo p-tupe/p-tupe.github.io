@@ -1,8 +1,22 @@
 ---
-modified: "Fri Nov 28 13:22:15 EST 2025"
+modified: Sat Aug 8 11:30:56 2026 -0400
 ---
 
 # SSH
+
+## Bind a local listener to remote host
+
+```bash
+ssh -L local-addr:local-port:remote-addr:remote-port remote-host
+```
+
+eg, to bind port 8000 on local to a server running on 9000 on remote-host
+
+```bash
+ssh -L 8000:127.0.0.1:9000 ubuntu@192.168.0.1 # remote-host is fake
+```
+
+Usually used with `-N` for pure tunnels
 
 ## Setup SSH keys (no password login)
 

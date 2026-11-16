@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-cd ./src/collections/notes/ && git pull origin master

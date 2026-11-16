@@ -1,5 +1,5 @@
 ---
-modified: "Sat May  9 10:26:00 EDT 2026"
+modified: Thu Nov 5 19:30:44 2026 -0500
 ---
 
 # Rust
@@ -12,79 +12,92 @@ modified: "Sat May  9 10:26:00 EDT 2026"
 - https://rust-lang-nursery.github.io/rust-cookbook/ <- How to use 'em
 - https://github.com/rust-unofficial/awesome-rust <- Stuff made in rust
 - https://github.com/pretzelhammer/rust-blog <- Good stuff
+- https://benjamingeer.eu/en/post/hypermedia-rust/
 
 ## Must Know Crates
 
-| name                   | function                |
-| ---------------------- | ----------------------- |
-| tokio                  | async runtime           |
-| clap                   | cli arg parsing         |
-| serde (+ others)       | struct to json/toml/etc |
-| tracing (+ subscriber) | logging                 |
-| time                   | datetime stuff          |
-| axum                   | web server              |
-| regex                  | regular expressions     |
-| rand                   | random numbers          |
-| anyhow                 | error handling          |
-| config                 | configuration file      |
-| dirs                   | user directories        |
-| walk_dir               | to walk directories     |
-| rusqlite               | sqlite interface        |
-
-## Crash course on Result/Option handling nomenclature
-
-```rust
-// Assume op on Result<Ok(Value), Err(Error)> or Option<Some(Value) | None>
-
-// ok*
-
-// unwrap*
-
-// *and*
-// *or*
-
-// *_else
-// *_then
-
-// map*
-// filter*
-// reduce*
-```
-
-### Discard None (Optional) values in a loop
-
-```rust
-let x = [Some(1), None, Some(2), None, Some(3)];
-
-// Using let Some(x) = y else { continue }
-let mut sum = 0;
-for v in x {
-    let Some(v) = v else { continue };
-    sum += v;
-}
-
-// Using filter_map
-let fsum = x.iter().filter_map(|v| v.map(|v| v)).fold(0, |s, e| s + e);
-```
-
-### Chose this or that (Optional) if they exists, else do something else
-
-```rust
-// .or_else is the main part
-let Some(editor) = env::var_os("VISUAL").or_else(|| env::var_os("EDITOR")) else {
-    println!("no editor found");
-};
-
-let _ = Command::new(editor).arg(path).status()?;
-```
+| name                   | function               |
+| ---------------------- | ---------------------- |
+| tokio +full            | async runtime          |
+| serde +derive          | (de)serialization glue |
+| serde_json             | json parser            |
+| quick_xml +serialize   | xml parser             |
+| tracing (& subscriber) | logging in axum        |
+| log (& env_logger)     | logging in general     |
+| jiff                   | datetime stuff         |
+| axum                   | web server             |
+| regex                  | regular expressions    |
+| rand                   | random numbers         |
+| anyhow                 | error handling         |
+| confy                  | app configuration      |
+| dirs                   | more user directories  |
+| walk_dir               | to walk directories    |
+| sqlx                   | sqlite, postgres       |
+| reqwest/ureq +json     | http libs              |
+| clap                   | cli arg parsing        |
+| indicatif              | cli progress bars      |
 
 ## How to
 
-### Embed a file into a binary
+### Conquer Command
+
+```rust
+Command::new(x).spawn()?; //  fire 'n forget
+Command::new(x).status()?; // fire 'n .. wait until complete to see if worked or not
+Command::new(x).output()?; // wait to completion (includes status along with rest of dump)
+```
+
+### Get `Date.now()` JS equivalent
+
+```rust
+let now = std::time::SystemTime::now().duration_since(SystemTime::UNIX_EPOCH)?.as_millis();
+```
+
+### Optimize release binary
+
+In the project's `cargo.toml`:
+
+```toml
+[profile.release]
+# remove symbol names (and DWARF) from the binary — smaller, but backtraces lose function names [default: "none"]
+strip = "symbols"
+# optimize across crates, not just within one — "thin" gets most of "fat"'s gain for far less link time [default: false]
+lto = "thin"
+# compile the crate as a single unit so LLVM sees the whole thing — better code, slower build [default: 16]
+codegen-units = 1
+# panic terminates instead of unwinding the stack — smaller/faster, but no catch_unwind and no unwind cleanup [default: "unwind"]
+panic = "abort"
+```
+
+### Embed a file into the binary
 
 ```rust
 let embedded_file = include_str!("./path/to/file");
 ```
+
+Can use this to add README as doc string
+
+```rust
+#![doc = include_str!("../README.md")]
+```
+
+### Build a cross-platform executable
+
+> As seen on [official docker rust image](https://hub.docker.com/_/rust/#compile-your-app-inside-the-docker-container)
+
+```bash
+# change os and arch as required
+docker run --rm --platform os/arch --user "$(id -u)":"$(id -g)"  \
+    -v "$PWD":/usr/src/app -w /usr/src/app \
+    rust:slim cargo build --release
+# use rust:alpine for static musl'd bin
+```
+
+> See [cross](https://github.com/cross-rs/cross) for complex usecases (does not work on MacOS though :/)
+
+### Run rust from a (minimal) docker file
+
+- [github.com code-example](https://github.com/p-tupe/code-examples/blob/main/rust/with-docker/Dockerfile)
 
 ### Run rust as standalone script
 
@@ -94,13 +107,15 @@ let embedded_file = include_str!("./path/to/file");
 [dependencies]
 serde_json = "*"
 ---
-fn main() { println("this is a script!"); }
+fn main() {}
 ```
 
 ### Quickly convert a digit (0-9) into char
 
 ```rust
 (digit + b'0') as char
+// To reverse
+char.to_digit(10) // 10: Radix, can be 2 - 26
 ```
 
 ### Buffer a file by line
@@ -108,20 +123,33 @@ fn main() { println("this is a script!"); }
 > https://doc.rust-lang.org/stable/rust-by-example/std_misc/file/read_lines.html
 
 ```rust
-use std::{
-    fs::File,
-    io::{BufRead, BufReader, Result},
-};
-
-fn main() -> Result<()> {
-    let file = File::open("./cargo.toml")?;
-    let line = String::new();
-    for line in BufReader::new(file).lines() {
-        println!("{}", line?);
-    }
-    Ok(())
+let file = File::open("./cargo.toml")?;
+for line in BufReader::new(file).lines() {
+    println!("{}", line?);
 }
 
+// Same, functional
+BufReader::new(File::open("./cargo.toml")?)
+    .lines()
+    .map_while(Result::ok)
+    .for_each(|l| println!("{}", l));
+
+// For a more memory-efficient version
+let file = File::open("./cargo.toml")?;
+let mut reader = BufReader::new(file);
+let mut line = String::new(); // Only a single line in memory allocated
+while reader.read_line(&mut line)? > 0 {
+    println!("{}", line);
+    line.clear(); // As long as it is cleared in time
+}
+```
+
+### Read a file if supplied or read from stdin
+
+```rust
+let input = env::args().nth(1)
+    .map_or_else(|| io::read_to_string(io::stdin()), fs::read_to_string)?;
+// Ctrl-D to end if stdin ip
 ```
 
 ## State-Type Pattern
