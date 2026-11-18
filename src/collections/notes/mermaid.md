@@ -21,5 +21,3 @@ stateDiagram-v2
     Moving --> Crash
     Crash --> [*]
 ```
-
-

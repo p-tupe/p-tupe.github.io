@@ -12,11 +12,11 @@
     "update-notes": "cd src/collections/notes && git pull"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.10",
-    "@astrojs/mdx": "^8.0.2",
+    "@astrojs/check": "^0.9.12",
+    "@astrojs/mdx": "^8.1.6",
     "@astrojs/rss": "^4.0.19",
-    "@astrojs/sitemap": "^3.7.4",
-    "astro": "^7.3.5",
+    "@astrojs/sitemap": "^3.7.6",
+    "astro": "^7.4.13",
     "astro-compressor": "^1.0.0",
     "astro-robots-txt": "^1.0.0",
     "astro-seo": "^1.1.0",
