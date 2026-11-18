@@ -7,9 +7,9 @@ I've heard great things about Rust's cross-compilation story, but things never w
 
 > Btw, I'm on a Mac compiling for Linux (both aarch64).
 
-Using bare [rustup target](<>) with [cargo build](<>) would have trouble finding a linker. [cross](<>) couldn't find images for my platform for whatever reason.
+Using bare [rustup target](https://rust-lang.github.io/rustup/cross-compilation.html) with [cargo build](https://doc.rust-lang.org/cargo/commands/cargo-build.html) would have trouble finding a linker. [cross](https://github.com/cross-rs/cross) couldn't find images for my platform for whatever reason.
 
-I didn't wanna use [zig](<>) (No shade on the language, just wanted something rust-native). Mostly hacked things together using a [docker](<>) command that kinda worked out.
+I didn't wanna use [zigbuild](https://github.com/rust-cross/cargo-zigbuild) (No shade on the language, just wanted something rust-native). Mostly hacked things together using a `docker` command that kinda worked out.
 
 Of course, I knew this was mostly me being a noob, so I decided to dig deep today and solve this once and for all.
 
